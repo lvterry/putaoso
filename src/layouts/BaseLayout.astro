@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  containerWidth?: 'narrow' | 'wide';
+  navMeta?: string;
+  wideFooter?: boolean;
+}
+
+const {
+  title,
+  description = '一本随手翻的葡萄品种图鉴',
+  containerWidth = 'narrow',
+  navMeta = '',
+  wideFooter = false,
+} = Astro.props;
+
+const containerClass = containerWidth === 'wide' ? 'container wide' : 'container';
+const footerClass = wideFooter ? 'site wide' : 'site';
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class={containerClass}>
+    <nav class="top">
+      <a class="logo" href="/">Putaoso<span>葡萄搜</span></a>
+      <slot name="nav-middle" />
+      {navMeta && <div class="nav-meta">{navMeta}</div>}
+    </nav>
+
+    <slot />
+
+    <footer class={footerClass}>
+      {wideFooter ? (
+        <>
+          <div class="footer-mark">Putaoso<span>葡萄搜</span></div>
+          <div class="footer-tag">A field guide to wine grapes<br />慢慢读，找到属于你的那一颗</div>
+          <div class="footer-meta">© 2026 · putaoso.com</div>
+        </>
+      ) : (
+        <>
+          <div class="footer-mark">Putaoso<span>葡萄搜</span></div>
+          <div class="footer-meta" style="margin-top: 16px;">A field guide to wine grapes · 2026</div>
+        </>
+      )}
+    </footer>
+  </div>
+</body>
+</html>

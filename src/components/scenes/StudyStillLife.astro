@@ -1,0 +1,43 @@
+---
+// 深色木桌 + 酒杯 + 蜡烛，夜晚
+---
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="background: linear-gradient(135deg, #2d1612 0%, #4a2820 40%, #6b3a2c 70%, #8b5a3c 100%);">
+  <defs>
+    <radialGradient id="ssl-light" cx="30%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#d4a574" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#d4a574" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ssl-wine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8b1a1f" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#3d0f15" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="ssl-glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f5f0e8" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#f5f0e8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#f5f0e8" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="ssl-table" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d1612" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#1a0a08" stop-opacity="0.6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#ssl-light)"/>
+  <rect y="650" width="1600" height="250" fill="url(#ssl-table)"/>
+  <ellipse cx="800" cy="720" rx="220" ry="14" fill="#000" opacity="0.4"/>
+  <path d="M 680 420 Q 680 580 800 600 Q 920 580 920 420 Z" fill="url(#ssl-glass)" stroke="#f5f0e8" stroke-opacity="0.4" stroke-width="1.5"/>
+  <path d="M 695 470 Q 700 575 800 590 Q 900 575 905 470 Z" fill="url(#ssl-wine)"/>
+  <ellipse cx="800" cy="420" rx="120" ry="16" fill="none" stroke="#f5f0e8" stroke-opacity="0.5" stroke-width="1.5"/>
+  <ellipse cx="800" cy="470" rx="105" ry="12" fill="#5a1a1f" opacity="0.7"/>
+  <rect x="797" y="600" width="6" height="90" fill="#f5f0e8" opacity="0.3"/>
+  <ellipse cx="800" cy="700" rx="85" ry="10" fill="#f5f0e8" opacity="0.25"/>
+  <ellipse cx="800" cy="695" rx="85" ry="6" fill="none" stroke="#f5f0e8" stroke-opacity="0.4" stroke-width="1"/>
+  <path d="M 720 460 Q 730 530 760 580" fill="none" stroke="#f5f0e8" stroke-opacity="0.4" stroke-width="2" stroke-linecap="round"/>
+  <g opacity="0.55" transform="translate(1200, 380)">
+    <rect x="-3" y="0" width="6" height="60" fill="#1a0a08"/>
+    <path d="M -28 60 Q -32 80 -32 130 L -32 320 L 32 320 L 32 130 Q 32 80 28 60 Z" fill="#1a0a08"/>
+    <rect x="-28" y="180" width="56" height="50" fill="#5a1a1f" opacity="0.7"/>
+  </g>
+  <circle cx="380" cy="540" r="8" fill="#ffd89a" opacity="0.9"/>
+  <circle cx="380" cy="540" r="22" fill="#ffd89a" opacity="0.25"/>
+  <circle cx="380" cy="540" r="50" fill="#ffd89a" opacity="0.08"/>
+</svg>

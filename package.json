@@ -1,0 +1,16 @@
+{
+  "name": "putaoso",
+  "version": "0.1.0",
+  "description": "葡萄搜 · 一本随手翻的葡萄品种图鉴",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.18"
+  }
+}

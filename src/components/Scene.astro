@@ -1,0 +1,21 @@
+---
+import StudyStillLife from './scenes/StudyStillLife.astro';
+import VineyardDawn from './scenes/VineyardDawn.astro';
+import ChateauSundown from './scenes/ChateauSundown.astro';
+import SlateSlope from './scenes/SlateSlope.astro';
+
+interface Props {
+  scene: 'study-still-life' | 'vineyard-dawn' | 'chateau-sundown' | 'slate-slope';
+  caption: string;
+}
+
+const { scene, caption } = Astro.props;
+---
+
+<div class="scene">
+  {scene === 'study-still-life' && <StudyStillLife />}
+  {scene === 'vineyard-dawn' && <VineyardDawn />}
+  {scene === 'chateau-sundown' && <ChateauSundown />}
+  {scene === 'slate-slope' && <SlateSlope />}
+  <div class="scene-caption">{caption}</div>
+</div>
