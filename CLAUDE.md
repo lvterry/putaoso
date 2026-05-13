@@ -45,6 +45,10 @@ Varieties live in `src/content/varieties/*.md` as frontmatter-only markdown file
 
 All CSS is in `src/styles/global.css` (one file, no CSS modules or utility framework). Components do not have scoped styles.
 
+### Deployment
+
+The site deploys to Cloudflare Pages via GitHub auto-deploy. `wrangler.jsonc` at the project root configures the static asset deployment — it points wrangler at the `dist/` output directory. No SSR adapter is used; the site is fully static.
+
 ### Cache gotcha
 
 If the dev server throws *"No cached compile metadata found"* for an `.astro` virtual module, clear the Vite and Astro caches and restart:
