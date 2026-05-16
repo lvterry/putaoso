@@ -7,6 +7,7 @@ interface Props {
   containerWidth?: 'narrow' | 'wide';
   navMeta?: string;
   wideFooter?: boolean;
+  hideHeader?: boolean;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   containerWidth = 'narrow',
   navMeta = '',
   wideFooter = false,
+  hideHeader = false,
 } = Astro.props;
 
 const containerClass = containerWidth === 'wide' ? 'container wide' : 'container';
@@ -37,11 +39,13 @@ const footerClass = wideFooter ? 'site wide' : 'site';
 </head>
 <body>
   <div class={containerClass}>
-    <nav class="top">
-      <a class="logo" href="/">Putaoso<span>葡萄搜</span></a>
-      <slot name="nav-middle" />
-      {navMeta && <div class="nav-meta">{navMeta}</div>}
-    </nav>
+    {!hideHeader && (
+      <nav class="top">
+        <a class="logo" href="/">Putaoso<span>葡萄搜</span></a>
+        <slot name="nav-middle" />
+        {navMeta && <div class="nav-meta">{navMeta}</div>}
+      </nav>
+    )}
 
     <slot />
 

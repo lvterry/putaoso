@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroMap from '../components/HeroMap.astro';
 
 const all = await getCollection('varieties');
 const varieties = all.sort((a, b) => a.data.number - b.data.number);
@@ -11,10 +12,14 @@ const varieties = all.sort((a, b) => a.data.number - b.data.number);
   title="葡萄搜・随手翻的葡萄品种图鉴"
   description="一本随手翻的葡萄品种图鉴。慢慢读，找到属于你的那一颗。"
   containerWidth="wide"
-wideFooter={true}
+  wideFooter={true}
+  hideHeader={true}
 >
 {/* === 编辑式封面 === */}
   <section class="cover">
+    <div class="cover-bg">
+      <HeroMap />
+    </div>
     <div class="cover-text">
       <div class="cover-issue">A Field Guide to Wine Grapes</div>
       <h1>Putaoso</h1>
@@ -25,57 +30,6 @@ wideFooter={true}
       </div>
     </div>
 
-    {/* 封面葡萄串插画 */}
-    <div class="cover-visual">
-      <svg viewBox="0 0 460 575" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="cover-grape" cx="35%" cy="30%" r="70%">
-            <stop offset="0%" stop-color="#8b3a44" stop-opacity="1"/>
-            <stop offset="60%" stop-color="#5a1a1f" stop-opacity="1"/>
-            <stop offset="100%" stop-color="#2d0a10" stop-opacity="1"/>
-          </radialGradient>
-          <radialGradient id="cover-grape-hl" cx="30%" cy="25%" r="20%">
-            <stop offset="0%" stop-color="#f5f0e8" stop-opacity="0.5"/>
-            <stop offset="100%" stop-color="#f5f0e8" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <path d="M 230 40 Q 232 80 228 120 Q 226 150 230 175" stroke="#3d342c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        <path d="M 230 90 Q 195 75 175 95 Q 165 115 180 135 Q 200 145 220 130 Q 230 115 230 90 Z" fill="#6b5e3a" opacity="0.6"/>
-        <path d="M 195 100 Q 210 115 225 120" stroke="#3d342c" stroke-width="0.8" fill="none" opacity="0.5"/>
-        <circle cx="170" cy="200" r="32" fill="url(#cover-grape)"/>
-        <circle cx="230" cy="195" r="34" fill="url(#cover-grape)"/>
-        <circle cx="290" cy="200" r="32" fill="url(#cover-grape)"/>
-        <circle cx="200" cy="245" r="33" fill="url(#cover-grape)"/>
-        <circle cx="260" cy="245" r="33" fill="url(#cover-grape)"/>
-        <circle cx="145" cy="250" r="30" fill="url(#cover-grape)"/>
-        <circle cx="315" cy="250" r="30" fill="url(#cover-grape)"/>
-        <circle cx="170" cy="295" r="32" fill="url(#cover-grape)"/>
-        <circle cx="230" cy="295" r="34" fill="url(#cover-grape)"/>
-        <circle cx="290" cy="295" r="32" fill="url(#cover-grape)"/>
-        <circle cx="200" cy="345" r="33" fill="url(#cover-grape)"/>
-        <circle cx="260" cy="345" r="33" fill="url(#cover-grape)"/>
-        <circle cx="215" cy="395" r="32" fill="url(#cover-grape)"/>
-        <circle cx="265" cy="395" r="30" fill="url(#cover-grape)"/>
-        <circle cx="240" cy="440" r="30" fill="url(#cover-grape)"/>
-        <circle cx="170" cy="200" r="32" fill="url(#cover-grape-hl)"/>
-        <circle cx="230" cy="195" r="34" fill="url(#cover-grape-hl)"/>
-        <circle cx="290" cy="200" r="32" fill="url(#cover-grape-hl)"/>
-        <circle cx="200" cy="245" r="33" fill="url(#cover-grape-hl)"/>
-        <circle cx="260" cy="245" r="33" fill="url(#cover-grape-hl)"/>
-        <circle cx="145" cy="250" r="30" fill="url(#cover-grape-hl)"/>
-        <circle cx="315" cy="250" r="30" fill="url(#cover-grape-hl)"/>
-        <circle cx="170" cy="295" r="32" fill="url(#cover-grape-hl)"/>
-        <circle cx="230" cy="295" r="34" fill="url(#cover-grape-hl)"/>
-        <circle cx="290" cy="295" r="32" fill="url(#cover-grape-hl)"/>
-        <circle cx="200" cy="345" r="33" fill="url(#cover-grape-hl)"/>
-        <circle cx="260" cy="345" r="33" fill="url(#cover-grape-hl)"/>
-        <circle cx="215" cy="395" r="32" fill="url(#cover-grape-hl)"/>
-        <circle cx="265" cy="395" r="30" fill="url(#cover-grape-hl)"/>
-        <circle cx="240" cy="440" r="30" fill="url(#cover-grape-hl)"/>
-        <text x="230" y="510" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="16" fill="#6b5d52" opacity="0.7">Vitis vinifera</text>
-        <text x="230" y="535" text-anchor="middle" font-family="Noto Serif SC, serif" font-size="11" letter-spacing="3" fill="#6b5d52" opacity="0.5">欧 亚 葡 萄</text>
-      </svg>
-    </div>
   </section>
 
   {/* === 品种网格 === */}

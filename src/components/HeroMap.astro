@@ -1,0 +1,311 @@
+---
+import { getCollection } from 'astro:content';
+import { geoNaturalEarth1, geoPath } from 'd3-geo';
+import { feature } from 'topojson-client';
+import countries from 'world-atlas/countries-110m.json';
+import { regionCoords } from '../data/region-coords';
+
+const VB_W = 1000;
+const VB_H = 520;
+const SCALE = 1.7;
+const INITIAL_TX = -150;
+const INITIAL_TY = -62;
+
+const world = countries as any;
+const countryCollection = feature(world, world.objects.countries) as any;
+const projection = geoNaturalEarth1().fitSize([VB_W, VB_H], countryCollection);
+const path = geoPath(projection);
+const countryPaths = countryCollection.features
+  .map((country: any) => path(country))
+  .filter(Boolean);
+
+const typeLabels = {
+  red: '红葡萄 · Red',
+  white: '白葡萄 · White',
+  rose: '桃红葡萄 · Rosé',
+};
+
+const all = await getCollection('varieties');
+const liveVarieties = all
+  .filter((variety) => variety.data.status === 'live')
+  .sort((a, b) => a.data.number - b.data.number);
+
+const placed: Array<{ x: number; y: number }> = [];
+const markerBase = liveVarieties.flatMap((variety) =>
+  variety.data.regions.map((region) => {
+    const coord = regionCoords[region.name_en];
+
+    if (!coord) {
+      console.warn(`HeroMap missing coords for region: ${region.name_en}`);
+      return null;
+    }
+
+    const projected = projection([coord[1], coord[0]]);
+
+    if (!projected) {
+      console.warn(`HeroMap could not project region: ${region.name_en}`);
+      return null;
+    }
+
+    return {
+      x: projected[0],
+      y: projected[1],
+      slug: variety.slug,
+      varietyEn: variety.data.name_en,
+      varietyCn: variety.data.name_cn,
+      type: variety.data.type,
+      typeLabel: typeLabels[variety.data.type],
+      tagline: variety.data.card_tagline,
+      origin: variety.data.origin,
+      priceMin: variety.data.price.min,
+      priceMax: variety.data.price.max,
+      regionEn: region.name_en,
+      regionCn: region.name_cn,
+      regionBadge: region.badge,
+    };
+  })
+).filter(Boolean);
+
+const markers = markerBase.map((marker) => {
+  let x = marker.x;
+  let y = marker.y;
+  const tooClose = (px: number, py: number) =>
+    placed.some((other) => Math.hypot(px - other.x, py - other.y) < 5);
+
+  if (tooClose(x, y)) {
+    let found = false;
+
+    for (let ring = 1; ring <= 2 && !found; ring += 1) {
+      for (let step = 0; step < 12; step += 1) {
+        const angle = (Math.PI * 2 * step) / 12 + ring * 0.28;
+        const candidateX = marker.x + Math.cos(angle) * ring * 7;
+        const candidateY = marker.y + Math.sin(angle) * ring * 7;
+
+        if (!tooClose(candidateX, candidateY)) {
+          x = candidateX;
+          y = candidateY;
+          found = true;
+          break;
+        }
+      }
+    }
+  }
+
+  placed.push({ x, y });
+  return { ...marker, x, y };
+});
+---
+
+<div
+  id="hero-map"
+  class="hero-map"
+  data-vb-w={VB_W}
+  data-vb-h={VB_H}
+  data-scale={SCALE}
+  data-initial-tx={INITIAL_TX}
+  data-initial-ty={INITIAL_TY}
+>
+  <svg viewBox={`0 0 ${VB_W} ${VB_H}`} preserveAspectRatio="xMidYMid meet" aria-label="Global wine region map">
+    <g class="hm-viewport" transform={`translate(${INITIAL_TX}, ${INITIAL_TY}) scale(${SCALE})`}>
+      <g class="hm-lands">
+        {countryPaths.map((d) => <path d={d} />)}
+      </g>
+      <g class="hm-markers">
+        {markers.map((marker) => (
+          <circle
+            class={`hm-marker hm-marker-${marker.type}`}
+            cx={marker.x}
+            cy={marker.y}
+            r="4.2"
+            tabindex="0"
+            role="button"
+            aria-label={`${marker.regionEn} · ${marker.varietyEn}`}
+            data-slug={marker.slug}
+            data-variety-en={marker.varietyEn}
+            data-variety-cn={marker.varietyCn}
+            data-type={marker.type}
+            data-type-label={marker.typeLabel}
+            data-tagline={marker.tagline}
+            data-origin={marker.origin}
+            data-price-min={marker.priceMin}
+            data-price-max={marker.priceMax}
+            data-region-en={marker.regionEn}
+            data-region-cn={marker.regionCn}
+            data-region-badge={marker.regionBadge}
+          />
+        ))}
+      </g>
+    </g>
+  </svg>
+
+  <div class="hero-map-popup" hidden>
+    <button class="hero-map-popup-close" type="button" aria-label="关闭">×</button>
+    <div class="hero-map-region-badge"></div>
+    <div class="hero-map-region-en"></div>
+    <div class="hero-map-region-cn"></div>
+    <div class="hero-map-divider"></div>
+    <div class="hero-map-type"><span></span><b></b></div>
+    <div class="hero-map-variety-en"></div>
+    <div class="hero-map-variety-cn"></div>
+    <p class="hero-map-tagline"></p>
+    <div class="hero-map-meta">
+      <span class="hero-map-origin"></span>
+      <span class="hero-map-price"></span>
+    </div>
+    <a class="hero-map-link" href="/">查看详情 →</a>
+  </div>
+  <div class="hero-map-hint">Drag the map · Click a region</div>
+</div>
+
+<script is:inline>
+  (() => {
+    const wrapper = document.getElementById('hero-map');
+    if (!wrapper) return;
+
+    const svg = wrapper.querySelector('svg');
+    const viewport = wrapper.querySelector('.hm-viewport');
+    const popup = wrapper.querySelector('.hero-map-popup');
+    const close = wrapper.querySelector('.hero-map-popup-close');
+    const markers = Array.from(wrapper.querySelectorAll('.hm-marker'));
+    const VB_W = Number(wrapper.dataset.vbW);
+    const VB_H = Number(wrapper.dataset.vbH);
+    const scale = Number(wrapper.dataset.scale);
+    let tx = Number(wrapper.dataset.initialTx);
+    let ty = Number(wrapper.dataset.initialTy);
+    let dragging = false;
+    let moved = false;
+    let startX = 0;
+    let startY = 0;
+    let startTx = tx;
+    let startTy = ty;
+    let downMarker = null;
+
+    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+    const applyTransform = () => {
+      viewport.setAttribute('transform', `translate(${tx}, ${ty}) scale(${scale})`);
+    };
+
+    const hidePopup = () => {
+      popup.hidden = true;
+      markers.forEach((marker) => marker.classList.remove('is-active'));
+    };
+
+    const setText = (selector, value) => {
+      popup.querySelector(selector).textContent = value || '';
+    };
+
+    const showPopup = (marker) => {
+      const data = marker.dataset;
+      markers.forEach((item) => item.classList.toggle('is-active', item === marker));
+      setText('.hero-map-region-badge', data.regionBadge);
+      setText('.hero-map-region-en', data.regionEn);
+      setText('.hero-map-region-cn', data.regionCn);
+      setText('.hero-map-type b', data.typeLabel);
+      setText('.hero-map-variety-en', data.varietyEn);
+      setText('.hero-map-variety-cn', data.varietyCn);
+      setText('.hero-map-tagline', data.tagline);
+      setText('.hero-map-origin', `原产 ${data.origin}`);
+      setText('.hero-map-price', `¥${data.priceMin} – ${data.priceMax}`);
+      popup.querySelector('.hero-map-type span').className = `hm-dot hm-dot-${data.type}`;
+      popup.querySelector('.hero-map-link').href = `/${data.slug}`;
+      popup.hidden = false;
+
+      const wrapperRect = wrapper.getBoundingClientRect();
+      const markerRect = marker.getBoundingClientRect();
+      const popupWidth = popup.offsetWidth;
+      const popupHeight = popup.offsetHeight;
+      const markerX = markerRect.left + markerRect.width / 2 - wrapperRect.left;
+      const markerY = markerRect.top + markerRect.height / 2 - wrapperRect.top;
+      const topCandidate = markerY - popupHeight - 12;
+      const top = topCandidate < 6 ? markerY + markerRect.height + 12 : topCandidate;
+      const left = clamp(markerX - popupWidth / 2, 6, wrapperRect.width - popupWidth - 6);
+
+      popup.style.left = `${left}px`;
+      popup.style.top = `${top}px`;
+    };
+
+    svg.addEventListener('pointerdown', (event) => {
+      if (event.button !== undefined && event.button !== 0) return;
+      downMarker = event.target.closest('.hm-marker');
+
+      if (!downMarker && !popup.contains(event.target)) {
+        hidePopup();
+      }
+
+      dragging = true;
+      moved = false;
+      startX = event.clientX;
+      startY = event.clientY;
+      startTx = tx;
+      startTy = ty;
+      svg.setPointerCapture(event.pointerId);
+      svg.style.cursor = 'grabbing';
+    });
+
+    svg.addEventListener('pointermove', (event) => {
+      if (!dragging) return;
+
+      const rect = svg.getBoundingClientRect();
+      const dx = (event.clientX - startX) * (VB_W / rect.width);
+      const dy = (event.clientY - startY) * (VB_H / rect.height);
+
+      if (Math.hypot(dx, dy) > 1) {
+        moved = true;
+      }
+
+      tx = clamp(startTx + dx, -VB_W * (scale - 1), 0);
+      ty = clamp(startTy + dy, -VB_H * (scale - 1), 0);
+      applyTransform();
+    });
+
+    const endDrag = (event) => {
+      if (!dragging) return;
+      dragging = false;
+      if (svg.hasPointerCapture(event.pointerId)) {
+        svg.releasePointerCapture(event.pointerId);
+      }
+      svg.style.cursor = 'grab';
+
+      if (downMarker && !moved) {
+        showPopup(downMarker);
+      }
+
+      downMarker = null;
+    };
+
+    svg.addEventListener('pointerup', endDrag);
+    svg.addEventListener('pointercancel', endDrag);
+
+    markers.forEach((marker) => {
+      marker.addEventListener('pointerup', (event) => {
+        event.stopPropagation();
+      });
+
+      marker.addEventListener('click', (event) => {
+        event.stopPropagation();
+        if (!moved) showPopup(marker);
+      });
+
+      marker.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          showPopup(marker);
+        }
+      });
+    });
+
+    close.addEventListener('click', hidePopup);
+
+    document.addEventListener('pointerdown', (event) => {
+      if (popup.hidden) return;
+      if (popup.contains(event.target) || event.target.closest('.hm-marker')) return;
+      hidePopup();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') hidePopup();
+    });
+
+    svg.style.cursor = 'grab';
+  })();
+</script>
