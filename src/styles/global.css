@@ -652,6 +652,9 @@ footer.site.wide {
   letter-spacing: 2px;
   color: var(--ink-faded);
   text-transform: uppercase;
+}
+
+footer.site.wide .footer-meta {
   text-align: right;
 }
 
