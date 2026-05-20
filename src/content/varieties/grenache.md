@@ -3,7 +3,7 @@ number: 12
 status: live
 publishedAt: 2026-05-16
 
-name_en: Grenache / Garnacha
+name_en: Grenache
 name_cn: 歌海娜
 aliases:
   - Garnacha（西班牙）

@@ -3,7 +3,7 @@ number: 15
 status: live
 publishedAt: 2026-05-16
 
-name_en: Zinfandel / Primitivo
+name_en: Zinfandel
 name_cn: 仙粉黛
 aliases:
   - Primitivo（意大利普利亚）

@@ -3,7 +3,7 @@ number: 10
 status: live
 publishedAt: 2026-05-16
 
-name_en: Pinot Grigio / Pinot Gris
+name_en: Pinot Gris
 name_cn: 灰皮诺
 aliases:
   - 灰比诺
