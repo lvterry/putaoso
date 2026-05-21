@@ -42,12 +42,12 @@ const varieties = all.sort((a, b) => a.data.number - b.data.number);
         const numStr = String(d.number).padStart(3, '0');
         const isLive = d.status === 'live';
         const typeColor = d.type === 'red' ? 'red' : d.type === 'white' ? 'white' : 'rose';
-        const typeLabel = d.type === 'red' ? 'Red Variety' : d.type === 'white' ? 'White Variety' : 'Rosé';
-        const statusLabel = d.status === 'draft' ? 'In Draft' : d.status === 'planned' ? 'Planned' : '';
+        const typeLabel = d.type === 'red' ? '红葡萄品种' : d.type === 'white' ? '白葡萄品种' : '桃红品种';
+        const statusLabel = d.status === 'draft' ? '撰写中' : d.status === 'planned' ? '即将上线' : '';
 
         const inner = (
           <>
-            {!isLive && <span class="stamp">Coming Soon</span>}
+            {!isLive && <span class="stamp">即将推出</span>}
             <div>
               <div class="card-num">N° {numStr}</div>
               <div style="margin-top: 32px;">
@@ -60,7 +60,7 @@ const varieties = all.sort((a, b) => a.data.number - b.data.number);
               <div class="card-name-cn">{d.name_cn}</div>
               <div class="card-tagline">{d.card_tagline}</div>
               <div class="card-foot">
-                <span class="card-foot-label">{isLive ? 'Origin' : 'Status'}</span>
+                <span class="card-foot-label">{isLive ? '产地' : '状态'}</span>
                 <span class="card-foot-value">
                   {isLive ? d.card_origin_short : statusLabel}
                 </span>

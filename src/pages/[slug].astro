@@ -38,10 +38,9 @@ function md(s: string) {
 <BaseLayout
   title={`${data.name_cn} ${data.name_en} — 葡萄搜`}
   description={data.hero_quote}
-  navMeta={`N° ${numberStr} / Variety`}
+  navMeta={`N° ${numberStr}`}
 >
   <header class="hero">
-    <div class="hero-meta">Vitis Vinifera · {typeLabel}</div>
     <h1 set:html={data.name_en.replace(/ /g, '<br>')} />
     <div class="hero-cn">{data.name_cn}</div>
     {data.aliases && data.aliases.length > 0 && (

@@ -145,24 +145,6 @@ nav.top {
   animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
-.hero-meta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--ink-faded);
-  text-transform: uppercase;
-  margin-bottom: 32px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.hero-meta::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--rule);
-}
 
 .hero h1 {
   font-family: 'Cormorant Garamond', serif;
