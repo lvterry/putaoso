@@ -1,6 +1,6 @@
 ---
 number: 19
-status: draft
+status: live
 publishedAt: 2026-05-21
 
 name_en: Cabernet Gernischt

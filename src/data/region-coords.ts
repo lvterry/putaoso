@@ -44,4 +44,16 @@ export const regionCoords: Record<string, [lat: number, lng: number]> = {
   'Dry Creek Valley, Sonoma': [38.68, -122.94],
   'Paso Robles, California': [35.64, -120.69],
   'Primitivo di Manduria, Puglia': [40.4, 17.63],
+  // 中国产区
+  'Helan Mountain East, Ningxia': [38.5, 106.1],
+  'Northern Foothills of Tianshan, Xinjiang': [44.3, 86.04],
+  'Yantai, Shandong': [37.46, 121.45],
+  'Huailai, Hebei': [40.41, 115.52],
+  'Yanqing, Beijing': [40.46, 115.97],
+  'Changli, Hebei': [39.71, 119.16],
+  'Shacheng, Hebei': [40.39, 115.5],
+  'Turpan & Shihezi, Xinjiang': [42.95, 89.16],
+  'Tonghua, Jilin': [41.73, 125.94],
+  'Huanren, Liaoning': [41.27, 125.36],
+  'Ili Valley, Xinjiang': [43.92, 81.32],
 };

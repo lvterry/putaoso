@@ -438,7 +438,7 @@ p {
   margin-top: 28px;
 }
 
-.caution strong {
+.caution > strong {
   font-family: 'Noto Serif SC', serif;
   font-weight: 500;
   color: var(--ink);
