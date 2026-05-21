@@ -29,11 +29,18 @@ Varieties live in `src/content/varieties/*.md` as frontmatter-only markdown file
 
 **`status` field controls visibility:**
 - `live` — detail page generated, card is clickable
-- `draft` / `planned` — card shown on index with "Coming Soon" stamp, no detail page
+- `draft` / `planned` — card shown on index with "即将推出" stamp, no detail page
 
 **`type` field drives the palate chart:** red varieties use `tannin`, white/rosé use `sweetness` — the schema marks both optional but the relevant one must be present.
 
 **Inline markdown** (`**bold**`) is supported in several string fields (`caveat`, `pairing_intro`, `region.body`, `history[]`, etc.) via a small `md()` helper in `[slug].astro` that converts `**x**` → `<strong>x</strong>`.
+
+**YAML gotcha — `**` at the start of a list item:** YAML treats a leading `*` as an alias reference, so a `history` / `flavors_casual` / `pairings` entry that begins with `**加粗**...` will fail to parse. Put bold mid-sentence, or rephrase so the line starts with a normal character.
+
+**Style conventions for content fields:**
+- `regions[].badge` — short English phrase in "The XXX" form (e.g. "The Old World", "The Hidden Gem"). Rendered uppercase in monospace; **don't use Chinese** here.
+- `card_origin_short` — local-language place name (Bordeaux, Mosel, 宁夏, 怀来). Foreign regions stay in their native spelling; Chinese regions use Chinese.
+- `aliases` — alternative names only (Garnacha, Shiraz, 解百纳); don't repeat `name_cn`. Omit the field entirely if there's no real alternative.
 
 ### Components
 
