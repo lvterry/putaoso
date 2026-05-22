@@ -42,7 +42,7 @@ const varieties = all.sort((a, b) => a.data.number - b.data.number);
         const numStr = String(d.number).padStart(3, '0');
         const isLive = d.status === 'live';
         const typeColor = d.type === 'red' ? 'red' : d.type === 'white' ? 'white' : 'rose';
-        const typeLabel = d.type === 'red' ? '红葡萄品种' : d.type === 'white' ? '白葡萄品种' : '桃红品种';
+        const typeLabel = d.type === 'red' ? '红葡萄' : d.type === 'white' ? '白葡萄' : '桃红';
         const statusLabel = d.status === 'draft' ? '撰写中' : d.status === 'planned' ? '即将上线' : '';
 
         const inner = (
