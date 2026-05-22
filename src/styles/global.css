@@ -96,60 +96,6 @@ body::before {
 }
 
 /* ============================================================
-   语言切换器（固定右上角）
-============================================================ */
-
-.lang-switcher {
-  position: fixed;
-  top: 18px;
-  right: 24px;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 1px;
-  background: rgba(var(--paper-rgb), 0.85);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--rule);
-}
-
-.lang-switcher .lang-link {
-  color: var(--ink-faded);
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: color 0.15s ease;
-}
-
-.lang-switcher .lang-link:hover {
-  color: var(--ink);
-}
-
-.lang-switcher .lang-link.is-active {
-  color: var(--wine-deep);
-  font-weight: 500;
-}
-
-.lang-switcher .lang-sep {
-  color: var(--ink-faded);
-  opacity: 0.5;
-}
-
-@media (max-width: 640px) {
-  .lang-switcher {
-    top: 12px;
-    right: 12px;
-    font-size: 10px;
-    padding: 5px 10px;
-    gap: 6px;
-  }
-}
-
-/* ============================================================
    顶部导航（所有页面共用）
 ============================================================ */
 

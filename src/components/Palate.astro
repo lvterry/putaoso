@@ -1,10 +1,6 @@
 ---
-import { type Locale, defaultLocale } from '../i18n/ui';
-import { t } from '../i18n/utils';
-
 interface Props {
   type: 'red' | 'white' | 'rose';
-  locale?: Locale;
   palate: {
     acidity: number;
     acidity_label: string;
@@ -19,39 +15,41 @@ interface Props {
   };
 }
 
-const { type, palate, locale = defaultLocale } = Astro.props;
+const { type, palate } = Astro.props;
 
+// 第二格根据品种类型变化：红用 tannin，白用 sweetness
 const secondMetric = type === 'red'
-  ? { value: palate.tannin!, label: palate.tannin_label!, dim: t(locale, 'palate.tannin') }
-  : { value: palate.sweetness!, label: palate.sweetness_label!, dim: t(locale, 'palate.sweetness') };
+  ? { value: palate.tannin!, label: palate.tannin_label!, en: 'Tannin', cn: '单宁' }
+  : { value: palate.sweetness!, label: palate.sweetness_label!, en: 'Sweetness', cn: '甜度' };
 
+// 把 1-5 转成 5 个 dot 的数组
 const dots = (n: number) => Array.from({ length: 5 }, (_, i) => i < n);
 ---
 
 <div class="palate">
   <div class="palate-item">
-    <div class="palate-label">{t(locale, 'palate.acidity')}</div>
+    <div class="palate-label">Acidity 酸度</div>
     <div class="palate-value">{palate.acidity_label}</div>
     <div class="palate-bar">
       {dots(palate.acidity).map((fill) => <span class={fill ? 'dot fill' : 'dot'} />)}
     </div>
   </div>
   <div class="palate-item">
-    <div class="palate-label">{secondMetric.dim}</div>
+    <div class="palate-label">{secondMetric.en} {secondMetric.cn}</div>
     <div class="palate-value">{secondMetric.label}</div>
     <div class="palate-bar">
       {dots(secondMetric.value).map((fill) => <span class={fill ? 'dot fill' : 'dot'} />)}
     </div>
   </div>
   <div class="palate-item">
-    <div class="palate-label">{t(locale, 'palate.body')}</div>
+    <div class="palate-label">Body 酒体</div>
     <div class="palate-value">{palate.body_label}</div>
     <div class="palate-bar">
       {dots(palate.body).map((fill) => <span class={fill ? 'dot fill' : 'dot'} />)}
     </div>
   </div>
   <div class="palate-item">
-    <div class="palate-label">{t(locale, 'palate.beginner')}</div>
+    <div class="palate-label">For Beginners 入门难度</div>
     <div class="palate-value">{palate.beginner_difficulty_label}</div>
     <div class="palate-bar">
       {dots(palate.beginner_difficulty).map((fill) => <span class={fill ? 'dot fill' : 'dot'} />)}

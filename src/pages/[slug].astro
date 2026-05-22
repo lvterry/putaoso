@@ -1,9 +1,12 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
-import VarietyPage from '../components/VarietyPage.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Scene from '../components/Scene.astro';
+import Palate from '../components/Palate.astro';
 
 export async function getStaticPaths() {
   const all = await getCollection('varieties');
+  // 只为已上线的品种生成路由
   const live = all.filter((v) => v.data.status === 'live');
   return live.map((entry) => ({
     params: { slug: entry.slug },
@@ -17,6 +20,197 @@ interface Props {
 }
 
 const { entry, all } = Astro.props;
+const data = entry.data;
+
+const typeLabel = data.type === 'red' ? 'Red' : data.type === 'white' ? 'White' : 'Rosé';
+const numberStr = String(data.number).padStart(3, '0');
+
+// 把相似品种的 slug 查一下：如果对方已上线，给链接；否则纯文本
+const liveSlugs = new Set(all.filter((v) => v.data.status === 'live').map((v) => v.slug));
+
+// 把价格 caveat / pairing intro / region body / avoid 等里可能有 markdown 加粗的字符串处理一下
+// 简单的 **xxx** → <strong>xxx</strong>
+function md(s: string) {
+  return s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+}
 ---
 
-<VarietyPage locale="zh" entry={entry} all={all} />
+<BaseLayout
+  title={`${data.name_cn} ${data.name_en} — 葡萄搜`}
+  description={data.hero_quote}
+  navMeta={`N° ${numberStr}`}
+>
+  <header class="hero">
+    <h1 set:html={data.name_en.replace(/ /g, '<br>')} />
+    <div class="hero-cn">{data.name_cn}</div>
+    {data.aliases && data.aliases.length > 0 && (
+      <div class="hero-alias">别名 · {data.aliases.join(' · ')}</div>
+    )}
+    <div class="hero-quote">{data.hero_quote}</div>
+  </header>
+
+  <Scene scene={data.hero_scene} caption={data.hero_scene_caption} />
+
+  {/* === 身份 === */}
+  <section>
+    <div class="section-label">Identity</div>
+    <h2>它是谁</h2>
+    <dl class="facts">
+      <dt>Type 类型</dt>
+      <dd>{typeLabel === 'Red' ? '红葡萄' : typeLabel === 'White' ? '白葡萄' : '桃红'}</dd>
+
+      <dt>Origin 原产地</dt>
+      <dd>{data.origin}</dd>
+
+      {data.parents && (
+        <>
+          <dt>Parents 亲本</dt>
+          <dd>
+            {data.parents.p1 && data.parents.p2 ? (
+              <>{data.parents.p1} × {data.parents.p2}</>
+            ) : null}
+            {data.parents.note && (
+              <span class="note">{data.parents.p1 ? ' · ' : ''}{data.parents.note}</span>
+            )}
+          </dd>
+        </>
+      )}
+
+      <dt>Family 葡萄科</dt>
+      <dd>Vitis vinifera</dd>
+    </dl>
+  </section>
+
+  {/* === 喝起来什么样 === */}
+  <section>
+    <div class="section-label">Tasting Notes</div>
+    <h2>喝起来什么样</h2>
+
+    <div class="flavor-pro">
+      <span class="flavor-pro-label">Professional · 专业描述</span>
+      {data.flavors_professional}
+    </div>
+
+    {/* 风味人话版 */}
+    <div class="prose">
+      {data.flavors_casual.map((p) => (
+        <p set:html={md(p)} />
+      ))}
+    </div>
+
+    <Palate type={data.type} palate={data.palate} />
+  </section>
+
+  {/* === 价格 === */}
+  <section>
+    <div class="section-label">Sweet Spot</div>
+    <h2>多少钱能喝到合格表现</h2>
+
+    <div class="price-block">
+      <div class="price-amount">
+        <span class="currency">¥</span>{data.price.min}<span class="dash"> – </span>{data.price.max}
+      </div>
+      <div class="price-caption">A reliable starting range</div>
+    </div>
+
+    <div class="caution">
+      <strong>踩雷提示 · Caveat</strong>
+      <span set:html={md(data.caveat)} />
+    </div>
+  </section>
+
+  {/* === 配餐 === */}
+  <section>
+    <div class="section-label">Pairing</div>
+    <h2>配什么吃</h2>
+
+    <p class="pairing-intro" set:html={md(data.pairing_intro)} />
+
+    <ol class="pairing-list">
+      {data.pairings.map((dish) => <li>{dish}</li>)}
+    </ol>
+
+    <p class="avoid">{data.avoid}</p>
+  </section>
+
+  {/* === 产区 === */}
+  <section>
+    <div class="section-label">Terroir</div>
+    <h2>三个代表产区</h2>
+
+    <div class="cards">
+      {data.regions.map((r) => (
+        <div class="card">
+          <div>
+            <div class="card-title">
+              {r.name_en}
+              <span class="cn">{r.name_cn}</span>
+            </div>
+            <div class="card-meta">{r.badge}</div>
+          </div>
+          <div class="card-body">{r.body}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* === 酒款 === */}
+  <section>
+    <div class="section-label">Bottles to Try</div>
+    <h2>三款值得一试</h2>
+
+    <div class="cards">
+      {data.bottles.map((b) => (
+        <div class="card">
+          <div>
+            <div class="card-title">
+              {b.name_en}
+              <span class="cn">{b.name_cn}</span>
+            </div>
+            <div class="card-meta">
+              <span class="price">≈ ¥{b.price.toLocaleString()}</span>
+            </div>
+          </div>
+          <div class="card-body">{b.body}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* === 类似品种 === */}
+  <section>
+    <div class="section-label">If You Like This</div>
+    <h2>喜欢{data.name_cn}，还可以试试</h2>
+
+    <div class="similar">
+      {data.similar.map((s) => (
+        <div class="similar-item">
+          {liveSlugs.has(s.slug) ? (
+            <a class="similar-name" href={`/${s.slug}`}>
+              {s.name_en}
+              <span class="cn">{s.name_cn}</span>
+            </a>
+          ) : (
+            <div class="similar-name">
+              {s.name_en}
+              <span class="cn">{s.name_cn}</span>
+            </div>
+          )}
+          <div class="similar-desc">{s.body}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* === 关于这个品种 === */}
+  <section>
+    <div class="section-label">A Brief History</div>
+    <h2>关于这个品种</h2>
+
+    <div class="prose">
+      {data.history.map((p) => (
+        <p set:html={md(p)} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

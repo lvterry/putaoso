@@ -6,17 +6,5 @@ export default defineConfig({
   build: {
     format: 'file', // 输出 about.html 而不是 about/index.html
   },
-  integrations: [
-    sitemap({
-      i18n: {
-        defaultLocale: 'zh',
-        locales: {
-          zh: 'zh-CN',
-          en: 'en',
-          de: 'de',
-          es: 'es',
-        },
-      },
-    }),
-  ],
+  integrations: [sitemap()],
 });

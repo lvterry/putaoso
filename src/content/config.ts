@@ -1,63 +1,5 @@
 import { defineCollection, z } from 'astro:content';
 
-const localeStrings = z.object({
-  name_en: z.string().optional(),
-  name_cn: z.string().optional(),
-  aliases: z.array(z.string()).optional(),
-  origin: z.string().optional(),
-  hero_quote: z.string().optional(),
-  hero_scene_caption: z.string().optional(),
-  flavors_professional: z.string().optional(),
-  flavors_casual: z.array(z.string()).optional(),
-  history: z.array(z.string()).optional(),
-  palate: z
-    .object({
-      acidity_label: z.string().optional(),
-      tannin_label: z.string().optional(),
-      sweetness_label: z.string().optional(),
-      body_label: z.string().optional(),
-      beginner_difficulty_label: z.string().optional(),
-    })
-    .optional(),
-  caveat: z.string().optional(),
-  pairing_intro: z.string().optional(),
-  pairings: z.array(z.string()).optional(),
-  avoid: z.string().optional(),
-  regions: z
-    .array(
-      z.object({
-        name_en: z.string().optional(),
-        name_cn: z.string().optional(),
-        badge: z.string().optional(),
-        body: z.string().optional(),
-      })
-    )
-    .length(3)
-    .optional(),
-  bottles: z
-    .array(
-      z.object({
-        name_en: z.string().optional(),
-        name_cn: z.string().optional(),
-        body: z.string().optional(),
-      })
-    )
-    .length(3)
-    .optional(),
-  similar: z
-    .array(
-      z.object({
-        name_en: z.string().optional(),
-        name_cn: z.string().optional(),
-        body: z.string().optional(),
-      })
-    )
-    .length(3)
-    .optional(),
-  card_tagline: z.string().optional(),
-  card_origin_short: z.string().optional(),
-});
-
 const varieties = defineCollection({
   type: 'content',
   schema: z.object({
@@ -171,15 +113,6 @@ const varieties = defineCollection({
     // === 索引页/卡片专用 ===
     card_tagline: z.string(), // 网格卡片用的一句话
     card_origin_short: z.string(), // 卡片底部显示的产区简称，如 Bordeaux
-
-    // === 多语言翻译块（可选，按需添加） ===
-    i18n: z
-      .object({
-        en: localeStrings.optional(),
-        de: localeStrings.optional(),
-        es: localeStrings.optional(),
-      })
-      .optional(),
   }),
 });
 

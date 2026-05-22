@@ -4,13 +4,6 @@ import { geoNaturalEarth1, geoPath } from 'd3-geo';
 import { feature } from 'topojson-client';
 import countries from 'world-atlas/countries-110m.json';
 import { regionCoords } from '../data/region-coords';
-import { type Locale, defaultLocale } from '../i18n/ui';
-import { t, pick, pickArray, localizedPath } from '../i18n/utils';
-
-interface Props {
-  locale?: Locale;
-}
-const { locale = defaultLocale } = Astro.props;
 
 const VB_W = 1000;
 const VB_H = 520;
@@ -26,10 +19,10 @@ const countryPaths = countryCollection.features
   .map((country: any) => path(country))
   .filter(Boolean);
 
-const typeLabels: Record<'red' | 'white' | 'rose', string> = {
-  red: t(locale, 'map.type.red'),
-  white: t(locale, 'map.type.white'),
-  rose: t(locale, 'map.type.rose'),
+const typeLabels = {
+  red: '红葡萄 · Red',
+  white: '白葡萄 · White',
+  rose: '桃红葡萄 · Rosé',
 };
 
 const all = await getCollection('varieties');
@@ -38,19 +31,12 @@ const liveVarieties = all
   .sort((a, b) => a.data.number - b.data.number);
 
 const placed: Array<{ x: number; y: number }> = [];
-const markerBase = liveVarieties.flatMap((variety) => {
-  const regions = pickArray(variety, locale, 'regions');
-  const varietyEn = pick(variety, locale, 'name_en');
-  const varietyCn = locale === defaultLocale ? variety.data.name_cn : (variety.data.i18n?.[locale]?.name_cn ?? '');
-  const tagline = pick(variety, locale, 'card_tagline');
-  const origin = pick(variety, locale, 'origin');
-  return regions.map((region: any, i: number) => {
-    // Always look up coords by the source English region name (regionCoords is keyed by it)
-    const sourceEn = variety.data.regions[i]?.name_en;
-    const coord = regionCoords[sourceEn];
+const markerBase = liveVarieties.flatMap((variety) =>
+  variety.data.regions.map((region) => {
+    const coord = regionCoords[region.name_en];
 
     if (!coord) {
-      console.warn(`HeroMap missing coords for region: ${sourceEn}`);
+      console.warn(`HeroMap missing coords for region: ${region.name_en}`);
       return null;
     }
 
@@ -65,21 +51,20 @@ const markerBase = liveVarieties.flatMap((variety) => {
       x: projected[0],
       y: projected[1],
       slug: variety.slug,
-      href: localizedPath(variety.slug, locale),
-      varietyEn,
-      varietyCn,
+      varietyEn: variety.data.name_en,
+      varietyCn: variety.data.name_cn,
       type: variety.data.type,
       typeLabel: typeLabels[variety.data.type],
-      tagline,
-      origin,
+      tagline: variety.data.card_tagline,
+      origin: variety.data.origin,
       priceMin: variety.data.price.min,
       priceMax: variety.data.price.max,
       regionEn: region.name_en,
       regionCn: region.name_cn,
       regionBadge: region.badge,
     };
-  });
-}).filter(Boolean);
+  })
+).filter(Boolean);
 
 const markers = markerBase.map((marker) => {
   let x = marker.x;
@@ -119,7 +104,6 @@ const markers = markerBase.map((marker) => {
   data-scale={SCALE}
   data-initial-tx={INITIAL_TX}
   data-initial-ty={INITIAL_TY}
-  data-i18n-origin={t(locale, 'map.origin', '__PLACE__')}
 >
   <svg viewBox={`0 0 ${VB_W} ${VB_H}`} preserveAspectRatio="xMidYMid meet" aria-label="Global wine region map">
     <g class="hm-viewport" transform={`translate(${INITIAL_TX}, ${INITIAL_TY}) scale(${SCALE})`}>
@@ -137,7 +121,6 @@ const markers = markerBase.map((marker) => {
             role="button"
             aria-label={`${marker.regionEn} · ${marker.varietyEn}`}
             data-slug={marker.slug}
-            data-href={marker.href}
             data-variety-en={marker.varietyEn}
             data-variety-cn={marker.varietyCn}
             data-type={marker.type}
@@ -156,7 +139,7 @@ const markers = markerBase.map((marker) => {
   </svg>
 
   <div class="hero-map-popup" hidden>
-    <button class="hero-map-popup-close" type="button" aria-label={t(locale, 'map.close')}>×</button>
+    <button class="hero-map-popup-close" type="button" aria-label="关闭">×</button>
     <div class="hero-map-region-badge"></div>
     <div class="hero-map-region-en"></div>
     <div class="hero-map-region-cn"></div>
@@ -169,9 +152,9 @@ const markers = markerBase.map((marker) => {
       <span class="hero-map-origin"></span>
       <span class="hero-map-price"></span>
     </div>
-    <a class="hero-map-link" href="/">{t(locale, 'map.cta')}</a>
+    <a class="hero-map-link" href="/">查看详情 →</a>
   </div>
-  <div class="hero-map-hint">{t(locale, 'map.hint')}</div>
+  <div class="hero-map-hint">Drag the map · Click a region</div>
 </div>
 
 <script is:inline>
@@ -221,11 +204,10 @@ const markers = markerBase.map((marker) => {
       setText('.hero-map-variety-en', data.varietyEn);
       setText('.hero-map-variety-cn', data.varietyCn);
       setText('.hero-map-tagline', data.tagline);
-      var originTpl = wrapper.dataset.i18nOrigin || '原产 __PLACE__';
-      setText('.hero-map-origin', originTpl.replace('__PLACE__', data.origin || ''));
+      setText('.hero-map-origin', `原产 ${data.origin}`);
       setText('.hero-map-price', `¥${data.priceMin} – ${data.priceMax}`);
       popup.querySelector('.hero-map-type span').className = `hm-dot hm-dot-${data.type}`;
-      popup.querySelector('.hero-map-link').href = data.href || `/${data.slug}`;
+      popup.querySelector('.hero-map-link').href = `/${data.slug}`;
       popup.hidden = false;
 
       const wrapperRect = wrapper.getBoundingClientRect();
