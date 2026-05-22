@@ -40,6 +40,19 @@ const bottles = pickArray(entry, locale, 'bottles');
 const similar = pickArray(entry, locale, 'similar');
 const palate = pickPalate(entry, locale);
 const showSecondaryNames = locale === defaultLocale;
+const CNY_PER_USD = 7.2;
+
+function formatGuidePrice(cny: number) {
+  if (locale === defaultLocale) {
+    return `¥${cny.toLocaleString('zh-CN')}`;
+  }
+
+  const usd = Math.max(1, Math.round(cny / CNY_PER_USD));
+  return `$${usd.toLocaleString('en-US')}`;
+}
+
+const priceMin = formatGuidePrice(data.price.min);
+const priceMax = formatGuidePrice(data.price.max);
 
 const titleName = locale === defaultLocale
   ? `${data.name_cn} ${data.name_en}`
@@ -123,7 +136,7 @@ const myDisplayName = displayName(entry, locale);
 
     <div class="price-block">
       <div class="price-amount">
-        <span class="currency">¥</span>{data.price.min}<span class="dash"> – </span>{data.price.max}
+        {priceMin}<span class="dash"> – </span>{priceMax}
       </div>
       <div class="price-caption">{t(locale, 'price.caption')}</div>
     </div>
@@ -180,7 +193,7 @@ const myDisplayName = displayName(entry, locale);
               {showSecondaryNames && b.name_cn && <span class="cn">{b.name_cn}</span>}
             </div>
             <div class="card-meta">
-              <span class="price">≈ ¥{data.bottles[i].price.toLocaleString()}</span>
+              <span class="price">≈ {formatGuidePrice(data.bottles[i].price)}</span>
             </div>
           </div>
           <div class="card-body">{b.body}</div>
