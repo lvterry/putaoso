@@ -3,19 +3,29 @@ import StudyStillLife from './scenes/StudyStillLife.astro';
 import VineyardDawn from './scenes/VineyardDawn.astro';
 import ChateauSundown from './scenes/ChateauSundown.astro';
 import SlateSlope from './scenes/SlateSlope.astro';
+import VarietyScene from './VarietyScene.astro';
+import { VARIETY_SCENES } from '../data/variety-scenes';
 
 interface Props {
   scene: 'study-still-life' | 'vineyard-dawn' | 'chateau-sundown' | 'slate-slope';
   caption: string;
+  slug?: string;
 }
 
-const { scene, caption } = Astro.props;
+const { scene, caption, slug } = Astro.props;
+const varietyProfile = slug ? VARIETY_SCENES[slug] : undefined;
 ---
 
 <div class="scene">
-  {scene === 'study-still-life' && <StudyStillLife />}
-  {scene === 'vineyard-dawn' && <VineyardDawn />}
-  {scene === 'chateau-sundown' && <ChateauSundown />}
-  {scene === 'slate-slope' && <SlateSlope />}
+  {varietyProfile ? (
+    <VarietyScene slug={slug!} profile={varietyProfile} />
+  ) : (
+    <>
+      {scene === 'study-still-life' && <StudyStillLife />}
+      {scene === 'vineyard-dawn' && <VineyardDawn />}
+      {scene === 'chateau-sundown' && <ChateauSundown />}
+      {scene === 'slate-slope' && <SlateSlope />}
+    </>
+  )}
   <div class="scene-caption">{caption}</div>
 </div>
