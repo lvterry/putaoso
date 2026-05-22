@@ -22,6 +22,18 @@ function md(s: string | undefined) {
   return (s ?? '').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 }
 
+function plainText(s: string | undefined) {
+  return (s ?? '')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function truncateMeta(s: string, max = 155) {
+  if (s.length <= max) return s;
+  return `${s.slice(0, max - 1).trimEnd()}…`;
+}
+
 const nameEn = pick(entry, locale, 'name_en');
 const nameCnOverride = locale === defaultLocale ? data.name_cn : data.i18n?.[locale]?.name_cn;
 const aliases = (pick(entry, locale, 'aliases') as string[]) ?? [];
@@ -58,6 +70,20 @@ const titleName = locale === defaultLocale
   ? `${data.name_cn} ${data.name_en}`
   : nameEn;
 const title = `${titleName} — Putaoso`;
+const typeLabel = t(locale, `type.${data.type}`);
+const flavorSummary = plainText(flavorsPro || heroQuote);
+const description = truncateMeta((() => {
+  if (locale === 'zh') {
+    return `${titleName}是一种${typeLabel}，原产于${origin}。风味关键词：${flavorSummary}`;
+  }
+  if (locale === 'de') {
+    return `${titleName} ist eine ${typeLabel.toLowerCase()} aus ${origin}. Geschmacksprofil: ${flavorSummary}`;
+  }
+  if (locale === 'es') {
+    return `${titleName} es una ${typeLabel.toLowerCase()} de ${origin}. Perfil de sabor: ${flavorSummary}`;
+  }
+  return `${titleName} is a ${typeLabel.toLowerCase()} from ${origin}. Flavor profile: ${flavorSummary}`;
+})());
 
 const heroH1 = nameEn.replace(/ /g, '<br>');
 
@@ -67,7 +93,7 @@ const myDisplayName = displayName(entry, locale);
 
 <BaseLayout
   title={title}
-  description={heroQuote}
+  description={description}
   navMeta={`N° ${numberStr}`}
   locale={locale}
   slug={entry.slug}
