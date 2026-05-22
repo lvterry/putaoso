@@ -1,0 +1,27 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import VarietyPage from '../../components/VarietyPage.astro';
+import { locales, defaultLocale, type Locale } from '../../i18n/ui';
+
+export async function getStaticPaths() {
+  const all = await getCollection('varieties');
+  const live = all.filter((v) => v.data.status === 'live');
+  const nonZh = locales.filter((l) => l !== defaultLocale);
+  return nonZh.flatMap((lang) =>
+    live.map((entry) => ({
+      params: { lang, slug: entry.slug },
+      props: { entry, all },
+    }))
+  );
+}
+
+interface Props {
+  entry: CollectionEntry<'varieties'>;
+  all: CollectionEntry<'varieties'>[];
+}
+
+const { lang } = Astro.params;
+const { entry, all } = Astro.props;
+---
+
+<VarietyPage locale={lang as Locale} entry={entry} all={all} />

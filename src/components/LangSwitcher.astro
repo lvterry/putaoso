@@ -1,0 +1,35 @@
+---
+import { locales, localeNames, type Locale } from '../i18n/ui';
+import { localizedPath } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+  slug?: string;
+}
+
+const { locale, slug = '' } = Astro.props;
+---
+
+<div class="lang-switcher" aria-label="Language">
+  {locales.map((l, i) => (
+    <>
+      {i > 0 && <span class="lang-sep" aria-hidden="true">·</span>}
+      <a
+        href={localizedPath(slug, l)}
+        class={`lang-link${l === locale ? ' is-active' : ''}`}
+        hreflang={l}
+        data-set-lang={l}
+      >{localeNames[l]}</a>
+    </>
+  ))}
+</div>
+
+<script is:inline>
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('[data-set-lang]');
+    if (!a) return;
+    const lang = a.getAttribute('data-set-lang');
+    document.cookie = `lang-pref=${lang};path=/;max-age=31536000;samesite=lax`;
+    try { localStorage.setItem('lang-pref', lang); } catch (_) {}
+  });
+</script>

@@ -1,0 +1,230 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Scene from './Scene.astro';
+import Palate from './Palate.astro';
+import { type Locale, defaultLocale } from '../i18n/ui';
+import { t, pick, pickArray, pickPalate, displayName, localizedPath } from '../i18n/utils';
+
+interface Props {
+  locale?: Locale;
+  entry: CollectionEntry<'varieties'>;
+  all: CollectionEntry<'varieties'>[];
+}
+
+const { locale = defaultLocale, entry, all } = Astro.props;
+const data = entry.data;
+
+const numberStr = String(data.number).padStart(3, '0');
+const liveSlugs = new Set(all.filter((v) => v.data.status === 'live').map((v) => v.slug));
+
+function md(s: string | undefined) {
+  return (s ?? '').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+}
+
+const nameEn = pick(entry, locale, 'name_en');
+const nameCnOverride = locale === defaultLocale ? data.name_cn : data.i18n?.[locale]?.name_cn;
+const aliases = (pick(entry, locale, 'aliases') as string[]) ?? [];
+const heroQuote = pick(entry, locale, 'hero_quote');
+const heroSceneCaption = pick(entry, locale, 'hero_scene_caption');
+const origin = pick(entry, locale, 'origin');
+const flavorsPro = pick(entry, locale, 'flavors_professional');
+const flavorsCasual = (pick(entry, locale, 'flavors_casual') as string[]) ?? [];
+const caveat = pick(entry, locale, 'caveat');
+const pairingIntro = pick(entry, locale, 'pairing_intro');
+const pairings = (pick(entry, locale, 'pairings') as string[]) ?? [];
+const avoid = pick(entry, locale, 'avoid');
+const history = (pick(entry, locale, 'history') as string[]) ?? [];
+const regions = pickArray(entry, locale, 'regions');
+const bottles = pickArray(entry, locale, 'bottles');
+const similar = pickArray(entry, locale, 'similar');
+const palate = pickPalate(entry, locale);
+const showSecondaryNames = locale === defaultLocale;
+
+const titleName = locale === defaultLocale
+  ? `${data.name_cn} ${data.name_en}`
+  : nameEn;
+const title = `${titleName} — Putaoso`;
+
+const heroH1 = nameEn.replace(/ /g, '<br>');
+
+// Display name for "If you like X, try also"
+const myDisplayName = displayName(entry, locale);
+---
+
+<BaseLayout
+  title={title}
+  description={heroQuote}
+  navMeta={`N° ${numberStr}`}
+  locale={locale}
+  slug={entry.slug}
+>
+  <header class="hero">
+    <h1 set:html={heroH1} />
+    {nameCnOverride && <div class="hero-cn">{nameCnOverride}</div>}
+    {aliases && aliases.length > 0 && (
+      <div class="hero-alias">{t(locale, 'hero.alias')} · {aliases.join(' · ')}</div>
+    )}
+    <div class="hero-quote">{heroQuote}</div>
+  </header>
+
+  <Scene scene={data.hero_scene} caption={heroSceneCaption} />
+
+  <section>
+    <div class="section-label">{t(locale, 'section.identity.label')}</div>
+    <h2>{t(locale, 'section.identity.heading')}</h2>
+    <dl class="facts">
+      <dt>{t(locale, 'identity.type')}</dt>
+      <dd>{t(locale, `identity.type.${data.type}`)}</dd>
+
+      <dt>{t(locale, 'identity.origin')}</dt>
+      <dd>{origin}</dd>
+
+      {data.parents && locale === defaultLocale && (
+        <>
+          <dt>{t(locale, 'identity.parents')}</dt>
+          <dd>
+            {data.parents.p1 && data.parents.p2 ? (
+              <>{data.parents.p1} × {data.parents.p2}</>
+            ) : null}
+            {data.parents.note && (
+              <span class="note">{data.parents.p1 ? ' · ' : ''}{data.parents.note}</span>
+            )}
+          </dd>
+        </>
+      )}
+
+      <dt>{t(locale, 'identity.family')}</dt>
+      <dd>Vitis vinifera</dd>
+    </dl>
+  </section>
+
+  <section>
+    <div class="section-label">{t(locale, 'section.tasting.label')}</div>
+    <h2>{t(locale, 'section.tasting.heading')}</h2>
+
+    <div class="flavor-pro">
+      <span class="flavor-pro-label">{t(locale, 'tasting.pro')}</span>
+      {flavorsPro}
+    </div>
+
+    <div class="prose">
+      {flavorsCasual.map((p: string) => (
+        <p set:html={md(p)} />
+      ))}
+    </div>
+
+    <Palate type={data.type} palate={palate} locale={locale} />
+  </section>
+
+  <section>
+    <div class="section-label">{t(locale, 'section.price.label')}</div>
+    <h2>{t(locale, 'section.price.heading')}</h2>
+
+    <div class="price-block">
+      <div class="price-amount">
+        <span class="currency">¥</span>{data.price.min}<span class="dash"> – </span>{data.price.max}
+      </div>
+      <div class="price-caption">{t(locale, 'price.caption')}</div>
+    </div>
+
+    <div class="caution">
+      <strong>{t(locale, 'price.caveat')}</strong>
+      <span set:html={md(caveat)} />
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">{t(locale, 'section.pairing.label')}</div>
+    <h2>{t(locale, 'section.pairing.heading')}</h2>
+
+    <p class="pairing-intro" set:html={md(pairingIntro)} />
+
+    <ol class="pairing-list">
+      {pairings.map((dish: string) => <li>{dish}</li>)}
+    </ol>
+
+    <p class="avoid">{avoid}</p>
+  </section>
+
+  <section>
+    <div class="section-label">{t(locale, 'section.terroir.label')}</div>
+    <h2>{t(locale, 'section.terroir.heading')}</h2>
+
+    <div class="cards">
+      {regions.map((r: any) => (
+        <div class="card">
+          <div>
+            <div class="card-title">
+              {r.name_en}
+              {showSecondaryNames && r.name_cn && <span class="cn">{r.name_cn}</span>}
+            </div>
+            <div class="card-meta">{r.badge}</div>
+          </div>
+          <div class="card-body">{r.body}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">{t(locale, 'section.bottles.label')}</div>
+    <h2>{t(locale, 'section.bottles.heading')}</h2>
+
+    <div class="cards">
+      {bottles.map((b: any, i: number) => (
+        <div class="card">
+          <div>
+            <div class="card-title">
+              {b.name_en}
+              {showSecondaryNames && b.name_cn && <span class="cn">{b.name_cn}</span>}
+            </div>
+            <div class="card-meta">
+              <span class="price">≈ ¥{data.bottles[i].price.toLocaleString()}</span>
+            </div>
+          </div>
+          <div class="card-body">{b.body}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">{t(locale, 'section.similar.label')}</div>
+    <h2>{t(locale, 'section.similar.heading', myDisplayName)}</h2>
+
+    <div class="similar">
+      {similar.map((s: any, i: number) => {
+        const slug = data.similar[i].slug;
+        const isLive = liveSlugs.has(slug);
+        const inner = (
+          <>
+            {s.name_en}
+            {showSecondaryNames && s.name_cn && <span class="cn">{s.name_cn}</span>}
+          </>
+        );
+        return (
+          <div class="similar-item">
+            {isLive ? (
+              <a class="similar-name" href={localizedPath(slug, locale)}>{inner}</a>
+            ) : (
+              <div class="similar-name">{inner}</div>
+            )}
+            <div class="similar-desc">{s.body}</div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">{t(locale, 'section.history.label')}</div>
+    <h2>{t(locale, 'section.history.heading')}</h2>
+
+    <div class="prose">
+      {history.map((p: string) => (
+        <p set:html={md(p)} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -111,4 +111,147 @@ has_china_planting: false
 
 card_tagline: 高酸度、矿物感、能甜能干，被严重低估的白葡萄。
 card_origin_short: Mosel
+
+i18n:
+  en:
+    origin: Rhine Valley, Germany
+    hero_quote: A seriously underrated white. An acidity that cuts straight to the bone — nothing oily can hide from it.
+    hero_scene_caption: Slate slopes above the Mosel · Germany
+    flavors_professional: Green apple, white peach, lime, grapefruit pith, white flowers, beeswax, slate minerality, petrol (the signature note of age).
+    flavors_casual:
+      - Like a chilled green apple — first that crisp snap of acidity, then a slow seep of white peach and grapefruit pith. On the nose there's a strange, addictive smell, like wet stones after rain — that's Riesling's soul. With age it develops a note often called "petrol" that sounds alarming but is in fact elegant and unmistakable once you've met it.
+    palate:
+      acidity_label: Very high
+      sweetness_label: Dry to sweet
+      body_label: Light
+      beginner_difficulty_label: Harder
+    caveat: Riesling's sweetness varies wildly — from bone-dry (Trocken) to syrupy (Trockenbeerenauslese) — and a German label can be hard to read. Kabinett, Spätlese, Auslese and the rest are not quality tiers but ripeness levels at harvest; the further down the list, the sweeter the wine.
+    pairing_intro: Riesling is **the savior of spicy and oily food**. Its high acidity cuts through fat, residual sugar tames chili, and it's one of the few wines that genuinely works with Sichuan and Hunan cooking.
+    pairings:
+      - Sichuan — mapo tofu, shuizhu fish, kung pao chicken (reach for an off-dry Kabinett)
+      - Thai and Vietnamese — the lemongrass, lime, and fish-sauce axis
+      - Japanese — sushi, sashimi, tempura; dry Riesling's lime edge is made for raw fish
+      - Roast duck, soy chicken, white-cut chicken
+      - German pork knuckle and sauerkraut sausage (the home pairing)
+    avoid: Steer clear of heavy-sauce steak, cream-rich Western dishes, and chocolate — they fight Riesling's acidity and nobody wins.
+    regions:
+      - name_en: Mosel
+        body: Riesling's holy land. Near-vertical slate slopes at extreme northern latitudes mean the grapes ripen slowly, acidity stays sky-high, and the minerality is so clear you feel like you're drinking the stone itself. Germany's VDP top sites cluster here.
+      - name_en: Alsace
+        body: The Franco-German border, almost entirely dry. Fuller and more alcoholic than Mosel — less wiry, more skeletal. The definitive "serious dry white" expression of Riesling.
+      - name_en: Clare Valley
+        body: South Australia's Riesling stronghold. Plenty of sun pushes the fruit forward — bold lime and grapefruit — but the trademark high acidity stays intact. A friendly entry point for newcomers.
+    bottles:
+      - name_en: Dr. Loosen, Riesling Dry
+        body: The easiest German Riesling to find in China. Dry, crisp, slate minerality up front — a good starting point for learning what Riesling actually tastes like.
+      - name_en: Selbach-Oster, Zeltinger Sonnenuhr Kabinett
+        body: A model off-dry Riesling. A whisper of residual sugar gets balanced by sharp acidity; you finish the glass realizing you never tasted sweetness, only a kind of indescribable balance. A weapon at the Sichuan or Thai table.
+      - name_en: Trimbach, Cuvée Frédéric Emile
+        body: The Alsace Riesling benchmark. Bony structure, intense minerality, will age twenty years and beyond. One bottle is enough to explain what "serious white wine" actually means.
+    similar:
+      - name_en: Chenin Blanc
+        body: The Loire Valley's signature. Same range from dry to sweet, same high acidity and minerality, with a touch more melon and chamomile than Riesling.
+      - name_en: Grüner Veltliner
+        body: Austria's national white. Equally high-acid, light, and mineral, with an extra dash of white pepper — Riesling's nearest neighbor.
+      - name_en: Albariño
+        body: Galicia's coastal white. Citrus and a salty, sea-spray savor; perfection with seafood. If you love Riesling's lean frame, this is another way to scratch that itch.
+    history:
+      - Riesling is **the white grape that most transparently reflects terroir**. The same variety grown on Mosel slate gives wiry minerality; in Alsace it puts on body; in Australia it pushes tropical fruit — the spread between sites is wider than between most varieties within one region.
+      - It is also one of the most misunderstood grapes. Cheap sweet Rieslings of the past (the Blue Nun era especially) convinced a generation that Riesling means sweet wine. In fact, the overwhelming majority of German Riesling today is dry or off-dry. If you once turned Riesling down at a table, it probably deserves a second look.
+    card_tagline: High acid, mineral, dry or sweet — a seriously underrated white.
+    card_origin_short: Mosel
+  de:
+    origin: Rheintal, Deutschland
+    hero_quote: Eine sträflich unterschätzte Weißweinrebe. Eine Säure, die bis auf die Knochen geht — nichts Fettiges kann sich vor ihr verstecken.
+    hero_scene_caption: Schieferhänge über der Mosel · Deutschland
+    flavors_professional: Grüner Apfel, weißer Pfirsisch, Limette, Grapefruitschale, weiße Blüten, Bienenwachs, Schiefermineralik, Petrolton (das Markenzeichen reifer Rieslinge).
+    flavors_casual:
+      - Wie ein gekühlter grüner Apfel — zuerst der knackige Säurebiss, dann sickert langsam weißer Pfirsich und Grapefruitschale durch. In der Nase ein eigenartiger, süchtig machender Duft wie nasser Stein nach dem Regen — das ist die Seele des Rieslings. Mit den Jahren entwickelt sich eine Note, die man "Petrol" nennt; das klingt alarmierend, ist aber tatsächlich elegant — wer sie einmal erlebt hat, erkennt sie wieder.
+    palate:
+      acidity_label: Sehr hoch
+      sweetness_label: Trocken bis süß
+      body_label: Leicht
+      beginner_difficulty_label: Eher schwierig
+    caveat: Die Süße im Riesling reicht von knochentrocken (Trocken) bis zur opulenten Trockenbeerenauslese — wer das deutsche Etikett nicht lesen kann, greift schnell daneben. Kabinett, Spätlese, Auslese und so weiter sind keine Qualitätsstufen, sondern Reifegrade bei der Lese; je weiter hinten, desto süßer im Regelfall.
+    pairing_intro: Riesling ist die **Rettung für scharfe und fettige Küche**. Seine hohe Säure schneidet durchs Fett, das Restzucker bändigt die Schärfe — einer der wenigen Weine, die wirklich zu Sichuan- und Hunan-Küche passen.
+    pairings:
+      - Sichuan-Küche — Mapo-Tofu, Shuizhu-Fisch, Kung-Pao-Huhn (am besten ein halbtrockener Kabinett)
+      - Thai und Vietnamesisch — die Achse aus Zitronengras, Limette und Fischsauce
+      - Japanisch — Sushi, Sashimi, Tempura; die Limettennote eines trockenen Rieslings ist für rohen Fisch gemacht
+      - Pekingente, Soja-Huhn, Bai-Qie-Ji (gepochtes Huhn)
+      - Deutsche Schweinshaxe, Sauerkraut mit Bratwurst (das Heimspiel)
+    avoid: Meide schwere Saucensteaks, sahnige westliche Küche und Schokolade — sie kämpfen mit der Säure des Rieslings, und keiner gewinnt.
+    regions:
+      - name_en: Mosel
+        body: Die heilige Heimat des Rieslings. Fast senkrechte Schieferhänge in extremer Nordlage, langsame Reife, sehr hohe Säure, eine Mineralik so deutlich, als tränke man den Stein selbst. Hier liegen praktisch alle Spitzenlagen des deutschen VDP.
+      - name_en: Alsace
+        body: Die deutsch-französische Grenze, fast ausschließlich trocken ausgebaut. Voller und alkoholreicher als die Mosel — weniger schlank, mehr Gerüst. Der definitive "ernsthafte trockene Weißwein" unter den Rieslingen.
+      - name_en: Clare Valley
+        body: Süd­australiens Riesling-Hochburg. Reichlich Sonne lässt die Frucht nach vorne treten — kräftige Limette und Grapefruit — doch die typisch hohe Säure bleibt. Ein einsteigerfreundlicher Zugang.
+    bottles:
+      - name_en: Dr. Loosen, Riesling Dry
+        body: Der in China am leichtesten zu findende deutsche Riesling. Trocken, frisch, klare Schiefermineralik — ein guter Ausgangspunkt, um zu lernen, wie Riesling überhaupt schmeckt.
+      - name_en: Selbach-Oster, Zeltinger Sonnenuhr Kabinett
+        body: Mustergültiger halbtrockener Riesling. Ein Hauch Restsüße wird von hoher Säure aufgefangen; am Ende des Glases hat man gar keine Süße geschmeckt, nur eine schwer zu beschreibende Balance. Ein Joker zu Sichuan- und Thai-Küche.
+      - name_en: Trimbach, Cuvée Frédéric Emile
+        body: Die Referenz des Elsässer Rieslings. Knochig im Gerüst, kraftvoll mineralisch, lagerfähig über zwanzig Jahre und mehr. Eine Flasche reicht, um zu begreifen, was "ernsthafter Weißwein" wirklich heißt.
+    similar:
+      - name_en: Chenin Blanc
+        body: Das Aushängeschild der Loire. Ebenfalls trocken bis süß möglich, hohe Säure, Mineralik — mit einem Schuss mehr Honigmelone und Kamille als beim Riesling.
+      - name_en: Grüner Veltliner
+        body: Österreichs Nationalweißer. Genauso säuerlich, leicht und mineralisch, mit einer zusätzlichen Prise weißem Pfeffer — der nächste Verwandte des Rieslings.
+      - name_en: Albariño
+        body: Galiciens Küstenweißer. Zitrus und eine salzige Meeresnote, ein Traum zu Meeresfrüchten. Wer das schlanke Profil des Rieslings mag, findet hier eine andere Richtung.
+    history:
+      - Riesling ist **die Weißweinrebe, die das Terroir am klarsten spiegelt**. Dieselbe Rebsorte zeigt am Moselschiefer eine drahtige Mineralik, im Elsass mehr Körper, in Australien tropische Frucht — die Unterschiede zwischen den Lagen sind oft größer als zwischen verschiedenen Rebsorten derselben Region.
+      - Sie ist außerdem eine der meistmissverstandenen Trauben. Die süßen Rieslinge vergangener Tage (die Blue-Nun-Ära) haben einer ganzen Generation eingebrannt, Riesling sei ein Süßwein. Tatsächlich ist der weit überwiegende Teil des heutigen deutschen Rieslings trocken oder halbtrocken. Wer Riesling am Tisch einmal abgelehnt hat, sollte ihm eine zweite Chance geben.
+    card_tagline: Hohe Säure, viel Mineralik, trocken oder süß — eine zutiefst unterschätzte Weißweinrebe.
+    card_origin_short: Mosel
+  es:
+    origin: Valle del Rin, Alemania
+    hero_quote: Una uva blanca gravemente infravalorada. Una acidez que llega hasta el hueso — nada graso puede esconderse de ella.
+    hero_scene_caption: Laderas de pizarra sobre el Mosela · Alemania
+    flavors_professional: Manzana verde, melocotón blanco, lima, piel de pomelo, flores blancas, cera de abeja, mineralidad de pizarra, nota de petróleo (la firma de los vinos con años).
+    flavors_casual:
+      - Como una manzana verde recién sacada del frío — primero el chasquido ácido y crujiente, después un goteo lento de melocotón blanco y piel de pomelo. En la nariz hay un aroma raro y adictivo, como piedra mojada tras la lluvia — esa es el alma del Riesling. Con los años aparece una nota llamada "petróleo" que asusta de oídas pero que en boca resulta elegante e inconfundible.
+    palate:
+      acidity_label: Muy alta
+      sweetness_label: De seco a dulce
+      body_label: Ligero
+      beginner_difficulty_label: Difícil
+    caveat: El dulzor del Riesling varía muchísimo — desde el seco absoluto (Trocken) hasta el almibarado Trockenbeerenauslese — y leer una etiqueta alemana no es fácil. Kabinett, Spätlese, Auslese y demás no son niveles de calidad sino grados de madurez en la cosecha; cuanto más avanzada la categoría, más dulce suele ser el vino.
+    pairing_intro: El Riesling es **la salvación de los platos picantes y grasos**. Su acidez alta corta la grasa, el azúcar residual doma el chile y es uno de los pocos vinos que de verdad funciona con la cocina sichuanesa y hunanesa.
+    pairings:
+      - Cocina sichuanesa — mapo tofu, pescado shuizhu, pollo kung pao (mejor un Kabinett semiseco)
+      - Tailandesa y vietnamita — el eje de hierba limón, lima y salsa de pescado
+      - Japonesa — sushi, sashimi, tempura; el toque de lima del Riesling seco va con el pescado crudo de maravilla
+      - Pato laqueado, pollo a la soja, pollo bai qie ji
+      - Codillo alemán y salchicha con chucrut (la combinación de la casa)
+    avoid: Evita los filetes en salsa pesada, los platos occidentales muy cremosos y el chocolate — pelean con la acidez del Riesling y nadie sale ganando.
+    regions:
+      - name_en: Mosel
+        body: La tierra sagrada del Riesling. Laderas de pizarra casi verticales en latitud extremo norte; la uva madura despacio, la acidez se mantiene altísima y la mineralidad es tan clara que parece beberse la piedra. Aquí se concentran los pagos top del VDP alemán.
+      - name_en: Alsace
+        body: La frontera franco-alemana, casi todo seco. Más lleno y con más alcohol que el Mosela — menos esbelto y con más esqueleto. La expresión definitiva del "blanco seco serio" en Riesling.
+      - name_en: Clare Valley
+        body: La plaza fuerte del Riesling en el sur de Australia. Mucho sol que empuja la fruta hacia adelante — lima y pomelo marcados — sin perder la acidez alta característica. Una puerta amable para principiantes.
+    bottles:
+      - name_en: Dr. Loosen, Riesling Dry
+        body: El Riesling alemán más fácil de encontrar en China. Seco, fresco, mineralidad de pizarra al frente — un buen punto de partida para entender a qué sabe el Riesling.
+      - name_en: Selbach-Oster, Zeltinger Sonnenuhr Kabinett
+        body: Manual del Riesling semiseco. Un soplo de azúcar residual queda equilibrado por la acidez; al terminar la copa uno se da cuenta de que no probó dulzor, solo una especie de equilibrio difícil de describir. Arma secreta para la mesa sichuanesa o tailandesa.
+      - name_en: Trimbach, Cuvée Frédéric Emile
+        body: La referencia del Riesling alsaciano. Esqueleto duro, mineralidad intensa, capaz de envejecer veinte años o más. Una sola botella basta para entender qué quiere decir "vino blanco serio".
+    similar:
+      - name_en: Chenin Blanc
+        body: La bandera del Loira. También va de seco a dulce, acidez alta, mineralidad — con un punto más de melón y manzanilla que el Riesling.
+      - name_en: Grüner Veltliner
+        body: El blanco nacional de Austria. Igualmente ácido, ligero y mineral, con un extra de pimienta blanca — el pariente más cercano del Riesling.
+      - name_en: Albariño
+        body: El blanco costero de Galicia. Cítricos y un dejo salino marino; perfecto con marisco. Si gusta del esqueleto delgado del Riesling, este es otro camino.
+    history:
+      - El Riesling es **la uva blanca que refleja el terruño con mayor transparencia**. La misma variedad da mineralidad nervuda sobre la pizarra del Mosela, gana cuerpo en Alsacia y empuja fruta tropical en Australia — la distancia entre pagos es a menudo mayor que entre variedades distintas de una misma región.
+      - Es además una de las uvas más malentendidas. Los Rieslings dulces de antaño (la era del Blue Nun, sobre todo) convencieron a una generación de que Riesling era sinónimo de vino dulce. Hoy la inmensa mayoría del Riesling alemán es seco o semiseco. Si alguna vez rechazaste un Riesling en la mesa, probablemente merezca una segunda oportunidad.
+    card_tagline: Acidez alta, mineralidad, de seco a dulce — un blanco gravemente infravalorado.
+    card_origin_short: Mosel
 ---

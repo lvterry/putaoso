@@ -11,6 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.18",
     "@types/d3-geo": "^3.1.0",
     "@types/topojson-client": "^3.1.5",
     "astro": "^4.16.18",

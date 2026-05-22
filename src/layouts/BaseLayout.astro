@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+import { type Locale, htmlLang, locales, defaultLocale } from '../i18n/ui';
+import { t, localizedPath } from '../i18n/utils';
+import LangSwitcher from '../components/LangSwitcher.astro';
 
 interface Props {
   title: string;
@@ -8,46 +11,99 @@ interface Props {
   navMeta?: string;
   wideFooter?: boolean;
   hideHeader?: boolean;
+  locale?: Locale;
+  slug?: string; // empty for the index page
 }
 
 const {
   title,
-  description = '一本随手翻的葡萄品种图鉴',
+  description,
   containerWidth = 'narrow',
   navMeta = '',
   wideFooter = false,
   hideHeader = false,
+  locale = defaultLocale,
+  slug = '',
 } = Astro.props;
 
+const desc = description ?? t(locale, 'meta.description');
 const containerClass = containerWidth === 'wide' ? 'container wide' : 'container';
 const footerClass = wideFooter ? 'site wide' : 'site';
+const lang = htmlLang[locale];
+
+const siteOrigin = Astro.site ? Astro.site.origin : '';
+const canonicalPath = localizedPath(slug, locale);
+const brandCn = t(locale, 'brand.cn');
 ---
 
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang={lang}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
-  <meta name="description" content={description} />
+  <meta name="description" content={desc} />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#c9b3ae" />
+  {siteOrigin && <link rel="canonical" href={`${siteOrigin}${canonicalPath}`} />}
+  {siteOrigin && locales.map((l) => (
+    <link rel="alternate" hreflang={l} href={`${siteOrigin}${localizedPath(slug, l)}`} />
+  ))}
+  {siteOrigin && <link rel="alternate" hreflang="x-default" href={`${siteOrigin}${localizedPath(slug, defaultLocale)}`} />}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap"
     rel="stylesheet"
   />
+  <script is:inline>
+    (() => {
+      try {
+        var SUPPORTED = ['zh','en','de','es'];
+        var path = location.pathname;
+        var segs = path.split('/').filter(Boolean);
+        var firstSeg = segs[0] || '';
+        var prefixed = ['en','de','es'].indexOf(firstSeg) !== -1;
+        var current = prefixed ? firstSeg : 'zh';
+
+        var m = document.cookie.match(/(?:^|;\s*)lang-pref=([a-z]{2})/);
+        var pref = m ? m[1] : null;
+        if (!pref) { try { pref = localStorage.getItem('lang-pref'); } catch (_) {} }
+
+        function targetUrl(loc) {
+          var rest = prefixed ? '/' + segs.slice(1).join('/') : path;
+          if (rest === '') rest = '/';
+          if (!rest.startsWith('/')) rest = '/' + rest;
+          return loc === 'zh' ? rest : ('/' + loc + (rest === '/' ? '' : rest));
+        }
+
+        if (pref && SUPPORTED.indexOf(pref) !== -1) {
+          if (pref !== current) { location.replace(targetUrl(pref)); }
+          return;
+        }
+
+        var nav = (navigator.language || 'en').toLowerCase();
+        var detected = 'en';
+        if (nav.indexOf('zh') === 0) detected = 'zh';
+        else if (nav.indexOf('de') === 0) detected = 'de';
+        else if (nav.indexOf('es') === 0) detected = 'es';
+
+        document.cookie = 'lang-pref=' + detected + ';path=/;max-age=31536000;samesite=lax';
+        if (detected !== current) { location.replace(targetUrl(detected)); }
+      } catch (_) {}
+    })();
+  </script>
 </head>
 <body>
+  <LangSwitcher locale={locale} slug={slug} />
   <div class={containerClass}>
     {!hideHeader && (
       <nav class="top">
-        <a class="logo" href="/">Putaoso<span>葡萄搜</span></a>
+        <a class="logo" href={localizedPath('', locale)}>Putaoso{brandCn && <span>{brandCn}</span>}</a>
         <slot name="nav-middle" />
         {navMeta && <div class="nav-meta">{navMeta}</div>}
       </nav>
@@ -58,14 +114,14 @@ const footerClass = wideFooter ? 'site wide' : 'site';
     <footer class={footerClass}>
       {wideFooter ? (
         <>
-          <div class="footer-mark">Putaoso<span>葡萄搜</span></div>
-          <div class="footer-tag">A field guide to wine grapes<br />慢慢读，找到属于你的那一颗</div>
+          <div class="footer-mark">Putaoso{brandCn && <span>{brandCn}</span>}</div>
+          <div class="footer-tag">{t(locale, 'footer.tag.line1')}<br />{t(locale, 'footer.tag.line2')}</div>
           <div class="footer-meta">© 2026 · putaoso.com</div>
         </>
       ) : (
         <>
-          <div class="footer-mark">Putaoso<span>葡萄搜</span></div>
-          <div class="footer-meta" style="margin-top: 16px;">A field guide to wine grapes · 2026</div>
+          <div class="footer-mark">Putaoso{brandCn && <span>{brandCn}</span>}</div>
+          <div class="footer-meta" style="margin-top: 16px;">{t(locale, 'footer.short')}</div>
         </>
       )}
     </footer>

@@ -109,4 +109,147 @@ has_china_planting: false
 
 card_tagline: 酸得直接，香得张扬。草本与柑橘的直球。
 card_origin_short: Loire / Marlborough
+
+i18n:
+  en:
+    origin: Loire Valley, France
+    hero_quote: Sharp acidity, loud aromatics. One sip and you know exactly what you're drinking.
+    hero_scene_caption: Slate & sauvignon · Loire Valley, midday
+    flavors_professional: Lime, grapefruit, blackcurrant leaf, fresh-cut grass, asparagus, passion fruit, mineral (flint), cat pee (classic New Zealand style).
+    flavors_casual:
+      - Imagine burying your nose in a handful of freshly cut grass, then squeezing a lemon over it. The New Zealand style leans tropical — almost a fruit juice, but with a wild edge some people read as cat-like; that's the character, not a flaw. The Loire style is quieter, with a mineral note like sucking on a wet stone.
+    palate:
+      acidity_label: High
+      sweetness_label: Dry
+      body_label: Light
+      beginner_difficulty_label: Easy
+    caveat: A lot of cheap bottles labelled "Sauvignon Blanc" come across as sharply acidic and one-dimensional — the result of over-industrial farming. Pick one with a real regional name on the label (Sancerre, Marlborough) and it's a completely different drink.
+    pairing_intro: Sauvignon Blanc's high acidity and herbal lift are made for **shellfish, goat cheese, and bright Asian flavors**.
+    pairings:
+      - Oysters, clams, scallops
+      - Goat cheese (Chèvre)
+      - Thai green papaya salad, Vietnamese spring rolls
+      - Steamed fish with lemon-butter sauce
+      - Asparagus, peas, leafy green salads
+    avoid: Steer clear of rich cream sauces and heavy cheeses — Sauvignon's freshness gets buried.
+    regions:
+      - name_en: Sancerre & Pouilly-Fumé, Loire
+        body: Sauvignon Blanc at its most elegant — flinty minerality, crisp citrus, and real aging potential. Sancerre is the best-known village of the style.
+      - name_en: Marlborough, New Zealand
+        body: The region that made Sauvignon Blanc a global hit. Loud passion fruit, grapefruit, and that signature "cat pee" lift — vivid, affordable, and shorthand for the New World style.
+      - name_en: Pessac-Léognan, Bordeaux
+        body: Here Sauvignon is usually blended with Sémillon and aged in oak, turning rounder and more complex — a completely different read from the Loire or New Zealand. Château Pape Clément and the white of Haut-Brion sit at the peak.
+    bottles:
+      - name_en: Cloudy Bay Sauvignon Blanc
+        body: The bottle that launched New Zealand Sauvignon Blanc on the world. Passion fruit and grapefruit jump out of the glass, the acid is electric — the most direct way into the grape.
+      - name_en: Henri Bourgeois Sancerre
+        body: A textbook Loire — pronounced minerality, restrained fruit, surgical acidity. Tasted blind alongside a New Zealand bottle, it's the best one-glass lesson in terroir.
+      - name_en: Dourthe No.1 Sauvignon Blanc
+        body: A well-made Bordeaux Sauvignon at an everyday price — citrus, green grass, a whisper of minerality. A reliable house white.
+    similar:
+      - name_en: Riesling
+        body: Also high-acid and aromatic, but more reserved, with sharper minerality and a much wider sweetness range.
+      - name_en: Chardonnay
+        body: The other great white, but the mirror image — rounder, fuller, made for people who love a creamy mouthfeel.
+      - name_en: Viognier
+        body: Another aromatic white, but leaning into peach and blossom, with low acidity and a fuller body — the softer alternative.
+    history:
+      - Sauvignon Blanc's homelands are the Loire Valley and Bordeaux, where it long played a supporting role in blends (paired with Sémillon in white Bordeaux). DNA work later showed it to be one of the parents of Cabernet Sauvignon — two very different fates wrapped up in one grape.
+      - What turned Sauvignon Blanc into a global phenomenon was 1990s New Zealand. Cloudy Bay's arrival showed the wine world that Marlborough's sunshine and cool nights could push the grape to a tropical extreme while keeping its hair-raising acidity intact.
+    card_tagline: Sharp acidity, loud aromatics. Herbs and citrus, no detours.
+    card_origin_short: Loire / Marlborough
+  de:
+    origin: Loiretal, Frankreich
+    hero_quote: Direkte Säure, lautstarkes Aroma. Ein Schluck genügt — du weißt sofort, was im Glas ist.
+    hero_scene_caption: Schiefer & Sauvignon · Loiretal, mittags
+    flavors_professional: Limette, Grapefruit, schwarze Johannisbeerblätter, frisch geschnittenes Gras, Spargel, Passionsfrucht, Mineralität (Feuerstein), Katzenpisse (typisch Neuseeland).
+    flavors_casual:
+      - Stell dir vor, du steckst die Nase in eine Handvoll frisch geschnittenes Gras und drückst noch Zitrone darüber. Die neuseeländische Lesart geht tropisch — fast wie Fruchtsaft, aber mit einer wilden Kante, die manche als katzenhaft beschreiben; das ist Stil, kein Fehler. Die Loire-Version ist leiser, mit einer Mineralnote wie ein nasser Kieselstein im Mund.
+    palate:
+      acidity_label: Hoch
+      sweetness_label: Trocken
+      body_label: Leicht
+      beginner_difficulty_label: Einsteigerfreundlich
+    caveat: Viele billige Flaschen mit "Sauvignon Blanc" auf dem Etikett wirken sauer und eindimensional — Ergebnis überindustrialisierten Anbaus. Wähl eine mit echtem Herkunftsnamen (Sancerre, Marlborough), und du hast ein völlig anderes Getränk im Glas.
+    pairing_intro: Die hohe Säure und das Kräuteraroma des Sauvignon Blanc sind wie geschaffen für **Schalentiere, Ziegenkäse und frische asiatische Aromen**.
+    pairings:
+      - Austern, Venusmuscheln, Jakobsmuscheln
+      - Ziegenkäse (Chèvre)
+      - Thailändischer Papayasalat, vietnamesische Frühlingsrollen
+      - Gedämpfter Fisch mit Zitronen-Butter-Sauce
+      - Spargel, Erbsen, grüne Blattsalate
+    avoid: Lass die Finger von schweren Sahnesaucen und kräftigen Käsen — die Frische des Sauvignon verschwindet darin.
+    regions:
+      - name_en: Sancerre & Pouilly-Fumé, Loire
+        body: Sauvignon Blanc von seiner elegantesten Seite — feuersteinige Mineralität, knackige Zitrusnoten und echtes Reifepotenzial. Sancerre ist das bekannteste Dorf des Stils.
+      - name_en: Marlborough, Neuseeland
+        body: Die Region, die Sauvignon Blanc weltweit groß machte. Laute Passionsfrucht, Grapefruit und der charakteristische "Katzenpipi"-Ton — markant, bezahlbar und Synonym für den Stil der Neuen Welt.
+      - name_en: Pessac-Léognan, Bordeaux
+        body: Hier wird Sauvignon meist mit Sémillon verschnitten und im Holz ausgebaut — runder, komplexer, eine ganz andere Lesart als Loire oder Neuseeland. Château Pape Clément und der weiße Haut-Brion markieren die Spitze.
+    bottles:
+      - name_en: Cloudy Bay Sauvignon Blanc
+        body: Die Flasche, die den neuseeländischen Sauvignon weltweit bekannt machte. Passionsfrucht und Grapefruit springen aus dem Glas, die Säure ist elektrisch — der direkteste Zugang zur Rebsorte.
+      - name_en: Henri Bourgeois Sancerre
+        body: Loire wie aus dem Lehrbuch — ausgeprägte Mineralität, zurückhaltende Frucht, präzise Säure. Blind neben einer neuseeländischen Flasche probiert die beste Terroir-Lektion in einem Glas.
+      - name_en: Dourthe No.1 Sauvignon Blanc
+        body: Ein gut gemachter Bordelaiser Sauvignon zum Alltagspreis — Zitrus, grünes Gras, ein Hauch Mineralität. Verlässlicher Haushaltsweißwein.
+    similar:
+      - name_en: Riesling
+        body: Ebenfalls säurebetont und aromatisch, aber zurückhaltender, mit schärferer Mineralität und weit größerer Spannweite an Süße.
+      - name_en: Chardonnay
+        body: Der andere große Weiße, aber das Spiegelbild — runder, voller, für alle, die ein cremiges Mundgefühl mögen.
+      - name_en: Viognier
+        body: Auch ein aromatischer Weißer, aber mit Pfirsich und Blüten, niedriger Säure und vollerem Körper — die weichere Alternative.
+    history:
+      - Sauvignon Blancs Heimat liegt im Loiretal und in Bordeaux, wo er lange im Verschnitt eine Nebenrolle spielte (mit Sémillon im weißen Bordeaux). DNA-Analysen zeigten später, dass er einer der Eltern des Cabernet Sauvignon ist — zwei sehr verschiedene Schicksale in einer Beere.
+      - Zum globalen Phänomen wurde Sauvignon Blanc erst durch das Neuseeland der 1990er. Cloudy Bay zeigte der Weinwelt, dass Marlboroughs Sonne und kühle Nächte die Rebsorte ins Tropische treiben können, ohne die markante Säure einzubüßen.
+    card_tagline: Direkte Säure, lautstarkes Aroma. Kräuter und Zitrus ohne Umwege.
+    card_origin_short: Loire / Marlborough
+  es:
+    origin: Valle del Loira, Francia
+    hero_quote: Acidez directa, aromas a todo volumen. Un sorbo y ya sabes qué estás bebiendo.
+    hero_scene_caption: Pizarra y sauvignon · Valle del Loira, mediodía
+    flavors_professional: Lima, pomelo, hoja de grosella negra, hierba recién cortada, espárrago, fruta de la pasión, mineral (pedernal), pis de gato (clásico de Nueva Zelanda).
+    flavors_casual:
+      - Imagina meter la nariz en un puñado de hierba recién cortada y exprimir un limón encima. La versión neozelandesa se va a lo tropical — casi un zumo, pero con un punto salvaje que algunos describen como felino; es su sello, no un defecto. La del Loira es más callada, con una mineralidad como de piedra mojada en la boca.
+    palate:
+      acidity_label: Alta
+      sweetness_label: Seco
+      body_label: Ligero
+      beginner_difficulty_label: Fácil
+    caveat: Muchas botellas baratas etiquetadas "Sauvignon Blanc" resultan ásperas y planas — fruto de un cultivo demasiado industrial. Elige una con denominación real en la etiqueta (Sancerre, Marlborough) y el vino cambia por completo.
+    pairing_intro: La acidez alta y el aire herbáceo del Sauvignon Blanc están hechos para **mariscos, queso de cabra y sabores frescos asiáticos**.
+    pairings:
+      - Ostras, almejas, vieiras
+      - Queso de cabra (Chèvre)
+      - Ensalada tailandesa de papaya verde, rollitos vietnamitas
+      - Pescado al vapor con salsa de mantequilla y limón
+      - Espárragos, guisantes, ensaladas de hojas verdes
+    avoid: Aléjate de las salsas cremosas potentes y los quesos curados pesados — la frescura del Sauvignon desaparece debajo.
+    regions:
+      - name_en: Sancerre y Pouilly-Fumé, Loira
+        body: Sauvignon Blanc en su versión más elegante — mineralidad de pedernal, cítricos vivos y verdadero potencial de guarda. Sancerre es el pueblo más conocido del estilo.
+      - name_en: Marlborough, Nueva Zelanda
+        body: La región que convirtió al Sauvignon Blanc en fenómeno global. Fruta de la pasión a tope, pomelo y el característico toque "pis de gato" — vivo, asequible y sinónimo del estilo Nuevo Mundo.
+      - name_en: Pessac-Léognan, Burdeos
+        body: Aquí el Sauvignon suele mezclarse con Sémillon y criar en roble — más redondo y complejo, una lectura muy distinta a la del Loira o Nueva Zelanda. Château Pape Clément y el blanco de Haut-Brion marcan la cima.
+    bottles:
+      - name_en: Cloudy Bay Sauvignon Blanc
+        body: La botella que llevó al Sauvignon Blanc neozelandés al mundo entero. Fruta de la pasión y pomelo saltan de la copa, la acidez eléctrica — la vía más directa a la uva.
+      - name_en: Henri Bourgeois Sancerre
+        body: Manual del Loira — mineralidad marcada, fruta contenida, acidez quirúrgica. A ciegas junto a uno de Nueva Zelanda es la mejor lección de terroir en una copa.
+      - name_en: Dourthe No.1 Sauvignon Blanc
+        body: Un Sauvignon de Burdeos bien hecho a precio diario — cítricos, hierba verde y un susurro de mineralidad. Blanco fiable para el día a día.
+    similar:
+      - name_en: Riesling
+        body: También de acidez alta y muy aromática, pero más contenida, con mineralidad más afilada y un rango de dulzor mucho más amplio.
+      - name_en: Chardonnay
+        body: El otro gran blanco, pero el espejo — más redondo y carnoso, para quien busca una boca cremosa.
+      - name_en: Viognier
+        body: Otro blanco aromático, pero tira a melocotón y flores, con acidez baja y cuerpo lleno — la opción más suave.
+    history:
+      - La cuna del Sauvignon Blanc está en el Valle del Loira y en Burdeos, donde durante siglos jugó papel secundario en los coupages (con Sémillon en los blancos bordeleses). El análisis de ADN demostró después que es uno de los progenitores del Cabernet Sauvignon — dos destinos muy distintos en una sola uva.
+      - Lo que lo convirtió en fenómeno global fue la Nueva Zelanda de los noventa. La irrupción de Cloudy Bay enseñó al mundo del vino que el sol y las noches frescas de Marlborough podían llevar la uva al extremo tropical sin perder esa acidez vibrante.
+    card_tagline: Acidez directa, aromas a todo volumen. Hierba y cítricos sin rodeos.
+    card_origin_short: Loire / Marlborough
 ---

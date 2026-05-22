@@ -1,0 +1,90 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroMap from './HeroMap.astro';
+import { type Locale, defaultLocale } from '../i18n/ui';
+import { t, pick, localizedPath } from '../i18n/utils';
+
+interface Props {
+  locale?: Locale;
+  varieties: CollectionEntry<'varieties'>[];
+}
+
+const { locale = defaultLocale, varieties } = Astro.props;
+---
+
+<BaseLayout
+  title={t(locale, 'meta.home.title')}
+  description={t(locale, 'meta.home.description')}
+  containerWidth="wide"
+  wideFooter={true}
+  hideHeader={true}
+  locale={locale}
+  slug=""
+>
+  <section class="cover">
+    <div class="cover-bg">
+      <HeroMap locale={locale} />
+    </div>
+    <div class="cover-text">
+      <div class="cover-issue">{t(locale, 'cover.issue')}</div>
+      <h1>Putaoso</h1>
+      {locale === defaultLocale && <div class="cover-subtitle">{t(locale, 'brand.cn')}</div>}
+      <div class="cover-tagline">
+        {t(locale, 'cover.tagline.line1')}<br />
+        {t(locale, 'cover.tagline.line2')}
+      </div>
+    </div>
+  </section>
+
+  <section class="varieties">
+    <div class="section-label">{t(locale, 'index.label')}</div>
+    <h2>{t(locale, 'index.heading')}</h2>
+    <div class="grid">
+      {varieties.map((v) => {
+        const d = v.data;
+        const numStr = String(d.number).padStart(3, '0');
+        const isLive = d.status === 'live';
+        const typeColor = d.type === 'red' ? 'red' : d.type === 'white' ? 'white' : 'rose';
+        const typeLabel = t(locale, `type.${d.type}`);
+        const statusLabel = d.status === 'draft' ? t(locale, 'status.draft') : d.status === 'planned' ? t(locale, 'status.planned') : '';
+        const cardTagline = pick(v, locale, 'card_tagline');
+        const cardOrigin = pick(v, locale, 'card_origin_short');
+        const nameEn = pick(v, locale, 'name_en');
+        const nameCnDisplay = locale === defaultLocale
+          ? d.name_cn
+          : (d.i18n?.[locale]?.name_cn ?? '');
+
+        const inner = (
+          <>
+            {!isLive && <span class="stamp">{t(locale, 'stamp.upcoming')}</span>}
+            <div>
+              <div class="card-num">N° {numStr}</div>
+              <div style="margin-top: 32px;">
+                <span class={`card-color ${typeColor}`}></span>
+                <span class="card-type-label">{typeLabel}</span>
+              </div>
+            </div>
+            <div>
+              <div class="card-name-en" set:html={nameEn.replace(/ /g, '<br>')} />
+              {nameCnDisplay && <div class="card-name-cn">{nameCnDisplay}</div>}
+              <div class="card-tagline">{cardTagline}</div>
+              <div class="card-foot">
+                <span class="card-foot-label">{isLive ? t(locale, 'card.foot.origin') : t(locale, 'card.foot.status')}</span>
+                <span class="card-foot-value">
+                  {isLive ? cardOrigin : statusLabel}
+                </span>
+              </div>
+            </div>
+          </>
+        );
+
+        return isLive ? (
+          <a class="card live" href={localizedPath(v.slug, locale)}>{inner}</a>
+        ) : (
+          <div class="card upcoming">{inner}</div>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>
