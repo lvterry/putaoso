@@ -1,0 +1,100 @@
+<svg role="img" aria-label="Riesling illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="ri-hatch" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(40)">
+          <line x1="0" y1="0" x2="0" y2="7" stroke="#1a1612" stroke-width="0.7"/>
+        </pattern>
+        <pattern id="ri-hatch-dense" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(40)">
+          <line x1="0" y1="0" x2="0" y2="5" stroke="#1a1612" stroke-width="0.8"/>
+        </pattern>
+        <pattern id="ri-stipple" patternUnits="userSpaceOnUse" width="9" height="9">
+          <circle cx="2" cy="2" r="0.7" fill="#1a1612"/>
+          <circle cx="6.5" cy="6" r="0.7" fill="#1a1612"/>
+        </pattern>
+        <clipPath id="ri-leaf-clip">
+          <path d="M 450 220 Q 510 280 526 360 Q 590 320 688 388 Q 626 446 580 510 Q 588 580 588 654 Q 520 622 462 612 L 462 612 Q 405 622 315 654 Q 320 580 322 510 Q 280 446 220 388 Q 320 320 374 360 Q 392 280 450 220 Z"/>
+        </clipPath>
+      </defs>
+      <rect x="0" y="0" width="1600" height="900" fill="#ede2c8"/>
+      <rect x="0" y="0" width="1600" height="900" fill="url(#ri-stipple)" opacity="0.06"/>
+      <rect x="48" y="48" width="1504" height="804" fill="none" stroke="#1a1612" stroke-width="1" stroke-dasharray="2 5" opacity="0.55"/>
+      <rect x="64" y="64" width="1472" height="772" fill="none" stroke="#1a1612" stroke-width="0.6" opacity="0.35"/>
+      <g clip-path="url(#ri-leaf-clip)">
+        <rect x="200" y="460" width="500" height="220" fill="url(#ri-hatch)" opacity="0.85"/>
+        <rect x="200" y="540" width="500" height="140" fill="url(#ri-hatch-dense)" opacity="0.55"/>
+      </g>
+      <path d="M 450 220 Q 510 280 526 360 Q 590 320 688 388 Q 626 446 580 510 Q 588 580 588 654 Q 520 622 462 612 L 462 612 Q 405 622 315 654 Q 320 580 322 510 Q 280 446 220 388 Q 320 320 374 360 Q 392 280 450 220 Z" fill="none" stroke="#1a1612" stroke-width="2.4" stroke-linejoin="round"/>
+      <g fill="none" stroke="#1a1612" stroke-width="1" stroke-linecap="round">
+        <path d="M 468 226 l 6 -10 l 6 10"/><path d="M 500 252 l 6 -10 l 6 10"/>
+        <path d="M 538 320 l 8 -8 l 4 12"/><path d="M 610 358 l 10 -6 l 2 12"/>
+        <path d="M 660 400 l 12 -2 l -2 12"/><path d="M 384 226 l -6 -10 l -6 10"/>
+        <path d="M 354 252 l -6 -10 l -6 10"/><path d="M 318 320 l -8 -8 l -4 12"/>
+        <path d="M 246 358 l -10 -6 l -2 12"/><path d="M 198 400 l -12 -2 l 2 12"/>
+      </g>
+      <g fill="none" stroke="#1a1612" stroke-width="1.5" stroke-linecap="round">
+        <path d="M 454 620 Q 452 460 450 226"/><path d="M 454 620 Q 540 510 664 392"/>
+        <path d="M 454 620 Q 564 590 582 644"/><path d="M 454 620 Q 344 590 320 644"/>
+        <path d="M 454 620 Q 368 510 244 392"/>
+        <g stroke-width="0.7" opacity="0.7">
+          <path d="M 452 480 Q 480 460 530 450"/><path d="M 452 380 Q 490 360 540 348"/>
+          <path d="M 452 480 Q 424 460 374 450"/><path d="M 452 380 Q 414 360 364 348"/>
+          <path d="M 500 540 Q 540 540 580 538"/><path d="M 404 540 Q 364 540 324 538"/>
+        </g>
+      </g>
+      <path d="M 454 612 Q 458 700 466 790" fill="none" stroke="#1a1612" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M 466 790 Q 410 800 380 770 Q 354 740 380 720 Q 410 706 416 740 Q 416 760 396 762" fill="none" stroke="#1a1612" stroke-width="1.4" stroke-linecap="round"/>
+      <g transform="translate(1020, 280)">
+        <path d="M 130 0 Q 132 30 130 60" fill="none" stroke="#1a1612" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M 130 4 Q 80 -10 70 30 Q 100 38 130 20 Z" fill="none" stroke="#1a1612" stroke-width="1.4"/>
+        <path d="M 130 12 Q 110 18 80 24" fill="none" stroke="#1a1612" stroke-width="0.7"/>
+        <g>
+          <g transform="translate(130,68)"><circle r="26" fill="#ede2c8" stroke="#1a1612" stroke-width="1.8"/><path d="M -6 14 A 26 26 0 0 0 22 -6 A 26 26 0 0 1 -6 14 Z" fill="url(#ri-hatch)" opacity="0.55"/><ellipse cx="-8" cy="-10" rx="5" ry="3" fill="none" stroke="#1a1612" stroke-width="0.7" opacity="0.5"/></g>
+          <g transform="translate(102,108)"><circle r="26" fill="#ede2c8" stroke="#1a1612" stroke-width="1.8"/><path d="M -6 14 A 26 26 0 0 0 22 -6 A 26 26 0 0 1 -6 14 Z" fill="url(#ri-hatch)" opacity="0.55"/><ellipse cx="-8" cy="-10" rx="5" ry="3" fill="none" stroke="#1a1612" stroke-width="0.7" opacity="0.5"/></g>
+          <g transform="translate(158,108)"><circle r="26" fill="#ede2c8" stroke="#1a1612" stroke-width="1.8"/><path d="M -6 14 A 26 26 0 0 0 22 -6 A 26 26 0 0 1 -6 14 Z" fill="url(#ri-hatch)" opacity="0.55"/><ellipse cx="-8" cy="-10" rx="5" ry="3" fill="none" stroke="#1a1612" stroke-width="0.7" opacity="0.5"/></g>
+          <g transform="translate(74,148)"><circle r="26" fill="#ede2c8" stroke="#1a1612" stroke-width="1.8"/><path d="M -6 14 A 26 26 0 0 0 22 -6 A 26 26 0 0 1 -6 14 Z" fill="url(#ri-hatch)" opacity="0.55"/><ellipse cx="-8" cy="-10" rx="5" ry="3" fill="none" stroke="#1a1612" stroke-width="0.7" opacity="0.5"/></g>
+          <g transform="translate(130,148)"><circle r="26" fill="#ede2c8" stroke="#1a1612" stroke-width="1.8"/><path d="M -6 14 A 26 26 0 0 0 22 -6 A 26 26 0 0 1 -6 14 Z" fill="url(#ri-hatch)" opacity="0.55"/><ellipse cx="-8" cy="-10" rx="5" ry="3" fill="none" stroke="#1a1612" stroke-width="0.7" opacity="0.5"/></g>
+          <g transform="translate(186,148)"><circle r="26" fill="#ede2c8" stroke="#1a1612" stroke-width="1.8"/><path d="M -6 14 A 26 26 0 0 0 22 -6 A 26 26 0 0 1 -6 14 Z" fill="url(#ri-hatch)" opacity="0.55"/><ellipse cx="-8" cy="-10" rx="5" ry="3" fill="none" stroke="#1a1612" stroke-width="0.7" opacity="0.5"/></g>
+          <g transform="translate(102,188)"><circle r="26" fill="#ede2c8" stroke="#1a1612" stroke-width="1.8"/><path d="M -6 14 A 26 26 0 0 0 22 -6 A 26 26 0 0 1 -6 14 Z" fill="url(#ri-hatch)" opacity="0.55"/><ellipse cx="-8" cy="-10" rx="5" ry="3" fill="none" stroke="#1a1612" stroke-width="0.7" opacity="0.5"/></g>
+          <g transform="translate(158,188)"><circle r="26" fill="#ede2c8" stroke="#1a1612" stroke-width="1.8"/><path d="M -6 14 A 26 26 0 0 0 22 -6 A 26 26 0 0 1 -6 14 Z" fill="url(#ri-hatch)" opacity="0.55"/><ellipse cx="-8" cy="-10" rx="5" ry="3" fill="none" stroke="#1a1612" stroke-width="0.7" opacity="0.5"/></g>
+          <g transform="translate(214,188)"><circle r="26" fill="#ede2c8" stroke="#1a1612" stroke-width="1.8"/><path d="M -6 14 A 26 26 0 0 0 22 -6 A 26 26 0 0 1 -6 14 Z" fill="url(#ri-hatch)" opacity="0.55"/><ellipse cx="-8" cy="-10" rx="5" ry="3" fill="none" stroke="#1a1612" stroke-width="0.7" opacity="0.5"/></g>
+          <g transform="translate(130,228)"><circle r="26" fill="#ede2c8" stroke="#1a1612" stroke-width="1.8"/><path d="M -6 14 A 26 26 0 0 0 22 -6 A 26 26 0 0 1 -6 14 Z" fill="url(#ri-hatch)" opacity="0.55"/><ellipse cx="-8" cy="-10" rx="5" ry="3" fill="none" stroke="#1a1612" stroke-width="0.7" opacity="0.5"/></g>
+          <g transform="translate(186,228)"><circle r="26" fill="#ede2c8" stroke="#1a1612" stroke-width="1.8"/><path d="M -6 14 A 26 26 0 0 0 22 -6 A 26 26 0 0 1 -6 14 Z" fill="url(#ri-hatch)" opacity="0.55"/><ellipse cx="-8" cy="-10" rx="5" ry="3" fill="none" stroke="#1a1612" stroke-width="0.7" opacity="0.5"/></g>
+          <g transform="translate(158,268)"><circle r="26" fill="#ede2c8" stroke="#1a1612" stroke-width="1.8"/><path d="M -6 14 A 26 26 0 0 0 22 -6 A 26 26 0 0 1 -6 14 Z" fill="url(#ri-hatch)" opacity="0.55"/><ellipse cx="-8" cy="-10" rx="5" ry="3" fill="none" stroke="#1a1612" stroke-width="0.7" opacity="0.5"/></g>
+        </g>
+      </g>
+      <g transform="translate(1080, 600)">
+        <rect x="0" y="0" width="380" height="200" fill="none" stroke="#1a1612" stroke-width="1.2"/>
+        <rect x="6" y="6" width="368" height="188" fill="none" stroke="#1a1612" stroke-width="0.5" opacity="0.5"/>
+        <path d="M 6 194 L 6 90 L 240 36 L 374 194 Z" fill="url(#ri-hatch-dense)" opacity="0.55"/>
+        <path d="M 6 194 L 6 90 L 240 36 L 374 194" fill="none" stroke="#1a1612" stroke-width="1.2"/>
+        <g stroke="#1a1612" stroke-width="0.6" fill="none">
+          <path d="M 30 175 L 358 175"/><path d="M 38 158 L 348 158"/><path d="M 46 140 L 336 140"/>
+          <path d="M 56 122 L 322 122"/><path d="M 68 104 L 304 104"/><path d="M 82 84 L 282 84"/>
+          <path d="M 102 64 L 254 64"/>
+        </g>
+        <g fill="#1a1612">
+          <circle cx="60" cy="175" r="1.4"/><circle cx="120" cy="175" r="1.4"/><circle cx="180" cy="175" r="1.4"/><circle cx="240" cy="175" r="1.4"/><circle cx="300" cy="175" r="1.4"/>
+          <circle cx="80" cy="140" r="1.4"/><circle cx="160" cy="140" r="1.4"/><circle cx="240" cy="140" r="1.4"/><circle cx="320" cy="140" r="1.4"/>
+          <circle cx="120" cy="104" r="1.4"/><circle cx="200" cy="104" r="1.4"/><circle cx="280" cy="104" r="1.4"/>
+          <circle cx="160" cy="84" r="1.4"/><circle cx="240" cy="84" r="1.4"/>
+        </g>
+        <g stroke="#1a1612" stroke-width="0.8" fill="none">
+          <path d="M 290 50 L 320 30"/><path d="M 286 48 L 296 54"/>
+        </g>
+        <text x="324" y="26" font-family="Georgia, serif" font-style="italic" font-size="11" fill="#1a1612">slate · 65°</text>
+        <text x="6" y="-8" font-family="Georgia, serif" font-size="11" letter-spacing="0.18em" fill="#1a1612">FIG. II — MOSEL TERROIR</text>
+      </g>
+      <g>
+        <text x="100" y="118" font-family="Georgia, serif" font-size="14" letter-spacing="0.22em" fill="#1a1612">PL. XVII</text>
+        <text x="800" y="106" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="22" fill="#1a1612">Vitis vinifera</text>
+        <text x="800" y="130" text-anchor="middle" font-family="Georgia, serif" font-size="11" letter-spacing="0.26em" fill="#1a1612">— RIESLING —</text>
+        <line x1="640" y1="148" x2="960" y2="148" stroke="#1a1612" stroke-width="0.6"/>
+        <circle cx="800" cy="148" r="2" fill="#1a1612"/>
+        <line x1="100" y1="812" x2="1500" y2="812" stroke="#1a1612" stroke-width="0.4" opacity="0.5"/>
+        <text x="100" y="838" font-family="Georgia, serif" font-style="italic" font-size="11" fill="#1a1612" opacity="0.7">a. lamina · b. petiole · c. cirrus · d. racemus</text>
+        <text x="1500" y="838" text-anchor="end" font-family="Georgia, serif" font-size="11" fill="#1a1612" opacity="0.7">drawn from life · Mosel · MMXXVI</text>
+      </g>
+      <g font-family="Georgia, serif" font-style="italic" font-size="14" fill="#1a1612">
+        <text x="430" y="438">a.</text><text x="486" y="720">b.</text>
+        <text x="332" y="760">c.</text><text x="1080" y="218">d.</text>
+      </g>
+    </svg>

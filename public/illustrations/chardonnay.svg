@@ -1,0 +1,61 @@
+<svg role="img" aria-label="Chardonnay illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="cd-wash" cx="55%" cy="60%" r="40%">
+          <stop offset="0%" stop-color="#3a3228" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#3a3228" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="cd-rough" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
+          <feDisplacementMap in="SourceGraphic" scale="2"/>
+        </filter>
+      </defs>
+
+      <!-- aged paper -->
+      <rect width="1600" height="900" fill="#f4ecdb"/>
+      <!-- subtle paper bloom -->
+      <ellipse cx="900" cy="500" rx="700" ry="400" fill="#e8dcc4" opacity="0.4"/>
+
+      <!-- the single brushstroke horizon: an ink wash hill -->
+      <path d="M 280 540
+               C 380 510 480 500 600 510
+               C 740 522 820 504 920 498
+               C 1060 490 1180 502 1240 514
+               L 1240 560
+               C 1100 568 940 558 800 560
+               C 660 562 480 568 280 560 Z"
+            fill="#2a2520" opacity="0.86" filter="url(#cd-rough)"/>
+
+      <!-- a softer second wash below -->
+      <path d="M 220 600
+               C 360 588 540 596 720 600
+               C 880 604 1040 598 1280 608
+               L 1280 640
+               C 1100 644 880 638 700 642
+               C 540 644 360 642 220 638 Z"
+            fill="#3a3228" opacity="0.32" filter="url(#cd-rough)"/>
+
+      <!-- tiny floating boat / leaf, just two brush strokes -->
+      <path d="M 620 700 Q 700 696 780 702" fill="none" stroke="#2a2520"
+            stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+      <path d="M 700 678 L 700 700" stroke="#2a2520" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+
+      <!-- the red sun seal / hanko -->
+      <g transform="translate(1180, 280)">
+        <rect width="70" height="70" fill="#b13830" rx="2"/>
+        <text x="35" y="50" text-anchor="middle" font-family="Georgia, serif"
+              font-size="46" font-weight="700" fill="#f4ecdb">霞</text>
+      </g>
+
+      <!-- calligraphic column right side: vertical Chinese-style title -->
+      <g font-family="'Songti SC','STSong',serif" fill="#2a2520">
+        <text x="1380" y="270" font-size="38" letter-spacing="0.2em">霞</text>
+        <text x="1380" y="320" font-size="38" letter-spacing="0.2em">多</text>
+        <text x="1380" y="370" font-size="38" letter-spacing="0.2em">丽</text>
+        <line x1="1378" y1="395" x2="1418" y2="395" stroke="#2a2520" stroke-width="1"/>
+        <text x="1380" y="430" font-size="12" letter-spacing="0.3em">勃 艮 第</text>
+      </g>
+
+      <!-- one stray ink dot, intentional -->
+      <circle cx="540" cy="660" r="3" fill="#2a2520" opacity="0.8"/>
+      <circle cx="556" cy="664" r="2" fill="#2a2520" opacity="0.6"/>
+    </svg>

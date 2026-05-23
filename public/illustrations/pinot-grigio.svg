@@ -1,0 +1,87 @@
+<svg role="img" aria-label="Pinot Gris illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="pg-bg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f3e3d4"/>
+          <stop offset="100%" stop-color="#dfc4b0"/>
+        </linearGradient>
+      </defs>
+      <rect width="1600" height="900" fill="url(#pg-bg)"/>
+
+      <!-- giant sunrise fan from bottom center -->
+      <g transform="translate(800, 880)">
+        <!-- alternating wedges -->
+        <g>
+          <path d="M 0 0 L -780 -200 A 808 808 0 0 1 -700 -380 Z" fill="#c89878"/>
+          <path d="M 0 0 L -700 -380 A 808 808 0 0 1 -560 -560 Z" fill="#d8a888"/>
+          <path d="M 0 0 L -560 -560 A 808 808 0 0 1 -380 -700 Z" fill="#c89878"/>
+          <path d="M 0 0 L -380 -700 A 808 808 0 0 1 -200 -780 Z" fill="#d8a888"/>
+          <path d="M 0 0 L -200 -780 A 808 808 0 0 1 0 -808 Z" fill="#c89878"/>
+          <path d="M 0 0 L 0 -808 A 808 808 0 0 1 200 -780 Z" fill="#d8a888"/>
+          <path d="M 0 0 L 200 -780 A 808 808 0 0 1 380 -700 Z" fill="#c89878"/>
+          <path d="M 0 0 L 380 -700 A 808 808 0 0 1 560 -560 Z" fill="#d8a888"/>
+          <path d="M 0 0 L 560 -560 A 808 808 0 0 1 700 -380 Z" fill="#c89878"/>
+          <path d="M 0 0 L 700 -380 A 808 808 0 0 1 780 -200 Z" fill="#d8a888"/>
+        </g>
+
+        <!-- inner concentric arcs -->
+        <g fill="none" stroke="#3a2828" stroke-width="1.5" opacity="0.7">
+          <path d="M -560 0 A 560 560 0 0 1 560 0"/>
+          <path d="M -440 0 A 440 440 0 0 1 440 0"/>
+          <path d="M -320 0 A 320 320 0 0 1 320 0"/>
+          <path d="M -200 0 A 200 200 0 0 1 200 0"/>
+        </g>
+
+        <!-- thin gold rays -->
+        <g stroke="#7a4828" stroke-width="2" opacity="0.85">
+          <line x1="0" y1="0" x2="-780" y2="-200"/>
+          <line x1="0" y1="0" x2="-700" y2="-380"/>
+          <line x1="0" y1="0" x2="-560" y2="-560"/>
+          <line x1="0" y1="0" x2="-380" y2="-700"/>
+          <line x1="0" y1="0" x2="-200" y2="-780"/>
+          <line x1="0" y1="0" x2="0" y2="-808"/>
+          <line x1="0" y1="0" x2="200" y2="-780"/>
+          <line x1="0" y1="0" x2="380" y2="-700"/>
+          <line x1="0" y1="0" x2="560" y2="-560"/>
+          <line x1="0" y1="0" x2="700" y2="-380"/>
+          <line x1="0" y1="0" x2="780" y2="-200"/>
+        </g>
+
+        <!-- center medallion -->
+        <circle r="80" fill="#f3e3d4"/>
+        <circle r="80" fill="none" stroke="#3a2828" stroke-width="2"/>
+        <circle r="60" fill="none" stroke="#3a2828" stroke-width="0.8"/>
+        <!-- stepped art deco motif inside -->
+        <g fill="#3a2828">
+          <rect x="-4" y="-50" width="8" height="36"/>
+          <rect x="-14" y="-44" width="28" height="6"/>
+          <rect x="-22" y="-36" width="44" height="6"/>
+          <rect x="-30" y="-28" width="60" height="6"/>
+        </g>
+      </g>
+
+      <!-- top corners: stepped deco ornaments -->
+      <g fill="#3a2828">
+        <g transform="translate(120, 100)">
+          <rect x="0" y="0" width="80" height="14"/>
+          <rect x="0" y="22" width="60" height="10"/>
+          <rect x="0" y="40" width="40" height="8"/>
+          <rect x="0" y="56" width="20" height="6"/>
+        </g>
+        <g transform="translate(1480, 100) scale(-1, 1)">
+          <rect x="0" y="0" width="80" height="14"/>
+          <rect x="0" y="22" width="60" height="10"/>
+          <rect x="0" y="40" width="40" height="8"/>
+          <rect x="0" y="56" width="20" height="6"/>
+        </g>
+      </g>
+
+      <!-- horizontal rule with title centered -->
+      <line x1="200" y1="200" x2="660" y2="200" stroke="#3a2828" stroke-width="1.2"/>
+      <line x1="940" y1="200" x2="1400" y2="200" stroke="#3a2828" stroke-width="1.2"/>
+      <text x="800" y="208" text-anchor="middle"
+            font-family="'Bodoni 72', 'Didot', Georgia, serif"
+            font-size="44" font-style="italic" fill="#3a2828">Pinot Gris</text>
+      <text x="800" y="248" text-anchor="middle"
+            font-family="Georgia, serif" font-size="14"
+            letter-spacing="0.42em" fill="#3a2828" opacity="0.75">— ALSACE · ALTO ADIGE —</text>
+    </svg>

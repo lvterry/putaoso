@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Cabernet Gernischt illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="cg-grid" patternUnits="userSpaceOnUse" width="40" height="40">
+          <rect width="40" height="40" fill="#e8d4b8"/>
+          <circle cx="20" cy="20" r="1" fill="#a88858" opacity="0.3"/>
+        </pattern>
+        <linearGradient id="cg-sun" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#f4d8a0"/>
+          <stop offset="100%" stop-color="#d8a868"/>
+        </linearGradient>
+      </defs>
+
+      <!-- aged cream poster paper -->
+      <rect width="1600" height="900" fill="url(#cg-grid)"/>
+
+      <!-- outer deco frame: green -->
+      <rect x="40" y="40" width="1520" height="820" fill="none" stroke="#2a5848" stroke-width="6"/>
+      <rect x="60" y="60" width="1480" height="780" fill="none" stroke="#2a5848" stroke-width="1.5"/>
+      <rect x="76" y="76" width="1448" height="748" fill="none" stroke="#a85838" stroke-width="0.8"/>
+
+      <!-- decorative corner ornaments -->
+      <g fill="#2a5848">
+        <g transform="translate(110, 110)">
+          <path d="M 0 0 L 80 0 L 80 12 L 12 12 L 12 80 L 0 80 Z"/>
+          <circle cx="12" cy="12" r="6" fill="#a85838"/>
+        </g>
+        <g transform="translate(1490, 110) scale(-1, 1)">
+          <path d="M 0 0 L 80 0 L 80 12 L 12 12 L 12 80 L 0 80 Z"/>
+          <circle cx="12" cy="12" r="6" fill="#a85838"/>
+        </g>
+        <g transform="translate(110, 790) scale(1, -1)">
+          <path d="M 0 0 L 80 0 L 80 12 L 12 12 L 12 80 L 0 80 Z"/>
+          <circle cx="12" cy="12" r="6" fill="#a85838"/>
+        </g>
+        <g transform="translate(1490, 790) scale(-1, -1)">
+          <path d="M 0 0 L 80 0 L 80 12 L 12 12 L 12 80 L 0 80 Z"/>
+          <circle cx="12" cy="12" r="6" fill="#a85838"/>
+        </g>
+      </g>
+
+      <!-- decorative sun-ray fan top center -->
+      <g transform="translate(800, 180)">
+        <circle r="80" fill="url(#cg-sun)"/>
+        <g stroke="#a85838" stroke-width="2" opacity="0.7" stroke-linecap="round">
+          <line x1="0" y1="-100" x2="0" y2="-130"/>
+          <line x1="60" y1="-80" x2="80" y2="-104"/>
+          <line x1="-60" y1="-80" x2="-80" y2="-104"/>
+          <line x1="86" y1="-30" x2="116" y2="-40"/>
+          <line x1="-86" y1="-30" x2="-116" y2="-40"/>
+          <line x1="86" y1="30" x2="116" y2="40"/>
+          <line x1="-86" y1="30" x2="-116" y2="40"/>
+        </g>
+        <text y="14" text-anchor="middle" font-family="'Songti SC', 'STKaiti', serif"
+              font-size="48" font-weight="700" fill="#7a1820" letter-spacing="0.1em">張裕</text>
+      </g>
+
+      <!-- main panel: stylized rose bouquet center -->
+      <g transform="translate(800, 510)">
+        <!-- vase outline -->
+        <path d="M -120 200 L -100 80 L -100 40 L -130 30 L -130 0 L 130 0 L 130 30 L 100 40 L 100 80 L 120 200 Z"
+              fill="#f0e0c4" stroke="#7a4828" stroke-width="2"/>
+        <ellipse cx="0" cy="0" rx="130" ry="10" fill="#7a4828"/>
+
+        <!-- three roses -->
+        <g transform="translate(0, -60)">
+          <!-- left rose -->
+          <g transform="translate(-80, 0)">
+            <circle r="38" fill="#c83048"/>
+            <circle r="38" fill="none" stroke="#7a1820" stroke-width="1.5"/>
+            <path d="M -20 -8 Q 0 -28 20 -8 Q 0 12 -20 -8" fill="#7a1820" opacity="0.5"/>
+            <ellipse cx="0" cy="0" rx="14" ry="20" fill="#7a1820"/>
+          </g>
+          <!-- center rose -->
+          <g transform="translate(0, -30)">
+            <circle r="48" fill="#d04060"/>
+            <circle r="48" fill="none" stroke="#7a1820" stroke-width="1.5"/>
+            <path d="M -24 -10 Q 0 -32 24 -10 Q 0 14 -24 -10" fill="#7a1820" opacity="0.5"/>
+            <ellipse cx="0" cy="0" rx="16" ry="24" fill="#7a1820"/>
+          </g>
+          <!-- right rose -->
+          <g transform="translate(80, -10)">
+            <circle r="36" fill="#c83048"/>
+            <circle r="36" fill="none" stroke="#7a1820" stroke-width="1.5"/>
+            <path d="M -18 -8 Q 0 -24 18 -8 Q 0 10 -18 -8" fill="#7a1820" opacity="0.5"/>
+            <ellipse cx="0" cy="0" rx="12" ry="18" fill="#7a1820"/>
+          </g>
+          <!-- leaves filling gaps -->
+          <g fill="#2a5848">
+            <ellipse cx="-130" cy="20" rx="30" ry="10" transform="rotate(-25 -130 20)"/>
+            <ellipse cx="-30" cy="40" rx="30" ry="10" transform="rotate(15 -30 40)"/>
+            <ellipse cx="50" cy="40" rx="30" ry="10" transform="rotate(-15 50 40)"/>
+            <ellipse cx="130" cy="30" rx="30" ry="10" transform="rotate(20 130 30)"/>
+            <ellipse cx="-80" cy="-70" rx="20" ry="8" transform="rotate(-40 -80 -70)"/>
+            <ellipse cx="80" cy="-80" rx="20" ry="8" transform="rotate(40 80 -80)"/>
+          </g>
+          <!-- grape cluster motif at bottom (variety reference) -->
+          <g fill="#3a0828" transform="translate(0, 60)">
+            <circle cx="-30" cy="0" r="9"/><circle cx="-12" cy="-2" r="9"/>
+            <circle cx="6" cy="0" r="9"/><circle cx="24" cy="-2" r="9"/>
+            <circle cx="-22" cy="14" r="9"/><circle cx="-4" cy="14" r="9"/>
+            <circle cx="14" cy="14" r="9"/>
+            <circle cx="-12" cy="28" r="9"/><circle cx="6" cy="28" r="9"/>
+            <circle cx="-4" cy="42" r="9"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- right side vertical title -->
+      <g font-family="'STKaiti', 'Kaiti SC', 'Songti SC', serif" fill="#7a1820">
+        <text x="1380" y="280" font-size="80" font-weight="700" letter-spacing="0.05em">蛇</text>
+        <text x="1380" y="380" font-size="80" font-weight="700" letter-spacing="0.05em">龍</text>
+        <text x="1380" y="480" font-size="80" font-weight="700" letter-spacing="0.05em">珠</text>
+      </g>
+
+      <!-- left side ENGLISH title vertical -->
+      <g transform="translate(160, 720) rotate(-90)" 
+         font-family="'Bodoni 72', 'Didot', Georgia, serif" fill="#7a1820">
+        <text font-size="36" font-style="italic" letter-spacing="0.18em">Cabernet Gernischt</text>
+      </g>
+
+      <!-- bottom plate text -->
+      <text x="800" y="800" text-anchor="middle"
+            font-family="'Songti SC', serif" font-size="16"
+            letter-spacing="0.4em" fill="#2a5848">煙臺·一九一五·解百納</text>
+
+      <!-- small price tag -->
+      <g transform="translate(1340, 720)">
+        <rect width="120" height="56" fill="#a85838"/>
+        <text x="60" y="22" text-anchor="middle" font-family="'STKaiti', serif"
+              font-size="14" fill="#f0e0c4" letter-spacing="0.2em">每瓶大洋</text>
+        <text x="60" y="46" text-anchor="middle" font-family="'STKaiti', serif"
+              font-size="20" font-weight="700" fill="#f0e0c4">壹圓貳角</text>
+      </g>
+    </svg>

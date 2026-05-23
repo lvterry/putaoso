@@ -1,0 +1,76 @@
+<svg role="img" aria-label="Pinot Noir illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <!-- pale dawn paper background -->
+      <rect width="1600" height="900" fill="#ede5db"/>
+
+      <!-- Layer 1: distant hill in lavender-grey dots -->
+      <g fill="#a89aab">
+        <!-- Generated as a band of small circles, density varying with y -->
+        <g opacity="0.7">
+          <!-- 7 rows × ~80 dots, jittered, forming hill silhouette y=380-460 -->
+          <circle cx="40" cy="392" r="3"/><circle cx="92" cy="386" r="3"/><circle cx="148" cy="390" r="3"/><circle cx="208" cy="384" r="3"/><circle cx="266" cy="388" r="3"/><circle cx="324" cy="380" r="3"/><circle cx="386" cy="384" r="3"/><circle cx="448" cy="378" r="3"/><circle cx="510" cy="382" r="3"/><circle cx="572" cy="380" r="3"/><circle cx="634" cy="386" r="3"/><circle cx="696" cy="384" r="3"/><circle cx="758" cy="390" r="3"/><circle cx="820" cy="388" r="3"/><circle cx="882" cy="392" r="3"/><circle cx="944" cy="386" r="3"/><circle cx="1006" cy="390" r="3"/><circle cx="1068" cy="392" r="3"/><circle cx="1130" cy="396" r="3"/><circle cx="1192" cy="394" r="3"/><circle cx="1254" cy="400" r="3"/><circle cx="1316" cy="402" r="3"/><circle cx="1378" cy="400" r="3"/><circle cx="1440" cy="404" r="3"/><circle cx="1502" cy="406" r="3"/><circle cx="1564" cy="408" r="3"/>
+        </g>
+        <!-- denser rows below -->
+        <g opacity="0.85">
+          <!-- This is a procedural-looking dot field. We'll create it with many small circles. -->
+        </g>
+      </g>
+
+      <!-- Use a denser stippling for the hill body via pattern -->
+      <defs>
+        <pattern id="pn-hill" patternUnits="userSpaceOnUse" width="11" height="11">
+          <circle cx="2.5" cy="2.5" r="2.2" fill="#a89aab" opacity="0.75"/>
+          <circle cx="8" cy="7.5" r="1.6" fill="#8a7a8e" opacity="0.6"/>
+        </pattern>
+        <pattern id="pn-vine" patternUnits="userSpaceOnUse" width="9" height="9">
+          <circle cx="2" cy="2" r="2.4" fill="#5e3c5a" opacity="0.7"/>
+          <circle cx="6.5" cy="6" r="1.6" fill="#7a3a52" opacity="0.6"/>
+          <circle cx="4" cy="7" r="1.2" fill="#9a6a78" opacity="0.5"/>
+        </pattern>
+        <pattern id="pn-mid" patternUnits="userSpaceOnUse" width="10" height="10">
+          <circle cx="2" cy="2" r="2" fill="#8c6678" opacity="0.7"/>
+          <circle cx="7" cy="7" r="1.8" fill="#a87a88" opacity="0.55"/>
+          <circle cx="5" cy="3" r="1.2" fill="#c9a5a6" opacity="0.5"/>
+        </pattern>
+        <pattern id="pn-mist" patternUnits="userSpaceOnUse" width="14" height="14">
+          <circle cx="3" cy="3" r="2.4" fill="#f0e2d0" opacity="0.65"/>
+          <circle cx="10" cy="9" r="2" fill="#e8d4c0" opacity="0.5"/>
+        </pattern>
+        <pattern id="pn-sun" patternUnits="userSpaceOnUse" width="9" height="9">
+          <circle cx="2" cy="2" r="2.4" fill="#f5d8b8" opacity="0.9"/>
+          <circle cx="6" cy="6" r="1.8" fill="#f5c2a0" opacity="0.8"/>
+        </pattern>
+      </defs>
+
+      <!-- Background hill body -->
+      <path d="M 0 420 Q 400 380 800 400 T 1600 420 L 1600 540 L 0 540 Z" fill="url(#pn-hill)"/>
+
+      <!-- Mid layer in pinks -->
+      <path d="M 0 510 Q 300 470 700 490 T 1600 480 L 1600 620 L 0 620 Z" fill="url(#pn-mid)"/>
+
+      <!-- Sun: dense warm dots -->
+      <circle cx="1180" cy="320" r="90" fill="url(#pn-sun)"/>
+      <circle cx="1180" cy="320" r="58" fill="#f5d8b8" opacity="0.7"/>
+
+      <!-- Foreground vineyard rows in deep wine dots -->
+      <path d="M 0 600 L 1600 600 L 1600 900 L 0 900 Z" fill="url(#pn-vine)"/>
+
+      <!-- Vine row hint: subtle diagonal density bands of slightly different color -->
+      <g opacity="0.4">
+        <path d="M 0 640 L 1600 615 L 1600 660 L 0 685 Z" fill="#3a1830"/>
+        <path d="M 0 720 L 1600 695 L 1600 740 L 0 765 Z" fill="#3a1830"/>
+        <path d="M 0 800 L 1600 775 L 1600 820 L 0 845 Z" fill="#3a1830"/>
+      </g>
+
+      <!-- Misty veil over middle -->
+      <path d="M 0 460 L 1600 460 L 1600 600 L 0 600 Z" fill="url(#pn-mist)" opacity="0.45"/>
+
+      <!-- A single tree silhouette, also in dots -->
+      <defs>
+        <pattern id="pn-tree" patternUnits="userSpaceOnUse" width="6" height="6">
+          <circle cx="1.5" cy="1.5" r="1.6" fill="#2a1820"/>
+          <circle cx="4" cy="4.5" r="1.2" fill="#3a1828"/>
+        </pattern>
+      </defs>
+      <ellipse cx="380" cy="520" rx="50" ry="68" fill="url(#pn-tree)"/>
+      <rect x="376" y="568" width="8" height="60" fill="#2a1820"/>
+    </svg>

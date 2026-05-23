@@ -1,0 +1,99 @@
+<svg role="img" aria-label="Cabernet Sauvignon illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="cs01-damask" patternUnits="userSpaceOnUse" width="60" height="60">
+          <path d="M30 6 L34 26 L54 30 L34 34 L30 54 L26 34 L6 30 L26 26 Z" fill="#3a0a14" opacity="0.4"/>
+        </pattern>
+      </defs>
+      <rect width="1600" height="900" fill="#1a0608"/>
+      <rect width="1600" height="900" fill="url(#cs01-damask)"/>
+      <!-- decorative outer frame -->
+      <rect x="60" y="60" width="1480" height="780" fill="none" stroke="#c9a064" stroke-width="2"/>
+      <rect x="74" y="74" width="1452" height="752" fill="none" stroke="#c9a064" stroke-width="0.6"/>
+      <!-- corner fleurs -->
+      <g fill="#c9a064">
+        <path d="M 110 110 L 130 90 L 150 110 L 130 130 Z M 130 80 L 130 100 M 120 90 L 140 90"/>
+        <path d="M 1490 110 L 1470 90 L 1450 110 L 1470 130 Z M 1470 80 L 1470 100 M 1460 90 L 1480 90"/>
+        <path d="M 110 790 L 130 770 L 150 790 L 130 810 Z M 130 810 L 130 830 M 120 820 L 140 820"/>
+        <path d="M 1490 790 L 1470 770 L 1450 790 L 1470 810 Z M 1470 810 L 1470 830 M 1460 820 L 1480 820"/>
+      </g>
+
+      <!-- crown -->
+      <g transform="translate(800, 200)">
+        <path d="M -110 0 L -90 -50 L -60 -20 L -30 -60 L 0 -25 L 30 -60 L 60 -20 L 90 -50 L 110 0 Z"
+              fill="#c9a064" stroke="#3a0a14" stroke-width="1.5"/>
+        <circle cx="-90" cy="-50" r="6" fill="#8b1a1f"/>
+        <circle cx="-30" cy="-60" r="6" fill="#8b1a1f"/>
+        <circle cx="30" cy="-60" r="6" fill="#8b1a1f"/>
+        <circle cx="90" cy="-50" r="6" fill="#8b1a1f"/>
+        <rect x="-110" y="0" width="220" height="14" fill="#c9a064" stroke="#3a0a14" stroke-width="1.5"/>
+      </g>
+
+      <!-- shield -->
+      <g transform="translate(800, 470)">
+        <path d="M -180 -160 L 180 -160 L 180 60 Q 180 200 0 260 Q -180 200 -180 60 Z"
+              fill="#3a0a14" stroke="#c9a064" stroke-width="4"/>
+        <!-- diagonal divisions (per saltire) -->
+        <path d="M -180 -160 L 180 260 M 180 -160 L -180 260"
+              stroke="#c9a064" stroke-width="2" opacity="0.55"/>
+        <!-- central grape cluster emblem -->
+        <g transform="translate(0, 30)">
+          <!-- cluster of 10 berries -->
+          <g fill="#c9a064">
+            <circle cx="0" cy="-50" r="14"/>
+            <circle cx="-18" cy="-30" r="14"/>
+            <circle cx="18" cy="-30" r="14"/>
+            <circle cx="-36" cy="-10" r="14"/>
+            <circle cx="0" cy="-10" r="14"/>
+            <circle cx="36" cy="-10" r="14"/>
+            <circle cx="-18" cy="10" r="14"/>
+            <circle cx="18" cy="10" r="14"/>
+            <circle cx="0" cy="30" r="14"/>
+            <circle cx="-12" cy="48" r="11"/>
+            <circle cx="12" cy="48" r="11"/>
+          </g>
+          <!-- highlight on each grape -->
+          <g fill="#3a0a14" opacity="0.4">
+            <circle cx="-4" cy="-54" r="4"/><circle cx="-22" cy="-34" r="4"/><circle cx="14" cy="-34" r="4"/>
+            <circle cx="-40" cy="-14" r="4"/><circle cx="-4" cy="-14" r="4"/><circle cx="32" cy="-14" r="4"/>
+            <circle cx="-22" cy="6" r="4"/><circle cx="14" cy="6" r="4"/><circle cx="-4" cy="26" r="4"/>
+          </g>
+          <!-- two leaves -->
+          <path d="M -56 -64 Q -90 -84 -82 -50 Q -68 -42 -56 -50 Z"
+                fill="#c9a064" stroke="#3a0a14" stroke-width="1"/>
+          <path d="M 56 -64 Q 90 -84 82 -50 Q 68 -42 56 -50 Z"
+                fill="#c9a064" stroke="#3a0a14" stroke-width="1"/>
+          <!-- tendril -->
+          <path d="M -82 -50 Q -110 -30 -100 -10 Q -94 0 -102 6"
+                fill="none" stroke="#c9a064" stroke-width="2"/>
+        </g>
+      </g>
+
+      <!-- banner with motto -->
+      <g transform="translate(800, 760)">
+        <path d="M -260 -10 L -240 -30 L -220 -10 L 220 -10 L 240 -30 L 260 -10 L 240 30 L 220 10 L -220 10 L -240 30 Z"
+              fill="#c9a064" stroke="#3a0a14" stroke-width="1.5"/>
+        <text x="0" y="6" text-anchor="middle"
+              font-family="Georgia, serif" font-style="italic"
+              font-size="20" font-weight="700" letter-spacing="0.16em"
+              fill="#3a0a14">STRUCTURA · OMNIBUS</text>
+      </g>
+
+      <!-- side oak branches -->
+      <g stroke="#c9a064" stroke-width="2.5" fill="none" opacity="0.85">
+        <path d="M 580 470 Q 460 460 380 530 Q 360 560 380 600"/>
+        <path d="M 1020 470 Q 1140 460 1220 530 Q 1240 560 1220 600"/>
+      </g>
+      <g fill="#c9a064" opacity="0.85">
+        <path d="M 440 470 Q 430 450 440 440 Q 460 446 458 470 Z"/>
+        <path d="M 420 510 Q 410 490 420 480 Q 440 486 438 510 Z"/>
+        <path d="M 400 555 Q 390 535 400 525 Q 420 531 418 555 Z"/>
+        <path d="M 1160 470 Q 1170 450 1160 440 Q 1140 446 1142 470 Z"/>
+        <path d="M 1180 510 Q 1190 490 1180 480 Q 1160 486 1162 510 Z"/>
+        <path d="M 1200 555 Q 1210 535 1200 525 Q 1180 531 1182 555 Z"/>
+      </g>
+
+      <!-- top tiny text -->
+      <text x="800" y="158" text-anchor="middle"
+            font-family="Georgia, serif" font-size="13"
+            letter-spacing="0.42em" fill="#c9a064">— MEDOC · ANNO XVII —</text>
+    </svg>

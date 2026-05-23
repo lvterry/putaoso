@@ -1,0 +1,113 @@
+<svg role="img" aria-label="Malbec illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="mb-zigzag" patternUnits="userSpaceOnUse" width="40" height="20">
+          <path d="M 0 10 L 10 0 L 20 10 L 30 0 L 40 10 L 30 20 L 20 10 L 10 20 Z" fill="#d4a058"/>
+        </pattern>
+      </defs>
+      <!-- handwoven cream backdrop -->
+      <rect width="1600" height="900" fill="#e8d8b8"/>
+
+      <!-- horizontal weave bands -->
+      <rect x="0" y="0" width="1600" height="120" fill="#3a0a14"/>
+      <rect x="0" y="120" width="1600" height="40" fill="#d4a058"/>
+      <rect x="0" y="160" width="1600" height="20" fill="#3a0a14"/>
+      <rect x="0" y="180" width="1600" height="40" fill="url(#mb-zigzag)"/>
+      <rect x="0" y="220" width="1600" height="20" fill="#3a0a14"/>
+
+      <!-- central panel: diamond field -->
+      <rect x="0" y="240" width="1600" height="420" fill="#1a0608"/>
+
+      <!-- repeating diamond motifs across the panel -->
+      <g fill="#d4a058">
+        <!-- row 1 -->
+        <g transform="translate(140, 360)">
+          <polygon points="0,-60 60,0 0,60 -60,0"/>
+          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
+          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
+        </g>
+        <g transform="translate(380, 360)">
+          <polygon points="0,-60 60,0 0,60 -60,0"/>
+          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
+          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
+        </g>
+        <g transform="translate(620, 360)">
+          <polygon points="0,-60 60,0 0,60 -60,0"/>
+          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
+          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
+        </g>
+        <g transform="translate(860, 360)">
+          <polygon points="0,-60 60,0 0,60 -60,0"/>
+          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
+          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
+        </g>
+        <g transform="translate(1100, 360)">
+          <polygon points="0,-60 60,0 0,60 -60,0"/>
+          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
+          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
+        </g>
+        <g transform="translate(1340, 360)">
+          <polygon points="0,-60 60,0 0,60 -60,0"/>
+          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
+          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
+        </g>
+
+        <!-- row 2 (offset) -->
+        <g transform="translate(260, 540)">
+          <polygon points="0,-60 60,0 0,60 -60,0"/>
+          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
+          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
+        </g>
+        <g transform="translate(500, 540)">
+          <polygon points="0,-60 60,0 0,60 -60,0"/>
+          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
+          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
+        </g>
+        <g transform="translate(740, 540)">
+          <polygon points="0,-60 60,0 0,60 -60,0"/>
+          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
+          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
+        </g>
+        <g transform="translate(980, 540)">
+          <polygon points="0,-60 60,0 0,60 -60,0"/>
+          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
+          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
+        </g>
+        <g transform="translate(1220, 540)">
+          <polygon points="0,-60 60,0 0,60 -60,0"/>
+          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
+          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
+        </g>
+      </g>
+
+      <!-- stepped pyramid (Andean condor / mountain symbol) center -->
+      <g transform="translate(800, 450)" fill="#d4a058">
+        <path d="M 0 -120 L 40 -120 L 40 -80 L 80 -80 L 80 -40 L 120 -40 L 120 0
+                 L 80 0 L 80 -40 L 40 -40 L 40 -80 L 0 -80 Z"/>
+        <path d="M 0 -120 L -40 -120 L -40 -80 L -80 -80 L -80 -40 L -120 -40 L -120 0
+                 L -80 0 L -80 -40 L -40 -40 L -40 -80 L 0 -80 Z"/>
+      </g>
+
+      <!-- horizontal bands at bottom mirroring top -->
+      <rect x="0" y="660" width="1600" height="20" fill="#3a0a14"/>
+      <rect x="0" y="680" width="1600" height="40" fill="url(#mb-zigzag)"/>
+      <rect x="0" y="720" width="1600" height="20" fill="#3a0a14"/>
+      <rect x="0" y="740" width="1600" height="40" fill="#d4a058"/>
+      <rect x="0" y="780" width="1600" height="120" fill="#3a0a14"/>
+
+      <!-- fringe / tassels at bottom -->
+      <g stroke="#3a0a14" stroke-width="3">
+        <line x1="40" y1="900" x2="40" y2="868"/><line x1="100" y1="900" x2="100" y2="876"/>
+        <line x1="160" y1="900" x2="160" y2="868"/><line x1="220" y1="900" x2="220" y2="876"/>
+        <line x1="280" y1="900" x2="280" y2="868"/><line x1="340" y1="900" x2="340" y2="876"/>
+        <line x1="400" y1="900" x2="400" y2="868"/><line x1="460" y1="900" x2="460" y2="876"/>
+        <line x1="520" y1="900" x2="520" y2="868"/><line x1="580" y1="900" x2="580" y2="876"/>
+        <line x1="640" y1="900" x2="640" y2="868"/><line x1="700" y1="900" x2="700" y2="876"/>
+        <line x1="760" y1="900" x2="760" y2="868"/><line x1="820" y1="900" x2="820" y2="876"/>
+        <line x1="880" y1="900" x2="880" y2="868"/><line x1="940" y1="900" x2="940" y2="876"/>
+        <line x1="1000" y1="900" x2="1000" y2="868"/><line x1="1060" y1="900" x2="1060" y2="876"/>
+        <line x1="1120" y1="900" x2="1120" y2="868"/><line x1="1180" y1="900" x2="1180" y2="876"/>
+        <line x1="1240" y1="900" x2="1240" y2="868"/><line x1="1300" y1="900" x2="1300" y2="876"/>
+        <line x1="1360" y1="900" x2="1360" y2="868"/><line x1="1420" y1="900" x2="1420" y2="876"/>
+        <line x1="1480" y1="900" x2="1480" y2="868"/><line x1="1540" y1="900" x2="1540" y2="876"/>
+      </g>
+    </svg>

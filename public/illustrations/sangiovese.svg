@@ -1,0 +1,89 @@
+<svg role="img" aria-label="Sangiovese illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="sg-plaster" patternUnits="userSpaceOnUse" width="60" height="60">
+          <rect width="60" height="60" fill="#e8d4a8"/>
+          <circle cx="10" cy="20" r="0.6" fill="#a8906c" opacity="0.4"/>
+          <circle cx="40" cy="35" r="0.4" fill="#a8906c" opacity="0.4"/>
+          <circle cx="25" cy="50" r="0.5" fill="#a8906c" opacity="0.4"/>
+          <circle cx="50" cy="10" r="0.3" fill="#a8906c" opacity="0.4"/>
+        </pattern>
+        <!-- crack lines as a reusable group -->
+      </defs>
+
+      <rect width="1600" height="900" fill="url(#sg-plaster)"/>
+
+      <!-- top stain/water mark -->
+      <ellipse cx="380" cy="120" rx="240" ry="40" fill="#c89870" opacity="0.18"/>
+      <ellipse cx="1280" cy="780" rx="200" ry="60" fill="#a07050" opacity="0.15"/>
+
+      <!-- arched fresco frame -->
+      <path d="M 200 200
+               L 200 700
+               L 1400 700
+               L 1400 200
+               Q 1400 100 1200 100
+               L 400 100
+               Q 200 100 200 200 Z"
+            fill="none" stroke="#7a4830" stroke-width="3" opacity="0.55"/>
+
+      <!-- a row of three cypress trees in fresco red/brown -->
+      <g fill="#5a3020" opacity="0.85">
+        <path d="M 480 540
+                 C 466 460 480 360 494 280
+                 C 502 240 506 240 510 280
+                 C 524 360 532 460 510 540 Z"/>
+        <path d="M 780 580
+                 C 762 480 780 350 798 250
+                 C 808 200 812 200 816 250
+                 C 834 350 842 480 820 580 Z"/>
+        <path d="M 1080 540
+                 C 1066 460 1080 360 1094 280
+                 C 1102 240 1106 240 1110 280
+                 C 1124 360 1132 460 1110 540 Z"/>
+      </g>
+
+      <!-- soft umbrian hills behind cypresses -->
+      <path d="M 220 580 Q 500 540 800 560 T 1380 568 L 1380 700 L 220 700 Z"
+            fill="#c8a878" opacity="0.55"/>
+      <path d="M 220 620 Q 500 600 800 615 T 1380 618 L 1380 700 L 220 700 Z"
+            fill="#a8845c" opacity="0.5"/>
+
+      <!-- a faded sun disk top center -->
+      <circle cx="800" cy="220" r="58" fill="#c44820" opacity="0.45"/>
+      <circle cx="800" cy="220" r="42" fill="#a83818" opacity="0.4"/>
+
+      <!-- a single jug / amphora in the foreground (faded ochre) -->
+      <g transform="translate(800, 720)" opacity="0.7">
+        <path d="M -30 -60
+                 Q -45 -55 -45 -30
+                 Q -45 0 -30 20
+                 L 30 20
+                 Q 45 0 45 -30
+                 Q 45 -55 30 -60
+                 Z" fill="#8a4828"/>
+        <ellipse cx="0" cy="-60" rx="30" ry="6" fill="#6a3818"/>
+        <path d="M -40 -50 Q -55 -30 -50 -10" fill="none" stroke="#8a4828" stroke-width="4"/>
+        <path d="M 40 -50 Q 55 -30 50 -10" fill="none" stroke="#8a4828" stroke-width="4"/>
+      </g>
+
+      <!-- crack lines through plaster (the key "aged fresco" tell) -->
+      <g fill="none" stroke="#1a1006" stroke-width="0.8" opacity="0.5">
+        <path d="M 120 0 L 180 80 L 160 200 L 240 320 L 200 480 L 280 620 L 220 800 L 280 900"/>
+        <path d="M 700 0 L 740 120 L 700 280 L 760 460 L 720 660 L 780 820"/>
+        <path d="M 1300 0 L 1280 140 L 1340 320 L 1300 520 L 1380 720 L 1340 900"/>
+        <path d="M 380 200 L 460 280" /><path d="M 880 380 L 940 460"/>
+        <path d="M 1120 540 L 1180 620"/><path d="M 540 700 L 600 780"/>
+      </g>
+
+      <!-- paint-loss patches (where plaster fell off) -->
+      <g fill="#d4b884" opacity="0.6">
+        <path d="M 340 460 Q 370 450 380 480 Q 360 500 320 490 Z"/>
+        <path d="M 1180 280 Q 1210 270 1220 300 Q 1200 320 1160 310 Z"/>
+        <path d="M 600 800 Q 640 790 660 820 Q 630 840 580 830 Z"/>
+      </g>
+
+      <!-- Latin inscription in faded red -->
+      <text x="800" y="160" text-anchor="middle"
+            font-family="'Trajan Pro', Georgia, serif" font-size="22"
+            letter-spacing="0.32em" fill="#7a2818" opacity="0.7">SANCTI · IOVIS · SANGUIS</text>
+    </svg>

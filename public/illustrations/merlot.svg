@@ -1,0 +1,27 @@
+<svg role="img" aria-label="Merlot illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <rect x="0" y="0" width="1600" height="900" fill="#4a1a28"/>
+      <rect x="0" y="285" width="1600" height="615" fill="#9c3a30"/>
+      <rect x="0" y="455" width="1600" height="445" fill="#d8794a"/>
+      <rect x="0" y="565" width="1600" height="335" fill="#ecb27a"/>
+      <circle cx="1180" cy="580" r="92" fill="#f5d8a4"/>
+      <g fill="none" stroke="#2a0a14" stroke-width="3" stroke-linecap="round">
+        <path d="M 360 200 Q 378 188 396 200 Q 414 188 432 200"/>
+        <path d="M 470 250 Q 484 240 498 250 Q 512 240 526 250"/>
+        <path d="M 310 290 Q 322 282 334 290 Q 346 282 358 290"/>
+      </g>
+      <path d="M 0 615 C 180 590 320 605 460 600 C 600 595 720 585 880 595 C 1020 605 1180 615 1320 600 C 1440 590 1520 600 1600 595 L 1600 720 L 0 720 Z" fill="#5a1820"/>
+      <path d="M 0 695 C 220 668 420 680 580 678 C 720 676 880 660 1040 668 C 1200 676 1380 686 1540 678 C 1580 676 1600 678 1600 678 L 1600 820 L 0 820 Z" fill="#2a0a18"/>
+      <path d="M 268 700 C 256 600 268 470 282 410 C 290 380 294 380 298 410 C 308 470 312 600 296 700 Z" fill="#160610"/>
+      <path d="M 1360 700 C 1352 640 1360 560 1370 510 C 1376 488 1380 488 1384 510 C 1392 560 1396 640 1382 700 Z" fill="#160610"/>
+      <g transform="translate(710, 622)">
+        <rect x="0" y="0" width="62" height="44" fill="#140610"/>
+        <polygon points="-6,0 31,-24 68,0" fill="#140610"/>
+        <rect x="49" y="-15" width="9" height="15" fill="#140610"/>
+        <rect x="22" y="18" width="9" height="14" fill="#f5d8a4"/>
+      </g>
+      <path d="M 0 790 C 300 770 700 778 1000 780 C 1200 781 1400 770 1600 778 L 1600 900 L 0 900 Z" fill="#140610"/>
+      <g transform="translate(1490, 805)">
+        <rect x="0" y="0" width="56" height="56" fill="#a02828"/>
+        <text x="28" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="700" fill="#f5d8a4" font-style="italic">M</text>
+      </g>
+    </svg>

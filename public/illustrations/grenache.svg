@@ -1,0 +1,71 @@
+<svg role="img" aria-label="Grenache illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <!-- warm cream background -->
+      <rect width="1600" height="900" fill="#f5e8d0"/>
+
+      <!-- big asymmetric coral blob (sun / fruit) -->
+      <path d="M 240 200
+               C 360 140 540 160 600 280
+               C 660 400 580 540 460 580
+               C 320 620 200 540 180 420
+               C 160 300 180 240 240 200 Z"
+            fill="#e85838"/>
+
+      <!-- deep pink organic shape (overlapping) -->
+      <path d="M 500 380
+               C 600 320 760 340 820 460
+               C 880 580 800 680 680 700
+               C 540 720 440 640 440 540
+               C 440 460 440 420 500 380 Z"
+            fill="#d83860" opacity="0.95"/>
+
+      <!-- big sun yellow disc -->
+      <circle cx="1180" cy="280" r="180" fill="#f0c038"/>
+
+      <!-- the sun: scalloped petals around it (Matisse Soleil) -->
+      <g fill="#f0c038">
+        <path d="M 1180 80 Q 1200 100 1200 130 L 1160 130 Q 1160 100 1180 80 Z"/>
+        <path d="M 1330 130 Q 1350 150 1340 180 L 1300 160 Q 1310 130 1330 130 Z"/>
+        <path d="M 1380 280 Q 1380 300 1360 320 L 1340 280 Q 1360 270 1380 280 Z"/>
+        <path d="M 1340 430 Q 1320 450 1290 440 L 1310 410 Q 1330 410 1340 430 Z"/>
+        <path d="M 1180 480 Q 1160 480 1140 460 L 1180 440 Q 1200 460 1180 480 Z"/>
+        <path d="M 1020 430 Q 1000 410 1020 380 L 1050 410 Q 1040 430 1020 430 Z"/>
+        <path d="M 980 280 Q 980 260 1000 240 L 1020 280 Q 1000 290 980 280 Z"/>
+        <path d="M 1020 130 Q 1040 110 1070 120 L 1050 150 Q 1030 150 1020 130 Z"/>
+      </g>
+
+      <!-- big bold blue leaf shape spilling from right -->
+      <path d="M 1100 600
+               C 1240 580 1380 620 1480 700
+               C 1560 760 1560 820 1480 880
+               L 1100 880
+               C 1020 820 1020 700 1100 600 Z"
+            fill="#3868a8"/>
+
+      <!-- big floating green leaf (top right) -->
+      <path d="M 1300 100
+               Q 1440 80 1480 200
+               Q 1460 280 1380 280
+               Q 1320 240 1300 180 Z"
+            fill="#4a8848"/>
+
+      <!-- small organic dot constellation (grapes scattered) -->
+      <g fill="#3a0a14">
+        <circle cx="900" cy="700" r="38"/><circle cx="970" cy="680" r="32"/>
+        <circle cx="940" cy="740" r="36"/><circle cx="1000" cy="730" r="30"/>
+        <circle cx="870" cy="760" r="28"/>
+      </g>
+
+      <!-- a single bold green stem squiggle -->
+      <path d="M 200 700 C 280 660 360 720 440 680 C 520 640 600 740 680 700"
+            fill="none" stroke="#4a8848" stroke-width="14" stroke-linecap="round"/>
+
+      <!-- bottom-left coral wedge -->
+      <path d="M 0 800 L 200 760 L 220 820 L 100 880 L 0 900 Z" fill="#e85838"/>
+
+      <!-- text in informal hand-cut sans -->
+      <text x="60" y="120" font-family="'Futura', 'Avenir', sans-serif"
+            font-size="56" font-weight="700" letter-spacing="-0.02em"
+            fill="#3a0a14">grenache</text>
+      <text x="64" y="160" font-family="'Futura', 'Avenir', sans-serif"
+            font-size="16" letter-spacing="0.3em" fill="#3a0a14">— soleil du sud —</text>
+    </svg>

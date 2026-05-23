@@ -1,0 +1,132 @@
+<svg role="img" aria-label="Gewürztraminer illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="gw-arabesque" patternUnits="userSpaceOnUse" width="60" height="60">
+          <rect width="60" height="60" fill="#1a3858"/>
+          <path d="M 30 8 Q 50 30 30 52 Q 10 30 30 8 Z" fill="#c89858" opacity="0.3"/>
+          <circle cx="30" cy="30" r="2" fill="#c89858" opacity="0.6"/>
+        </pattern>
+      </defs>
+
+      <!-- soft pink background -->
+      <rect width="1600" height="900" fill="#f0d4d0"/>
+
+      <!-- decorative gold rectangular border -->
+      <rect x="60" y="60" width="1480" height="780" fill="#fbeac4"/>
+      <rect x="60" y="60" width="1480" height="780" fill="none" stroke="#a85838" stroke-width="6"/>
+      <rect x="80" y="80" width="1440" height="740" fill="none" stroke="#a85838" stroke-width="1"/>
+
+      <!-- inner deep-blue panel with arabesque -->
+      <rect x="180" y="180" width="1240" height="540" fill="url(#gw-arabesque)"/>
+      <rect x="180" y="180" width="1240" height="540" fill="none" stroke="#c89858" stroke-width="3"/>
+
+      <!-- central golden lozenge (medallion) -->
+      <g transform="translate(800, 450)">
+        <path d="M 0 -200 L 200 0 L 0 200 L -200 0 Z" fill="#fbeac4"/>
+        <path d="M 0 -200 L 200 0 L 0 200 L -200 0 Z" fill="none" stroke="#a85838" stroke-width="2"/>
+        <path d="M 0 -170 L 170 0 L 0 170 L -170 0 Z" fill="none" stroke="#a85838" stroke-width="0.6"/>
+
+        <!-- a rose blossom inside -->
+        <g fill="#d04060">
+          <circle r="14"/>
+          <ellipse cx="0" cy="-30" rx="22" ry="14"/>
+          <ellipse cx="30" cy="0" rx="14" ry="22"/>
+          <ellipse cx="0" cy="30" rx="22" ry="14"/>
+          <ellipse cx="-30" cy="0" rx="14" ry="22"/>
+          <ellipse cx="22" cy="-22" rx="18" ry="12" transform="rotate(45 22 -22)"/>
+          <ellipse cx="22" cy="22" rx="18" ry="12" transform="rotate(-45 22 22)"/>
+          <ellipse cx="-22" cy="22" rx="18" ry="12" transform="rotate(45 -22 22)"/>
+          <ellipse cx="-22" cy="-22" rx="18" ry="12" transform="rotate(-45 -22 -22)"/>
+        </g>
+        <g fill="#7a1830">
+          <circle r="8"/>
+          <circle cx="0" cy="-28" r="4"/><circle cx="28" cy="0" r="4"/>
+          <circle cx="0" cy="28" r="4"/><circle cx="-28" cy="0" r="4"/>
+        </g>
+
+        <!-- leaves jutting out of lozenge tips -->
+        <path d="M 0 -200 Q -28 -240 -10 -270 Q 10 -270 14 -240 Z" fill="#4a6038"/>
+        <path d="M 200 0 Q 240 -28 270 -10 Q 270 10 240 14 Z" fill="#4a6038"/>
+        <path d="M 0 200 Q 28 240 10 270 Q -10 270 -14 240 Z" fill="#4a6038"/>
+        <path d="M -200 0 Q -240 28 -270 10 Q -270 -10 -240 -14 Z" fill="#4a6038"/>
+      </g>
+
+      <!-- 4 corner cartouches with stylized lychees -->
+      <g>
+        <g transform="translate(280, 280)">
+          <circle r="50" fill="#fbeac4" stroke="#a85838" stroke-width="2"/>
+          <!-- lychee fruit -->
+          <circle r="30" fill="#d04060"/>
+          <g fill="#a02040">
+            <circle cx="-12" cy="-12" r="3"/><circle cx="8" cy="-14" r="3"/>
+            <circle cx="-14" cy="6" r="3"/><circle cx="10" cy="4" r="3"/>
+            <circle cx="-4" cy="14" r="3"/><circle cx="14" cy="-2" r="3"/>
+            <circle cx="-2" cy="-4" r="3"/><circle cx="6" cy="14" r="3"/>
+          </g>
+          <!-- stem -->
+          <line x1="0" y1="-30" x2="0" y2="-44" stroke="#4a6038" stroke-width="2"/>
+          <!-- tiny leaf -->
+          <path d="M 0 -38 Q 10 -42 14 -34 Q 8 -32 0 -38 Z" fill="#4a6038"/>
+        </g>
+        <g transform="translate(1320, 280)">
+          <circle r="50" fill="#fbeac4" stroke="#a85838" stroke-width="2"/>
+          <circle r="30" fill="#d04060"/>
+          <g fill="#a02040">
+            <circle cx="-12" cy="-12" r="3"/><circle cx="8" cy="-14" r="3"/>
+            <circle cx="-14" cy="6" r="3"/><circle cx="10" cy="4" r="3"/>
+            <circle cx="-4" cy="14" r="3"/><circle cx="14" cy="-2" r="3"/>
+            <circle cx="-2" cy="-4" r="3"/><circle cx="6" cy="14" r="3"/>
+          </g>
+          <line x1="0" y1="-30" x2="0" y2="-44" stroke="#4a6038" stroke-width="2"/>
+          <path d="M 0 -38 Q 10 -42 14 -34 Q 8 -32 0 -38 Z" fill="#4a6038"/>
+        </g>
+        <g transform="translate(280, 620)">
+          <circle r="50" fill="#fbeac4" stroke="#a85838" stroke-width="2"/>
+          <circle r="30" fill="#d04060"/>
+          <g fill="#a02040">
+            <circle cx="-12" cy="-12" r="3"/><circle cx="8" cy="-14" r="3"/>
+            <circle cx="-14" cy="6" r="3"/><circle cx="10" cy="4" r="3"/>
+            <circle cx="-4" cy="14" r="3"/><circle cx="14" cy="-2" r="3"/>
+            <circle cx="-2" cy="-4" r="3"/><circle cx="6" cy="14" r="3"/>
+          </g>
+          <line x1="0" y1="-30" x2="0" y2="-44" stroke="#4a6038" stroke-width="2"/>
+          <path d="M 0 -38 Q 10 -42 14 -34 Q 8 -32 0 -38 Z" fill="#4a6038"/>
+        </g>
+        <g transform="translate(1320, 620)">
+          <circle r="50" fill="#fbeac4" stroke="#a85838" stroke-width="2"/>
+          <circle r="30" fill="#d04060"/>
+          <g fill="#a02040">
+            <circle cx="-12" cy="-12" r="3"/><circle cx="8" cy="-14" r="3"/>
+            <circle cx="-14" cy="6" r="3"/><circle cx="10" cy="4" r="3"/>
+            <circle cx="-4" cy="14" r="3"/><circle cx="14" cy="-2" r="3"/>
+            <circle cx="-2" cy="-4" r="3"/><circle cx="6" cy="14" r="3"/>
+          </g>
+          <line x1="0" y1="-30" x2="0" y2="-44" stroke="#4a6038" stroke-width="2"/>
+          <path d="M 0 -38 Q 10 -42 14 -34 Q 8 -32 0 -38 Z" fill="#4a6038"/>
+        </g>
+      </g>
+
+      <!-- vine arabesques connecting the cartouches -->
+      <g fill="none" stroke="#c89858" stroke-width="1.5" opacity="0.85">
+        <path d="M 340 280 Q 580 240 800 250 Q 1020 240 1260 280"/>
+        <path d="M 340 620 Q 580 660 800 650 Q 1020 660 1260 620"/>
+        <path d="M 280 340 Q 240 460 280 580"/>
+        <path d="M 1320 340 Q 1360 460 1320 580"/>
+      </g>
+
+      <!-- little dot/star decorations along the arabesque -->
+      <g fill="#c89858">
+        <circle cx="460" cy="250" r="3"/><circle cx="680" cy="244" r="3"/>
+        <circle cx="920" cy="244" r="3"/><circle cx="1140" cy="250" r="3"/>
+        <circle cx="460" cy="650" r="3"/><circle cx="680" cy="656" r="3"/>
+        <circle cx="920" cy="656" r="3"/><circle cx="1140" cy="650" r="3"/>
+      </g>
+
+      <!-- title in arching script -->
+      <text x="800" y="138" text-anchor="middle"
+            font-family="'Estedad', 'Scheherazade New', 'Times New Roman', serif"
+            font-size="36" font-style="italic" letter-spacing="0.18em"
+            fill="#7a1830">Gewürztraminer</text>
+      <text x="800" y="780" text-anchor="middle"
+            font-family="Georgia, serif" font-size="14"
+            letter-spacing="0.5em" fill="#7a1830">— rose · lychee · spice —</text>
+    </svg>

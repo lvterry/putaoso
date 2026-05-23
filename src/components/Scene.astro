@@ -3,8 +3,6 @@ import StudyStillLife from './scenes/StudyStillLife.astro';
 import VineyardDawn from './scenes/VineyardDawn.astro';
 import ChateauSundown from './scenes/ChateauSundown.astro';
 import SlateSlope from './scenes/SlateSlope.astro';
-import VarietyScene from './VarietyScene.astro';
-import { VARIETY_SCENES } from '../data/variety-scenes';
 
 interface Props {
   scene: 'study-still-life' | 'vineyard-dawn' | 'chateau-sundown' | 'slate-slope';
@@ -13,12 +11,34 @@ interface Props {
 }
 
 const { scene, caption, slug } = Astro.props;
-const varietyProfile = slug ? VARIETY_SCENES[slug] : undefined;
+const illustrationSlugs = new Set([
+  'beibinghong',
+  'cabernet-franc',
+  'cabernet-gernischt',
+  'cabernet-sauvignon',
+  'chardonnay',
+  'gewurztraminer',
+  'grenache',
+  'longyan',
+  'malbec',
+  'marselan',
+  'merlot',
+  'pinot-grigio',
+  'pinot-noir',
+  'riesling',
+  'sangiovese',
+  'sauvignon-blanc',
+  'syrah',
+  'tempranillo',
+  'viognier',
+  'zinfandel',
+]);
+const illustrationSrc = slug && illustrationSlugs.has(slug) ? `/illustrations/${slug}.svg` : undefined;
 ---
 
 <div class="scene">
-  {varietyProfile ? (
-    <VarietyScene slug={slug!} profile={varietyProfile} />
+  {illustrationSrc ? (
+    <img src={illustrationSrc} alt={caption} loading="eager" decoding="async" />
   ) : (
     <>
       {scene === 'study-still-life' && <StudyStillLife />}

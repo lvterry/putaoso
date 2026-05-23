@@ -1,0 +1,78 @@
+<svg role="img" aria-label="Syrah illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <!-- pale unbleached paper -->
+      <rect width="1600" height="900" fill="#e0d4b8"/>
+
+      <!-- big slabby black sky carved with rough gouge marks -->
+      <path d="M 0 0 L 1600 0 L 1600 480
+               L 1500 470 L 1380 478 L 1240 472 L 1100 480
+               L 960 470 L 820 478 L 680 472 L 540 480
+               L 400 470 L 260 478 L 120 472 L 0 480 Z"
+            fill="#0e0a08"/>
+
+      <!-- jagged white slash through black sky (lightning / wind) -->
+      <path d="M 200 60 L 240 180 L 210 200 L 280 320 L 240 340 L 320 460"
+            fill="none" stroke="#e0d4b8" stroke-width="6" stroke-linejoin="miter"/>
+
+      <!-- gouge marks across the black sky -->
+      <g stroke="#e0d4b8" stroke-width="3" stroke-linecap="square" opacity="0.85">
+        <path d="M 460 80 L 540 90"/><path d="M 660 110 L 760 100"/>
+        <path d="M 900 80 L 1020 90"/><path d="M 1180 120 L 1300 110"/>
+        <path d="M 480 200 L 580 195"/><path d="M 780 220 L 880 210"/>
+        <path d="M 1080 240 L 1200 230"/><path d="M 1340 220 L 1460 215"/>
+        <path d="M 540 320 L 640 310"/><path d="M 880 340 L 1000 330"/>
+        <path d="M 1180 350 L 1320 340"/>
+      </g>
+
+      <!-- crooked horizon mountain in heavy black -->
+      <path d="M 0 540
+               L 220 460 L 320 500 L 480 420 L 620 490
+               L 780 400 L 920 480 L 1080 410 L 1280 490
+               L 1440 440 L 1600 500 L 1600 600 L 0 600 Z"
+            fill="#0e0a08"/>
+
+      <!-- the figure: a wild boar silhouette (peppery, savage) -->
+      <g transform="translate(720, 640)" fill="#0e0a08">
+        <!-- body (chunky woodcut shape) -->
+        <path d="M -180 40 L -160 -20 L -120 -50 L -70 -60 L -20 -65
+                 L 30 -68 L 80 -65 L 130 -55 L 170 -30 L 200 -10 L 220 30
+                 L 240 50 L 260 80 L 240 100 L 220 110
+                 L 180 110 L 170 130 L 150 130 L 140 115
+                 L 80 115 L 70 135 L 50 135 L 40 115
+                 L -100 115 L -110 135 L -130 135 L -140 115
+                 L -180 110 L -200 100 L -200 70 L -180 60 Z"/>
+        <!-- ear -->
+        <path d="M -50 -55 L -40 -90 L -10 -75 Z" fill="#0e0a08"/>
+        <!-- tusks -->
+        <path d="M 215 0 L 250 -20 L 240 -5 Z" fill="#e0d4b8"/>
+        <path d="M 220 10 L 256 0 L 244 12 Z" fill="#e0d4b8"/>
+        <!-- eye -->
+        <circle cx="160" cy="-15" r="3" fill="#e0d4b8"/>
+        <!-- bristles on back -->
+        <g stroke="#0e0a08" stroke-width="4" fill="none" stroke-linecap="round">
+          <line x1="-100" y1="-65" x2="-110" y2="-85"/>
+          <line x1="-70" y1="-70" x2="-78" y2="-92"/>
+          <line x1="-30" y1="-72" x2="-36" y2="-94"/>
+          <line x1="10" y1="-72" x2="6" y2="-94"/>
+          <line x1="50" y1="-72" x2="48" y2="-92"/>
+          <line x1="90" y1="-68" x2="92" y2="-88"/>
+        </g>
+        <!-- coarse hatching on belly -->
+        <g stroke="#e0d4b8" stroke-width="2" opacity="0.4">
+          <line x1="-140" y1="60" x2="-100" y2="60"/>
+          <line x1="-80" y1="65" x2="-30" y2="65"/>
+          <line x1="0" y1="70" x2="60" y2="70"/>
+          <line x1="80" y1="65" x2="140" y2="65"/>
+        </g>
+      </g>
+
+      <!-- ground: rough zigzag -->
+      <path d="M 0 800 L 100 780 L 180 810 L 280 785 L 380 815 L 480 790
+               L 580 818 L 680 795 L 780 822 L 880 798 L 980 820 L 1080 798
+               L 1180 822 L 1280 800 L 1380 824 L 1480 802 L 1600 822
+               L 1600 900 L 0 900 Z" fill="#0e0a08"/>
+
+      <!-- title in carved letters -->
+      <text x="80" y="80" font-family="Georgia, 'Black Ops One', serif"
+            font-size="36" font-weight="900" letter-spacing="0.18em"
+            fill="#e0d4b8">SYRAH</text>
+    </svg>

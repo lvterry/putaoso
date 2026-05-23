@@ -1,0 +1,53 @@
+<svg role="img" aria-label="Sauvignon Blanc illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <!-- cream off-white paper -->
+      <rect width="1600" height="900" fill="#f0ead8"/>
+
+      <!-- huge tilted black diagonal -->
+      <polygon points="0,200 1600,500 1600,640 0,340" fill="#0e0a08"/>
+
+      <!-- bright lime/grass green disc behind everything -->
+      <circle cx="1100" cy="320" r="220" fill="#9bb83a"/>
+
+      <!-- huge black diagonal again, on top, with rotation -->
+      <polygon points="0,560 1600,260 1600,400 0,700" fill="#0e0a08" opacity="0.95"/>
+
+      <!-- small white wedge across the green disc -->
+      <polygon points="900,300 1300,200 1320,260 920,360" fill="#f0ead8"/>
+
+      <!-- bold rectangular blocks (constructivist building blocks) -->
+      <rect x="120" y="100" width="60" height="320" fill="#9bb83a"/>
+      <rect x="200" y="60" width="36" height="280" fill="#0e0a08"/>
+      <rect x="120" y="440" width="160" height="22" fill="#c44820"/>
+
+      <!-- big sans-serif type, anchored asymmetrically -->
+      <g font-family="'Helvetica Neue', 'Arial Black', sans-serif">
+        <text x="380" y="240" font-size="160" font-weight="900"
+              letter-spacing="-0.04em" fill="#0e0a08">SAUVIGNON</text>
+        <text x="380" y="380" font-size="160" font-weight="900"
+              letter-spacing="-0.04em" fill="#9bb83a">BLANC</text>
+      </g>
+
+      <!-- a circle of small dots representing acidity / lime -->
+      <g fill="#c44820">
+        <circle cx="320" cy="700" r="12"/><circle cx="380" cy="700" r="12"/>
+        <circle cx="440" cy="700" r="12"/><circle cx="500" cy="700" r="12"/>
+        <circle cx="560" cy="700" r="12"/><circle cx="620" cy="700" r="12"/>
+        <circle cx="680" cy="700" r="12"/><circle cx="740" cy="700" r="12"/>
+      </g>
+
+      <!-- a sharp triangle wedge -->
+      <polygon points="320,720 740,720 530,820" fill="#0e0a08"/>
+
+      <!-- thick bottom bar with type -->
+      <rect x="0" y="860" width="1600" height="40" fill="#0e0a08"/>
+      <text x="60" y="888" font-family="'Helvetica Neue', Arial, sans-serif"
+            font-size="16" letter-spacing="0.4em" fill="#f0ead8" font-weight="700">№ 09 · 长相思 · LOIRE / MARLBOROUGH · MMXXVI</text>
+
+      <!-- vertical thin red line at right -->
+      <rect x="1500" y="60" width="6" height="780" fill="#c44820"/>
+
+      <!-- a constructivist star-burst at the top right -->
+      <g transform="translate(1380, 140)" fill="#0e0a08">
+        <polygon points="0,-40 8,-12 38,-12 14,8 22,38 0,20 -22,38 -14,8 -38,-12 -8,-12"/>
+      </g>
+    </svg>
