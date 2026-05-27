@@ -1,5 +1,19 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import VarietyPicker from '../components/VarietyPicker.astro';
+
+const all = await getCollection('varieties');
+const liveForPicker = all
+  .filter((v) => v.data.status === 'live')
+  .sort((a, b) => a.data.number - b.data.number)
+  .map((v) => ({
+    slug: v.slug,
+    name_en: v.data.name_en,
+    name_cn: v.data.name_cn,
+    type: v.data.type,
+    number: v.data.number,
+  }));
 ---
 
 <BaseLayout
@@ -7,6 +21,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="将不同的葡萄品种放在一起，对比它们的参数与风味差异。"
   containerWidth="wide"
 >
+  <VarietyPicker varieties={liveForPicker} />
+
   <div class="compare-page">
     <header class="compare-page-head">
       <div class="section-label">Compare</div>
@@ -33,31 +49,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <script>
   (() => {
-    /** ---- 入口 ---- */
     const container = document.getElementById('compare-table-container');
     const emptyEl = document.getElementById('compare-empty');
     const modifyBtn = document.getElementById('compare-modify-btn');
     const emptyBtn = document.getElementById('compare-empty-btn');
 
-    /** 缓存品种数据 */
     let ALL_VARIETIES = [];
     let ALL_SLUGS = [];
 
-    /** 从 hash 解析 slug 列表 */
+    // ===== 工具函数（与 compare-helpers.ts 保持一致） =====
     function parseHash() {
       const raw = location.hash.replace(/^#/, '').trim();
       if (!raw) return [];
       return raw.split(',').map((s) => s.trim()).filter(Boolean);
     }
 
-    /** HTML 转义 */
     function esc(s) {
       const div = document.createElement('div');
       div.textContent = s;
       return div.innerHTML;
     }
 
-    /** 点状条 HTML */
     function dotsHtml(value, label) {
       let d = '<div class="compare-dots"><div class="compare-dots-bar">';
       for (let i = 0; i < 5; i++) {
@@ -67,17 +79,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       return d;
     }
 
-    /** 构建一行 */
-    function row(dim, cells) {
-      let r = `<div class="compare-row"><div class="compare-cell compare-dim">${esc(dim)}</div>`;
-      for (const cell of cells) {
-        r += `<div class="compare-cell compare-val">${cell}</div>`;
-      }
-      r += '</div>';
-      return r;
+    // ===== 提取风味关键词 =====
+    function extractFlavors(text) {
+      return text
+        .replace(/[。、，（）\(\)]/g, ' ')
+        .split(/[、，,，\s]+/)
+        .filter((f) => f.length > 0 && f.length <= 8)
+        .slice(0, 5);
     }
 
-    /** 渲染对比表格 */
+    // ===== 构建一个品种的维度列表（用于移动端卡片） =====
+    function varietyFields(v) {
+      const dims = [];
+      dims.push(['类型', `<span class="compare-type-badge" data-type="${v.type}">${v.type === 'red' ? '红葡萄' : v.type === 'white' ? '白葡萄' : '桃红'}</span>`]);
+      dims.push(['原产地', esc(v.origin)]);
+      dims.push(['风味', `<div class="compare-flavors">${extractFlavors(v.flavors_professional).map((f) => `<span class="compare-flavor-tag">${esc(f)}</span>`).join('')}</div>`]);
+      dims.push(['酸度', dotsHtml(v.palate.acidity, v.palate.acidity_label)]);
+
+      let secondDim, secondVal;
+      if (v.type === 'red') {
+        secondDim = '单宁';
+        secondVal = dotsHtml(v.palate.tannin, v.palate.tannin_label);
+      } else {
+        secondDim = '甜度';
+        secondVal = dotsHtml(v.palate.sweetness, v.palate.sweetness_label);
+      }
+      dims.push([secondDim, secondVal]);
+      dims.push(['酒体', dotsHtml(v.palate.body, v.palate.body_label)]);
+      dims.push(['入门难度', dotsHtml(v.palate.beginner_difficulty, v.palate.beginner_difficulty_label)]);
+      dims.push(['价格区间', `<span class="compare-price">¥${v.price.min} – ¥${v.price.max}</span>`]);
+      dims.push(['配餐推荐', `<ul class="compare-pairings">${v.pairings.slice(0, 2).map((p) => `<li>${esc(p)}</li>`).join('')}</ul>`]);
+      dims.push(['标签', `<div class="compare-tags">${v.flavor_tags.map((t) => `<span class="compare-tag">${esc(t.replace(/-/g, ' '))}</span>`).join('')}</div>`]);
+      return dims;
+    }
+
+    // ===== 渲染 =====
     function render() {
       const slugs = parseHash();
       const validSet = new Set(ALL_SLUGS);
@@ -92,96 +128,85 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         return;
       }
 
-      // 按 number 排序
       const slugOrder = new Map(ALL_VARIETIES.map((v) => [v.slug, v.number]));
       selected.sort((a, b) => (slugOrder.get(a) ?? 999) - (slugOrder.get(b) ?? 999));
-
       const sel = ALL_VARIETIES.filter((v) => selected.includes(v.slug));
+      const n = sel.length;
 
-      // 设置 grid 列数
-      const colCount = sel.length + 1;
-      let html = `<div class="compare-wrapper" style="grid-template-columns: 120px repeat(${sel.length}, 1fr);">`;
+      // ---- 桌面端：网格表格 ----
+      let html = '<div class="compare-desktop">';
+      html += '<div class="compare-wrapper">';
+
+      const grid = (inside) => inside.map((cell) => `<td class="compare-cell compare-val">${cell}</td>`).join('');
 
       // 表头
-      html += '<div class="compare-header" style="display: grid; grid-template-columns: 120px repeat(' + sel.length + ', 1fr);">';
-      html += '<div class="compare-cell compare-dim">维度</div>';
+      html += `<table class="compare-table"><thead><tr><th class="compare-cell compare-dim"></th>`;
       for (const v of sel) {
-        html += `<div class="compare-cell compare-col-head" data-type="${v.type}">`;
-        html += `<div class="compare-col-en">${esc(v.name_en)}</div>`;
-        html += `<div class="compare-col-cn">${esc(v.name_cn)}</div>`;
-        html += '</div>';
+        html += `<th class="compare-cell compare-col-head" data-type="${v.type}"><div class="compare-col-en">${esc(v.name_en)}</div><div class="compare-col-cn">${esc(v.name_cn)}</div></th>`;
       }
-      html += '</div>';
+      html += '</tr></thead><tbody>';
 
       // 类型
-      html += `<div class="compare-row" style="display: grid; grid-template-columns: 120px repeat(${sel.length}, 1fr);">`;
-      html += '<div class="compare-cell compare-dim">类型</div>';
-      for (const v of sel) {
+      html += `<tr><td class="compare-cell compare-dim">类型</td>${grid(sel.map((v) => {
         const label = v.type === 'red' ? '红葡萄' : v.type === 'white' ? '白葡萄' : '桃红';
-        html += `<div class="compare-cell compare-val"><span class="compare-type-badge" data-type="${v.type}">${label}</span></div>`;
-      }
-      html += '</div>';
+        return `<span class="compare-type-badge" data-type="${v.type}">${label}</span>`;
+      }))}</tr>`;
 
       // 原产地
-      html += `<div class="compare-row" style="display: grid; grid-template-columns: 120px repeat(${sel.length}, 1fr);">`;
-      html += '<div class="compare-cell compare-dim">原产地</div>';
-      for (const v of sel) {
-        html += `<div class="compare-cell compare-val">${esc(v.origin)}</div>`;
-      }
-      html += '</div>';
+      html += `<tr><td class="compare-cell compare-dim">原产地</td>${grid(sel.map((v) => esc(v.origin)))}</tr>`;
 
       // 风味
-      html += `<div class="compare-row" style="display: grid; grid-template-columns: 120px repeat(${sel.length}, 1fr);">`;
-      html += '<div class="compare-cell compare-dim">风味</div>';
-      for (const v of sel) {
-        const flavors = v.flavors_professional
-          .replace(/[。、，]/g, ' ')
-          .split(/[、，,，\s]+/)
-          .filter((f) => f.length > 0 && f.length <= 8)
-          .slice(0, 5)
-          .map((f) => `<span class="compare-flavor-tag">${esc(f)}</span>`)
-          .join('');
-        html += `<div class="compare-cell compare-val"><div class="compare-flavors">${flavors}</div></div>`;
-      }
-      html += '</div>';
+      html += `<tr><td class="compare-cell compare-dim">风味</td>${grid(sel.map((v) => {
+        const flavors = extractFlavors(v.flavors_professional).map((f) => `<span class="compare-flavor-tag">${esc(f)}</span>`).join('');
+        return `<div class="compare-flavors">${flavors}</div>`;
+      }))}</tr>`;
 
       // 酸度
-      html += rowWithGrid('酸度', sel.map((v) => dotsHtml(v.palate.acidity, v.palate.acidity_label)), sel.length);
+      html += `<tr><td class="compare-cell compare-dim">酸度</td>${grid(sel.map((v) => dotsHtml(v.palate.acidity, v.palate.acidity_label)))}</tr>`;
 
       // 单宁/甜度
       const hasRed = sel.some((v) => v.type === 'red');
       const hasWhite = sel.some((v) => v.type === 'white');
       const tanninDim = hasRed && hasWhite ? '单宁 / 甜度' : hasRed ? '单宁' : '甜度';
-      html += rowWithGrid(tanninDim, sel.map((v) => {
+      html += `<tr><td class="compare-cell compare-dim">${tanninDim}</td>${grid(sel.map((v) => {
         if (v.type === 'red') return dotsHtml(v.palate.tannin, v.palate.tannin_label);
         return dotsHtml(v.palate.sweetness, v.palate.sweetness_label);
-      }), sel.length);
+      }))}</tr>`;
 
       // 酒体
-      html += rowWithGrid('酒体', sel.map((v) => dotsHtml(v.palate.body, v.palate.body_label)), sel.length);
+      html += `<tr><td class="compare-cell compare-dim">酒体</td>${grid(sel.map((v) => dotsHtml(v.palate.body, v.palate.body_label)))}</tr>`;
 
       // 入门难度
-      html += rowWithGrid('入门难度', sel.map((v) => dotsHtml(v.palate.beginner_difficulty, v.palate.beginner_difficulty_label)), sel.length);
+      html += `<tr><td class="compare-cell compare-dim">入门难度</td>${grid(sel.map((v) => dotsHtml(v.palate.beginner_difficulty, v.palate.beginner_difficulty_label)))}</tr>`;
 
       // 价格区间
-      html += rowWithGrid('价格区间', sel.map((v) =>
-        `<span class="compare-price">¥${v.price.min} – ¥${v.price.max}</span>`
-      ), sel.length);
+      html += `<tr><td class="compare-cell compare-dim">价格区间</td>${grid(sel.map((v) => `<span class="compare-price">¥${v.price.min} – ¥${v.price.max}</span>`))}</tr>`;
 
       // 配餐推荐
-      html += rowWithGrid('配餐推荐', sel.map((v) => {
+      html += `<tr><td class="compare-cell compare-dim">配餐推荐</td>${grid(sel.map((v) => {
         const items = v.pairings.slice(0, 2).map((p) => `<li>${esc(p)}</li>`).join('');
         return `<ul class="compare-pairings">${items}</ul>`;
-      }), sel.length);
+      }))}</tr>`;
 
       // 标签
-      html += rowWithGrid('标签', sel.map((v) => {
-        const tags = v.flavor_tags.map((t) =>
-          `<span class="compare-tag">${esc(t.replace(/-/g, ' '))}</span>`
-        ).join('');
+      html += `<tr><td class="compare-cell compare-dim">标签</td>${grid(sel.map((v) => {
+        const tags = v.flavor_tags.map((t) => `<span class="compare-tag">${esc(t.replace(/-/g, ' '))}</span>`).join('');
         return `<div class="compare-tags">${tags}</div>`;
-      }), sel.length);
+      }))}</tr>`;
 
+      html += '</tbody></table></div></div>';
+
+      // ---- 移动端：每个品种一张卡片 ----
+      html += '<div class="compare-mobile">';
+      for (const v of sel) {
+        html += `<div class="compare-card" data-type="${v.type}">`;
+        html += `<div class="compare-card-head"><div class="compare-col-en">${esc(v.name_en)}</div><div class="compare-col-cn">${esc(v.name_cn)}</div></div>`;
+        html += '<div class="compare-card-body">';
+        for (const [dim, val] of varietyFields(v)) {
+          html += `<div class="compare-card-row"><div class="compare-card-dim">${dim}</div><div class="compare-card-val">${val}</div></div>`;
+        }
+        html += '</div></div>';
+      }
       html += '</div>';
 
       container.innerHTML = html;
@@ -189,24 +214,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       emptyEl.hidden = true;
     }
 
-    /** 辅助：带 grid 行 */
-    function rowWithGrid(dim, cells, count) {
-      let r = `<div class="compare-row" style="display: grid; grid-template-columns: 120px repeat(${count}, 1fr);">`;
-      r += `<div class="compare-cell compare-dim">${esc(dim)}</div>`;
-      for (const cell of cells) {
-        r += `<div class="compare-cell compare-val">${cell}</div>`;
-      }
-      r += '</div>';
-      return r;
-    }
-
-    /** 打开品种选择弹窗 */
     function openPicker() {
       const current = parseHash();
       window.openVarietyPicker?.(current.length > 0 ? current : undefined);
     }
 
-    /** 加载数据 + 首次渲染 */
     async function init() {
       try {
         const res = await fetch('/api/varieties.json');
@@ -218,307 +230,200 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
     }
 
-    // 事件绑定
     window.addEventListener('hashchange', render);
     modifyBtn?.addEventListener('click', openPicker);
     emptyBtn?.addEventListener('click', openPicker);
 
-    // 启动
     init();
   })();
 </script>
 
 <style is:global>
-  /* ===== Compare Page ===== */
   .compare-page {
     padding-top: 48px;
   }
-
   .compare-page-head {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
+    display: flex; align-items: baseline; gap: 16px;
+    margin-bottom: 40px; flex-wrap: wrap;
   }
-
   .compare-page-head h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    font-weight: 500;
-    margin: 0;
-    letter-spacing: 0.3px;
+    font-size: 28px; font-weight: 500; margin: 0; letter-spacing: 0.3px;
   }
-
   .compare-modify-btn {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background: none;
-    border: 1px solid var(--rule);
-    color: var(--ink-faded);
-    padding: 4px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: border-color 0.15s, color 0.15s;
-    margin-left: auto;
+    font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+    background: none; border: 1px solid var(--rule); color: var(--ink-faded);
+    padding: 4px 12px; border-radius: 4px; cursor: pointer;
+    transition: border-color 0.15s, color 0.15s; margin-left: auto;
   }
+  .compare-modify-btn:hover { border-color: var(--wine); color: var(--wine); }
 
-  .compare-modify-btn:hover {
-    border-color: var(--wine);
-    color: var(--wine);
-  }
-
-  /* 空状态 */
   .compare-empty {
-    text-align: center;
-    padding: 80px 24px;
+    text-align: center; padding: 80px 24px;
   }
-
   .compare-empty p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    color: var(--ink-faded);
-    margin: 0 0 16px;
+    font-family: 'Cormorant Garamond', serif; font-size: 20px;
+    color: var(--ink-faded); margin: 0 0 16px;
   }
-
   .compare-empty-btn {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background: var(--wine);
-    color: var(--paper);
-    border: none;
-    padding: 8px 20px;
-    border-radius: 4px;
-    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 1px; text-transform: uppercase;
+    background: var(--wine); color: var(--paper); border: none;
+    padding: 8px 20px; border-radius: 4px; cursor: pointer;
   }
-
-  .compare-empty-btn:hover {
-    opacity: 0.85;
-  }
-
+  .compare-empty-btn:hover { opacity: 0.85; }
   .compare-loading {
-    text-align: center;
-    padding: 60px;
-    color: var(--ink-faded);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
+    text-align: center; padding: 60px; color: var(--ink-faded);
+    font-family: 'Cormorant Garamond', serif; font-size: 18px;
   }
 
-  /* ===== Compare Table ===== */
+  /* ===== 桌面表格 ===== */
+  .compare-desktop { display: none; }
+  @media (min-width: 769px) { .compare-desktop { display: block; } }
+
   .compare-wrapper {
-    border: 1px solid var(--rule);
-    border-radius: 8px;
-    overflow: hidden;
+    border: 1px solid var(--rule); border-radius: 8px; overflow: hidden;
   }
-
-  .compare-cell {
-    padding: 14px 16px;
-    min-width: 0;
+  .compare-table {
+    width: 100%; border-collapse: collapse;
   }
-
-  .compare-dim {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--ink-faded);
-    border-right: 1px solid var(--rule);
-    background: color-mix(in srgb, var(--wine) 3%, var(--paper));
-    display: flex;
-    align-items: center;
-  }
-
-  .compare-col-head {
-    text-align: center;
-    padding: 20px 16px;
-    border-bottom: 2px solid var(--rule);
-  }
-
-  .compare-col-en {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.2;
-  }
-
-  .compare-col-cn {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 13px;
-    color: var(--ink-faded);
-    margin-top: 2px;
-  }
-
-  .compare-val {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Noto Serif SC', serif;
-    font-size: 14px;
-    line-height: 1.5;
-    color: var(--ink-soft);
-    text-align: center;
-  }
-
-  .compare-row {
+  .compare-table th, .compare-table td {
+    padding: 14px 16px; min-width: 0;
     border-bottom: 1px solid var(--rule);
   }
-  .compare-row:last-child {
-    border-bottom: none;
+  .compare-table .compare-dim {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--ink-faded); border-right: 1px solid var(--rule);
+    background: color-mix(in srgb, var(--wine) 3%, var(--paper));
+    width: 100px; white-space: nowrap;
+  }
+  .compare-col-head {
+    text-align: center; padding: 20px 16px !important;
+    border-bottom: 2px solid var(--rule) !important;
+  }
+  .compare-col-en {
+    font-family: 'Cormorant Garamond', serif; font-size: 18px;
+    font-weight: 500; line-height: 1.2;
+  }
+  .compare-col-cn {
+    font-family: 'Noto Serif SC', serif; font-size: 13px;
+    color: var(--ink-faded); margin-top: 2px;
+  }
+  .compare-val {
+    text-align: center; vertical-align: middle;
+    font-family: 'Noto Serif SC', serif; font-size: 14px;
+    color: var(--ink-soft); line-height: 1.5;
   }
 
   /* 类型 badge */
   .compare-type-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 1px;
-    padding: 2px 8px;
-    border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 1px; padding: 2px 8px; border-radius: 3px;
     text-transform: uppercase;
   }
   .compare-type-badge[data-type='red'] {
-    color: var(--wine);
-    background: color-mix(in srgb, var(--wine) 12%, transparent);
+    color: var(--wine); background: color-mix(in srgb, var(--wine) 12%, transparent);
   }
   .compare-type-badge[data-type='white'] {
-    color: var(--ink-soft);
-    background: color-mix(in srgb, var(--ink-soft) 10%, transparent);
+    color: var(--ink-soft); background: color-mix(in srgb, var(--ink-soft) 10%, transparent);
   }
   .compare-type-badge[data-type='rose'] {
-    color: var(--highlight);
-    background: color-mix(in srgb, var(--highlight) 12%, transparent);
+    color: var(--highlight); background: color-mix(in srgb, var(--highlight) 12%, transparent);
   }
 
   /* 风味标签 */
   .compare-flavors {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    justify-content: center;
+    display: flex; flex-wrap: wrap; gap: 4px; justify-content: center;
   }
   .compare-flavor-tag {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 12px;
-    padding: 2px 6px;
+    font-family: 'Noto Serif SC', serif; font-size: 12px; padding: 2px 6px;
     background: color-mix(in srgb, var(--ink) 6%, transparent);
-    border-radius: 3px;
-    white-space: nowrap;
+    border-radius: 3px; white-space: nowrap;
   }
 
   /* 点状条 */
   .compare-dots {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
   }
-  .compare-dots-bar {
-    display: flex;
-    gap: 4px;
-  }
+  .compare-dots-bar { display: flex; gap: 4px; }
   .compare-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--rule);
-    transition: background 0.2s;
+    width: 10px; height: 10px; border-radius: 50%; background: var(--rule);
   }
-  .compare-dot.fill {
-    background: var(--wine);
-  }
+  .compare-dot.fill { background: var(--wine); }
   .compare-dots-label {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 11px;
-    color: var(--ink-faded);
+    font-family: 'Noto Serif SC', serif; font-size: 11px; color: var(--ink-faded);
   }
 
   /* 价格 */
   .compare-price {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    color: var(--ink-soft);
+    font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--ink-soft);
   }
 
   /* 配餐 */
   .compare-pairings {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-    font-size: 13px;
+    list-style: none; padding: 0; margin: 0;
+    text-align: left; font-size: 13px;
   }
-  .compare-pairings li {
-    position: relative;
-    padding-left: 14px;
-  }
+  .compare-pairings li { position: relative; padding-left: 14px; }
   .compare-pairings li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--ink-faded);
+    content: '—'; position: absolute; left: 0; color: var(--ink-faded);
   }
 
   /* 标签云 */
   .compare-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    justify-content: center;
+    display: flex; flex-wrap: wrap; gap: 4px; justify-content: center;
   }
   .compare-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    padding: 2px 6px;
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    color: var(--ink-faded);
+    font-family: 'JetBrains Mono', monospace; font-size: 9px;
+    letter-spacing: 0.5px; text-transform: uppercase;
+    padding: 2px 6px; border: 1px solid var(--rule);
+    border-radius: 3px; color: var(--ink-faded);
   }
 
-  /* ===== 移动端堆叠卡片 ===== */
-  @media (max-width: 768px) {
-    .compare-wrapper {
-      display: block;
-      border: none;
-      border-radius: 0;
-    }
+  /* ===== 移动端：每个品种一张卡片 ===== */
+  .compare-mobile { display: none; }
+  @media (max-width: 768px) { .compare-mobile { display: block; } }
 
-    .compare-header {
-      display: none !important;
-    }
-
-    .compare-row {
-      display: flex !important;
-      flex-direction: column;
-      border: 1px solid var(--rule);
-      border-radius: 8px;
-      margin-bottom: 16px;
-      overflow: hidden;
-    }
-
-    .compare-row[style] {
-      display: flex !important;
-    }
-
-    .compare-cell {
-      padding: 12px 16px;
-    }
-
-    .compare-dim {
-      border-right: none;
-      border-bottom: 1px solid var(--rule);
-      background: color-mix(in srgb, var(--wine) 3%, var(--paper));
-      font-size: 10px;
-      justify-content: center;
-    }
-
-    .compare-val {
-      text-align: center;
-      padding: 14px 16px;
-    }
+  .compare-card {
+    border: 1px solid var(--rule); border-radius: 8px;
+    margin-bottom: 24px; overflow: hidden;
+  }
+  .compare-card-head {
+    text-align: center; padding: 20px 16px 14px;
+    border-bottom: 2px solid var(--rule);
+  }
+  .compare-card-head .compare-col-en {
+    font-family: 'Cormorant Garamond', serif; font-size: 22px;
+    font-weight: 500; line-height: 1.2;
+  }
+  .compare-card-head .compare-col-cn {
+    font-family: 'Noto Serif SC', serif; font-size: 14px;
+    color: var(--ink-faded); margin-top: 2px;
+  }
+  .compare-card-body {
+    display: grid; grid-template-columns: auto 1fr;
+  }
+  .compare-card-row {
+    display: contents;
+  }
+  .compare-card-dim {
+    font-family: 'JetBrains Mono', monospace; font-size: 9px;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--ink-faded);
+    background: color-mix(in srgb, var(--wine) 3%, var(--paper));
+    padding: 10px 14px; border-bottom: 1px solid var(--rule);
+    display: flex; align-items: center;
+  }
+  .compare-card-val {
+    padding: 10px 14px; border-bottom: 1px solid var(--rule);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Noto Serif SC', serif; font-size: 14px;
+    color: var(--ink-soft); text-align: center;
+  }
+  .compare-card-row:last-of-type .compare-card-dim,
+  .compare-card-row:last-of-type .compare-card-val {
+    border-bottom: none;
   }
 </style>

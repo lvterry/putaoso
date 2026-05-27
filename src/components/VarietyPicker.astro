@@ -31,14 +31,13 @@ const preselected = Astro.props.preselected ?? [];
 
     <div class="picker-list">
       {varieties.map((v) => {
-        const checked = preselected.includes(v.slug) ? 'checked' : '';
         return (
           <label class="picker-item" data-slug={v.slug}>
             <input
               type="checkbox"
               class="picker-cb"
               value={v.slug}
-              {checked}
+              checked={preselected.includes(v.slug)}
               data-type={v.type}
             />
             <span class="picker-type" data-type={v.type}>
