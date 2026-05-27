@@ -3,7 +3,6 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Scene from '../components/Scene.astro';
 import Palate from '../components/Palate.astro';
-import VarietyPicker from '../components/VarietyPicker.astro';
 
 export async function getStaticPaths() {
   const all = await getCollection('varieties');
@@ -48,9 +47,6 @@ function md(s: string) {
       <div class="hero-alias">别名 · {data.aliases.join(' · ')}</div>
     )}
     <div class="hero-quote">{data.hero_quote}</div>
-    <button class="detail-compare-btn" id="detail-compare-btn" type="button">
-      + 加入对比
-    </button>
   </header>
 
   <Scene slug={entry.slug} scene={data.hero_scene} caption={data.hero_scene_caption} />
@@ -217,23 +213,4 @@ function md(s: string) {
     </div>
   </section>
 
-  <VarietyPicker
-    varieties={all
-      .filter((v) => v.data.status === 'live')
-      .sort((a, b) => a.data.number - b.data.number)
-      .map((v) => ({
-        slug: v.slug,
-        name_en: v.data.name_en,
-        name_cn: v.data.name_cn,
-        type: v.data.type,
-        number: v.data.number,
-      }))}
-    preselected={[entry.slug]}
-  />
 </BaseLayout>
-
-<script>
-  document.getElementById('detail-compare-btn')?.addEventListener('click', () => {
-    window.openVarietyPicker?.(['{entry.slug}']);
-  });
-</script>

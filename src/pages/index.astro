@@ -39,9 +39,6 @@ const liveForPicker = all
         一本随手翻的葡萄品种图鉴。<br />
         慢慢读，找到属于你的那一颗。
       </div>
-      <button class="cover-compare-btn" id="cover-compare-btn" type="button">
-        品种对比
-      </button>
     </div>
 
   </section>
@@ -51,7 +48,10 @@ const liveForPicker = all
   {/* === 品种网格 === */}
   <section class="varieties">
     <div class="section-label">The Index</div>
-    <h2>品种索引</h2>
+    <div class="varieties-head">
+      <h2>品种索引</h2>
+      <button class="compare-btn" id="compare-btn" type="button">品种对比</button>
+    </div>
     <div class="grid">
       {varieties.map((v) => {
         const d = v.data;
@@ -96,7 +96,7 @@ const liveForPicker = all
 </BaseLayout>
 
 <script>
-  document.getElementById('cover-compare-btn')?.addEventListener('click', () => {
+  document.getElementById('compare-btn')?.addEventListener('click', () => {
     window.openVarietyPicker?.();
   });
 </script>
