@@ -103,7 +103,14 @@ const preselected = Astro.props.preselected ?? [];
       const checked = dialog.querySelectorAll<HTMLInputElement>('.picker-cb:checked');
       const slugs = Array.from(checked).map((cb) => cb.value);
       if (slugs.length === 0) return;
-      window.location.href = `/compare#${slugs.join(',')}`;
+      dialog.close();
+      const hash = '#' + slugs.join(',');
+      // 如果已在对比页，只更新 hash 避免整页刷新；否则跳转
+      if (window.location.pathname === '/compare' || window.location.pathname === '/compare.html') {
+        window.location.hash = hash;
+      } else {
+        window.location.href = '/compare' + hash;
+      }
     }
 
     // 绑定事件

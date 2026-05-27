@@ -25,7 +25,6 @@ const liveForPicker = all
 
   <div class="compare-page">
     <header class="compare-page-head">
-      <div class="section-label">Compare</div>
       <h2>品种对比</h2>
       <button class="compare-modify-btn" id="compare-modify-btn" type="button">
         + 修改品种
@@ -57,7 +56,27 @@ const liveForPicker = all
     let ALL_VARIETIES = [];
     let ALL_SLUGS = [];
 
-    // ===== 工具函数（与 compare-helpers.ts 保持一致） =====
+    const TAG_MAP = {
+      'approachable': '易饮', 'aromatic': '芳香', 'black-fruit': '黑色水果',
+      'black-pepper': '黑胡椒', 'butter': '黄油', 'cherry': '樱桃',
+      'chocolate': '巧克力', 'citrus': '柑橘', 'dark-fruit': '深色水果',
+      'dried-herb': '干草药', 'earth': '泥土', 'earthy': '泥土味',
+      'elegant': '优雅', 'floral': '花香', 'full-body': '饱满',
+      'grassy': '青草', 'herbal': '草本', 'high-acid': '高酸',
+      'high-tannin': '高单宁', 'honey': '蜂蜜', 'jam': '果酱',
+      'leather': '皮革', 'light': '轻盈', 'light-body': '轻盈',
+      'lychee': '荔枝', 'medium-tannin': '中单宁', 'mineral': '矿物',
+      'mint': '薄荷', 'mushroom': '蘑菇', 'oak': '橡木',
+      'pear': '梨', 'pencil-shaving': '铅笔屑', 'plum': '李子',
+      'red-fruit': '红色水果', 'rose': '玫瑰', 'round': '圆润',
+      'smoked': '烟熏', 'soft-tannin': '柔顺单宁', 'spice': '香料',
+      'stone-fruit': '核果', 'sweet': '甜', 'tobacco': '烟草',
+      'violet': '紫罗兰', 'warm-spice': '暖香料', 'white-flower': '白花',
+      'wild-berry': '野莓',
+    };
+    function tagLabel(t) { return TAG_MAP[t] || t.replace(/-/g, ' '); }
+
+    // ===== 工具函数 =====
     function parseHash() {
       const raw = location.hash.replace(/^#/, '').trim();
       if (!raw) return [];
@@ -109,7 +128,7 @@ const liveForPicker = all
       dims.push(['入门难度', dotsHtml(v.palate.beginner_difficulty, v.palate.beginner_difficulty_label)]);
       dims.push(['价格区间', `<span class="compare-price">¥${v.price.min} – ¥${v.price.max}</span>`]);
       dims.push(['配餐推荐', `<ul class="compare-pairings">${v.pairings.slice(0, 2).map((p) => `<li>${esc(p)}</li>`).join('')}</ul>`]);
-      dims.push(['标签', `<div class="compare-tags">${v.flavor_tags.map((t) => `<span class="compare-tag">${esc(t.replace(/-/g, ' '))}</span>`).join('')}</div>`]);
+      dims.push(['标签', `<div class="compare-tags">${v.flavor_tags.map((t) => `<span class="compare-tag">${esc(tagLabel(t))}</span>`).join('')}</div>`]);
       return dims;
     }
 
@@ -190,7 +209,7 @@ const liveForPicker = all
 
       // 标签
       html += `<tr><td class="compare-cell compare-dim">标签</td>${grid(sel.map((v) => {
-        const tags = v.flavor_tags.map((t) => `<span class="compare-tag">${esc(t.replace(/-/g, ' '))}</span>`).join('');
+        const tags = v.flavor_tags.map((t) => `<span class="compare-tag">${esc(tagLabel(t))}</span>`).join('');
         return `<div class="compare-tags">${tags}</div>`;
       }))}</tr>`;
 
