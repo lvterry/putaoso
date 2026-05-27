@@ -25,6 +25,45 @@ const data = entry.data;
 const typeLabel = data.type === 'red' ? 'Red' : data.type === 'white' ? 'White' : 'Rosé';
 const numberStr = String(data.number).padStart(3, '0');
 
+const regionBadgeLabels: Record<string, string> = {
+  'The Heartland': '核心产区',
+  'The Origin': '发源地',
+  'The New World': '新世界',
+  'The Accessible': '亲民入门',
+  'The Classic': '经典产区',
+  'The Powerful': '强劲风格',
+  'The Portuguese Side': '葡萄牙一侧',
+  'The Crisp Style': '清爽风格',
+  'The Rich Style': '丰腴风格',
+  'The Old World': '旧世界',
+  'The Mineral': '矿物风格',
+  'The Capital Side': '京城周边',
+  'The Coastal Edge': '海岸边缘',
+  'The China Flagship': '中国标杆',
+  'The Frontier': '前沿产区',
+  'The Coastal Voice': '海岸表达',
+  'The Intense': '浓郁风格',
+  'The Hidden Gem': '隐藏宝藏',
+  'The Holy Land': '圣地',
+  'Across the Rhine': '莱茵河对岸',
+  'The Grand': '顶级表达',
+  'The Altitude': '高海拔',
+  'The New Burgundy': '新勃艮第',
+  'The Southernmost': '南境产区',
+  'The Pure Expression': '纯粹表达',
+  'The Blend Partner': '混酿搭档',
+  'The Italian Voice': '意式表达',
+  'The Super-Tuscan': '超级托斯卡纳',
+  'The Value': '性价比之选',
+  'The Ice Wine Heartland': '冰酒核心',
+  'The Western Trial': '西部尝试',
+  'The Northern Reach': '北方延伸',
+  'The Western Reach': '西部延伸',
+  'The Blend': '混酿风格',
+  'The Bold': '豪放风格',
+  'The Old Country': '旧大陆故乡',
+};
+
 // 把相似品种的 slug 查一下：如果对方已上线，给链接；否则纯文本
 const liveSlugs = new Set(all.filter((v) => v.data.status === 'live').map((v) => v.slug));
 
@@ -56,15 +95,15 @@ function md(s: string) {
     <div class="section-label">Identity</div>
     <h2>它是谁</h2>
     <dl class="facts">
-      <dt>Type 类型</dt>
+      <dt>类型</dt>
       <dd>{typeLabel === 'Red' ? '红葡萄' : typeLabel === 'White' ? '白葡萄' : '桃红'}</dd>
 
-      <dt>Origin 原产地</dt>
+      <dt>原产地</dt>
       <dd>{data.origin}</dd>
 
       {data.parents && (
         <>
-          <dt>Parents 亲本</dt>
+          <dt>亲本</dt>
           <dd>
             {data.parents.p1 && data.parents.p2 ? (
               <>{data.parents.p1} × {data.parents.p2}</>
@@ -76,8 +115,8 @@ function md(s: string) {
         </>
       )}
 
-      <dt>Family 葡萄科</dt>
-      <dd>Vitis vinifera</dd>
+      <dt>葡萄科</dt>
+      <dd>欧亚种葡萄 Vitis vinifera</dd>
     </dl>
   </section>
 
@@ -109,11 +148,10 @@ function md(s: string) {
       <div class="price-amount">
         <span class="currency">¥</span>{data.price.min}<span class="dash"> – </span>{data.price.max}
       </div>
-      <div class="price-caption">A reliable starting range</div>
     </div>
 
     <div class="caution">
-      <strong>踩雷提示 · Caveat</strong>
+      <strong>踩雷提示</strong>
       <span set:html={md(data.caveat)} />
     </div>
   </section>
@@ -139,13 +177,13 @@ function md(s: string) {
 
     <div class="cards">
       {data.regions.map((r) => (
-        <div class="card">
+        <div class="card region-card">
           <div>
             <div class="card-title">
-              {r.name_en}
-              <span class="cn">{r.name_cn}</span>
+              {r.name_cn}
+              <span class="en">{r.name_en}</span>
             </div>
-            <div class="card-meta">{r.badge}</div>
+            <div class="card-meta">{regionBadgeLabels[r.badge] ?? r.badge}</div>
           </div>
           <div class="card-body">{r.body}</div>
         </div>

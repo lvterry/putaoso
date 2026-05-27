@@ -443,14 +443,6 @@ p {
   font-size: 48px;
 }
 
-.price-caption {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--ink-faded);
-  text-transform: uppercase;
-}
-
 .caution {
   background: var(--paper-warm);
   padding: 24px 28px;
@@ -549,6 +541,23 @@ p {
   letter-spacing: 1px;
 }
 
+.region-card .card-title {
+  font-family: 'Noto Serif SC', serif;
+  font-style: normal;
+  font-size: 20px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.region-card .card-title .en {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--wine-deep);
+  margin-top: 4px;
+}
+
 .card-body {
   font-size: 16px;
   color: var(--ink-soft);
@@ -565,6 +574,13 @@ p {
 
 .card-meta .price {
   color: var(--wine);
+}
+
+.region-card .card-meta {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: none;
 }
 
 /* 类似品种 */
