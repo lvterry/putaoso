@@ -199,6 +199,26 @@ nav.top {
   line-height: 1;
 }
 
+.detail-compare-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid var(--wine);
+  color: var(--wine);
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 20px;
+}
+
+.detail-compare-btn:hover {
+  background: var(--wine);
+  color: var(--paper);
+}
+
 /* 场景图容器 */
 .scene {
   margin: 72px -32px;
@@ -839,9 +859,29 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
   line-height: 1.7;
   color: var(--ink-soft);
   max-width: 460px;
-  margin-bottom: 56px;
+  margin-bottom: 40px;
   padding-left: 18px;
   border-left: 2px solid var(--wine);
+}
+
+.cover-compare-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid var(--wine);
+  color: var(--wine);
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-left: 18px;
+}
+
+.cover-compare-btn:hover {
+  background: var(--wine);
+  color: var(--paper);
 }
 
 .hero-map {

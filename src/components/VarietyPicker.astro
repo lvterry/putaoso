@@ -1,0 +1,326 @@
+---
+interface VarietyItem {
+  slug: string;
+  name_en: string;
+  name_cn: string;
+  type: 'red' | 'white' | 'rose';
+  number: number;
+}
+
+interface Props {
+  varieties: VarietyItem[];
+  /** 预先勾选的品种 slug（从详情页进入时） */
+  preselected?: string[];
+}
+
+const { varieties } = Astro.props;
+const preselected = Astro.props.preselected ?? [];
+---
+
+<dialog class="picker-dialog" id="variety-picker">
+  <form method="dialog" class="picker-inner">
+    <div class="picker-head">
+      <h3 class="picker-title">选择对比品种</h3>
+      <p class="picker-hint">最多选 4 个</p>
+      <button type="button" class="picker-close" id="picker-close" aria-label="关闭">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M2 2L14 14M14 2L2 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="picker-list">
+      {varieties.map((v) => {
+        const checked = preselected.includes(v.slug) ? 'checked' : '';
+        return (
+          <label class="picker-item" data-slug={v.slug}>
+            <input
+              type="checkbox"
+              class="picker-cb"
+              value={v.slug}
+              {checked}
+              data-type={v.type}
+            />
+            <span class="picker-type" data-type={v.type}>
+              {v.type === 'red' ? '红' : v.type === 'white' ? '白' : '桃红'}
+            </span>
+            <span class="picker-name">
+              <span class="picker-name-en">{v.name_en}</span>
+              <span class="picker-name-cn">{v.name_cn}</span>
+            </span>
+          </label>
+        );
+      })}
+    </div>
+
+    <div class="picker-foot">
+      <span class="picker-count" id="picker-count">已选 {preselected.length} 个</span>
+      <button type="submit" class="picker-confirm" id="picker-confirm">
+        对比选中的品种
+      </button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+  (() => {
+    const dialog = document.getElementById('variety-picker') as HTMLDialogElement | null;
+    if (!dialog) return;
+
+    const form = dialog.querySelector('.picker-inner') as HTMLFormElement;
+    const checkboxes = dialog.querySelectorAll<HTMLInputElement>('.picker-cb');
+    const countEl = document.getElementById('picker-count') as HTMLElement | null;
+    const confirmBtn = document.getElementById('picker-confirm') as HTMLButtonElement | null;
+    const closeBtn = document.getElementById('picker-close') as HTMLButtonElement | null;
+    const MAX = 4;
+
+    /** 更新已选计数 */
+    function updateCount() {
+      const checked = dialog.querySelectorAll<HTMLInputElement>('.picker-cb:checked');
+      if (countEl) countEl.textContent = `已选 ${checked.length} 个`;
+      if (confirmBtn) confirmBtn.disabled = checked.length === 0;
+    }
+
+    /** checkbox 变更时限制最多选 MAX 个 */
+    function onCheckboxChange(this: HTMLInputElement) {
+      if (!this.checked) {
+        updateCount();
+        return;
+      }
+      const checked = dialog.querySelectorAll<HTMLInputElement>('.picker-cb:checked');
+      if (checked.length > MAX) {
+        this.checked = false;
+        // 简单提示
+        if (countEl) countEl.textContent = `最多对比 ${MAX} 个品种`;
+        setTimeout(updateCount, 1200);
+        return;
+      }
+      updateCount();
+    }
+
+    /** 收集选中的 slug 并跳转 */
+    function onSubmit(e: Event) {
+      e.preventDefault();
+      const checked = dialog.querySelectorAll<HTMLInputElement>('.picker-cb:checked');
+      const slugs = Array.from(checked).map((cb) => cb.value);
+      if (slugs.length === 0) return;
+      window.location.href = `/compare#${slugs.join(',')}`;
+    }
+
+    // 绑定事件
+    checkboxes.forEach((cb) => cb.addEventListener('change', onCheckboxChange));
+    form.addEventListener('submit', onSubmit);
+    closeBtn?.addEventListener('click', () => dialog.close());
+
+    // 初始更新
+    updateCount();
+
+    // 暴露 open 方法到全局，便于其他页面调用
+    (window as any).openVarietyPicker = (preselectSlugs?: string[]) => {
+      if (preselectSlugs) {
+        const slugSet = new Set(preselectSlugs);
+        checkboxes.forEach((cb) => {
+          cb.checked = slugSet.has(cb.value);
+        });
+        updateCount();
+      }
+      dialog.showModal();
+    };
+  })();
+</script>
+
+<style is:global>
+  /* ===== Variety Picker Dialog ===== */
+  .picker-dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: min(90vw, 520px);
+    max-height: 80vh;
+    padding: 0;
+    border: none;
+    border-radius: 12px;
+    background: var(--paper);
+    color: var(--ink);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    animation: picker-fade-in 0.2s ease-out;
+  }
+
+  .picker-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  @keyframes picker-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .picker-inner {
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+  }
+
+  .picker-head {
+    position: relative;
+    padding: 20px 24px 0;
+  }
+
+  .picker-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 2px;
+    letter-spacing: 0.3px;
+  }
+
+  .picker-hint {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--ink-faded);
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .picker-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--ink-faded);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: color 0.15s;
+  }
+
+  .picker-close:hover {
+    color: var(--ink);
+  }
+
+  .picker-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 8px 12px 24px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .picker-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px 8px 0;
+    border-bottom: 1px solid var(--rule);
+    cursor: pointer;
+    transition: background 0.1s;
+    border-radius: 4px;
+    user-select: none;
+  }
+
+  .picker-item:hover {
+    background: color-mix(in srgb, var(--wine) 5%, transparent);
+  }
+
+  .picker-cb {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--wine);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .picker-type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .picker-type[data-type='red'] {
+    color: var(--wine);
+    background: color-mix(in srgb, var(--wine) 12%, transparent);
+  }
+
+  .picker-type[data-type='white'] {
+    color: var(--ink-soft);
+    background: color-mix(in srgb, var(--ink-soft) 10%, transparent);
+  }
+
+  .picker-type[data-type='rose'] {
+    color: var(--highlight);
+    background: color-mix(in srgb, var(--highlight) 12%, transparent);
+  }
+
+  .picker-name {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .picker-name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .picker-name-cn {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 13px;
+    color: var(--ink-faded);
+    white-space: nowrap;
+  }
+
+  .picker-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px 16px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .picker-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: var(--ink-faded);
+  }
+
+  .picker-confirm {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: var(--wine);
+    color: var(--paper);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+
+  .picker-confirm:hover {
+    opacity: 0.85;
+  }
+
+  .picker-confirm:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+</style>

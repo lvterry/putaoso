@@ -2,9 +2,20 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroMap from '../components/HeroMap.astro';
+import VarietyPicker from '../components/VarietyPicker.astro';
 
 const all = await getCollection('varieties');
 const varieties = all.sort((a, b) => a.data.number - b.data.number);
+const liveForPicker = all
+  .filter((v) => v.data.status === 'live')
+  .sort((a, b) => a.data.number - b.data.number)
+  .map((v) => ({
+    slug: v.slug,
+    name_en: v.data.name_en,
+    name_cn: v.data.name_cn,
+    type: v.data.type,
+    number: v.data.number,
+  }));
 
 ---
 
@@ -28,9 +39,14 @@ const varieties = all.sort((a, b) => a.data.number - b.data.number);
         一本随手翻的葡萄品种图鉴。<br />
         慢慢读，找到属于你的那一颗。
       </div>
+      <button class="cover-compare-btn" id="cover-compare-btn" type="button">
+        品种对比
+      </button>
     </div>
 
   </section>
+
+  <VarietyPicker varieties={liveForPicker} />
 
   {/* === 品种网格 === */}
   <section class="varieties">
@@ -78,3 +94,9 @@ const varieties = all.sort((a, b) => a.data.number - b.data.number);
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  document.getElementById('cover-compare-btn')?.addEventListener('click', () => {
+    window.openVarietyPicker?.();
+  });
+</script>

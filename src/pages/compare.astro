@@ -1,0 +1,524 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="品种对比 · 葡萄搜"
+  description="将不同的葡萄品种放在一起，对比它们的参数与风味差异。"
+  containerWidth="wide"
+>
+  <div class="compare-page">
+    <header class="compare-page-head">
+      <div class="section-label">Compare</div>
+      <h2>品种对比</h2>
+      <button class="compare-modify-btn" id="compare-modify-btn" type="button">
+        + 修改品种
+      </button>
+    </header>
+
+    <!-- 对比表格容器——客户端渲染 -->
+    <div id="compare-table-container">
+      <div class="compare-loading">加载品种数据…</div>
+    </div>
+
+    <!-- 空状态（隐藏） -->
+    <div id="compare-empty" class="compare-empty" hidden>
+      <p>还没有选择品种。</p>
+      <button class="compare-empty-btn" id="compare-empty-btn" type="button">
+        选择品种开始对比
+      </button>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  (() => {
+    /** ---- 入口 ---- */
+    const container = document.getElementById('compare-table-container');
+    const emptyEl = document.getElementById('compare-empty');
+    const modifyBtn = document.getElementById('compare-modify-btn');
+    const emptyBtn = document.getElementById('compare-empty-btn');
+
+    /** 缓存品种数据 */
+    let ALL_VARIETIES = [];
+    let ALL_SLUGS = [];
+
+    /** 从 hash 解析 slug 列表 */
+    function parseHash() {
+      const raw = location.hash.replace(/^#/, '').trim();
+      if (!raw) return [];
+      return raw.split(',').map((s) => s.trim()).filter(Boolean);
+    }
+
+    /** HTML 转义 */
+    function esc(s) {
+      const div = document.createElement('div');
+      div.textContent = s;
+      return div.innerHTML;
+    }
+
+    /** 点状条 HTML */
+    function dotsHtml(value, label) {
+      let d = '<div class="compare-dots"><div class="compare-dots-bar">';
+      for (let i = 0; i < 5; i++) {
+        d += `<span class="compare-dot${i < value ? ' fill' : ''}"></span>`;
+      }
+      d += `</div><span class="compare-dots-label">${esc(label)}</span></div>`;
+      return d;
+    }
+
+    /** 构建一行 */
+    function row(dim, cells) {
+      let r = `<div class="compare-row"><div class="compare-cell compare-dim">${esc(dim)}</div>`;
+      for (const cell of cells) {
+        r += `<div class="compare-cell compare-val">${cell}</div>`;
+      }
+      r += '</div>';
+      return r;
+    }
+
+    /** 渲染对比表格 */
+    function render() {
+      const slugs = parseHash();
+      const validSet = new Set(ALL_SLUGS);
+      const selected = slugs
+        .filter((s) => validSet.has(s))
+        .filter((s, i, arr) => arr.indexOf(s) === i);
+
+      if (selected.length === 0) {
+        container.innerHTML = '';
+        container.hidden = true;
+        emptyEl.hidden = false;
+        return;
+      }
+
+      // 按 number 排序
+      const slugOrder = new Map(ALL_VARIETIES.map((v) => [v.slug, v.number]));
+      selected.sort((a, b) => (slugOrder.get(a) ?? 999) - (slugOrder.get(b) ?? 999));
+
+      const sel = ALL_VARIETIES.filter((v) => selected.includes(v.slug));
+
+      // 设置 grid 列数
+      const colCount = sel.length + 1;
+      let html = `<div class="compare-wrapper" style="grid-template-columns: 120px repeat(${sel.length}, 1fr);">`;
+
+      // 表头
+      html += '<div class="compare-header" style="display: grid; grid-template-columns: 120px repeat(' + sel.length + ', 1fr);">';
+      html += '<div class="compare-cell compare-dim">维度</div>';
+      for (const v of sel) {
+        html += `<div class="compare-cell compare-col-head" data-type="${v.type}">`;
+        html += `<div class="compare-col-en">${esc(v.name_en)}</div>`;
+        html += `<div class="compare-col-cn">${esc(v.name_cn)}</div>`;
+        html += '</div>';
+      }
+      html += '</div>';
+
+      // 类型
+      html += `<div class="compare-row" style="display: grid; grid-template-columns: 120px repeat(${sel.length}, 1fr);">`;
+      html += '<div class="compare-cell compare-dim">类型</div>';
+      for (const v of sel) {
+        const label = v.type === 'red' ? '红葡萄' : v.type === 'white' ? '白葡萄' : '桃红';
+        html += `<div class="compare-cell compare-val"><span class="compare-type-badge" data-type="${v.type}">${label}</span></div>`;
+      }
+      html += '</div>';
+
+      // 原产地
+      html += `<div class="compare-row" style="display: grid; grid-template-columns: 120px repeat(${sel.length}, 1fr);">`;
+      html += '<div class="compare-cell compare-dim">原产地</div>';
+      for (const v of sel) {
+        html += `<div class="compare-cell compare-val">${esc(v.origin)}</div>`;
+      }
+      html += '</div>';
+
+      // 风味
+      html += `<div class="compare-row" style="display: grid; grid-template-columns: 120px repeat(${sel.length}, 1fr);">`;
+      html += '<div class="compare-cell compare-dim">风味</div>';
+      for (const v of sel) {
+        const flavors = v.flavors_professional
+          .replace(/[。、，]/g, ' ')
+          .split(/[、，,，\s]+/)
+          .filter((f) => f.length > 0 && f.length <= 8)
+          .slice(0, 5)
+          .map((f) => `<span class="compare-flavor-tag">${esc(f)}</span>`)
+          .join('');
+        html += `<div class="compare-cell compare-val"><div class="compare-flavors">${flavors}</div></div>`;
+      }
+      html += '</div>';
+
+      // 酸度
+      html += rowWithGrid('酸度', sel.map((v) => dotsHtml(v.palate.acidity, v.palate.acidity_label)), sel.length);
+
+      // 单宁/甜度
+      const hasRed = sel.some((v) => v.type === 'red');
+      const hasWhite = sel.some((v) => v.type === 'white');
+      const tanninDim = hasRed && hasWhite ? '单宁 / 甜度' : hasRed ? '单宁' : '甜度';
+      html += rowWithGrid(tanninDim, sel.map((v) => {
+        if (v.type === 'red') return dotsHtml(v.palate.tannin, v.palate.tannin_label);
+        return dotsHtml(v.palate.sweetness, v.palate.sweetness_label);
+      }), sel.length);
+
+      // 酒体
+      html += rowWithGrid('酒体', sel.map((v) => dotsHtml(v.palate.body, v.palate.body_label)), sel.length);
+
+      // 入门难度
+      html += rowWithGrid('入门难度', sel.map((v) => dotsHtml(v.palate.beginner_difficulty, v.palate.beginner_difficulty_label)), sel.length);
+
+      // 价格区间
+      html += rowWithGrid('价格区间', sel.map((v) =>
+        `<span class="compare-price">¥${v.price.min} – ¥${v.price.max}</span>`
+      ), sel.length);
+
+      // 配餐推荐
+      html += rowWithGrid('配餐推荐', sel.map((v) => {
+        const items = v.pairings.slice(0, 2).map((p) => `<li>${esc(p)}</li>`).join('');
+        return `<ul class="compare-pairings">${items}</ul>`;
+      }), sel.length);
+
+      // 标签
+      html += rowWithGrid('标签', sel.map((v) => {
+        const tags = v.flavor_tags.map((t) =>
+          `<span class="compare-tag">${esc(t.replace(/-/g, ' '))}</span>`
+        ).join('');
+        return `<div class="compare-tags">${tags}</div>`;
+      }), sel.length);
+
+      html += '</div>';
+
+      container.innerHTML = html;
+      container.hidden = false;
+      emptyEl.hidden = true;
+    }
+
+    /** 辅助：带 grid 行 */
+    function rowWithGrid(dim, cells, count) {
+      let r = `<div class="compare-row" style="display: grid; grid-template-columns: 120px repeat(${count}, 1fr);">`;
+      r += `<div class="compare-cell compare-dim">${esc(dim)}</div>`;
+      for (const cell of cells) {
+        r += `<div class="compare-cell compare-val">${cell}</div>`;
+      }
+      r += '</div>';
+      return r;
+    }
+
+    /** 打开品种选择弹窗 */
+    function openPicker() {
+      const current = parseHash();
+      window.openVarietyPicker?.(current.length > 0 ? current : undefined);
+    }
+
+    /** 加载数据 + 首次渲染 */
+    async function init() {
+      try {
+        const res = await fetch('/api/varieties.json');
+        ALL_VARIETIES = await res.json();
+        ALL_SLUGS = ALL_VARIETIES.map((v) => v.slug);
+        render();
+      } catch (e) {
+        container.innerHTML = '<div class="compare-loading" style="color: var(--wine);">数据加载失败，请刷新重试</div>';
+      }
+    }
+
+    // 事件绑定
+    window.addEventListener('hashchange', render);
+    modifyBtn?.addEventListener('click', openPicker);
+    emptyBtn?.addEventListener('click', openPicker);
+
+    // 启动
+    init();
+  })();
+</script>
+
+<style is:global>
+  /* ===== Compare Page ===== */
+  .compare-page {
+    padding-top: 48px;
+  }
+
+  .compare-page-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .compare-page-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 0.3px;
+  }
+
+  .compare-modify-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid var(--rule);
+    color: var(--ink-faded);
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+    margin-left: auto;
+  }
+
+  .compare-modify-btn:hover {
+    border-color: var(--wine);
+    color: var(--wine);
+  }
+
+  /* 空状态 */
+  .compare-empty {
+    text-align: center;
+    padding: 80px 24px;
+  }
+
+  .compare-empty p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--ink-faded);
+    margin: 0 0 16px;
+  }
+
+  .compare-empty-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: var(--wine);
+    color: var(--paper);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .compare-empty-btn:hover {
+    opacity: 0.85;
+  }
+
+  .compare-loading {
+    text-align: center;
+    padding: 60px;
+    color: var(--ink-faded);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+  }
+
+  /* ===== Compare Table ===== */
+  .compare-wrapper {
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .compare-cell {
+    padding: 14px 16px;
+    min-width: 0;
+  }
+
+  .compare-dim {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-faded);
+    border-right: 1px solid var(--rule);
+    background: color-mix(in srgb, var(--wine) 3%, var(--paper));
+    display: flex;
+    align-items: center;
+  }
+
+  .compare-col-head {
+    text-align: center;
+    padding: 20px 16px;
+    border-bottom: 2px solid var(--rule);
+  }
+
+  .compare-col-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .compare-col-cn {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 13px;
+    color: var(--ink-faded);
+    margin-top: 2px;
+  }
+
+  .compare-val {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  .compare-row {
+    border-bottom: 1px solid var(--rule);
+  }
+  .compare-row:last-child {
+    border-bottom: none;
+  }
+
+  /* 类型 badge */
+  .compare-type-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  .compare-type-badge[data-type='red'] {
+    color: var(--wine);
+    background: color-mix(in srgb, var(--wine) 12%, transparent);
+  }
+  .compare-type-badge[data-type='white'] {
+    color: var(--ink-soft);
+    background: color-mix(in srgb, var(--ink-soft) 10%, transparent);
+  }
+  .compare-type-badge[data-type='rose'] {
+    color: var(--highlight);
+    background: color-mix(in srgb, var(--highlight) 12%, transparent);
+  }
+
+  /* 风味标签 */
+  .compare-flavors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+  }
+  .compare-flavor-tag {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 12px;
+    padding: 2px 6px;
+    background: color-mix(in srgb, var(--ink) 6%, transparent);
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  /* 点状条 */
+  .compare-dots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .compare-dots-bar {
+    display: flex;
+    gap: 4px;
+  }
+  .compare-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--rule);
+    transition: background 0.2s;
+  }
+  .compare-dot.fill {
+    background: var(--wine);
+  }
+  .compare-dots-label {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 11px;
+    color: var(--ink-faded);
+  }
+
+  /* 价格 */
+  .compare-price {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  /* 配餐 */
+  .compare-pairings {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-size: 13px;
+  }
+  .compare-pairings li {
+    position: relative;
+    padding-left: 14px;
+  }
+  .compare-pairings li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--ink-faded);
+  }
+
+  /* 标签云 */
+  .compare-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+  }
+  .compare-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    color: var(--ink-faded);
+  }
+
+  /* ===== 移动端堆叠卡片 ===== */
+  @media (max-width: 768px) {
+    .compare-wrapper {
+      display: block;
+      border: none;
+      border-radius: 0;
+    }
+
+    .compare-header {
+      display: none !important;
+    }
+
+    .compare-row {
+      display: flex !important;
+      flex-direction: column;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .compare-row[style] {
+      display: flex !important;
+    }
+
+    .compare-cell {
+      padding: 12px 16px;
+    }
+
+    .compare-dim {
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
+      background: color-mix(in srgb, var(--wine) 3%, var(--paper));
+      font-size: 10px;
+      justify-content: center;
+    }
+
+    .compare-val {
+      text-align: center;
+      padding: 14px 16px;
+    }
+  }
+</style>
