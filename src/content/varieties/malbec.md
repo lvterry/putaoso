@@ -105,5 +105,5 @@ beginner_friendly: true
 has_china_planting: false
 
 card_tagline: 从法国流亡到阿根廷，意外成了一个国家的名片。
-card_origin_short: Mendoza
+card_origin_short: 门多萨
 ---

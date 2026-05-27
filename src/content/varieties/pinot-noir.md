@@ -109,5 +109,5 @@ beginner_friendly: false
 has_china_planting: false
 
 card_tagline: 葡萄酒里的莫奈。轻盈、敏感、难伺候。
-card_origin_short: Burgundy
+card_origin_short: 勃艮第
 ---

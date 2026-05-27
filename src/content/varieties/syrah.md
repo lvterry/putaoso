@@ -112,5 +112,5 @@ beginner_friendly: true
 has_china_planting: false
 
 card_tagline: 浓郁、香料感、野性，法国的优雅与澳洲的奔放共一体。
-card_origin_short: Rhône
+card_origin_short: 罗讷河谷
 ---

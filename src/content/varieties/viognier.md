@@ -103,5 +103,5 @@ beginner_friendly: false
 has_china_planting: false
 
 card_tagline: 桃花与橙花的香水。最像香氛的白葡萄酒。
-card_origin_short: Condrieu, Rhône
+card_origin_short: 孔德里约, 罗讷河谷
 ---

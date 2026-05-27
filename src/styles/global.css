@@ -1249,8 +1249,7 @@ section.varieties {
 
 .card-foot-value {
   font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 16px;
+  font-size: 14px;
   color: var(--wine);
 }
 

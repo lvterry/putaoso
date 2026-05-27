@@ -108,5 +108,5 @@ beginner_friendly: true
 has_china_planting: false
 
 card_tagline: 酸得直接，香得张扬。草本与柑橘的直球。
-card_origin_short: Loire / Marlborough
+card_origin_short: 卢瓦尔河 / 马尔堡
 ---

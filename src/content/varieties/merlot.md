@@ -110,5 +110,5 @@ beginner_friendly: true
 has_china_planting: true
 
 card_tagline: 柔软、圆润、好入口，赤霞珠最常见的混酿伙伴。
-card_origin_short: Bordeaux
+card_origin_short: 波尔多
 ---

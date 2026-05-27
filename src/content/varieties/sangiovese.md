@@ -109,5 +109,5 @@ beginner_friendly: false
 has_china_planting: false
 
 card_tagline: 意大利的灵魂，基安蒂、布鲁奈罗都从这一颗葡萄而来。
-card_origin_short: Tuscany
+card_origin_short: 托斯卡纳
 ---

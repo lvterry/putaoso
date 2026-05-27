@@ -110,5 +110,5 @@ beginner_friendly: false
 has_china_planting: true
 
 card_tagline: 葡萄酒世界的国民品种。稳定、有结构。
-card_origin_short: Bordeaux
+card_origin_short: 波尔多
 ---

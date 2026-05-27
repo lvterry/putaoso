@@ -107,5 +107,5 @@ beginner_friendly: false
 has_china_planting: false
 
 card_tagline: 西班牙的脊梁。陈年后温柔得出人意料。
-card_origin_short: Rioja, Spain
+card_origin_short: 里奥哈, 西班牙
 ---

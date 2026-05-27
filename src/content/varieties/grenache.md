@@ -106,5 +106,5 @@ beginner_friendly: true
 has_china_planting: false
 
 card_tagline: 太阳的孩子。甜润圆滑，地中海的慷慨。
-card_origin_short: Aragon, Spain
+card_origin_short: 阿拉贡, 西班牙
 ---

@@ -106,5 +106,5 @@ beginner_friendly: true
 has_china_planting: false
 
 card_tagline: 荔枝、玫瑰、香料。盲品就能认出来的品种。
-card_origin_short: Alsace, France
+card_origin_short: 阿尔萨斯
 ---

@@ -109,5 +109,5 @@ beginner_friendly: true
 has_china_planting: false
 
 card_tagline: 同一品种，两种性格。清爽或丰满，看产地。
-card_origin_short: Alto Adige / Alsace
+card_origin_short: 上阿迪杰 / 阿尔萨斯
 ---

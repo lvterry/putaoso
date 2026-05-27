@@ -106,5 +106,5 @@ beginner_friendly: true
 has_china_planting: false
 
 card_tagline: 加州阳光装进瓶子里。大方、热情、从不扭捏。
-card_origin_short: California / Puglia
+card_origin_short: 加利福尼亚 / 普利亚
 ---

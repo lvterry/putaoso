@@ -110,5 +110,5 @@ beginner_friendly: false
 has_china_planting: false
 
 card_tagline: 高酸度、矿物感、能甜能干，被严重低估的白葡萄。
-card_origin_short: Mosel
+card_origin_short: 摩泽尔
 ---

@@ -109,5 +109,5 @@ beginner_friendly: false
 has_china_planting: false
 
 card_tagline: 赤霞珠之父。更轻盈，也更难被真正认识。
-card_origin_short: Loire / Bordeaux
+card_origin_short: 卢瓦尔河 / 波尔多
 ---

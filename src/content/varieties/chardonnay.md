@@ -114,5 +114,5 @@ beginner_friendly: true
 has_china_planting: true
 
 card_tagline: 最百变的白葡萄，从清爽脆口到奶油橡木桶都是它。
-card_origin_short: Burgundy
+card_origin_short: 勃艮第
 ---
