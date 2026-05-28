@@ -3,6 +3,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Scene from '../components/Scene.astro';
 import Palate from '../components/Palate.astro';
+import ShareCard from '../components/ShareCard.astro';
 
 export async function getStaticPaths() {
   const all = await getCollection('varieties');
@@ -86,6 +87,18 @@ function md(s: string) {
       <div class="hero-alias">别名 · {data.aliases.join(' · ')}</div>
     )}
     <div class="hero-quote">{data.hero_quote}</div>
+    <ShareCard
+      slug={entry.slug}
+      number={data.number}
+      name_en={data.name_en}
+      name_cn={data.name_cn}
+      type={data.type}
+      origin={data.origin}
+      hero_quote={data.hero_quote}
+      hero_scene={data.hero_scene}
+      flavors_professional={data.flavors_professional}
+      flavor_tags={data.flavor_tags}
+    />
   </header>
 
   <Scene slug={entry.slug} scene={data.hero_scene} caption={data.hero_scene_caption} />

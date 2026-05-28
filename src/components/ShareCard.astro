@@ -1,0 +1,473 @@
+---
+import StudyStillLife from './scenes/StudyStillLife.astro';
+import VineyardDawn from './scenes/VineyardDawn.astro';
+import ChateauSundown from './scenes/ChateauSundown.astro';
+import SlateSlope from './scenes/SlateSlope.astro';
+
+interface Props {
+  slug: string;
+  number: number;
+  name_en: string;
+  name_cn: string;
+  type: 'red' | 'white' | 'rose';
+  origin: string;
+  hero_quote: string;
+  hero_scene: 'study-still-life' | 'vineyard-dawn' | 'chateau-sundown' | 'slate-slope';
+  flavors_professional: string;
+  flavor_tags: string[];
+}
+
+const {
+  slug,
+  number,
+  name_en,
+  name_cn,
+  type,
+  origin,
+  hero_quote,
+  hero_scene,
+  flavors_professional,
+} = Astro.props;
+
+const numberStr = String(number).padStart(3, '0');
+const typeLabel = type === 'red' ? 'RED' : type === 'white' ? 'WHITE' : 'ROSÉ';
+
+const accentColors: Record<string, string> = {
+  red: '#5a1a1f',
+  white: '#c8a96b',
+  rose: '#d4807a',
+};
+const accent = accentColors[type];
+
+const accentDim: Record<string, string> = {
+  red: 'rgba(90, 26, 31, 0.35)',
+  white: 'rgba(200, 169, 107, 0.40)',
+  rose: 'rgba(212, 128, 122, 0.40)',
+};
+const accentDimColor = accentDim[type];
+
+const typeBadgeBg: Record<string, string> = {
+  red: '#5a1a1f',
+  white: '#c8a96b',
+  rose: '#c47070',
+};
+const typeBadgeColor = typeBadgeBg[type];
+
+function trimFlavors(s: string, maxLen = 100): string {
+  if (s.length <= maxLen) return s;
+  const cut = s.lastIndexOf('、', maxLen);
+  if (cut > 0) return s.slice(0, cut) + '…';
+  return s.slice(0, maxLen) + '…';
+}
+
+const trimmedFlavors = trimFlavors(flavors_professional);
+const nameEnLines = name_en.split(' ');
+const siteUrl = `putaoso.com/${slug}`;
+
+const illustrationSlugs = new Set([
+  'beibinghong', 'cabernet-franc', 'cabernet-gernischt', 'cabernet-sauvignon',
+  'chardonnay', 'gewurztraminer', 'grenache', 'longyan', 'malbec', 'marselan',
+  'merlot', 'pinot-grigio', 'pinot-noir', 'riesling', 'sangiovese', 'sauvignon-blanc',
+  'syrah', 'tempranillo', 'viognier', 'zinfandel',
+]);
+const illustrationSrc = illustrationSlugs.has(slug)
+  ? `/illustrations/${slug}.svg`
+  : undefined;
+
+// Serialize card data for the SVG builder in the client script.
+const cardData = JSON.stringify({
+  numberStr,
+  typeLabel,
+  typeBadgeColor,
+  accent,
+  accentDimColor,
+  nameEnLines,
+  nameCn: name_cn,
+  heroQuote: hero_quote,
+  trimmedFlavors,
+  origin,
+  siteUrl,
+  hasIllustration: !!illustrationSrc,
+});
+---
+
+<button
+  class="share-trigger"
+  type="button"
+  aria-label="分享"
+  data-share-trigger
+>
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+    <polyline points="16 6 12 2 8 6"/>
+    <line x1="12" y1="2" x2="12" y2="15"/>
+  </svg>
+  <span>分享</span>
+</button>
+
+<dialog class="share-dialog" data-share-dialog>
+  <div class="share-dialog-inner">
+    <div class="share-card-preview" data-share-preview>
+      <div class="share-card-scaler" data-share-scaler>
+        <div
+          class:list={['share-card', { 'has-illustration': !!illustrationSrc }]}
+          data-share-card
+          data-slug={slug}
+          data-card-data={cardData}
+        >
+          <div class="share-card-visual">
+            {illustrationSrc ? (
+              <img
+                class="share-card-illustration"
+                src={illustrationSrc}
+                alt=""
+                loading="eager"
+                decoding="async"
+              />
+            ) : (
+              <div class="share-card-scene">
+                {hero_scene === 'study-still-life' && <StudyStillLife />}
+                {hero_scene === 'vineyard-dawn' && <VineyardDawn />}
+                {hero_scene === 'chateau-sundown' && <ChateauSundown />}
+                {hero_scene === 'slate-slope' && <SlateSlope />}
+              </div>
+            )}
+          </div>
+
+          <div class="share-card-frame" style={`border-color:${accentDimColor};`}></div>
+
+          <div class="share-card-content">
+            <div class="share-card-top">
+              <span class="share-card-number">N° {numberStr}</span>
+              <span class="share-card-type" style={`background:${typeBadgeColor};color:#f5f0e8;`}>{typeLabel}</span>
+            </div>
+
+            <div class="share-card-names">
+              <div class="share-card-name-en">
+                {nameEnLines.map((word, i) => (
+                  i < nameEnLines.length - 1 ? <>{word}<br/></> : <>{word}</>
+                ))}
+              </div>
+              <div class="share-card-name-cn">{name_cn}</div>
+            </div>
+
+            <div class="share-card-quote">
+              {hero_quote}
+            </div>
+
+            <div class="share-card-rule" style={`background:${accentDimColor};`}></div>
+
+            <div class="share-card-info">
+              <div class="share-card-info-col">
+                <div class="share-card-label">风味特征</div>
+                <div class="share-card-flavors-pro">{trimmedFlavors}</div>
+              </div>
+              <div class="share-card-info-divider" style={`background:${accentDimColor};`}></div>
+              <div class="share-card-info-col">
+                <div class="share-card-label">原产地</div>
+                <div class="share-card-origin">{origin}</div>
+              </div>
+            </div>
+
+            <div class="share-card-footer">
+              <div class="share-card-branding">
+                <span class="share-card-brand-zh">葡萄搜</span>
+                <span class="share-card-brand-en">PUTAOSO</span>
+              </div>
+              <div class="share-card-url">{siteUrl}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="share-dialog-actions">
+      <button class="share-download-btn" data-share-download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        下载 PNG
+      </button>
+      <button class="share-close-btn" data-share-close>关闭</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  // ── DOM refs ──────────────────────────────────────────────────
+  const trigger = document.querySelector<HTMLButtonElement>('[data-share-trigger]')!;
+  const dialog = document.querySelector<HTMLDialogElement>('[data-share-dialog]')!;
+  const downloadBtn = document.querySelector<HTMLButtonElement>('[data-share-download]')!;
+  const closeBtn = document.querySelector<HTMLButtonElement>('[data-share-close]')!;
+  const cardEl = document.querySelector<HTMLElement>('[data-share-card]')!;
+  // Per-page card data (data attribute avoids hoisting across pages).
+  const cardData = JSON.parse(cardEl.dataset.cardData!);
+  const scalerEl = document.querySelector<HTMLElement>('[data-share-scaler]')!;
+  const previewEl = document.querySelector<HTMLElement>('[data-share-preview]')!;
+  const illustrationImg = document.querySelector<HTMLImageElement>('.share-card-illustration');
+  const slug = cardEl.dataset.slug || 'variety';
+
+  function applyScale() {
+    scalerEl.style.transform = `scale(${previewEl.clientWidth / 1080})`;
+  }
+
+  function openDialog() {
+    dialog.showModal();
+    document.body.style.overflow = 'hidden';
+    applyScale();
+  }
+
+  function closeDialog() {
+    dialog.close();
+    document.body.style.overflow = '';
+  }
+
+  trigger.addEventListener('click', openDialog);
+  closeBtn.addEventListener('click', closeDialog);
+  dialog.addEventListener('click', (e) => { if (e.target === dialog) closeDialog(); });
+  dialog.addEventListener('cancel', (e) => { e.preventDefault(); closeDialog(); });
+  window.addEventListener('resize', () => { if (dialog.open) applyScale(); });
+
+  // ── Text helpers for SVG ─────────────────────────────────────
+  /** Wrap CJK text into lines of at most `maxChars` characters. */
+  function wrapLines(text: string, maxChars: number): string[] {
+    const lines: string[] = [];
+    let i = 0;
+    while (i < text.length) {
+      lines.push(text.slice(i, i + maxChars));
+      i += maxChars;
+    }
+    return lines;
+  }
+
+  function svgText(text: string): string {
+    return String(text)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&apos;');
+  }
+
+  // ── SVG builder ──────────────────────────────────────────────
+  function buildCardSvg(illustrationDataUrl: string): string {
+    const W = 1080;
+    const C = 36;                      // frame inset
+    const cw = W - C * 2;             // content width = 1008
+    const cx = W / 2;                 // center X
+
+    const {
+      numberStr, typeLabel, typeBadgeColor,
+      accent, accentDimColor,
+      nameEnLines, nameCn, heroQuote,
+      trimmedFlavors, origin, siteUrl, hasIllustration,
+    } = cardData;
+
+    const illH = hasIllustration ? 540 : 360;
+    const contentTop = illH + 48;
+    const contentBot = 1350 - 56;
+    const contentH = contentBot - contentTop;
+
+    // ── Dynamic layout: distribute available height ──────────
+    // Fixed-size elements
+    const topBarH = 40;
+    const nameH = nameEnLines.length * 130 + 60;  // EN lines + CN
+    const ruleH = 1;
+    // Flexible elements — estimate line counts
+    const quoteLines = wrapLines(heroQuote, 30);
+    const flavorLines = wrapLines(trimmedFlavors, 34);
+    const quoteH = quoteLines.length * 48 + 24;
+    const infoH = Math.max(flavorLines.length * 42, 60) + 40;
+    const footerH = 36;
+
+    const totalH = topBarH + nameH + quoteH + ruleH + infoH + footerH;
+    const gap = Math.max(12, (contentH - totalH) / 5);
+
+    let y = contentTop;
+
+    function gapY() { y += gap; }
+
+    // ── Inner frame ───────────────────────────────────────────
+    const frame = `<rect x="${C}" y="${C}" width="${W - C * 2}" height="${1350 - C * 2}" fill="none" stroke="${accentDimColor}" stroke-width="1"/>`;
+
+    // ── Top bar ───────────────────────────────────────────────
+    const topY = y + 28; // baseline
+    const topBar = `
+      <text x="${C + 20}" y="${topY}" font-family="'JetBrains Mono', monospace" font-size="16" letter-spacing="2.5" fill="#8a7d6a">N° ${numberStr}</text>
+      <rect x="${W - C - 90}" y="${topY - 22}" width="70" height="28" rx="2" fill="${typeBadgeColor}"/>
+      <text x="${W - C - 55}" y="${topY}" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="3" fill="#f5f0e8" text-anchor="middle">${typeLabel}</text>`;
+    y += topBarH; gapY();
+
+    // ── Name block (centered) ─────────────────────────────────
+    let nameSvg = '';
+    let ny = y;
+    for (const word of nameEnLines) {
+      nameSvg += `<text x="${cx}" y="${ny}" font-family="'Cormorant Garamond', serif" font-style="italic" font-size="120" fill="#3d0f15" text-anchor="middle">${svgText(word)}</text>`;
+      ny += 130;
+    }
+    nameSvg += `<text x="${cx}" y="${ny}" font-family="'Noto Serif SC', serif" font-weight="300" font-size="56" letter-spacing="5.6" fill="#1a1410" text-anchor="middle">${svgText(nameCn)}</text>`;
+    y += nameH; gapY();
+
+    // ── Quote (centered) + decorative quote mark ──────────────
+    let quoteSvg = '';
+    const quoteMarkY = y - 8;
+    quoteSvg += `<text x="${cx}" y="${quoteMarkY}" font-family="'Cormorant Garamond', serif" font-style="italic" font-size="128" fill="#5a1a1f" opacity="0.12" text-anchor="middle">"</text>`;
+
+    let qy = y + 36;
+    for (const line of quoteLines) {
+      quoteSvg += `<text x="${cx}" y="${qy}" font-family="'Noto Serif SC', serif" font-size="30" fill="#3d342c" text-anchor="middle">${svgText(line)}</text>`;
+      qy += 48;
+    }
+    y += quoteH; gapY();
+
+    // ── Rule ──────────────────────────────────────────────────
+    const rule = `<line x1="${C + 20}" y1="${y}" x2="${W - C - 20}" y2="${y}" stroke="${accentDimColor}" stroke-width="1"/>`;
+    y += ruleH; gapY();
+
+    // ── Info row: flavor | origin ─────────────────────────────
+    const infoMid = W / 2;
+    const infoLabelY = y + 24;
+    const infoBodyY = infoLabelY + 36;
+
+    // Flavor (left half, centered in its column)
+    let flavorSvg = `<text x="${infoMid / 2}" y="${infoLabelY}" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="3" fill="#8a7d6a" text-anchor="middle">风味特征</text>`;
+    let fy = infoBodyY;
+    for (const line of flavorLines) {
+      flavorSvg += `<text x="${infoMid / 2}" y="${fy}" font-family="'Noto Serif SC', serif" font-weight="500" font-size="24" fill="#3d342c" text-anchor="middle">${svgText(line)}</text>`;
+      fy += 40;
+    }
+
+    // Divider
+    const divider = `<line x1="${infoMid}" y1="${infoLabelY - 10}" x2="${infoMid}" y2="${fy - 10}" stroke="${accentDimColor}" stroke-width="1"/>`;
+
+    // Origin (right half, centered in its column)
+    const originX = infoMid + infoMid / 2;
+    const originSvg = `
+      <text x="${originX}" y="${infoLabelY}" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="3" fill="#8a7d6a" text-anchor="middle">原产地</text>
+      <text x="${originX}" y="${infoBodyY}" font-family="'Noto Serif SC', serif" font-size="28" letter-spacing="1.1" fill="#3d0f15" text-anchor="middle">${svgText(origin)}</text>`;
+
+    y += infoH;
+
+    // ── Footer ────────────────────────────────────────────────
+    const footerY = contentBot - 12;
+    const footer = `
+      <text x="${C + 20}" y="${footerY}" font-family="'Noto Serif SC', serif" font-weight="500" font-size="20" letter-spacing="2" fill="#1a1410">葡萄搜</text>
+      <text x="${C + 100}" y="${footerY}" font-family="'Cormorant Garamond', serif" font-style="italic" font-size="18" letter-spacing="1.5" fill="#8a7d6a">PUTAOSO</text>
+      <text x="${W - C - 20}" y="${footerY}" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="1" fill="#8a7d6a" text-anchor="end">${svgText(siteUrl)}</text>`;
+
+    // ── Assemble ──────────────────────────────────────────────
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="${W}" height="1350" viewBox="0 0 ${W} 1350">
+  <rect width="${W}" height="1350" fill="#f5f0e8"/>
+  ${hasIllustration ? `<image x="0" y="0" width="${W}" height="${illH}" href="${illustrationDataUrl}" preserveAspectRatio="xMidYMid slice"/>` : ''}
+  ${frame}
+  ${topBar}
+  ${nameSvg}
+  ${quoteSvg}
+  ${rule}
+  ${flavorSvg}
+  ${divider}
+  ${originSvg}
+  ${footer}
+</svg>`;
+  }
+
+  // ── Helper: load image from the already-rendered <img> ──────
+  function getIllustrationDataUrl(): Promise<string> {
+    return new Promise((resolve, reject) => {
+      if (!illustrationImg) return resolve('');
+      const canvas = document.createElement('canvas');
+      canvas.width = 1080;
+      canvas.height = 540;
+      const ctx = canvas.getContext('2d')!;
+      try {
+        ctx.drawImage(illustrationImg, 0, 0, 1080, 540);
+        resolve(canvas.toDataURL('image/png'));
+      } catch (err) {
+        // Canvas tainted or image not loaded — fall back to empty
+        console.warn('Could not render illustration to canvas, omitting from card', err);
+        resolve('');
+      }
+    });
+  }
+
+  // ── Helper: SVG string → PNG Blob ──────────────────────────
+  function svgToPngBlob(svgString: string): Promise<Blob> {
+    return new Promise((resolve, reject) => {
+      const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(svgBlob);
+      const img = new Image();
+      img.onload = () => {
+        URL.revokeObjectURL(url);
+        const canvas = document.createElement('canvas');
+        canvas.width = 1080;
+        canvas.height = 1350;
+        const ctx = canvas.getContext('2d')!;
+        ctx.drawImage(img, 0, 0);
+        canvas.toBlob((blob) => {
+          if (blob) resolve(blob);
+          else reject(new Error('Canvas toBlob returned null'));
+        }, 'image/png');
+      };
+      img.onerror = () => {
+        URL.revokeObjectURL(url);
+        reject(new Error('Failed to load SVG as image'));
+      };
+      img.src = url;
+    });
+  }
+
+  // ── Download handler ────────────────────────────────────────
+  downloadBtn.addEventListener('click', async () => {
+    const originalText = downloadBtn.innerHTML;
+    downloadBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="spin"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 生成中…`;
+    downloadBtn.disabled = true;
+
+    try {
+      await document.fonts.ready;
+
+      // Wait for illustration image if present
+      if (illustrationImg && !illustrationImg.complete) {
+        await new Promise<void>((resolve) => {
+          illustrationImg.onload = () => resolve();
+          illustrationImg.onerror = () => resolve();
+          setTimeout(() => resolve(), 5000);
+        });
+      }
+
+      const illDataUrl = await getIllustrationDataUrl();
+      const svg = buildCardSvg(illDataUrl);
+      const blob = await svgToPngBlob(svg);
+
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.download = `putaoso-${slug}.png`;
+      link.href = url;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    } catch (err) {
+      console.error('Share card export failed:', err);
+      downloadBtn.innerHTML = '⚠ 导出失败，请重试';
+      downloadBtn.disabled = false;
+      setTimeout(() => { downloadBtn.innerHTML = originalText; }, 2000);
+      return;
+    }
+
+    downloadBtn.innerHTML = originalText;
+    downloadBtn.disabled = false;
+  });
+</script>
+
+<style>
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  .spin {
+    animation: spin 1s linear infinite;
+  }
+</style>

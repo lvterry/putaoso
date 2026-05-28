@@ -716,6 +716,421 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
    响应式
 ============================================================ */
 
+/* ============================================================
+   分享卡片
+============================================================ */
+
+/* Share trigger button - placed near hero title */
+.share-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 13px;
+  letter-spacing: 1px;
+  background: none;
+  border: 1px solid var(--rule);
+  color: var(--ink-faded);
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  margin-top: 20px;
+}
+
+.share-trigger:hover {
+  border-color: var(--wine);
+  color: var(--wine);
+}
+
+.share-trigger svg {
+  flex-shrink: 0;
+}
+
+/* Dialog overlay */
+.share-dialog {
+  border: none;
+  padding: 0;
+  background: transparent;
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.share-dialog::backdrop {
+  background: rgba(20, 16, 12, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .share-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.share-dialog-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 40px 24px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  justify-content: center;
+}
+
+/* Preview wrapper — viewport-sized viewport into the card */
+.share-card-preview {
+  position: relative;
+  width: min(calc(100vw - 48px), calc((100vh - 200px) * 0.8));
+  aspect-ratio: 4 / 5;
+  max-width: 480px;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/*
+  Scaler gets the preview-fit transform.
+  The card itself stays at native 1080×1350 with NO transform,
+  so the generated export uses the true card dimensions.
+*/
+.share-card-scaler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1080px;
+  height: 1350px;
+  transform-origin: top left;
+}
+
+/* Native 1080×1350 card — no transform applied here */
+.share-card {
+  width: 1080px;
+  height: 1350px;
+  background: #f5f0e8;
+  font-family: 'Noto Serif SC', Georgia, serif;
+  color: #1a1410;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Paper texture overlay */
+.share-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.06 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   Visual section — illustration or fallback scene
+============================================================ */
+.share-card-visual {
+  position: relative;
+  flex-shrink: 0;
+  height: 488px;  /* ~36% of 1350 — leaves good room for content */
+  overflow: hidden;
+}
+
+/* Custom illustration */
+.share-card-illustration {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Make the visual taller when it's a real illustration */
+.share-card.has-illustration .share-card-visual {
+  height: 540px;
+}
+
+/* Fallback scene SVG (no custom illustration available) */
+.share-card-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.share-card-scene svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Inner frame — subtle border inset */
+.share-card-frame {
+  position: absolute;
+  inset: 36px;
+  border: 1px solid;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============================================================
+   Content layer
+============================================================ */
+.share-card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px 72px 56px;
+  flex: 1;
+}
+
+/* When illustration is shown, content has less padding-top */
+.share-card.has-illustration .share-card-content {
+  padding-top: 36px;
+}
+
+/* Top row */
+.share-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.share-card-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  letter-spacing: 2.5px;
+  color: #8a7d6a;
+  text-transform: uppercase;
+}
+
+.share-card-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 3px;
+  padding: 8px 20px;
+  border-radius: 2px;
+  font-weight: 400;
+}
+
+/* Name block */
+.share-card-names {
+  text-align: center;
+}
+
+.share-card-name-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 120px;
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  color: #3d0f15;
+  margin-bottom: 4px;
+}
+
+.share-card-name-cn {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 300;
+  font-size: 56px;
+  letter-spacing: 0.10em;
+  color: #1a1410;
+}
+
+/* Quote with decorative quote mark */
+.share-card-quote {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.6;
+  color: #3d342c;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.share-card-quote::before {
+  content: '"';
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 128px;
+  color: #5a1a1f;
+  opacity: 0.12;
+  position: absolute;
+  top: -56px;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* Decorative rule line */
+.share-card-rule {
+  height: 1px;
+  width: 100%;
+}
+
+/* Side-by-side info row: 风味特征 + 原产地 */
+.share-card-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.share-card-info-col {
+  flex: 1;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.share-card-info-divider {
+  width: 1px;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.share-card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #8a7d6a;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.share-card-flavors-pro {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.65;
+  color: #3d342c;
+  letter-spacing: 0.02em;
+}
+
+.share-card-origin {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  color: #3d0f15;
+}
+
+/* Footer branding */
+.share-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.share-card-branding {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.share-card-brand-zh {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #1a1410;
+}
+
+.share-card-brand-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  color: #8a7d6a;
+}
+
+.share-card-url {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #8a7d6a;
+}
+
+/* Dialog action buttons */
+.share-dialog-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.share-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  background: var(--wine);
+  color: #f5f0e8;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.share-download-btn:hover {
+  background: var(--wine-deep);
+}
+
+.share-download-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.share-close-btn {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  background: none;
+  border: 1px solid var(--rule);
+  color: var(--ink-faded);
+  padding: 11px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.share-close-btn:hover {
+  border-color: var(--ink-faded);
+  color: var(--ink-soft);
+}
+
+/* Responsive: dialog actions stack on small screens */
+@media (max-width: 640px) {
+  .share-dialog-inner {
+    padding: 24px 16px;
+    gap: 20px;
+  }
+  .share-card-preview {
+    width: min(calc(100vw - 32px), calc((100vh - 180px) * 0.8));
+  }
+  .share-dialog-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+  .share-download-btn,
+  .share-close-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 640px) {
   .container {
     padding: 0 24px;
