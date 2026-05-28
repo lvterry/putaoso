@@ -102,8 +102,4 @@
         <circle cx="800" cy="450" r="300"/>
       </g>
 
-      <!-- minimal title bottom -->
-      <text x="800" y="828" text-anchor="middle"
-            font-family="'Songti SC', 'STSong', serif" font-size="22"
-            letter-spacing="0.5em" fill="#3a4a40">龍 眼 · 懷 來</text>
     </svg>

@@ -105,13 +105,6 @@
         </g>
       </g>
 
-      <!-- right side vertical title -->
-      <g font-family="'STKaiti', 'Kaiti SC', 'Songti SC', serif" fill="#7a1820">
-        <text x="1380" y="280" font-size="80" font-weight="700" letter-spacing="0.05em">蛇</text>
-        <text x="1380" y="380" font-size="80" font-weight="700" letter-spacing="0.05em">龍</text>
-        <text x="1380" y="480" font-size="80" font-weight="700" letter-spacing="0.05em">珠</text>
-      </g>
-
       <!-- left side ENGLISH title vertical -->
       <g transform="translate(160, 720) rotate(-90)" 
          font-family="'Bodoni 72', 'Didot', Georgia, serif" fill="#7a1820">
@@ -123,12 +116,4 @@
             font-family="'Songti SC', serif" font-size="16"
             letter-spacing="0.4em" fill="#2a5848">煙臺·一九一五·解百納</text>
 
-      <!-- small price tag -->
-      <g transform="translate(1340, 720)">
-        <rect width="120" height="56" fill="#a85838"/>
-        <text x="60" y="22" text-anchor="middle" font-family="'STKaiti', serif"
-              font-size="14" fill="#f0e0c4" letter-spacing="0.2em">每瓶大洋</text>
-        <text x="60" y="46" text-anchor="middle" font-family="'STKaiti', serif"
-              font-size="20" font-weight="700" fill="#f0e0c4">壹圓貳角</text>
-      </g>
     </svg>

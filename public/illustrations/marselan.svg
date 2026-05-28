@@ -93,21 +93,4 @@
       <circle cx="500" cy="618" r="3" fill="#1a1208"/>
       <line x1="500" y1="620" x2="500" y2="640" stroke="#1a1208" stroke-width="1.5"/>
 
-      <!-- calligraphic title column on right -->
-      <g font-family="'Songti SC', 'STSong', serif" fill="#1a1208">
-        <text x="1440" y="160" font-size="46" letter-spacing="0.15em">马</text>
-        <text x="1440" y="216" font-size="46" letter-spacing="0.15em">瑟</text>
-        <text x="1440" y="272" font-size="46" letter-spacing="0.15em">兰</text>
-        <line x1="1438" y1="294" x2="1480" y2="294" stroke="#1a1208" stroke-width="1"/>
-        <text x="1440" y="328" font-size="14" letter-spacing="0.3em">贺 兰</text>
-        <text x="1440" y="352" font-size="14" letter-spacing="0.3em">山 东</text>
-        <text x="1440" y="376" font-size="14" letter-spacing="0.3em">麓</text>
-      </g>
-
-      <!-- red seal -->
-      <g transform="translate(1430, 420)">
-        <rect width="56" height="56" fill="#a83020"/>
-        <text x="28" y="42" text-anchor="middle"
-              font-family="'Songti SC', serif" font-size="34" fill="#f0e8d4">宁</text>
-      </g>
     </svg>
