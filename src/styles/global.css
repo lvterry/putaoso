@@ -1705,7 +1705,7 @@ section.varieties {
 }
 
 .card-foot-value {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Noto Serif SC', serif;
   font-size: 14px;
   color: var(--wine);
 }
@@ -1785,6 +1785,7 @@ section.varieties {
 }
 
 .grid .card.live .card-foot-value {
+  font-family: 'Noto Serif SC', serif;
   transition: opacity 0.3s ease;
 }
 
