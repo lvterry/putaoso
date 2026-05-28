@@ -110,9 +110,9 @@ const liveForPicker = all
     // ===== 构建一个品种的维度列表（用于移动端卡片） =====
     function varietyFields(v) {
       const dims = [];
-      dims.push(['类型', `<span class="compare-type-badge" data-type="${v.type}">${v.type === 'red' ? '红葡萄' : v.type === 'white' ? '白葡萄' : '桃红'}</span>`]);
+      dims.push(['类型', `<span class="compare-badge" data-type="${v.type}">${v.type === 'red' ? '红葡萄' : v.type === 'white' ? '白葡萄' : '桃红'}</span>`]);
       dims.push(['原产地', esc(v.origin)]);
-      dims.push(['风味', `<div class="compare-flavors">${extractFlavors(v.flavors_professional).map((f) => `<span class="compare-flavor-tag">${esc(f)}</span>`).join('')}</div>`]);
+      dims.push(['风味', `<div class="compare-badges">${extractFlavors(v.flavors_professional).map((f) => `<span class="compare-badge">${esc(f)}</span>`).join('')}</div>`]);
       dims.push(['酸度', dotsHtml(v.palate.acidity, v.palate.acidity_label)]);
 
       let secondDim, secondVal;
@@ -128,7 +128,7 @@ const liveForPicker = all
       dims.push(['入门难度', dotsHtml(v.palate.beginner_difficulty, v.palate.beginner_difficulty_label)]);
       dims.push(['价格区间', `<span class="compare-price">¥${v.price.min} – ¥${v.price.max}</span>`]);
       dims.push(['配餐推荐', `<ul class="compare-pairings">${v.pairings.slice(0, 2).map((p) => `<li>${esc(p)}</li>`).join('')}</ul>`]);
-      dims.push(['标签', `<div class="compare-tags">${v.flavor_tags.map((t) => `<span class="compare-tag">${esc(tagLabel(t))}</span>`).join('')}</div>`]);
+      dims.push(['标签', `<div class="compare-badges">${v.flavor_tags.map((t) => `<span class="compare-badge">${esc(tagLabel(t))}</span>`).join('')}</div>`]);
       return dims;
     }
 
@@ -168,7 +168,7 @@ const liveForPicker = all
       // 类型
       html += `<tr><td class="compare-cell compare-dim">类型</td>${grid(sel.map((v) => {
         const label = v.type === 'red' ? '红葡萄' : v.type === 'white' ? '白葡萄' : '桃红';
-        return `<span class="compare-type-badge" data-type="${v.type}">${label}</span>`;
+        return `<span class="compare-badge" data-type="${v.type}">${label}</span>`;
       }))}</tr>`;
 
       // 原产地
@@ -176,8 +176,8 @@ const liveForPicker = all
 
       // 风味
       html += `<tr><td class="compare-cell compare-dim">风味</td>${grid(sel.map((v) => {
-        const flavors = extractFlavors(v.flavors_professional).map((f) => `<span class="compare-flavor-tag">${esc(f)}</span>`).join('');
-        return `<div class="compare-flavors">${flavors}</div>`;
+        const flavors = extractFlavors(v.flavors_professional).map((f) => `<span class="compare-badge">${esc(f)}</span>`).join('');
+        return `<div class="compare-badges">${flavors}</div>`;
       }))}</tr>`;
 
       // 酸度
@@ -209,8 +209,8 @@ const liveForPicker = all
 
       // 标签
       html += `<tr><td class="compare-cell compare-dim">标签</td>${grid(sel.map((v) => {
-        const tags = v.flavor_tags.map((t) => `<span class="compare-tag">${esc(tagLabel(t))}</span>`).join('');
-        return `<div class="compare-tags">${tags}</div>`;
+        const tags = v.flavor_tags.map((t) => `<span class="compare-badge">${esc(tagLabel(t))}</span>`).join('');
+        return `<div class="compare-badges">${tags}</div>`;
       }))}</tr>`;
 
       html += '</tbody></table></div></div>';
@@ -336,30 +336,25 @@ const liveForPicker = all
     color: var(--ink-soft); line-height: 1.5;
   }
 
-  /* 类型 badge */
-  .compare-type-badge {
-    font-family: 'JetBrains Mono', monospace; font-size: 10px;
-    letter-spacing: 1px; padding: 2px 8px; border-radius: 3px;
-    text-transform: uppercase;
+  /* 统一标签样式 */
+  .compare-badge {
+    font-family: 'Noto Serif SC', serif; font-size: 12px;
+    padding: 2px 8px; border-radius: 3px; white-space: nowrap;
+    background: color-mix(in srgb, var(--ink) 6%, transparent);
+    color: var(--ink-soft);
   }
-  .compare-type-badge[data-type='red'] {
+  .compare-badge[data-type='red'] {
     color: var(--wine); background: color-mix(in srgb, var(--wine) 12%, transparent);
   }
-  .compare-type-badge[data-type='white'] {
+  .compare-badge[data-type='white'] {
     color: var(--ink-soft); background: color-mix(in srgb, var(--ink-soft) 10%, transparent);
   }
-  .compare-type-badge[data-type='rose'] {
+  .compare-badge[data-type='rose'] {
     color: var(--highlight); background: color-mix(in srgb, var(--highlight) 12%, transparent);
   }
 
-  /* 风味标签 */
-  .compare-flavors {
+  .compare-badges {
     display: flex; flex-wrap: wrap; gap: 4px; justify-content: center;
-  }
-  .compare-flavor-tag {
-    font-family: 'Noto Serif SC', serif; font-size: 12px; padding: 2px 6px;
-    background: color-mix(in srgb, var(--ink) 6%, transparent);
-    border-radius: 3px; white-space: nowrap;
   }
 
   /* 点状条 */
@@ -390,16 +385,7 @@ const liveForPicker = all
     content: '—'; position: absolute; left: 0; color: var(--ink-faded);
   }
 
-  /* 标签云 */
-  .compare-tags {
-    display: flex; flex-wrap: wrap; gap: 4px; justify-content: center;
-  }
-  .compare-tag {
-    font-family: 'JetBrains Mono', monospace; font-size: 9px;
-    letter-spacing: 0.5px; text-transform: uppercase;
-    padding: 2px 6px; border: 1px solid var(--rule);
-    border-radius: 3px; color: var(--ink-faded);
-  }
+
 
   /* ===== 移动端：每个品种一张卡片 ===== */
   .compare-mobile { display: none; }
