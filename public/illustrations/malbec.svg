@@ -3,6 +3,11 @@
         <pattern id="mb-zigzag" patternUnits="userSpaceOnUse" width="40" height="20">
           <path d="M 0 10 L 10 0 L 20 10 L 30 0 L 40 10 L 30 20 L 20 10 L 10 20 Z" fill="#d4a058"/>
         </pattern>
+        <g id="mb-diamond">
+          <polygon points="0,-60 60,0 0,60 -60,0"/>
+          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
+          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
+        </g>
       </defs>
       <!-- handwoven cream backdrop -->
       <rect width="1600" height="900" fill="#e8d8b8"/>
@@ -20,71 +25,19 @@
       <!-- repeating diamond motifs across the panel -->
       <g fill="#d4a058">
         <!-- row 1 -->
-        <g transform="translate(140, 360)">
-          <polygon points="0,-60 60,0 0,60 -60,0"/>
-          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
-          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
-        </g>
-        <g transform="translate(380, 360)">
-          <polygon points="0,-60 60,0 0,60 -60,0"/>
-          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
-          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
-        </g>
-        <g transform="translate(620, 360)">
-          <polygon points="0,-60 60,0 0,60 -60,0"/>
-          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
-          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
-        </g>
-        <g transform="translate(860, 360)">
-          <polygon points="0,-60 60,0 0,60 -60,0"/>
-          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
-          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
-        </g>
-        <g transform="translate(1100, 360)">
-          <polygon points="0,-60 60,0 0,60 -60,0"/>
-          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
-          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
-        </g>
-        <g transform="translate(1340, 360)">
-          <polygon points="0,-60 60,0 0,60 -60,0"/>
-          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
-          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
-        </g>
+        <use href="#mb-diamond" transform="translate(140, 360)"/>
+        <use href="#mb-diamond" transform="translate(380, 360)"/>
+        <use href="#mb-diamond" transform="translate(620, 360)"/>
+        <use href="#mb-diamond" transform="translate(860, 360)"/>
+        <use href="#mb-diamond" transform="translate(1100, 360)"/>
+        <use href="#mb-diamond" transform="translate(1340, 360)"/>
 
         <!-- row 2 (offset) -->
-        <g transform="translate(260, 540)">
-          <polygon points="0,-60 60,0 0,60 -60,0"/>
-          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
-          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
-        </g>
-        <g transform="translate(500, 540)">
-          <polygon points="0,-60 60,0 0,60 -60,0"/>
-          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
-          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
-        </g>
-        <g transform="translate(740, 540)">
-          <polygon points="0,-60 60,0 0,60 -60,0"/>
-          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
-          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
-        </g>
-        <g transform="translate(980, 540)">
-          <polygon points="0,-60 60,0 0,60 -60,0"/>
-          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
-          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
-        </g>
-        <g transform="translate(1220, 540)">
-          <polygon points="0,-60 60,0 0,60 -60,0"/>
-          <polygon points="0,-30 30,0 0,30 -30,0" fill="#1a0608"/>
-          <polygon points="0,-12 12,0 0,12 -12,0" fill="#a02828"/>
-        </g>
-      </g>
-
-      <!-- stepped pyramid (Andean condor / mountain symbol) center -->
-      <g transform="translate(800, 450)" fill="#d4a058">
-        <path d="M 0 -120 L 40 -120 L 40 -80 L 80 -80 L 80 -40 L 120 -40 L 120 0
-                 L 80 0 L 80 -40 L 40 -40 L 40 -80 L 0 -80 Z"/>
-        <path d="M 0 -120 L -40 -120 L -40 -80 L -80 -80 L -80 -40 L -120 -40 L -120 0
-                 L -80 0 L -80 -40 L -40 -40 L -40 -80 L 0 -80 Z"/>
+        <use href="#mb-diamond" transform="translate(260, 540)"/>
+        <use href="#mb-diamond" transform="translate(500, 540)"/>
+        <use href="#mb-diamond" transform="translate(740, 540)"/>
+        <use href="#mb-diamond" transform="translate(980, 540)"/>
+        <use href="#mb-diamond" transform="translate(1220, 540)"/>
       </g>
 
       <!-- horizontal bands at bottom mirroring top -->
