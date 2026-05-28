@@ -145,6 +145,18 @@ nav.top {
   animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
+.hero-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.hero-title-row h1 {
+  flex: 1;
+  margin-bottom: 0;
+}
+
 
 .hero h1 {
   font-family: 'Cormorant Garamond', serif;
@@ -735,7 +747,7 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
   border-radius: 4px;
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s;
-  margin-top: 20px;
+  flex-shrink: 0;
 }
 
 .share-trigger:hover {
@@ -1074,40 +1086,23 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
   font-family: 'Noto Serif SC', serif;
   font-size: 15px;
   letter-spacing: 0.5px;
-  background: var(--wine);
-  color: #f5f0e8;
-  border: none;
+  background: #fff;
+  color: var(--wine);
+  border: 1px solid var(--wine);
   padding: 12px 28px;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .share-download-btn:hover {
-  background: var(--wine-deep);
+  background: #faf3f0;
+  color: var(--wine);
 }
 
 .share-download-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-}
-
-.share-close-btn {
-  font-family: 'Noto Serif SC', serif;
-  font-size: 15px;
-  letter-spacing: 0.5px;
-  background: none;
-  border: 1px solid var(--rule);
-  color: var(--ink-faded);
-  padding: 11px 24px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
-}
-
-.share-close-btn:hover {
-  border-color: var(--ink-faded);
-  color: var(--ink-soft);
 }
 
 /* Responsive: dialog actions stack on small screens */
@@ -1124,8 +1119,7 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
     width: 100%;
     max-width: 320px;
   }
-  .share-download-btn,
-  .share-close-btn {
+  .share-download-btn {
     width: 100%;
     justify-content: center;
   }

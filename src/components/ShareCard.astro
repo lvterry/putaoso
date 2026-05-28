@@ -188,9 +188,9 @@ const cardData = JSON.stringify({
           <polyline points="7 10 12 15 17 10"/>
           <line x1="12" y1="15" x2="12" y2="3"/>
         </svg>
-        下载 PNG
+        下载图片
       </button>
-      <button class="share-close-btn" data-share-close>关闭</button>
+
     </div>
   </div>
 </dialog>
@@ -200,7 +200,6 @@ const cardData = JSON.stringify({
   const trigger = document.querySelector<HTMLButtonElement>('[data-share-trigger]')!;
   const dialog = document.querySelector<HTMLDialogElement>('[data-share-dialog]')!;
   const downloadBtn = document.querySelector<HTMLButtonElement>('[data-share-download]')!;
-  const closeBtn = document.querySelector<HTMLButtonElement>('[data-share-close]')!;
   const cardEl = document.querySelector<HTMLElement>('[data-share-card]')!;
   // Per-page card data (data attribute avoids hoisting across pages).
   const cardData = JSON.parse(cardEl.dataset.cardData!);
@@ -225,8 +224,12 @@ const cardData = JSON.stringify({
   }
 
   trigger.addEventListener('click', openDialog);
-  closeBtn.addEventListener('click', closeDialog);
-  dialog.addEventListener('click', (e) => { if (e.target === dialog) closeDialog(); });
+  dialog.addEventListener('click', (e) => {
+    // Close when clicking the backdrop area (not the card preview or actions)
+    if (!e.target.closest('.share-card-preview') && !e.target.closest('.share-dialog-actions')) {
+      closeDialog();
+    }
+  });
   dialog.addEventListener('cancel', (e) => { e.preventDefault(); closeDialog(); });
   window.addEventListener('resize', () => { if (dialog.open) applyScale(); });
 
@@ -277,7 +280,7 @@ const cardData = JSON.stringify({
     const ruleH = 1;
     // Flexible elements — estimate line counts
     const quoteLines = wrapLines(heroQuote, 30);
-    const flavorLines = wrapLines(trimmedFlavors, 34);
+    const flavorLines = wrapLines(trimmedFlavors, 14);
     const quoteH = quoteLines.length * 48 + 24;
     const infoH = Math.max(flavorLines.length * 42, 60) + 40;
     const footerH = 36;
