@@ -311,6 +311,9 @@ const liveForPicker = all
     padding: 14px 16px; min-width: 0;
     border-bottom: 1px solid var(--rule);
   }
+  .compare-table tr:last-child td {
+    border-bottom: none;
+  }
   .compare-table .compare-dim {
     font-family: 'JetBrains Mono', monospace; font-size: 10px;
     letter-spacing: 1px; text-transform: uppercase;
@@ -320,7 +323,7 @@ const liveForPicker = all
   }
   .compare-col-head {
     text-align: center; padding: 20px 16px !important;
-    border-bottom: 2px solid var(--rule) !important;
+    border-bottom: 1px solid var(--rule);
   }
   .compare-col-en {
     font-family: 'Cormorant Garamond', serif; font-size: 18px;
