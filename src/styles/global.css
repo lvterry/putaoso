@@ -769,8 +769,8 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
     gap: 16px;
     text-align: left;
   }
-  .footer-tag,
-  .footer-meta {
+  footer.site.wide .footer-tag,
+  footer.site.wide .footer-meta {
     text-align: left;
   }
 }
