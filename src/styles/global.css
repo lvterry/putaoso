@@ -1141,20 +1141,6 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
   color: var(--wine-deep);
 }
 
-.hero-map-hint {
-  position: absolute;
-  right: max(24px, calc((100vw - 1200px) / 2 + 32px));
-  bottom: 28px;
-  z-index: 2;
-  color: var(--ink-faded);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  pointer-events: none;
-  opacity: 0.72;
-}
-
 .cover-meta {
   display: flex;
   gap: 48px;
@@ -1245,19 +1231,18 @@ section.varieties {
   color: var(--ink-faded);
 }
 
-.card-color {
+.card-drop {
   display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 10px;
+  height: 14px;
   margin-right: 6px;
   vertical-align: middle;
   transform: translateY(-1px);
 }
 
-.card-color.red { background: var(--wine); }
-.card-color.white { background: #d4b85a; }
-.card-color.rose { background: #d4807a; }
+.card-drop.red { fill: var(--wine); }
+.card-drop.white { fill: #d4b85a; }
+.card-drop.rose { fill: #d4807a; }
 
 .card-type-label {
   font-family: 'JetBrains Mono', monospace;
@@ -1302,11 +1287,9 @@ section.varieties {
 }
 
 .card-foot-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 1.5px;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 14px;
   color: var(--ink-faded);
-  text-transform: uppercase;
 }
 
 .card-foot-value {
@@ -1453,9 +1436,5 @@ section.varieties {
   .hero-map svg {
     min-height: 100vh;
     min-height: 100svh;
-  }
-  .hero-map-hint {
-    right: 24px;
-    bottom: 20px;
   }
 }
