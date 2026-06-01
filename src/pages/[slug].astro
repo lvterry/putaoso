@@ -21,6 +21,8 @@ interface Props {
 
 const { entry, all } = Astro.props;
 const data = entry.data;
+const siteOrigin = Astro.site?.origin ?? 'https://putaoso.com';
+const pageUrl = `${siteOrigin}/${entry.slug}`;
 
 const typeLabel = data.type === 'red' ? 'Red' : data.type === 'white' ? 'White' : 'Rosé';
 const numberStr = String(data.number).padStart(3, '0');
@@ -72,16 +74,67 @@ const liveSlugs = new Set(all.filter((v) => v.data.status === 'live').map((v) =>
 function md(s: string) {
   return s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
 }
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: `${data.name_cn} ${data.name_en}`,
+    name: `${data.name_cn} ${data.name_en}`,
+    description: data.hero_quote,
+    url: pageUrl,
+    image: `${siteOrigin}/og-image.svg`,
+    inLanguage: 'zh-CN',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Putaoso',
+      url: siteOrigin,
+    },
+    about: {
+      '@type': 'Thing',
+      name: data.name_en,
+      alternateName: [data.name_cn, ...(data.aliases ?? [])],
+      description: data.card_tagline,
+    },
+    articleSection: ['葡萄品种', data.type],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: '首页',
+        item: `${siteOrigin}/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: `${data.name_cn} ${data.name_en}`,
+        item: pageUrl,
+      },
+    ],
+  },
+];
 ---
 
 <BaseLayout
   title={`${data.name_cn} ${data.name_en} — 葡萄搜`}
   description={data.hero_quote}
   navMeta={`N° ${numberStr}`}
+  structuredData={structuredData}
 >
+  <nav class="breadcrumb" aria-label="面包屑">
+    <ol>
+      <li><a href="/">首页</a></li>
+      <li aria-current="page">{data.name_cn}<span lang="en">{data.name_en}</span></li>
+    </ol>
+  </nav>
+
   <header class="hero">
     <div class="hero-title-row">
-      <h1 set:html={data.name_en.replace(/ /g, '<br>')} />
+      <h1 lang="en" set:html={data.name_en.replace(/ /g, '<br>')} />
     </div>
     <div class="hero-cn">{data.name_cn}</div>
     {data.aliases && data.aliases.length > 0 && (
@@ -117,7 +170,7 @@ function md(s: string) {
       )}
 
       <dt>葡萄科</dt>
-      <dd>欧亚种葡萄 Vitis vinifera</dd>
+      <dd>欧亚种葡萄 <span lang="la">Vitis vinifera</span></dd>
     </dl>
   </section>
 
@@ -178,7 +231,7 @@ function md(s: string) {
           <div>
             <div class="card-title">
               {r.name_cn}
-              <span class="en">{r.name_en}</span>
+              <span class="en" lang="en">{r.name_en}</span>
             </div>
             <div class="card-meta">{regionBadgeLabels[r.badge] ?? r.badge}</div>
           </div>
@@ -197,7 +250,7 @@ function md(s: string) {
         <div class="card">
           <div>
             <div class="card-title">
-              {b.name_en}
+              <span lang="en">{b.name_en}</span>
               <span class="cn">{b.name_cn}</span>
             </div>
             <div class="card-meta">
@@ -219,12 +272,12 @@ function md(s: string) {
         <div class="similar-item">
           {liveSlugs.has(s.slug) ? (
             <a class="similar-name" href={`/${s.slug}`}>
-              {s.name_en}
+              <span lang="en">{s.name_en}</span>
               <span class="cn">{s.name_cn}</span>
             </a>
           ) : (
             <div class="similar-name">
-              {s.name_en}
+              <span lang="en">{s.name_en}</span>
               <span class="cn">{s.name_cn}</span>
             </div>
           )}

@@ -17,6 +17,35 @@ const liveForPicker = all
     number: v.data.number,
   }));
 
+const siteOrigin = Astro.site?.origin ?? 'https://putaoso.com';
+const liveVarieties = varieties.filter((v) => v.data.status === 'live');
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: '葡萄搜・随手翻的葡萄品种图鉴',
+    alternateName: 'Putaoso',
+    description: '一本随手翻的葡萄品种图鉴。慢慢读，找到属于你的那一颗。',
+    url: `${siteOrigin}/`,
+    inLanguage: 'zh-CN',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Putaoso',
+      url: siteOrigin,
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: liveVarieties.length,
+      itemListElement: liveVarieties.map((v, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `${siteOrigin}/${v.slug}`,
+        name: `${v.data.name_cn} ${v.data.name_en}`,
+        description: v.data.card_tagline,
+      })),
+    },
+  },
+];
 ---
 
 <BaseLayout
@@ -25,6 +54,7 @@ const liveForPicker = all
   containerWidth="wide"
   wideFooter={true}
   hideHeader={true}
+  structuredData={structuredData}
 >
 {/* === 编辑式封面 === */}
   <section class="cover">
@@ -32,7 +62,7 @@ const liveForPicker = all
       <HeroMap />
     </div>
     <div class="cover-text">
-      <h1>Putaoso</h1>
+      <h1 lang="en">Putaoso</h1>
       <div class="cover-subtitle">葡萄搜</div>
       <div class="cover-tagline">
         一本随手翻的葡萄品种图鉴。<br />
@@ -64,7 +94,7 @@ const liveForPicker = all
             {!isLive && <span class="stamp">即将推出</span>}
             <div>
               <div class="card-num">N° {numStr}</div>
-              <div style="margin-top: 32px;">
+              <div class="card-type-block">
                 <svg class={`card-drop ${typeColor}`} width="10" height="14" viewBox="0 0 12 18" aria-hidden="true">
                   <path d="M6 1 C3 5 0 8.5 0 12 C0 15.3 2.7 18 6 18 C9.3 18 12 15.3 12 12 C12 8.5 9 5 6 1Z" />
                 </svg>
@@ -72,7 +102,7 @@ const liveForPicker = all
               </div>
             </div>
             <div>
-              <div class="card-name-en" set:html={d.name_en.replace(/ /g, '<br>')} />
+              <div class="card-name-en" lang="en" set:html={d.name_en.replace(/ /g, '<br>')} />
               <div class="card-name-cn">{d.name_cn}</div>
               <div class="card-tagline">{d.card_tagline}</div>
               <div class="card-foot">

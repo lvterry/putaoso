@@ -1,0 +1,9 @@
+/* TEAM */
+Site: Putaoso / 葡萄搜
+Role: Static wine grape variety field guide
+
+/* SITE */
+Language: Chinese (zh-CN)
+Framework: Astro
+Host: Cloudflare Pages
+Standards: HTML, CSS, RSS, XML Sitemap, JSON-LD, Linkset

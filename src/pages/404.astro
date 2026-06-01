@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const siteOrigin = Astro.site?.origin ?? 'https://putaoso.com';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: '页面没有找到',
+  description: '这个葡萄品种页面暂时不存在，回到首页继续浏览葡萄搜。',
+  url: `${siteOrigin}/404`,
+  inLanguage: 'zh-CN',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Putaoso',
+    url: siteOrigin,
+  },
+};
+---
+
+<BaseLayout
+  title="页面没有找到 · 葡萄搜"
+  description="这个葡萄品种页面暂时不存在，回到首页继续浏览葡萄搜。"
+  structuredData={structuredData}
+  robots="noindex, follow"
+>
+  <section class="error-page" aria-labelledby="error-title">
+    <p class="error-kicker">404</p>
+    <h1 id="error-title">页面没有找到</h1>
+    <p>这张酒标暂时不在架上。你可以回到品种索引，继续找下一颗葡萄。</p>
+    <a class="text-link" href="/">回到首页</a>
+  </section>
+</BaseLayout>

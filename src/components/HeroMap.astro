@@ -111,15 +111,16 @@ const markers = markerBase.map((marker) => {
         {countryPaths.map((d) => <path d={d} />)}
       </g>
       <g class="hm-markers">
-        {markers.map((marker) => (
+        {markers.map((marker, index) => (
           <circle
             class={`hm-marker hm-marker-${marker.type}`}
             cx={marker.x}
             cy={marker.y}
             r="4.2"
-            tabindex="0"
+            tabindex={index === 0 ? '0' : '-1'}
             role="button"
             aria-label={`${marker.regionEn} · ${marker.varietyEn}`}
+            data-index={index}
             data-slug={marker.slug}
             data-variety-en={marker.varietyEn}
             data-variety-cn={marker.varietyCn}
@@ -141,11 +142,11 @@ const markers = markerBase.map((marker) => {
   <div class="hero-map-popup" hidden>
     <button class="hero-map-popup-close" type="button" aria-label="关闭">×</button>
     <div class="hero-map-region-badge"></div>
-    <div class="hero-map-region-en"></div>
+    <div class="hero-map-region-en" lang="en"></div>
     <div class="hero-map-region-cn"></div>
     <div class="hero-map-divider"></div>
     <div class="hero-map-type"><span></span><b></b></div>
-    <div class="hero-map-variety-en"></div>
+    <div class="hero-map-variety-en" lang="en"></div>
     <div class="hero-map-variety-cn"></div>
     <p class="hero-map-tagline"></p>
     <div class="hero-map-meta">
@@ -276,6 +277,11 @@ const markers = markerBase.map((marker) => {
     svg.addEventListener('pointercancel', endDrag);
 
     markers.forEach((marker) => {
+      const focusMarker = (nextMarker) => {
+        markers.forEach((item) => item.setAttribute('tabindex', item === nextMarker ? '0' : '-1'));
+        nextMarker.focus();
+      };
+
       marker.addEventListener('pointerup', (event) => {
         event.stopPropagation();
       });
@@ -289,6 +295,20 @@ const markers = markerBase.map((marker) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
           showPopup(marker);
+          return;
+        }
+
+        if (['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp', 'Home', 'End'].includes(event.key)) {
+          event.preventDefault();
+          const current = markers.indexOf(marker);
+          let next = current;
+
+          if (event.key === 'Home') next = 0;
+          if (event.key === 'End') next = markers.length - 1;
+          if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (current + 1) % markers.length;
+          if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = (current - 1 + markers.length) % markers.length;
+
+          focusMarker(markers[next]);
         }
       });
     });

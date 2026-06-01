@@ -8,6 +8,8 @@ interface Props {
   navMeta?: string;
   wideFooter?: boolean;
   hideHeader?: boolean;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
+  robots?: string;
 }
 
 const {
@@ -17,15 +19,31 @@ const {
   navMeta = '',
   wideFooter = false,
   hideHeader = false,
+  structuredData = [],
+  robots = 'index, follow',
 } = Astro.props;
 
 const containerClass = containerWidth === 'wide' ? 'container wide' : 'container';
 const footerClass = wideFooter ? 'site wide' : 'site';
-const siteOrigin = Astro.site ? Astro.site.origin : '';
+const siteOrigin = Astro.site ? Astro.site.origin : 'https://putaoso.com';
 const canonicalPath = Astro.url?.pathname ?? '/';
-const canonicalUrl = siteOrigin ? `${siteOrigin}${canonicalPath}` : canonicalPath;
+const canonicalUrl = `${siteOrigin}${canonicalPath}`;
 const socialImagePath = '/og-image.svg';
-const socialImageUrl = siteOrigin ? `${siteOrigin}${socialImagePath}` : socialImagePath;
+const socialImageUrl = `${siteOrigin}${socialImagePath}`;
+const baseStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Putaoso',
+  alternateName: '葡萄搜',
+  url: siteOrigin,
+  description: '一本随手翻的葡萄品种图鉴',
+  inLanguage: 'zh-CN',
+};
+const pageStructuredData = Array.isArray(structuredData) ? structuredData : [structuredData];
+const structuredDataJson = JSON.stringify([baseStructuredData, ...pageStructuredData]).replace(
+  /</g,
+  '\\u003c',
+);
 ---
 
 <!DOCTYPE html>
@@ -33,8 +51,10 @@ const socialImageUrl = siteOrigin ? `${siteOrigin}${socialImagePath}` : socialIm
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <meta name="robots" content={robots} />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
@@ -42,7 +62,10 @@ const socialImageUrl = siteOrigin ? `${siteOrigin}${socialImagePath}` : socialIm
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#c9b3ae" />
   <link rel="sitemap" href="/sitemap-index.xml" />
-  {siteOrigin && <link rel="canonical" href={canonicalUrl} />}
+  <link rel="alternate" type="application/rss+xml" title="葡萄搜 · 葡萄品种图鉴" href="/rss.xml" />
+  <link rel="api-catalog" type="application/linkset+json" href="/.well-known/api-catalog" />
+  <link rel="author" href="/humans.txt" />
+  <link rel="canonical" href={canonicalUrl} />
   <meta property="og:site_name" content="Putaoso" />
   <meta property="og:type" content={canonicalPath === '/' ? 'website' : 'article'} />
   <meta property="og:title" content={title} />
@@ -62,34 +85,54 @@ const socialImageUrl = siteOrigin ? `${siteOrigin}${socialImagePath}` : socialIm
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap"
     rel="stylesheet"
   />
+  <script type="application/ld+json" set:html={structuredDataJson} />
 </head>
 <body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
   <div class={containerClass}>
     {!hideHeader && (
       <nav class="top">
-        <a class="logo" href="/">Putaoso<span>葡萄搜</span></a>
+        <a class="logo" href="/"><span lang="en">Putaoso</span><span>葡萄搜</span></a>
         <slot name="nav-middle" />
         {navMeta && <div class="nav-meta">{navMeta}</div>}
       </nav>
     )}
 
-    <slot />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
 
     <footer class={footerClass}>
       {wideFooter ? (
         <>
-          <div class="footer-mark">Putaoso<span>葡萄搜</span></div>
-          <div class="footer-tag">A field guide to wine grapes<br />慢慢读，找到属于你的那一颗</div>
-          <div class="footer-meta">© 2026 · putaoso.com</div>
+          <div class="footer-mark"><span lang="en">Putaoso</span><span>葡萄搜</span></div>
+          <div class="footer-tag"><span lang="en">A field guide to wine grapes</span><br />慢慢读，找到属于你的那一颗</div>
+          <div class="footer-meta">
+            © 2026 · putaoso.com<br />
+            <a href="/privacy">Privacy</a> · <a href="/llms.txt">llms.txt</a> · <a href="/rss.xml">RSS</a>
+          </div>
         </>
       ) : (
         <>
-          <div class="footer-mark">Putaoso<span>葡萄搜</span></div>
-          <div class="footer-meta" style="margin-top: 16px;">A field guide to wine grapes · 2026</div>
+          <div class="footer-mark"><span lang="en">Putaoso</span><span>葡萄搜</span></div>
+          <div class="footer-meta footer-meta-spaced">
+            <span lang="en">A field guide to wine grapes</span> · 2026<br />
+            <a href="/privacy">Privacy</a> · <a href="/llms.txt">llms.txt</a> · <a href="/rss.xml">RSS</a>
+          </div>
         </>
       )}
     </footer>
   </div>
-  <script defer src="https://analytics.putaoso.com/script.js" data-website-id="a425a6b0-a352-4cfc-b1fb-9b7451b83970"></script>
+  <script is:inline>
+    (() => {
+      if (navigator.globalPrivacyControl) return;
+
+      const script = document.createElement('script');
+      script.defer = true;
+      script.src = 'https://analytics.putaoso.com/script.js';
+      script.dataset.websiteId = 'a425a6b0-a352-4cfc-b1fb-9b7451b83970';
+      document.head.appendChild(script);
+    })();
+  </script>
 </body>
 </html>

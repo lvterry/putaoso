@@ -14,18 +14,63 @@ const liveForPicker = all
     type: v.data.type,
     number: v.data.number,
   }));
+
+const siteOrigin = Astro.site?.origin ?? 'https://putaoso.com';
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: '品种对比',
+    applicationCategory: 'ReferenceApplication',
+    operatingSystem: 'Any',
+    description: '将不同的葡萄品种放在一起，对比它们的参数与风味差异。',
+    url: `${siteOrigin}/compare`,
+    inLanguage: 'zh-CN',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Putaoso',
+      url: siteOrigin,
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: '首页',
+        item: `${siteOrigin}/`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: '品种对比',
+        item: `${siteOrigin}/compare`,
+      },
+    ],
+  },
+];
 ---
 
 <BaseLayout
   title="品种对比 · 葡萄搜"
   description="将不同的葡萄品种放在一起，对比它们的参数与风味差异。"
   containerWidth="wide"
+  structuredData={structuredData}
 >
   <VarietyPicker varieties={liveForPicker} />
 
   <div class="compare-page">
+    <nav class="breadcrumb" aria-label="面包屑">
+      <ol>
+        <li><a href="/">首页</a></li>
+        <li aria-current="page">品种对比</li>
+      </ol>
+    </nav>
+
     <header class="compare-page-head">
-      <h2>品种对比</h2>
+      <h1>品种对比</h1>
       <button class="compare-modify-btn" id="compare-modify-btn" type="button">
         + 修改品种
       </button>
@@ -161,7 +206,7 @@ const liveForPicker = all
       // 表头
       html += `<table class="compare-table"><thead><tr><th class="compare-cell compare-dim"></th>`;
       for (const v of sel) {
-        html += `<th class="compare-cell compare-col-head" data-type="${v.type}"><div class="compare-col-en">${esc(v.name_en)}</div><div class="compare-col-cn">${esc(v.name_cn)}</div></th>`;
+        html += `<th class="compare-cell compare-col-head" data-type="${v.type}"><div class="compare-col-en" lang="en">${esc(v.name_en)}</div><div class="compare-col-cn">${esc(v.name_cn)}</div></th>`;
       }
       html += '</tr></thead><tbody>';
 
@@ -219,7 +264,7 @@ const liveForPicker = all
       html += '<div class="compare-mobile">';
       for (const v of sel) {
         html += `<div class="compare-card" data-type="${v.type}">`;
-        html += `<div class="compare-card-head"><div class="compare-col-en">${esc(v.name_en)}</div><div class="compare-col-cn">${esc(v.name_cn)}</div></div>`;
+        html += `<div class="compare-card-head"><div class="compare-col-en" lang="en">${esc(v.name_en)}</div><div class="compare-col-cn">${esc(v.name_cn)}</div></div>`;
         html += '<div class="compare-card-body">';
         for (const [dim, val] of varietyFields(v)) {
           html += `<div class="compare-card-row"><div class="compare-card-dim">${dim}</div><div class="compare-card-val">${val}</div></div>`;
@@ -265,7 +310,7 @@ const liveForPicker = all
     display: flex; align-items: baseline; gap: 16px;
     margin-bottom: 40px; flex-wrap: wrap;
   }
-  .compare-page-head h2 {
+  .compare-page-head h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 28px; font-weight: 500; margin: 0; letter-spacing: 0.3px;
   }

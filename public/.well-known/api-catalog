@@ -1,0 +1,41 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://putaoso.com/",
+      "describedby": [
+        {
+          "href": "https://putaoso.com/llms.txt",
+          "type": "text/markdown"
+        }
+      ],
+      "alternate": [
+        {
+          "href": "https://putaoso.com/rss.xml",
+          "type": "application/rss+xml"
+        },
+        {
+          "href": "https://putaoso.com/api/varieties.json",
+          "type": "application/json"
+        }
+      ],
+      "sitemap": [
+        {
+          "href": "https://putaoso.com/sitemap-index.xml",
+          "type": "application/xml"
+        }
+      ],
+      "author": [
+        {
+          "href": "https://putaoso.com/humans.txt",
+          "type": "text/plain"
+        }
+      ],
+      "privacy-policy": [
+        {
+          "href": "https://putaoso.com/privacy",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}
