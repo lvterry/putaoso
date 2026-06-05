@@ -55,12 +55,11 @@ const structuredDataJson = JSON.stringify([baseStructuredData, ...pageStructured
   <title>{title}</title>
   <meta name="description" content={description} />
   <meta name="robots" content={robots} />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <meta name="theme-color" content="#c9b3ae" />
+  <meta name="theme-color" content="#9f42f4" />
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link rel="alternate" type="application/rss+xml" title="葡萄搜 · 葡萄品种图鉴" href="/rss.xml" />
   <link rel="api-catalog" type="application/linkset+json" href="/.well-known/api-catalog" />
@@ -92,7 +91,10 @@ const structuredDataJson = JSON.stringify([baseStructuredData, ...pageStructured
   <div class={containerClass}>
     {!hideHeader && (
       <nav class="top">
-        <a class="logo" href="/"><span lang="en">Putaoso</span><span>葡萄搜</span></a>
+        <a class="logo" href="/" aria-label="Putaoso 葡萄搜">
+          <img class="logo-mark" src="/logo.png" alt="" width="44" height="44" />
+          <span class="logo-wordmark"><span lang="en">Putaoso</span><span>葡萄搜</span></span>
+        </a>
         <slot name="nav-middle" />
         {navMeta && <div class="nav-meta">{navMeta}</div>}
       </nav>
@@ -105,7 +107,7 @@ const structuredDataJson = JSON.stringify([baseStructuredData, ...pageStructured
     <footer class={footerClass}>
       {wideFooter ? (
         <>
-          <div class="footer-mark"><span lang="en">Putaoso</span><span>葡萄搜</span></div>
+          <div class="footer-mark"><img src="/logo.png" alt="" width="52" height="52" /><span lang="en">Putaoso</span><span>葡萄搜</span></div>
           <div class="footer-tag"><span lang="en">A field guide to wine grapes</span><br />慢慢读，找到属于你的那一颗</div>
           <div class="footer-meta">
             © 2026 · putaoso.com<br />
@@ -114,7 +116,7 @@ const structuredDataJson = JSON.stringify([baseStructuredData, ...pageStructured
         </>
       ) : (
         <>
-          <div class="footer-mark"><span lang="en">Putaoso</span><span>葡萄搜</span></div>
+          <div class="footer-mark"><img src="/logo.png" alt="" width="52" height="52" /><span lang="en">Putaoso</span><span>葡萄搜</span></div>
           <div class="footer-meta footer-meta-spaced">
             <span lang="en">A field guide to wine grapes</span> · 2026<br />
             <a href="/privacy">Privacy</a> · <a href="/llms.txt">llms.txt</a> · <a href="/rss.xml">RSS</a>

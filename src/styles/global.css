@@ -2,40 +2,40 @@
    葡萄搜 · 全局样式
    ------------------------------------------------------------
    设计语言：独立刊物编辑式
-   配色：暖米黄 / 酒红 / 深墨；深色模式自动切换
+   配色：葡萄紫 / 叶绿 / 深墨；深色模式自动切换
 ============================================================ */
 
 :root {
-  --ink: #1a1410;
-  --ink-soft: #3d342c;
-  --ink-faded: #6b5d52;
-  --paper: #f5f0e8;
-  --paper-rgb: 245, 240, 232;
-  --paper-warm: #ede5d6;
-  --map-land-rgb: 90, 26, 31;
-  --map-border-rgb: 90, 26, 31;
-  --wine: #5a1a1f;
-  --wine-deep: #3d0f15;
-  --rule: #c8b89e;
-  --highlight: #8b6f3f;
-  --noise-opacity: 0.4;
+  --ink: #100814;
+  --ink-soft: #2f2136;
+  --ink-faded: #6b5c72;
+  --paper: #fbf7ff;
+  --paper-rgb: 251, 247, 255;
+  --paper-warm: #efe4ff;
+  --map-land-rgb: 159, 66, 244;
+  --map-border-rgb: 16, 8, 20;
+  --wine: #9f42f4;
+  --wine-deep: #6415b8;
+  --rule: #d9c6ef;
+  --highlight: #18a84f;
+  --noise-opacity: 0.28;
   --noise-blend: multiply;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --ink: #f0e6d6;
-    --ink-soft: #c9bba6;
-    --ink-faded: #8a7d6a;
-    --paper: #14100c;
-    --paper-rgb: 20, 16, 12;
-    --paper-warm: #1f1812;
-    --map-land-rgb: 245, 240, 232;
-    --map-border-rgb: 245, 240, 232;
-    --wine: #c9776e;
-    --wine-deep: #e8a89b;
-    --rule: #3a2f24;
-    --highlight: #d4a574;
+    --ink: #fbf7ff;
+    --ink-soft: #e9ddf5;
+    --ink-faded: #b9a9c4;
+    --paper: #100814;
+    --paper-rgb: 16, 8, 20;
+    --paper-warm: #1c1024;
+    --map-land-rgb: 159, 66, 244;
+    --map-border-rgb: 251, 247, 255;
+    --wine: #b968ff;
+    --wine-deep: #d9b0ff;
+    --rule: #332040;
+    --highlight: #19ae55;
     --noise-opacity: 0.25;
     --noise-blend: screen;
   }
@@ -61,15 +61,15 @@ body {
   font-size: 17px;
   -webkit-font-smoothing: antialiased;
   background-image:
-    radial-gradient(at 20% 10%, rgba(201, 119, 110, 0.06) 0%, transparent 50%),
-    radial-gradient(at 80% 80%, rgba(212, 165, 116, 0.05) 0%, transparent 50%);
+    radial-gradient(at 20% 10%, rgba(159, 66, 244, 0.08) 0%, transparent 50%),
+    radial-gradient(at 80% 80%, rgba(24, 168, 79, 0.06) 0%, transparent 50%);
 }
 
 @media (prefers-color-scheme: light) {
   body {
     background-image:
-      radial-gradient(at 20% 10%, rgba(90, 26, 31, 0.04) 0%, transparent 50%),
-      radial-gradient(at 80% 80%, rgba(139, 111, 63, 0.05) 0%, transparent 50%);
+      radial-gradient(at 20% 10%, rgba(159, 66, 244, 0.08) 0%, transparent 50%),
+      radial-gradient(at 80% 80%, rgba(24, 168, 79, 0.07) 0%, transparent 50%);
   }
 }
 
@@ -140,6 +140,9 @@ nav.top {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 500;
@@ -150,7 +153,19 @@ nav.top {
   text-decoration: none;
 }
 
-.logo span {
+.logo-mark {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.logo-wordmark span {
   font-family: 'Noto Serif SC', serif;
   font-style: normal;
   font-weight: 400;
@@ -777,10 +792,20 @@ footer.site.wide {
 }
 
 .footer-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 20px;
   color: var(--ink);
+}
+
+.footer-mark img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
 }
 
 .footer-mark span {
@@ -1092,21 +1117,13 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
 }
 
 .hm-marker {
-  fill: #8b3a44;
-  stroke: rgba(245, 240, 232, 0.72);
+  fill: var(--wine);
+  stroke: rgba(var(--paper-rgb), 0.86);
   stroke-width: 1.35;
   vector-effect: non-scaling-stroke;
   cursor: pointer;
-  filter: drop-shadow(0 0 0 rgba(245, 240, 232, 0));
+  filter: drop-shadow(0 0 0 rgba(159, 66, 244, 0));
   transition: r 0.18s ease, opacity 0.18s ease, fill 0.18s ease, stroke 0.18s ease, filter 0.18s ease;
-}
-
-.hm-marker-white {
-  fill: #c8a96b;
-}
-
-.hm-marker-rose {
-  fill: #c47070;
 }
 
 .hm-markers:hover .hm-marker:not(:hover) {
@@ -1119,26 +1136,9 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
   r: 6;
   opacity: 1;
   outline: none;
-  stroke: rgba(245, 240, 232, 0.95);
-  filter: drop-shadow(0 0 8px rgba(245, 240, 232, 0.36));
-}
-
-.hm-marker-red:hover,
-.hm-marker-red:focus-visible,
-.hm-marker-red.is-active {
-  fill: #f06d7d;
-}
-
-.hm-marker-white:hover,
-.hm-marker-white:focus-visible,
-.hm-marker-white.is-active {
-  fill: #ffe08a;
-}
-
-.hm-marker-rose:hover,
-.hm-marker-rose:focus-visible,
-.hm-marker-rose.is-active {
-  fill: #ff9aa0;
+  fill: var(--wine-deep);
+  stroke: rgba(var(--paper-rgb), 0.98);
+  filter: drop-shadow(0 0 8px rgba(159, 66, 244, 0.42));
 }
 
 .hero-map-popup {
@@ -1147,8 +1147,8 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
   width: min(300px, calc(100vw - 24px));
   padding: 18px 18px 16px;
   background: rgba(var(--paper-rgb), 0.94);
-  border: 1px solid rgba(90, 26, 31, 0.28);
-  box-shadow: 0 18px 50px rgba(26, 20, 16, 0.16);
+  border: 1px solid color-mix(in srgb, var(--wine) 34%, transparent);
+  box-shadow: 0 18px 50px rgba(16, 8, 20, 0.16);
   backdrop-filter: blur(10px);
   color: var(--ink);
 }
@@ -1180,7 +1180,7 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
   display: inline-block;
   max-width: calc(100% - 28px);
   padding: 3px 8px;
-  border: 1px solid rgba(90, 26, 31, 0.55);
+  border: 1px solid color-mix(in srgb, var(--wine) 58%, transparent);
   color: var(--wine);
   font-family: 'JetBrains Mono', monospace;
   font-size: 9px;
@@ -1233,15 +1233,7 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #8b3a44;
-}
-
-.hm-dot-white {
-  background: #c8a96b;
-}
-
-.hm-dot-rose {
-  background: #c47070;
+  background: var(--wine);
 }
 
 .hero-map-variety-en {

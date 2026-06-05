@@ -8,7 +8,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "ios:data": "node scripts/export-ios-data.mjs",
+    "ios:generate": "cd ios && xcodegen generate"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.18",

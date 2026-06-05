@@ -2,3 +2,9 @@ node_modules/
 dist/
 .astro/
 .DS_Store
+ios/build/
+ios/DerivedData/
+ios/*.xcworkspace/
+ios/*.xcodeproj/xcuserdata/
+ios/**/*.xcuserdata/
+ios/**/xcuserdata/
