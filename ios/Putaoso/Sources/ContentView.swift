@@ -186,17 +186,8 @@ private struct RegionMapCallout: View {
     let onClose: () -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack(alignment: .top) {
-                Text(marker.region.badge.uppercased())
-                    .font(.caption2.monospaced())
-                    .foregroundStyle(marker.variety.type.tint)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
-                    .overlay {
-                        Capsule()
-                            .stroke(marker.variety.type.tint.opacity(0.55), lineWidth: 1)
-                    }
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
                 Spacer()
                 Button {
                     onClose()
@@ -209,35 +200,28 @@ private struct RegionMapCallout: View {
                 .buttonStyle(.plain)
             }
 
-            VStack(alignment: .leading, spacing: 3) {
-                Text(marker.region.nameEn)
-                    .font(.system(.title3, design: .serif).italic())
-                    .foregroundStyle(PutaosoTheme.grapeDeep)
-                    .lineLimit(2)
+            VStack(alignment: .leading, spacing: 4) {
                 Text(marker.region.nameCn)
-                    .font(.caption)
+                    .font(.headline)
+                    .foregroundStyle(PutaosoTheme.ink)
+                    .lineLimit(2)
+                Text(marker.region.nameEn)
+                    .font(.subheadline)
                     .foregroundStyle(PutaosoTheme.muted)
+                    .lineLimit(2)
             }
 
             Divider()
 
-            HStack(spacing: 7) {
-                Circle()
-                    .fill(marker.variety.type.tint)
-                    .frame(width: 7, height: 7)
-                Text(marker.variety.type.label)
-                    .font(.caption2.monospaced())
-                    .foregroundStyle(PutaosoTheme.muted)
-            }
-
             VStack(alignment: .leading, spacing: 4) {
+                Text(marker.variety.nameCn)
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(PutaosoTheme.ink)
+                    .lineLimit(2)
                 Text(marker.variety.nameEn)
-                    .font(.system(.title2, design: .serif).weight(.semibold).italic())
+                    .font(.system(.headline, design: .serif).italic())
                     .foregroundStyle(PutaosoTheme.grapeDeep)
                     .lineLimit(2)
-                Text(marker.variety.nameCn)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(PutaosoTheme.ink)
             }
 
             Text(marker.variety.cardTagline)
@@ -245,22 +229,16 @@ private struct RegionMapCallout: View {
                 .foregroundStyle(PutaosoTheme.ink)
                 .fixedSize(horizontal: false, vertical: true)
 
-            HStack {
-                Text("原产 \(marker.variety.origin)")
-                Text("¥\(marker.variety.price.min) - \(marker.variety.price.max)")
-            }
-            .font(.caption2.monospaced())
-            .foregroundStyle(PutaosoTheme.muted)
-            .lineLimit(1)
-            .minimumScaleFactor(0.78)
-
             NavigationLink(value: marker.variety) {
-                Label("查看详情", systemImage: "arrow.right")
-                    .font(.callout.weight(.medium))
-                    .foregroundStyle(marker.variety.type.tint)
+                Text("查看详情")
+                    .font(.callout.weight(.semibold))
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 10)
+                    .background(marker.variety.type.tint, in: RoundedRectangle(cornerRadius: 8))
             }
             .buttonStyle(.plain)
-            .padding(.top, 2)
+            .padding(.top, 4)
         }
         .padding(16)
         .frame(maxWidth: 330, alignment: .leading)

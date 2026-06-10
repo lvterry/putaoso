@@ -10,29 +10,42 @@
 		0BBD13B9E719289CAD89A34C /* PutaosoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF1A24DBBFFF49E05C237C1 /* PutaosoApp.swift */; };
 		32C2CB99072BD62259195437 /* varieties.json in Resources */ = {isa = PBXBuildFile; fileRef = 5364F7D2C3A4339DC7C4202C /* varieties.json */; };
 		3AC1C11C1286E3B9D9203F15 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3569CE2063F4C06FBF338B38 /* logo.png */; };
-		4D9F34E64AC449C7B96E7B0B /* Illustrations in Resources */ = {isa = PBXBuildFile; fileRef = 4D9F34E54AC449C7B96E7B0B /* Illustrations */; };
+		89039B2EA24AE59E35BCC05A /* Illustrations in Resources */ = {isa = PBXBuildFile; fileRef = BECFCE29F24C2AE72BB43708 /* Illustrations */; };
 		980F899D64FF621889D37695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDE7589A00EB0992A39D8E28 /* Assets.xcassets */; };
 		9E6BE5CAD25E625C0DB8FB16 /* PalateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F548D8F7AA7993A0C819A811 /* PalateView.swift */; };
 		B3E3854EDAC77EA4280E622A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ECE15356B0CCCFDA25B20B /* ContentView.swift */; };
 		BEA9C958F8896BE1D40B3EF9 /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B26BF68C6D37369B566F57 /* SVGView.swift */; };
 		C392B7BC7D42CF75681A3EDC /* VarietyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FE7A1C8FB601C09B776D7 /* VarietyStore.swift */; };
 		CE0A9C2EA31635E952AF61D3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7FA28BEBB136B5E617587 /* DetailView.swift */; };
+		D945ABD01475A155425FC15B /* PutaosoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC436147B529FF3CC62A1B71 /* PutaosoUITests.swift */; };
 		DCC3BB95781B92B70246CE94 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D0CC68C8E96B806AA206A /* Models.swift */; };
 		EC83117BE06F644F69ED85B6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F8BA97D6A7A3C577FF4CE7 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D45F054DA840D06570CEC52D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B658205292331612FA04875 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E462B5C74498CC24D314C3E8;
+			remoteInfo = Putaoso;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		12ECE15356B0CCCFDA25B20B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		3464CC74202E52A2348ECF53 /* Putaoso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Putaoso.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3464CC74202E52A2348ECF53 /* Putaoso.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Putaoso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3569CE2063F4C06FBF338B38 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		37D7FA28BEBB136B5E617587 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		4D9F34E54AC449C7B96E7B0B /* Illustrations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Illustrations; sourceTree = "<group>"; };
 		4AF1A24DBBFFF49E05C237C1 /* PutaosoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutaosoApp.swift; sourceTree = "<group>"; };
 		5364F7D2C3A4339DC7C4202C /* varieties.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = varieties.json; sourceTree = "<group>"; };
 		61B26BF68C6D37369B566F57 /* SVGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGView.swift; sourceTree = "<group>"; };
 		7A5D0CC68C8E96B806AA206A /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A72FE7A1C8FB601C09B776D7 /* VarietyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarietyStore.swift; sourceTree = "<group>"; };
+		BC436147B529FF3CC62A1B71 /* PutaosoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutaosoUITests.swift; sourceTree = "<group>"; };
+		BECFCE29F24C2AE72BB43708 /* Illustrations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Illustrations; path = Putaoso/Resources/Illustrations; sourceTree = SOURCE_ROOT; };
 		C2F8BA97D6A7A3C577FF4CE7 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E778C33855512F16AA4EB6AE /* PutaosoUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PutaosoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F548D8F7AA7993A0C819A811 /* PalateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalateView.swift; sourceTree = "<group>"; };
 		FDE7589A00EB0992A39D8E28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,16 +54,27 @@
 		084A893C51DC3F8444A097C2 = {
 			isa = PBXGroup;
 			children = (
+				BECFCE29F24C2AE72BB43708 /* Illustrations */,
+				A55001BBBA8D8914FF0FDF23 /* PutaosoUITests */,
 				FF17A2EF02A9FDE5F1BA65E7 /* Resources */,
 				F8EB3F93B8F05629D191E200 /* Sources */,
 				BA2AFF143089CB57E29EC5D7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
+		A55001BBBA8D8914FF0FDF23 /* PutaosoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BC436147B529FF3CC62A1B71 /* PutaosoUITests.swift */,
+			);
+			path = PutaosoUITests;
+			sourceTree = "<group>";
+		};
 		BA2AFF143089CB57E29EC5D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				3464CC74202E52A2348ECF53 /* Putaoso.app */,
+				E778C33855512F16AA4EB6AE /* PutaosoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				FDE7589A00EB0992A39D8E28 /* Assets.xcassets */,
-				4D9F34E54AC449C7B96E7B0B /* Illustrations */,
 				3569CE2063F4C06FBF338B38 /* logo.png */,
 				5364F7D2C3A4339DC7C4202C /* varieties.json */,
 			);
@@ -86,6 +109,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		10E1FA07247CEE964EFF9700 /* PutaosoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54FFDAE94617835BC8AEA7DC /* Build configuration list for PBXNativeTarget "PutaosoUITests" */;
+			buildPhases = (
+				B24D4CF5EF93B2EB3016820C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C41C08F3A0F9386DEABEBAE3 /* PBXTargetDependency */,
+			);
+			name = PutaosoUITests;
+			packageProductDependencies = (
+			);
+			productName = PutaosoUITests;
+			productReference = E778C33855512F16AA4EB6AE /* PutaosoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		E462B5C74498CC24D314C3E8 /* Putaoso */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D759F4E9A0C35C4372C23CAE /* Build configuration list for PBXNativeTarget "Putaoso" */;
@@ -114,7 +155,11 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					10E1FA07247CEE964EFF9700 = {
+						TestTargetID = E462B5C74498CC24D314C3E8;
+					};
 					E462B5C74498CC24D314C3E8 = {
+						DevelopmentTeam = RRSXL9JZ27;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -134,6 +179,7 @@
 			projectRoot = "";
 			targets = (
 				E462B5C74498CC24D314C3E8 /* Putaoso */,
+				10E1FA07247CEE964EFF9700 /* PutaosoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -144,7 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				980F899D64FF621889D37695 /* Assets.xcassets in Resources */,
-				4D9F34E64AC449C7B96E7B0B /* Illustrations in Resources */,
+				89039B2EA24AE59E35BCC05A /* Illustrations in Resources */,
 				3AC1C11C1286E3B9D9203F15 /* logo.png in Resources */,
 				32C2CB99072BD62259195437 /* varieties.json in Resources */,
 			);
@@ -175,6 +221,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B24D4CF5EF93B2EB3016820C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D945ABD01475A155425FC15B /* PutaosoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC1D84838A65432E5CE6BCA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -191,6 +245,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C41C08F3A0F9386DEABEBAE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E462B5C74498CC24D314C3E8 /* Putaoso */;
+			targetProxy = D45F054DA840D06570CEC52D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		02417CFAAD0AAB8335F9A0B5 /* Release */ = {
@@ -255,7 +317,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S3J499CH5F;
+				DEVELOPMENT_TEAM = RRSXL9JZ27;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "葡萄搜";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -334,13 +396,47 @@
 			};
 			name = Debug;
 		};
+		53CBD884FD9843055177A781 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wang39.putaoso.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Putaoso;
+			};
+			name = Debug;
+		};
+		8AE3AC411F0238795C8C4D09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wang39.putaoso.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Putaoso;
+			};
+			name = Release;
+		};
 		9C3639CFA170BB915D8B5106 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S3J499CH5F;
+				DEVELOPMENT_TEAM = RRSXL9JZ27;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "葡萄搜";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -359,6 +455,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		54FFDAE94617835BC8AEA7DC /* Build configuration list for PBXNativeTarget "PutaosoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53CBD884FD9843055177A781 /* Debug */,
+				8AE3AC411F0238795C8C4D09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		B6A811F87C10E59031F9DC08 /* Build configuration list for PBXProject "Putaoso" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
