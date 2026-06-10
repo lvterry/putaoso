@@ -8,6 +8,7 @@ const root = process.cwd();
 const sourceDir = path.join(root, 'public/illustrations');
 const outputDir = path.join(root, 'ios/Putaoso/Resources/Illustrations');
 const size = '1600';
+const outputExtension = 'jpg';
 
 const svgFiles = fs
   .readdirSync(sourceDir)
@@ -22,8 +23,8 @@ const expected = new Set();
 for (const file of svgFiles) {
   const slug = file.replace(/\.svg$/, '');
   const sourceFile = path.join(sourceDir, file);
-  const outputFile = path.join(outputDir, `${slug}.png`);
-  expected.add(`${slug}.png`);
+  const outputFile = path.join(outputDir, `${slug}.${outputExtension}`);
+  expected.add(`${slug}.${outputExtension}`);
 
   const sourceStat = fs.statSync(sourceFile);
   const outputStat = fs.existsSync(outputFile) ? fs.statSync(outputFile) : null;
@@ -48,13 +49,24 @@ for (const file of svgFiles) {
     throw new Error(`qlmanage did not produce ${path.basename(renderedFile)}`);
   }
 
-  fs.renameSync(renderedFile, outputFile);
+  const convertResult = spawnSync(
+    'sips',
+    ['-s', 'format', 'jpeg', '-s', 'formatOptions', '82', renderedFile, '--out', outputFile],
+    { encoding: 'utf8' }
+  );
+
+  if (convertResult.status !== 0) {
+    process.stderr.write(convertResult.stdout ?? '');
+    process.stderr.write(convertResult.stderr ?? '');
+    throw new Error(`Failed to convert ${file} to JPEG`);
+  }
+
   fs.rmSync(tmpDir, { recursive: true, force: true });
   generated += 1;
 }
 
 for (const file of fs.readdirSync(outputDir)) {
-  if (file.endsWith('.png') && !expected.has(file)) {
+  if ((file.endsWith('.png') || file.endsWith('.jpg')) && !expected.has(file)) {
     fs.rmSync(path.join(outputDir, file));
   }
 }

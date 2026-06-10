@@ -133,6 +133,7 @@ struct DetailView: View {
         .background(PutaosoTheme.paper)
         .navigationTitle(variety.nameCn)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.visible, for: .navigationBar)
     }
 }
 

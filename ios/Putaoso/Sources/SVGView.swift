@@ -40,7 +40,8 @@ final class IllustrationImageCache {
         }
 
         guard
-            let url = Bundle.main.url(forResource: slug, withExtension: "png", subdirectory: "Illustrations"),
+            let url = Bundle.main.url(forResource: slug, withExtension: "jpg", subdirectory: "Illustrations")
+                ?? Bundle.main.url(forResource: slug, withExtension: "png", subdirectory: "Illustrations"),
             let image = UIImage(contentsOfFile: url.path)
         else {
             return nil
