@@ -63,6 +63,7 @@ struct ContentView: View {
 
 struct HomeRegionMapView: View {
     private let markers: [HomeRegionMarker]
+    private let calloutAnimation = Animation.spring(response: 0.36, dampingFraction: 0.78, blendDuration: 0.08)
     @State private var position: MapCameraPosition = .region(
         MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 22, longitude: 20),
@@ -70,6 +71,7 @@ struct HomeRegionMapView: View {
         )
     )
     @State private var selectedMarkerID: String?
+    @State private var calloutSize: CGSize = .zero
 
     init(varieties: [Variety]) {
         self.markers = Self.makeMarkers(varieties: varieties)
@@ -80,30 +82,69 @@ struct HomeRegionMapView: View {
     }
 
     var body: some View {
-        ZStack(alignment: .bottom) {
-            Map(position: $position, interactionModes: .all, selection: $selectedMarkerID) {
-                ForEach(markers) { marker in
-                    Marker(marker.region.nameCn, coordinate: marker.coordinate)
-                        .tint(marker.variety.type.tint)
-                        .tag(marker.id)
-                }
-            }
-            .mapControlVisibility(.visible)
-            .mapControls {
-                MapCompass()
-                MapScaleView()
-            }
-            .mapStyle(.standard(elevation: .flat, pointsOfInterest: .excludingAll))
+        MapReader { mapProxy in
+            GeometryReader { geometry in
+                ZStack {
+                    Map(position: $position, interactionModes: .all, selection: $selectedMarkerID) {
+                        ForEach(markers) { marker in
+                            Marker(marker.region.nameCn, coordinate: marker.coordinate)
+                                .tint(marker.variety.type.tint)
+                                .tag(marker.id)
+                        }
+                    }
+                    .mapControlVisibility(.visible)
+                    .mapControls {
+                        MapCompass()
+                        MapScaleView()
+                    }
+                    .mapStyle(.standard(elevation: .flat, pointsOfInterest: .excludingAll))
 
-            if let selectedMarker {
-                RegionMapCallout(marker: selectedMarker) {
-                    selectedMarkerID = nil
+                    if let selectedMarker {
+                        let sourcePoint = calloutSourcePoint(for: selectedMarker, mapProxy: mapProxy, geometry: geometry)
+                        let targetPoint = calloutTargetPoint(in: geometry)
+
+                        RegionMapCallout(marker: selectedMarker) {
+                            withAnimation(calloutAnimation) {
+                                selectedMarkerID = nil
+                            }
+                        }
+                        .padding(12)
+                        .readCalloutSize()
+                        .onPreferenceChange(CalloutSizePreferenceKey.self) { size in
+                            calloutSize = size
+                        }
+                        .position(targetPoint)
+                        .transition(.pinCallout(source: sourcePoint, target: targetPoint))
+                        .id(selectedMarker.id)
+                    }
                 }
-                .padding(12)
-                .transition(.move(edge: .bottom).combined(with: .opacity))
+                .animation(calloutAnimation, value: selectedMarkerID)
             }
         }
-        .animation(.easeInOut(duration: 0.18), value: selectedMarkerID)
+    }
+
+    private func calloutSourcePoint(
+        for marker: HomeRegionMarker,
+        mapProxy: MapProxy,
+        geometry: GeometryProxy
+    ) -> CGPoint {
+        guard let point = mapProxy.convert(marker.coordinate, to: .local) else {
+            return calloutTargetPoint(in: geometry)
+        }
+
+        return CGPoint(
+            x: min(max(point.x, 16), max(geometry.size.width - 16, 16)),
+            y: min(max(point.y, 16), max(geometry.size.height - 16, 16))
+        )
+    }
+
+    private func calloutTargetPoint(in geometry: GeometryProxy) -> CGPoint {
+        let height = calloutSize.height > 0 ? calloutSize.height : 280
+
+        return CGPoint(
+            x: geometry.size.width / 2,
+            y: geometry.size.height - height / 2
+        )
     }
 
     private static func makeMarkers(varieties: [Variety]) -> [HomeRegionMarker] {
@@ -159,6 +200,53 @@ struct HomeRegionMapView: View {
             coordinate.latitude + sin(angle) * radius,
             coordinate.longitude + cos(angle) * radius
         )
+    }
+}
+
+private struct PinCalloutScaleModifier: ViewModifier {
+    let scale: CGFloat
+    let opacity: Double
+    let source: CGPoint
+    let target: CGPoint
+
+    func body(content: Content) -> some View {
+        content
+            .scaleEffect(scale, anchor: .center)
+            .offset(x: source.x - target.x, y: source.y - target.y)
+            .opacity(opacity)
+    }
+}
+
+private extension AnyTransition {
+    static func pinCallout(source: CGPoint, target: CGPoint) -> AnyTransition {
+        .asymmetric(
+            insertion: .modifier(
+                active: PinCalloutScaleModifier(scale: 0.08, opacity: 0, source: source, target: target),
+                identity: PinCalloutScaleModifier(scale: 1, opacity: 1, source: target, target: target)
+            ),
+            removal: .modifier(
+                active: PinCalloutScaleModifier(scale: 0.06, opacity: 0, source: source, target: target),
+                identity: PinCalloutScaleModifier(scale: 1, opacity: 1, source: target, target: target)
+            )
+        )
+    }
+}
+
+private struct CalloutSizePreferenceKey: PreferenceKey {
+    static var defaultValue: CGSize = .zero
+
+    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+        value = nextValue()
+    }
+}
+
+private extension View {
+    func readCalloutSize() -> some View {
+        background {
+            GeometryReader { geometry in
+                Color.clear.preference(key: CalloutSizePreferenceKey.self, value: geometry.size)
+            }
+        }
     }
 }
 
