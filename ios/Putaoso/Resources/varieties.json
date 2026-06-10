@@ -52,19 +52,31 @@
         "name_en": "Bordeaux, Left Bank",
         "name_cn": "法国 · 波尔多左岸",
         "badge": "The Old World",
-        "body": "赤霞珠的故乡和最高表现地。梅多克、波雅克、圣朱利安等村庄出产的酒结构严谨、陈年潜力惊人，是全世界赤霞珠的标杆。"
+        "body": "赤霞珠的故乡和最高表现地。梅多克、波雅克、圣朱利安等村庄出产的酒结构严谨、陈年潜力惊人，是全世界赤霞珠的标杆。",
+        "coordinate": {
+          "latitude": 44.84,
+          "longitude": -0.58
+        }
       },
       {
         "name_en": "Napa Valley",
         "name_cn": "美国 · 纳帕谷",
         "badge": "The New World",
-        "body": "比波尔多更成熟、更甜润、更外放。橡木桶用得重，单宁更圆，年轻时就好喝。代表了赤霞珠的\"新世界\"表达。"
+        "body": "比波尔多更成熟、更甜润、更外放。橡木桶用得重，单宁更圆，年轻时就好喝。代表了赤霞珠的\"新世界\"表达。",
+        "coordinate": {
+          "latitude": 38.5,
+          "longitude": -122.37
+        }
       },
       {
         "name_en": "Maipo Valley",
         "name_cn": "智利 · 中央山谷",
         "badge": "The Value",
-        "body": "高性价比的代名词。阳光充足、价格亲民，是中国市场最常见的赤霞珠来源。Maipo Valley 是其中最经典的子产区。"
+        "body": "高性价比的代名词。阳光充足、价格亲民，是中国市场最常见的赤霞珠来源。Maipo Valley 是其中最经典的子产区。",
+        "coordinate": {
+          "latitude": -33.65,
+          "longitude": -70.65
+        }
       }
     ],
     "bottles": [
@@ -180,19 +192,31 @@
         "name_en": "Burgundy",
         "name_cn": "法国 · 勃艮第",
         "badge": "The Holy Land",
-        "body": "黑皮诺的故乡，也是它一生都无法摆脱的标杆。从入门的 Bourgogne Rouge 到神坛上的 Romanée-Conti，整个产区几乎只为这一个品种存在。土壤、坡向、气候被切分到每一小块田，每一块都有自己的名字和价格。"
+        "body": "黑皮诺的故乡，也是它一生都无法摆脱的标杆。从入门的 Bourgogne Rouge 到神坛上的 Romanée-Conti，整个产区几乎只为这一个品种存在。土壤、坡向、气候被切分到每一小块田，每一块都有自己的名字和价格。",
+        "coordinate": {
+          "latitude": 47.05,
+          "longitude": 4.38
+        }
       },
       {
         "name_en": "Willamette Valley",
         "name_cn": "美国 · 俄勒冈州",
         "badge": "The New Burgundy",
-        "body": "被誉为\"美国的勃艮第\"。气候凉爽、纬度合适，黑皮诺在这里能保留住欧洲式的优雅，又带着新世界的果味饱满度。性价比远胜勃艮第。"
+        "body": "被誉为\"美国的勃艮第\"。气候凉爽、纬度合适，黑皮诺在这里能保留住欧洲式的优雅，又带着新世界的果味饱满度。性价比远胜勃艮第。",
+        "coordinate": {
+          "latitude": 45.22,
+          "longitude": -123.08
+        }
       },
       {
         "name_en": "Central Otago",
         "name_cn": "新西兰 · 中部奥塔哥",
         "badge": "The Southernmost",
-        "body": "世界最南的葡萄酒产区之一。昼夜温差大，让黑皮诺的酸度和果香都极度集中。风格更外放、更有阳光感，是认识\"非勃艮第黑皮诺\"的好起点。"
+        "body": "世界最南的葡萄酒产区之一。昼夜温差大，让黑皮诺的酸度和果香都极度集中。风格更外放、更有阳光感，是认识\"非勃艮第黑皮诺\"的好起点。",
+        "coordinate": {
+          "latitude": -45.03,
+          "longitude": 169.2
+        }
       }
     ],
     "bottles": [
@@ -309,19 +333,31 @@
         "name_en": "Bordeaux, Right Bank",
         "name_cn": "法国 · 波尔多右岸",
         "badge": "The Holy Land",
-        "body": "梅洛的精神故乡。圣埃美隆和波美侯产区以梅洛为主酿酒，膏腴润泽、口感天鹅绒一般，是梅洛的最高表达。柏图斯（Pétrus）几乎是梅洛单一品种酒的金字塔顶。"
+        "body": "梅洛的精神故乡。圣埃美隆和波美侯产区以梅洛为主酿酒，膏腴润泽、口感天鹅绒一般，是梅洛的最高表达。柏图斯（Pétrus）几乎是梅洛单一品种酒的金字塔顶。",
+        "coordinate": {
+          "latitude": 44.93,
+          "longitude": -0.24
+        }
       },
       {
         "name_en": "Tuscany",
         "name_cn": "意大利 · 托斯卡纳",
         "badge": "The Super-Tuscan",
-        "body": "1980 年代意大利\"超级托斯卡纳\"运动让梅洛在这里成名。马塞托（Masseto）一举成为意大利身价最高的梅洛酒款。结构感比波尔多更强、更现代。"
+        "body": "1980 年代意大利\"超级托斯卡纳\"运动让梅洛在这里成名。马塞托（Masseto）一举成为意大利身价最高的梅洛酒款。结构感比波尔多更强、更现代。",
+        "coordinate": {
+          "latitude": 43.77,
+          "longitude": 11.25
+        }
       },
       {
         "name_en": "Washington State",
         "name_cn": "美国 · 华盛顿州",
         "badge": "The New World",
-        "body": "被低估的梅洛产区。气候干燥、昼夜温差大，梅洛在这里保留了果香的同时多了一份骨架，性价比远高于纳帕。"
+        "body": "被低估的梅洛产区。气候干燥、昼夜温差大，梅洛在这里保留了果香的同时多了一份骨架，性价比远高于纳帕。",
+        "coordinate": {
+          "latitude": 46.26,
+          "longitude": -119.34
+        }
       }
     ],
     "bottles": [
@@ -438,19 +474,31 @@
         "name_en": "Mosel",
         "name_cn": "德国 · 摩泽尔河谷",
         "badge": "The Holy Land",
-        "body": "雷司令最神圣的产地。陡到接近垂直的板岩坡，纬度极北，葡萄成熟极慢，酸度极高，矿物感清晰得像在喝石头。德国 VDP 体系下的顶级园几乎都集中在这里。"
+        "body": "雷司令最神圣的产地。陡到接近垂直的板岩坡，纬度极北，葡萄成熟极慢，酸度极高，矿物感清晰得像在喝石头。德国 VDP 体系下的顶级园几乎都集中在这里。",
+        "coordinate": {
+          "latitude": 49.92,
+          "longitude": 7.02
+        }
       },
       {
         "name_en": "Alsace",
         "name_cn": "法国 · 阿尔萨斯",
         "badge": "Across the Rhine",
-        "body": "法德边境，几乎全为干型。比摩泽尔更饱满、更有酒精感，少了一分清瘦多了一分骨架。是雷司令\"严肃干白\"的代表表达。"
+        "body": "法德边境，几乎全为干型。比摩泽尔更饱满、更有酒精感，少了一分清瘦多了一分骨架。是雷司令\"严肃干白\"的代表表达。",
+        "coordinate": {
+          "latitude": 48.16,
+          "longitude": 7.31
+        }
       },
       {
         "name_en": "Clare Valley",
         "name_cn": "澳洲 · 克莱尔谷",
         "badge": "The New World",
-        "body": "南澳的雷司令重镇。阳光充足，果味更外放、青柠和柚子感强烈，但还保留着雷司令招牌的高酸。是入门者的友好选择。"
+        "body": "南澳的雷司令重镇。阳光充足，果味更外放、青柠和柚子感强烈，但还保留着雷司令招牌的高酸。是入门者的友好选择。",
+        "coordinate": {
+          "latitude": -33.83,
+          "longitude": 138.61
+        }
       }
     ],
     "bottles": [
@@ -569,19 +617,31 @@
         "name_en": "Côte de Beaune, Burgundy",
         "name_cn": "法国 · 勃艮第金丘",
         "badge": "The Old World",
-        "body": "霞多丽的精神故乡。默尔索、普里尼-蒙哈榭、夏山-蒙哈榭出产的顶级白勃艮第是全球白葡萄酒的标杆——矿物感、酸度与复杂度的完美平衡，可以陈年十年以上。"
+        "body": "霞多丽的精神故乡。默尔索、普里尼-蒙哈榭、夏山-蒙哈榭出产的顶级白勃艮第是全球白葡萄酒的标杆——矿物感、酸度与复杂度的完美平衡，可以陈年十年以上。",
+        "coordinate": {
+          "latitude": 47.03,
+          "longitude": 4.84
+        }
       },
       {
         "name_en": "Chablis",
         "name_cn": "法国 · 夏布利",
         "badge": "The Mineral",
-        "body": "同属勃艮第，但风格截然不同。夏布利气候更冷，几乎不用橡木桶，出来的酒像一把柠檬加一块湿燧石——纯粹、尖锐、带着一种近乎咸鲜的矿物感。是牡蛎最好的搭档。"
+        "body": "同属勃艮第，但风格截然不同。夏布利气候更冷，几乎不用橡木桶，出来的酒像一把柠檬加一块湿燧石——纯粹、尖锐、带着一种近乎咸鲜的矿物感。是牡蛎最好的搭档。",
+        "coordinate": {
+          "latitude": 47.81,
+          "longitude": 3.8
+        }
       },
       {
         "name_en": "Sonoma Coast / Napa Valley",
         "name_cn": "美国 · 索诺玛 / 纳帕",
         "badge": "The New World",
-        "body": "阳光更充足，果味更奔放，橡木桶用得更重。奶油感和热带水果味是标志。Sonoma Coast 比 Napa 凉爽，风格更接近勃艮第；Napa 则更饱满浓郁。"
+        "body": "阳光更充足，果味更奔放，橡木桶用得更重。奶油感和热带水果味是标志。Sonoma Coast 比 Napa 凉爽，风格更接近勃艮第；Napa 则更饱满浓郁。",
+        "coordinate": {
+          "latitude": 38.42,
+          "longitude": -122.78
+        }
       }
     ],
     "bottles": [
@@ -701,19 +761,31 @@
         "name_en": "Hermitage & Côte-Rôtie, Northern Rhône",
         "name_cn": "法国 · 北罗讷",
         "badge": "The Old World",
-        "body": "西拉的精神故乡。埃米塔日（Hermitage）和罗第丘（Côte-Rôtie）是全球西拉的最高表达——花岗岩坡地，陡峭梯田，酒款结构严谨，可以陈年数十年，价格也相应不菲。"
+        "body": "西拉的精神故乡。埃米塔日（Hermitage）和罗第丘（Côte-Rôtie）是全球西拉的最高表达——花岗岩坡地，陡峭梯田，酒款结构严谨，可以陈年数十年，价格也相应不菲。",
+        "coordinate": {
+          "latitude": 45.08,
+          "longitude": 4.84
+        }
       },
       {
         "name_en": "Barossa Valley",
         "name_cn": "澳大利亚 · 巴罗萨谷",
         "badge": "The New World",
-        "body": "澳洲 Shiraz 的核心产区，拥有部分世界上树龄最老的西拉老藤（超过 150 年）。风格浓郁饱满，果酱感重，橡木桶味明显，是新世界风格的极致代表。"
+        "body": "澳洲 Shiraz 的核心产区，拥有部分世界上树龄最老的西拉老藤（超过 150 年）。风格浓郁饱满，果酱感重，橡木桶味明显，是新世界风格的极致代表。",
+        "coordinate": {
+          "latitude": -34.53,
+          "longitude": 138.96
+        }
       },
       {
         "name_en": "Crozes-Hermitage",
         "name_cn": "法国 · 克罗兹-埃米塔日",
         "badge": "The Value",
-        "body": "埃米塔日的\"平价邻居\"，同在北罗讷，风格相近但价格亲民得多。是认识法国西拉风格而不需要倾家荡产的最佳入口。"
+        "body": "埃米塔日的\"平价邻居\"，同在北罗讷，风格相近但价格亲民得多。是认识法国西拉风格而不需要倾家荡产的最佳入口。",
+        "coordinate": {
+          "latitude": 45.09,
+          "longitude": 4.84
+        }
       }
     ],
     "bottles": [
@@ -824,19 +896,31 @@
         "name_en": "Luján de Cuyo, Mendoza",
         "name_cn": "阿根廷 · 卢汉德库约",
         "badge": "The Classic",
-        "body": "门多萨最传统的马尔贝克产区，海拔约 900 米，土壤以砾石为主。出产的酒结构扎实、陈年潜力好，是认识阿根廷马尔贝克的第一站。"
+        "body": "门多萨最传统的马尔贝克产区，海拔约 900 米，土壤以砾石为主。出产的酒结构扎实、陈年潜力好，是认识阿根廷马尔贝克的第一站。",
+        "coordinate": {
+          "latitude": -33.04,
+          "longitude": -68.88
+        }
       },
       {
         "name_en": "Valle de Uco",
         "name_cn": "阿根廷 · 乌科谷",
         "badge": "The Altitude",
-        "body": "海拔 1000-1500 米，昼夜温差极大。这里的马尔贝克比卢汉德库约更精细，花香更明显，酸度更清晰——是近年来阿根廷精品酒庄最集中的地方。"
+        "body": "海拔 1000-1500 米，昼夜温差极大。这里的马尔贝克比卢汉德库约更精细，花香更明显，酸度更清晰——是近年来阿根廷精品酒庄最集中的地方。",
+        "coordinate": {
+          "latitude": -33.62,
+          "longitude": -69.15
+        }
       },
       {
         "name_en": "Cahors, Southwest France",
         "name_cn": "法国 · 卡奥尔",
         "badge": "The Origin",
-        "body": "马尔贝克的真正故乡，当地称\"Côt\"或\"Auxerrois\"。法国版风格更紧涩、土腥味更重、单宁更硬，和阿根廷版几乎像两个品种，需要更长陈年才开放。"
+        "body": "马尔贝克的真正故乡，当地称\"Côt\"或\"Auxerrois\"。法国版风格更紧涩、土腥味更重、单宁更硬，和阿根廷版几乎像两个品种，需要更长陈年才开放。",
+        "coordinate": {
+          "latitude": 44.45,
+          "longitude": 1.44
+        }
       }
     ],
     "bottles": [
@@ -951,19 +1035,31 @@
         "name_en": "Chianti Classico, Tuscany",
         "name_cn": "意大利 · 基安蒂经典",
         "badge": "The Classic",
-        "body": "桑娇维塞最经典的产区，佛罗伦萨和锡耶纳之间的山丘地带。黑公鸡（Gallo Nero）是品质标志。风格平衡、易于配餐，Riserva 和 Gran Selezione 级别值得陈年。"
+        "body": "桑娇维塞最经典的产区，佛罗伦萨和锡耶纳之间的山丘地带。黑公鸡（Gallo Nero）是品质标志。风格平衡、易于配餐，Riserva 和 Gran Selezione 级别值得陈年。",
+        "coordinate": {
+          "latitude": 43.47,
+          "longitude": 11.33
+        }
       },
       {
         "name_en": "Brunello di Montalcino",
         "name_cn": "意大利 · 布鲁奈罗",
         "badge": "The Grand",
-        "body": "意大利最顶级的红葡萄酒之一，由桑娇维塞的特殊克隆\"布鲁奈罗\"酿造。蒙塔尔奇诺的土壤和气候让它达到惊人的复杂度和陈年潜力，动辄二三十年。价格也相当于一个宣言。"
+        "body": "意大利最顶级的红葡萄酒之一，由桑娇维塞的特殊克隆\"布鲁奈罗\"酿造。蒙塔尔奇诺的土壤和气候让它达到惊人的复杂度和陈年潜力，动辄二三十年。价格也相当于一个宣言。",
+        "coordinate": {
+          "latitude": 43.06,
+          "longitude": 11.49
+        }
       },
       {
         "name_en": "Vino Nobile di Montepulciano",
         "name_cn": "意大利 · 蒙特普尔恰诺贵族",
         "badge": "The Hidden Gem",
-        "body": "常被基安蒂和布鲁奈罗的光芒遮蔽，但性价比极高。当地克隆\"Prugnolo Gentile\"风格更圆润，比布鲁奈罗更早开放，是桑娇维塞的低调入门之选。"
+        "body": "常被基安蒂和布鲁奈罗的光芒遮蔽，但性价比极高。当地克隆\"Prugnolo Gentile\"风格更圆润，比布鲁奈罗更早开放，是桑娇维塞的低调入门之选。",
+        "coordinate": {
+          "latitude": 43.1,
+          "longitude": 11.78
+        }
       }
     ],
     "bottles": [
@@ -1080,19 +1176,31 @@
         "name_en": "Sancerre & Pouilly-Fumé, Loire",
         "name_cn": "法国 · 卢瓦尔 · 桑塞尔 / 布伊富美",
         "badge": "The Old World",
-        "body": "长相思在卢瓦尔河谷展现最优雅的一面——燧石般的矿物感、清爽的柑橘调性，以及经久的陈年潜力。桑塞尔是其中最知名的村庄。"
+        "body": "长相思在卢瓦尔河谷展现最优雅的一面——燧石般的矿物感、清爽的柑橘调性，以及经久的陈年潜力。桑塞尔是其中最知名的村庄。",
+        "coordinate": {
+          "latitude": 47.33,
+          "longitude": 2.84
+        }
       },
       {
         "name_en": "Marlborough, New Zealand",
         "name_cn": "新西兰 · 马尔堡",
         "badge": "The New World",
-        "body": "让长相思在全球爆红的产区。浓烈的西番莲、葡萄柚和标志性的\"猫尿\"气息，风格鲜明、价格亲民，是新世界长相思的代名词。"
+        "body": "让长相思在全球爆红的产区。浓烈的西番莲、葡萄柚和标志性的\"猫尿\"气息，风格鲜明、价格亲民，是新世界长相思的代名词。",
+        "coordinate": {
+          "latitude": -41.51,
+          "longitude": 173.96
+        }
       },
       {
         "name_en": "Pessac-Léognan, Bordeaux",
         "name_cn": "法国 · 波尔多 · 佩萨克-雷奥良",
         "badge": "The Blend",
-        "body": "这里的长相思通常与赛美蓉混酿，经橡木桶陈年后变得圆润、复杂，是完全不同于卢瓦尔和新西兰的表达。白骑士堡是这一风格的顶峰。"
+        "body": "这里的长相思通常与赛美蓉混酿，经橡木桶陈年后变得圆润、复杂，是完全不同于卢瓦尔和新西兰的表达。白骑士堡是这一风格的顶峰。",
+        "coordinate": {
+          "latitude": 44.77,
+          "longitude": -0.64
+        }
       }
     ],
     "bottles": [
@@ -1208,19 +1316,31 @@
         "name_en": "Alto Adige, Italy",
         "name_cn": "意大利 · 上阿迪杰",
         "badge": "The Crisp Style",
-        "body": "意大利最优质的 Pinot Grigio 产地。高海拔带来清脆的酸度和矿物感，远比平原产区复杂，是\"意式清爽\"这个风格的精华版。"
+        "body": "意大利最优质的 Pinot Grigio 产地。高海拔带来清脆的酸度和矿物感，远比平原产区复杂，是\"意式清爽\"这个风格的精华版。",
+        "coordinate": {
+          "latitude": 46.5,
+          "longitude": 11.35
+        }
       },
       {
         "name_en": "Alsace, France",
         "name_cn": "法国 · 阿尔萨斯",
         "badge": "The Rich Style",
-        "body": "阿尔萨斯的 Pinot Gris 是完全不同的动物——酒体饱满、香气复杂，有时带残糖，需要搭配食物，是这个品种的另一个极端。"
+        "body": "阿尔萨斯的 Pinot Gris 是完全不同的动物——酒体饱满、香气复杂，有时带残糖，需要搭配食物，是这个品种的另一个极端。",
+        "coordinate": {
+          "latitude": 48.16,
+          "longitude": 7.31
+        }
       },
       {
         "name_en": "Willamette Valley, Oregon",
         "name_cn": "美国 · 俄勒冈 · 威拉米特谷",
         "badge": "The New World",
-        "body": "俄勒冈的灰皮诺介于意大利和阿尔萨斯之间——比意大利款丰满，比阿尔萨斯款清爽，是新世界的均衡表达。"
+        "body": "俄勒冈的灰皮诺介于意大利和阿尔萨斯之间——比意大利款丰满，比阿尔萨斯款清爽，是新世界的均衡表达。",
+        "coordinate": {
+          "latitude": 45.22,
+          "longitude": -123.08
+        }
       }
     ],
     "bottles": [
@@ -1334,19 +1454,31 @@
         "name_en": "Rioja, Spain",
         "name_cn": "西班牙 · 里奥哈",
         "badge": "The Classic",
-        "body": "丹魄最经典的家乡。这里的酒通常经过较长的橡木桶陈年，呈现出香草、皮革和樱桃的复合气息。分为 Alta、Alavesa 和 Baja 三个子产区，风格各有侧重。"
+        "body": "丹魄最经典的家乡。这里的酒通常经过较长的橡木桶陈年，呈现出香草、皮革和樱桃的复合气息。分为 Alta、Alavesa 和 Baja 三个子产区，风格各有侧重。",
+        "coordinate": {
+          "latitude": 42.47,
+          "longitude": -2.45
+        }
       },
       {
         "name_en": "Ribera del Duero, Spain",
         "name_cn": "西班牙 · 里贝拉德杜埃罗",
         "badge": "The Powerful",
-        "body": "海拔更高、气候更大陆，这里的丹魄（本地叫 Tinto Fino）结构更强壮、颜色更深、陈年潜力更大。Vega Sicilia 和 Pingus 等传奇酒庄就在这里。"
+        "body": "海拔更高、气候更大陆，这里的丹魄（本地叫 Tinto Fino）结构更强壮、颜色更深、陈年潜力更大。Vega Sicilia 和 Pingus 等传奇酒庄就在这里。",
+        "coordinate": {
+          "latitude": 41.68,
+          "longitude": -3.69
+        }
       },
       {
         "name_en": "Alentejo, Portugal",
         "name_cn": "葡萄牙 · 阿连特茹",
         "badge": "The Portuguese Side",
-        "body": "同一品种在葡萄牙叫 Aragonez 或 Tinta Roriz，是波特酒和杜罗河红酒的重要原料。阿连特茹的版本更热情、果味更浓郁。"
+        "body": "同一品种在葡萄牙叫 Aragonez 或 Tinta Roriz，是波特酒和杜罗河红酒的重要原料。阿连特茹的版本更热情、果味更浓郁。",
+        "coordinate": {
+          "latitude": 38.57,
+          "longitude": -7.91
+        }
       }
     ],
     "bottles": [
@@ -1459,19 +1591,31 @@
         "name_en": "Châteauneuf-du-Pape, Rhône",
         "name_cn": "法国 · 南罗纳 · 教皇新堡",
         "badge": "The Old World",
-        "body": "歌海娜在法国最光辉的舞台。教皇新堡的多石土地蓄热保温，产出的歌海娜浓郁、复杂，常与西拉、慕合怀特混酿，是南罗纳最具代表性的风格。"
+        "body": "歌海娜在法国最光辉的舞台。教皇新堡的多石土地蓄热保温，产出的歌海娜浓郁、复杂，常与西拉、慕合怀特混酿，是南罗纳最具代表性的风格。",
+        "coordinate": {
+          "latitude": 44.06,
+          "longitude": 4.83
+        }
       },
       {
         "name_en": "Priorat, Spain",
         "name_cn": "西班牙 · 普里奥拉托",
         "badge": "The Intense",
-        "body": "加泰罗尼亚山区，板岩土壤（Llicorella）让歌海娜变得矿物感极强、浓缩度惊人。这里的老藤歌海娜是西班牙最贵的红葡萄酒之一。"
+        "body": "加泰罗尼亚山区，板岩土壤（Llicorella）让歌海娜变得矿物感极强、浓缩度惊人。这里的老藤歌海娜是西班牙最贵的红葡萄酒之一。",
+        "coordinate": {
+          "latitude": 41.15,
+          "longitude": 0.82
+        }
       },
       {
         "name_en": "Sardinia, Italy",
         "name_cn": "意大利 · 撒丁岛（Cannonau）",
         "badge": "The Hidden Gem",
-        "body": "撒丁岛人称歌海娜为 Cannonau，相传是世界上最古老的歌海娜种植地。岛上的老藤出产口感纯朴、果味浓郁的红酒，且价格远低于法西同类。"
+        "body": "撒丁岛人称歌海娜为 Cannonau，相传是世界上最古老的歌海娜种植地。岛上的老藤出产口感纯朴、果味浓郁的红酒，且价格远低于法西同类。",
+        "coordinate": {
+          "latitude": 40.12,
+          "longitude": 9.01
+        }
       }
     ],
     "bottles": [
@@ -1587,19 +1731,31 @@
         "name_en": "Chinon & Bourgueil, Loire",
         "name_cn": "法国 · 卢瓦尔 · 希农 / 布尔格伊",
         "badge": "The Pure Expression",
-        "body": "品丽珠在卢瓦尔展现最纯粹的个性——凉爽气候、砾石和凝灰岩土壤，出产轻盈、草本感突出、矿物清晰的纯种品丽珠，是认识这个品种的最佳起点。"
+        "body": "品丽珠在卢瓦尔展现最纯粹的个性——凉爽气候、砾石和凝灰岩土壤，出产轻盈、草本感突出、矿物清晰的纯种品丽珠，是认识这个品种的最佳起点。",
+        "coordinate": {
+          "latitude": 47.17,
+          "longitude": 0.24
+        }
       },
       {
         "name_en": "Saint-Émilion, Bordeaux Right Bank",
         "name_cn": "法国 · 波尔多 · 圣埃美隆",
         "badge": "The Blend Partner",
-        "body": "波尔多右岸的混酿角色，通常与梅洛搭档。Cheval Blanc（白马庄）是一个极端例外——品丽珠占比超过半数，证明了它单独成酒的天花板有多高。"
+        "body": "波尔多右岸的混酿角色，通常与梅洛搭档。Cheval Blanc（白马庄）是一个极端例外——品丽珠占比超过半数，证明了它单独成酒的天花板有多高。",
+        "coordinate": {
+          "latitude": 44.89,
+          "longitude": -0.16
+        }
       },
       {
         "name_en": "Friuli-Venezia Giulia, Italy",
         "name_cn": "意大利 · 弗留利",
         "badge": "The Italian Voice",
-        "body": "意大利东北部的弗留利种植了大量品丽珠，风格比法国款更圆润、果味更甜，橡木桶使用更谨慎，有其独特的辨识度。"
+        "body": "意大利东北部的弗留利种植了大量品丽珠，风格比法国款更圆润、果味更甜，橡木桶使用更谨慎，有其独特的辨识度。",
+        "coordinate": {
+          "latitude": 46.07,
+          "longitude": 13.24
+        }
       }
     ],
     "bottles": [
@@ -1708,19 +1864,31 @@
         "name_en": "Condrieu, Northern Rhône",
         "name_cn": "法国 · 北罗纳 · 孔德里约",
         "badge": "The Origin",
-        "body": "维欧尼的故乡，也是最顶级的表达地。孔德里约是北罗纳的一个小产区，花岗岩土壤加上极陡的梯田，出产最芳香、最复杂的维欧尼。产量极少，价格不菲。"
+        "body": "维欧尼的故乡，也是最顶级的表达地。孔德里约是北罗纳的一个小产区，花岗岩土壤加上极陡的梯田，出产最芳香、最复杂的维欧尼。产量极少，价格不菲。",
+        "coordinate": {
+          "latitude": 45.46,
+          "longitude": 4.77
+        }
       },
       {
         "name_en": "Languedoc-Roussillon, France",
         "name_cn": "法国 · 朗格多克-鲁西永",
         "badge": "The Accessible",
-        "body": "法国南部大量种植维欧尼作为单一品种酒或混酿原料，价格亲民，保留了花香和果香，是认识维欧尼的实惠入口。"
+        "body": "法国南部大量种植维欧尼作为单一品种酒或混酿原料，价格亲民，保留了花香和果香，是认识维欧尼的实惠入口。",
+        "coordinate": {
+          "latitude": 43.61,
+          "longitude": 3.88
+        }
       },
       {
         "name_en": "Eden Valley, Australia",
         "name_cn": "澳大利亚 · 伊甸谷",
         "badge": "The New World",
-        "body": "澳大利亚的凉爽高地产出风格清爽、花香纯净的维欧尼，比南罗纳款酒精度低、酸度更高，是维欧尼新世界表达的佳作。"
+        "body": "澳大利亚的凉爽高地产出风格清爽、花香纯净的维欧尼，比南罗纳款酒精度低、酸度更高，是维欧尼新世界表达的佳作。",
+        "coordinate": {
+          "latitude": -34.65,
+          "longitude": 139.1
+        }
       }
     ],
     "bottles": [
@@ -1833,19 +2001,31 @@
         "name_en": "Dry Creek Valley, Sonoma",
         "name_cn": "美国 · 加州 · 索诺玛 · 干溪谷",
         "badge": "The Heartland",
-        "body": "仙粉黛在加州的精华产区。干溪谷凉爽的傍晚和砾石土壤让仙粉黛保持了活泼的酸度，出产全加州最平衡、最具陈年潜力的版本。"
+        "body": "仙粉黛在加州的精华产区。干溪谷凉爽的傍晚和砾石土壤让仙粉黛保持了活泼的酸度，出产全加州最平衡、最具陈年潜力的版本。",
+        "coordinate": {
+          "latitude": 38.68,
+          "longitude": -122.94
+        }
       },
       {
         "name_en": "Paso Robles, California",
         "name_cn": "美国 · 加州 · 帕索罗伯斯",
         "badge": "The Bold",
-        "body": "更炎热的内陆产区，果味更浓郁、酒精度更高、风格更豪放。是喜欢\"大酒\"风格的仙粉黛爱好者的首选。"
+        "body": "更炎热的内陆产区，果味更浓郁、酒精度更高、风格更豪放。是喜欢\"大酒\"风格的仙粉黛爱好者的首选。",
+        "coordinate": {
+          "latitude": 35.64,
+          "longitude": -120.69
+        }
       },
       {
         "name_en": "Primitivo di Manduria, Puglia",
         "name_cn": "意大利 · 普利亚 · 曼杜里亚",
         "badge": "The Old Country",
-        "body": "仙粉黛的意大利远亲，叫 Primitivo，风格比加州款更干、单宁更多、果酱感更少。老藤出产的版本有复杂的泥土和香料气息，是欧洲风格爱好者的惊喜选择。"
+        "body": "仙粉黛的意大利远亲，叫 Primitivo，风格比加州款更干、单宁更多、果酱感更少。老藤出产的版本有复杂的泥土和香料气息，是欧洲风格爱好者的惊喜选择。",
+        "coordinate": {
+          "latitude": 40.4,
+          "longitude": 17.63
+        }
       }
     ],
     "bottles": [
@@ -1958,19 +2138,31 @@
         "name_en": "Alsace, France",
         "name_cn": "法国 · 阿尔萨斯",
         "badge": "The Heartland",
-        "body": "琼瑶浆在阿尔萨斯找到了最理想的生长地——大陆性气候、花岗岩与石灰岩土壤，出产香气最馥郁、质地最丰腴的版本。特级园（Grand Cru）的版本可以陈年十年以上。"
+        "body": "琼瑶浆在阿尔萨斯找到了最理想的生长地——大陆性气候、花岗岩与石灰岩土壤，出产香气最馥郁、质地最丰腴的版本。特级园（Grand Cru）的版本可以陈年十年以上。",
+        "coordinate": {
+          "latitude": 48.16,
+          "longitude": 7.31
+        }
       },
       {
         "name_en": "Alto Adige, Italy",
         "name_cn": "意大利 · 上阿迪杰（Traminer 故乡）",
         "badge": "The Origin",
-        "body": "品种名中的 Tramin（特拉明）就是今天上阿迪杰的一个小村庄。这里的版本比阿尔萨斯款更清爽、酸度更高、花香更轻盈，是这个品种最古老的家乡表达。"
+        "body": "品种名中的 Tramin（特拉明）就是今天上阿迪杰的一个小村庄。这里的版本比阿尔萨斯款更清爽、酸度更高、花香更轻盈，是这个品种最古老的家乡表达。",
+        "coordinate": {
+          "latitude": 46.5,
+          "longitude": 11.35
+        }
       },
       {
         "name_en": "Marlborough, New Zealand",
         "name_cn": "新西兰 · 马尔堡",
         "badge": "The New World",
-        "body": "凉爽气候让马尔堡的琼瑶浆保留了新鲜的花香，同时比阿尔萨斯款酸度更高、更适合单独饮用，是新世界风格的清爽诠释。"
+        "body": "凉爽气候让马尔堡的琼瑶浆保留了新鲜的花香，同时比阿尔萨斯款酸度更高、更适合单独饮用，是新世界风格的清爽诠释。",
+        "coordinate": {
+          "latitude": -41.51,
+          "longitude": 173.96
+        }
       }
     ],
     "bottles": [
@@ -2084,19 +2276,31 @@
         "name_en": "Helan Mountain East, Ningxia",
         "name_cn": "宁夏 · 贺兰山东麓",
         "badge": "The China Flagship",
-        "body": "马瑟兰在中国的大本营。干燥少雨、日照充足、昼夜温差大，造就了果味浓郁又保留了清爽酸度的风格。贺兰晴雪、银色高地、留世等精品酒庄的马瑟兰已在国际赛事上多次获奖。"
+        "body": "马瑟兰在中国的大本营。干燥少雨、日照充足、昼夜温差大，造就了果味浓郁又保留了清爽酸度的风格。贺兰晴雪、银色高地、留世等精品酒庄的马瑟兰已在国际赛事上多次获奖。",
+        "coordinate": {
+          "latitude": 38.5,
+          "longitude": 106.1
+        }
       },
       {
         "name_en": "Northern Foothills of Tianshan, Xinjiang",
         "name_cn": "新疆 · 天山北麓",
         "badge": "The Frontier",
-        "body": "极端大陆性气候让葡萄糖分积累更充分，马瑟兰在这里呈现出更浓郁、果味更甜熟的风格，酸度略低于宁夏。"
+        "body": "极端大陆性气候让葡萄糖分积累更充分，马瑟兰在这里呈现出更浓郁、果味更甜熟的风格，酸度略低于宁夏。",
+        "coordinate": {
+          "latitude": 44.3,
+          "longitude": 86.04
+        }
       },
       {
         "name_en": "Yantai, Shandong",
         "name_cn": "山东 · 烟台",
         "badge": "The Coastal Voice",
-        "body": "中国葡萄酒产业的发源地。湿润的海洋性气候让马瑟兰更轻盈，带有更多新鲜红果气息，与宁夏风格形成鲜明对比。"
+        "body": "中国葡萄酒产业的发源地。湿润的海洋性气候让马瑟兰更轻盈，带有更多新鲜红果气息，与宁夏风格形成鲜明对比。",
+        "coordinate": {
+          "latitude": 37.46,
+          "longitude": 121.45
+        }
       }
     ],
     "bottles": [
@@ -2209,19 +2413,31 @@
         "name_en": "Huailai, Hebei",
         "name_cn": "河北 · 怀来",
         "badge": "The Origin",
-        "body": "龙眼的故乡。怀来盆地三面环山，桑干河穿行其中，昼夜温差大，土壤多砾石，是龙眼最经典的表达地。中法庄园、瑞云酒庄等都在这里扎根。"
+        "body": "龙眼的故乡。怀来盆地三面环山，桑干河穿行其中，昼夜温差大，土壤多砾石，是龙眼最经典的表达地。中法庄园、瑞云酒庄等都在这里扎根。",
+        "coordinate": {
+          "latitude": 40.41,
+          "longitude": 115.52
+        }
       },
       {
         "name_en": "Yanqing, Beijing",
         "name_cn": "北京 · 延庆",
         "badge": "The Capital Side",
-        "body": "紧邻怀来，气候相近，部分酒庄在此种植龙眼。离北京近，是都市消费者了解龙眼最便捷的窗口。"
+        "body": "紧邻怀来，气候相近，部分酒庄在此种植龙眼。离北京近，是都市消费者了解龙眼最便捷的窗口。",
+        "coordinate": {
+          "latitude": 40.46,
+          "longitude": 115.97
+        }
       },
       {
         "name_en": "Changli, Hebei",
         "name_cn": "河北 · 昌黎",
         "badge": "The Coastal Edge",
-        "body": "渤海湾沿岸，气候比怀来湿润，龙眼在这里果味更丰沛，酸度略高，风格更饱满一些。"
+        "body": "渤海湾沿岸，气候比怀来湿润，龙眼在这里果味更丰沛，酸度略高，风格更饱满一些。",
+        "coordinate": {
+          "latitude": 39.71,
+          "longitude": 119.16
+        }
       }
     ],
     "bottles": [
@@ -2334,19 +2550,31 @@
         "name_en": "Yantai, Shandong",
         "name_cn": "山东 · 烟台",
         "badge": "The Origin",
-        "body": "蛇龙珠的中国原点。1892 年张弼士在烟台创立张裕公司并引入这一品种，此后烟台成为中国葡萄酒工业的摇篮，蛇龙珠也在此深根百年。"
+        "body": "蛇龙珠的中国原点。1892 年张弼士在烟台创立张裕公司并引入这一品种，此后烟台成为中国葡萄酒工业的摇篮，蛇龙珠也在此深根百年。",
+        "coordinate": {
+          "latitude": 37.46,
+          "longitude": 121.45
+        }
       },
       {
         "name_en": "Shacheng, Hebei",
         "name_cn": "河北 · 沙城",
         "badge": "The Northern Reach",
-        "body": "桑干河流域的砾石土壤给蛇龙珠带来更明显的矿物感，风格比烟台更干涩一些，草本气息更突出。"
+        "body": "桑干河流域的砾石土壤给蛇龙珠带来更明显的矿物感，风格比烟台更干涩一些，草本气息更突出。",
+        "coordinate": {
+          "latitude": 40.39,
+          "longitude": 115.5
+        }
       },
       {
         "name_en": "Turpan & Shihezi, Xinjiang",
         "name_cn": "新疆 · 吐哈 / 石河子",
         "badge": "The Western Reach",
-        "body": "强烈日照让蛇龙珠的果味更成熟、更甜润，草本感减弱，单宁更圆润，是最好入口的蛇龙珠产地之一。"
+        "body": "强烈日照让蛇龙珠的果味更成熟、更甜润，草本感减弱，单宁更圆润，是最好入口的蛇龙珠产地之一。",
+        "coordinate": {
+          "latitude": 42.95,
+          "longitude": 89.16
+        }
       }
     ],
     "bottles": [
@@ -2460,19 +2688,31 @@
         "name_en": "Tonghua, Jilin",
         "name_cn": "吉林 · 通化",
         "badge": "The Origin",
-        "body": "北冰红的发源地和主产区。通化地处长白山西麓，冬季最低气温可达 -40°C，曾被认为是葡萄种植的禁区——北冰红的出现彻底改变了这一判断。通化葡萄酒厂是这里最老牌的生产者。"
+        "body": "北冰红的发源地和主产区。通化地处长白山西麓，冬季最低气温可达 -40°C，曾被认为是葡萄种植的禁区——北冰红的出现彻底改变了这一判断。通化葡萄酒厂是这里最老牌的生产者。",
+        "coordinate": {
+          "latitude": 41.73,
+          "longitude": 125.94
+        }
       },
       {
         "name_en": "Huanren, Liaoning",
         "name_cn": "辽宁 · 桓仁",
         "badge": "The Ice Wine Heartland",
-        "body": "鸭绿江上游山区，昼夜温差极大，冬季低温持久，是中国最重要的冰酒产区之一。桓仁的北冰红冰酒因天然冰冻条件稳定而品质出众。"
+        "body": "鸭绿江上游山区，昼夜温差极大，冬季低温持久，是中国最重要的冰酒产区之一。桓仁的北冰红冰酒因天然冰冻条件稳定而品质出众。",
+        "coordinate": {
+          "latitude": 41.27,
+          "longitude": 125.36
+        }
       },
       {
         "name_en": "Ili Valley, Xinjiang",
         "name_cn": "新疆 · 伊犁河谷",
         "badge": "The Western Trial",
-        "body": "相比东北，伊犁河谷的冬季同样严酷，部分酒庄引种北冰红作为抗寒品种储备。风格比东北更甜熟，酸度略低。"
+        "body": "相比东北，伊犁河谷的冬季同样严酷，部分酒庄引种北冰红作为抗寒品种储备。风格比东北更甜熟，酸度略低。",
+        "coordinate": {
+          "latitude": 43.92,
+          "longitude": 81.32
+        }
       }
     ],
     "bottles": [

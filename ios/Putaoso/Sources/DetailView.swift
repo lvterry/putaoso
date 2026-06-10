@@ -30,7 +30,7 @@ struct DetailView: View {
                         .padding(.top, 6)
                 }
 
-                SVGView(slug: variety.slug)
+                IllustrationView(slug: variety.slug)
                     .frame(height: 210)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     .overlay(alignment: .bottomTrailing) {

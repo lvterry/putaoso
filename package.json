@@ -10,6 +10,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "ios:data": "node scripts/export-ios-data.mjs",
+    "ios:resources": "node scripts/export-ios-data.mjs && node scripts/export-ios-illustrations.mjs",
     "ios:generate": "cd ios && xcodegen generate"
   },
   "dependencies": {

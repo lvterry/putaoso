@@ -139,12 +139,18 @@ struct Region: Codable, Hashable {
     let nameCn: String
     let badge: String
     let body: String
+    let coordinate: RegionCoordinate?
 
     private enum CodingKeys: String, CodingKey {
-        case badge, body
+        case badge, body, coordinate
         case nameEn = "name_en"
         case nameCn = "name_cn"
     }
+}
+
+struct RegionCoordinate: Codable, Hashable {
+    let latitude: Double
+    let longitude: Double
 }
 
 struct Bottle: Codable, Hashable {

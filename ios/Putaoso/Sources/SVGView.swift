@@ -1,37 +1,53 @@
 import SwiftUI
-import WebKit
+import UIKit
 
-struct SVGView: UIViewRepresentable {
+struct IllustrationView: View {
     let slug: String
 
-    func makeUIView(context: Context) -> WKWebView {
-        let webView = WKWebView()
-        webView.isOpaque = false
-        webView.backgroundColor = .clear
-        webView.scrollView.isScrollEnabled = false
-        webView.scrollView.backgroundColor = .clear
-        return webView
+    var body: some View {
+        Group {
+            if let image = IllustrationImageCache.shared.image(named: slug) {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+            } else {
+                Rectangle()
+                    .fill(PutaosoTheme.paperWarm)
+                    .overlay {
+                        Image(systemName: "photo")
+                            .font(.title2)
+                            .foregroundStyle(PutaosoTheme.muted)
+                    }
+            }
+        }
+    }
+}
+
+final class IllustrationImageCache {
+    static let shared = IllustrationImageCache()
+
+    private let cache = NSCache<NSString, UIImage>()
+
+    private init() {
+        cache.countLimit = 6
     }
 
-    func updateUIView(_ webView: WKWebView, context: Context) {
-        guard let url = Bundle.main.url(forResource: slug, withExtension: "svg", subdirectory: "illustrations") else {
-            webView.loadHTMLString("", baseURL: nil)
-            return
+    func image(named slug: String) -> UIImage? {
+        let key = slug as NSString
+
+        if let image = cache.object(forKey: key) {
+            return image
         }
 
-        let html = """
-        <!doctype html>
-        <html>
-        <head>
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <style>
-            html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: transparent; }
-            img { width: 100%; height: 100%; object-fit: cover; display: block; }
-          </style>
-        </head>
-        <body><img src="\(url.lastPathComponent)" alt=""></body>
-        </html>
-        """
-        webView.loadHTMLString(html, baseURL: url.deletingLastPathComponent())
+        guard
+            let url = Bundle.main.url(forResource: slug, withExtension: "png", subdirectory: "Illustrations"),
+            let image = UIImage(contentsOfFile: url.path)
+        else {
+            return nil
+        }
+
+        let prepared = image.preparingForDisplay() ?? image
+        cache.setObject(prepared, forKey: key)
+        return prepared
     }
 }

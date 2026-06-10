@@ -10,12 +10,11 @@
 		0BBD13B9E719289CAD89A34C /* PutaosoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF1A24DBBFFF49E05C237C1 /* PutaosoApp.swift */; };
 		32C2CB99072BD62259195437 /* varieties.json in Resources */ = {isa = PBXBuildFile; fileRef = 5364F7D2C3A4339DC7C4202C /* varieties.json */; };
 		3AC1C11C1286E3B9D9203F15 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3569CE2063F4C06FBF338B38 /* logo.png */; };
+		4D9F34E64AC449C7B96E7B0B /* Illustrations in Resources */ = {isa = PBXBuildFile; fileRef = 4D9F34E54AC449C7B96E7B0B /* Illustrations */; };
 		980F899D64FF621889D37695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDE7589A00EB0992A39D8E28 /* Assets.xcassets */; };
 		9E6BE5CAD25E625C0DB8FB16 /* PalateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F548D8F7AA7993A0C819A811 /* PalateView.swift */; };
 		B3E3854EDAC77EA4280E622A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ECE15356B0CCCFDA25B20B /* ContentView.swift */; };
 		BEA9C958F8896BE1D40B3EF9 /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B26BF68C6D37369B566F57 /* SVGView.swift */; };
-		C04A7B553145DCCDD0EF4F35 /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBE9F00209808976DFB2024 /* CompareView.swift */; };
-		C285822014EBD5809F1A1D79 /* illustrations in Resources */ = {isa = PBXBuildFile; fileRef = 8E545133D00209E98E8D0D47 /* illustrations */; };
 		C392B7BC7D42CF75681A3EDC /* VarietyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72FE7A1C8FB601C09B776D7 /* VarietyStore.swift */; };
 		CE0A9C2EA31635E952AF61D3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7FA28BEBB136B5E617587 /* DetailView.swift */; };
 		DCC3BB95781B92B70246CE94 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D0CC68C8E96B806AA206A /* Models.swift */; };
@@ -24,15 +23,14 @@
 
 /* Begin PBXFileReference section */
 		12ECE15356B0CCCFDA25B20B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		3464CC74202E52A2348ECF53 /* Putaoso.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Putaoso.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3464CC74202E52A2348ECF53 /* Putaoso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Putaoso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3569CE2063F4C06FBF338B38 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		37D7FA28BEBB136B5E617587 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		3BBE9F00209808976DFB2024 /* CompareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
+		4D9F34E54AC449C7B96E7B0B /* Illustrations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Illustrations; sourceTree = "<group>"; };
 		4AF1A24DBBFFF49E05C237C1 /* PutaosoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutaosoApp.swift; sourceTree = "<group>"; };
 		5364F7D2C3A4339DC7C4202C /* varieties.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = varieties.json; sourceTree = "<group>"; };
 		61B26BF68C6D37369B566F57 /* SVGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGView.swift; sourceTree = "<group>"; };
 		7A5D0CC68C8E96B806AA206A /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		8E545133D00209E98E8D0D47 /* illustrations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = illustrations; path = ../public/illustrations; sourceTree = SOURCE_ROOT; };
 		A72FE7A1C8FB601C09B776D7 /* VarietyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarietyStore.swift; sourceTree = "<group>"; };
 		C2F8BA97D6A7A3C577FF4CE7 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		F548D8F7AA7993A0C819A811 /* PalateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalateView.swift; sourceTree = "<group>"; };
@@ -43,7 +41,6 @@
 		084A893C51DC3F8444A097C2 = {
 			isa = PBXGroup;
 			children = (
-				8E545133D00209E98E8D0D47 /* illustrations */,
 				FF17A2EF02A9FDE5F1BA65E7 /* Resources */,
 				F8EB3F93B8F05629D191E200 /* Sources */,
 				BA2AFF143089CB57E29EC5D7 /* Products */,
@@ -61,7 +58,6 @@
 		F8EB3F93B8F05629D191E200 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				3BBE9F00209808976DFB2024 /* CompareView.swift */,
 				12ECE15356B0CCCFDA25B20B /* ContentView.swift */,
 				37D7FA28BEBB136B5E617587 /* DetailView.swift */,
 				7A5D0CC68C8E96B806AA206A /* Models.swift */,
@@ -79,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				FDE7589A00EB0992A39D8E28 /* Assets.xcassets */,
+				4D9F34E54AC449C7B96E7B0B /* Illustrations */,
 				3569CE2063F4C06FBF338B38 /* logo.png */,
 				5364F7D2C3A4339DC7C4202C /* varieties.json */,
 			);
@@ -147,7 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				980F899D64FF621889D37695 /* Assets.xcassets in Resources */,
-				C285822014EBD5809F1A1D79 /* illustrations in Resources */,
+				4D9F34E64AC449C7B96E7B0B /* Illustrations in Resources */,
 				3AC1C11C1286E3B9D9203F15 /* logo.png in Resources */,
 				32C2CB99072BD62259195437 /* varieties.json in Resources */,
 			);
@@ -173,7 +170,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$SRCROOT/..\"\n/usr/bin/env node scripts/export-ios-data.mjs\n";
+			shellScript = "set -e\nexport PATH=\"/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH\"\ncd \"$SRCROOT/..\"\nif ! command -v node >/dev/null 2>&1; then\n  echo \"error: Node.js is required to export iOS variety data. Install Node.js or add it to PATH.\"\n  exit 1\nfi\nnode scripts/export-ios-data.mjs\nnode scripts/export-ios-illustrations.mjs\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -182,7 +179,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C04A7B553145DCCDD0EF4F35 /* CompareView.swift in Sources */,
 				B3E3854EDAC77EA4280E622A /* ContentView.swift in Sources */,
 				CE0A9C2EA31635E952AF61D3 /* DetailView.swift in Sources */,
 				DCC3BB95781B92B70246CE94 /* Models.swift in Sources */,
@@ -259,6 +255,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S3J499CH5F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "葡萄搜";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -267,7 +264,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.putaoso.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wang39.putaoso;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -343,6 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S3J499CH5F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "葡萄搜";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -351,7 +349,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.putaoso.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wang39.putaoso;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				TARGETED_DEVICE_FAMILY = "1,2";

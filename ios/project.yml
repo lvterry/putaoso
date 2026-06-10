@@ -14,21 +14,29 @@ targets:
       - path: Putaoso/Sources
       - path: Putaoso/Resources
         buildPhase: resources
-      - path: ../public/illustrations
+      - path: Putaoso/Resources/Illustrations
         buildPhase: resources
         type: folder
     preBuildScripts:
       - name: Export Variety Data
         script: |
+          set -e
+          export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
           cd "$SRCROOT/.."
-          /usr/bin/env node scripts/export-ios-data.mjs
+          if ! command -v node >/dev/null 2>&1; then
+            echo "error: Node.js is required to export iOS variety data. Install Node.js or add it to PATH."
+            exit 1
+          fi
+          node scripts/export-ios-data.mjs
+          node scripts/export-ios-illustrations.mjs
         basedOnDependencyAnalysis: false
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.putaoso.app
+        PRODUCT_BUNDLE_IDENTIFIER: com.wang39.putaoso
         SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
         GENERATE_INFOPLIST_FILE: YES
         CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: RRSXL9JZ27
         INFOPLIST_KEY_CFBundleDisplayName: 葡萄搜
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UIUserInterfaceStyle: Light
