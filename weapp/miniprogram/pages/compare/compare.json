@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "品种对比",
-  "usingComponents": {
-    "variety-picker": "../../components/variety-picker/variety-picker",
-    "palate-chart": "../../components/palate-chart/palate-chart"
-  }
-}

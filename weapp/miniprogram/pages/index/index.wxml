@@ -19,54 +19,34 @@
       bindtap="onMapTap"
       binderror="onMapError"
     />
-    <view class="map-hint mono">WORLD OF GRAPES · 点击地图标记查看产区</view>
-  </view>
 
-  <view class="region-panel" wx:if="{{selectedRegion}}">
-    <view class="region-head">
-      <view>
-        <view class="region-cn">{{selectedRegion.name_cn}}</view>
-        <view class="region-en mono">{{selectedRegion.name_en}}</view>
+    <!-- 大头针 tooltip：品种简介卡片，点击进入详情 -->
+    <view class="tooltip" wx:if="{{selectedRegion}}" catchtap="onNoop">
+      <view class="tooltip-head">
+        <text class="tooltip-region">{{selectedRegion.name_cn}}</text>
+        <view class="tooltip-close" catchtap="onCloseRegion">✕</view>
       </view>
-      <view class="region-close" bindtap="onCloseRegion">✕</view>
-    </view>
-    <view
-      wx:for="{{selectedRegion.varieties}}"
-      wx:key="slug"
-      class="region-variety"
-      hover-class="region-variety-hover"
-      data-slug="{{item.slug}}"
-      data-live="{{item.live}}"
-      bindtap="onRegionVarietyTap"
-    >
-      <view class="region-variety-names">
-        <text class="region-variety-cn">{{item.name_cn}}</text>
-        <text class="region-variety-en">{{item.name_en}}</text>
-        <text class="type-badge {{item.type}}">{{item.typeText}}</text>
-      </view>
-      <view class="region-variety-tags">
-        <text wx:for="{{item.tags}}" wx:for-item="tag" wx:key="*this" class="region-tag">{{tag}}</text>
-        <text class="region-variety-go">查看详情 →</text>
+      <view
+        wx:for="{{selectedRegion.varieties}}"
+        wx:key="slug"
+        class="tooltip-variety"
+        hover-class="tooltip-variety-hover"
+        data-slug="{{item.slug}}"
+        data-live="{{item.live}}"
+        catchtap="onRegionVarietyTap"
+      >
+        <view class="tooltip-names">
+          <text class="tooltip-cn">{{item.name_cn}}</text>
+          <text class="tooltip-en">{{item.name_en}}</text>
+          <text class="tooltip-arrow">→</text>
+        </view>
+        <view class="tooltip-tagline">{{item.tagline}}</view>
       </view>
     </view>
-  </view>
-
-  <view class="search-wrap">
-    <input
-      class="search-input"
-      type="text"
-      value="{{query}}"
-      placeholder="搜索品种 · 中文名 / 英文名 / 别名 / 产地"
-      placeholder-class="search-placeholder"
-      confirm-type="search"
-      bindinput="onSearchInput"
-    />
-    <view wx:if="{{query}}" class="search-clear" bindtap="onClearSearch">✕</view>
   </view>
 
   <view class="toolbar">
     <text class="result-count">{{query ? '找到 ' + cards.length + ' 个品种' : '全部品种'}}</text>
-    <view class="compare-link" hover-class="compare-link-hover" bindtap="onGoCompare">对比品种 →</view>
   </view>
 
   <view wx:if="{{cards.length === 0}}" class="empty">
@@ -81,4 +61,21 @@
   </view>
 
   <view class="footer mono">PUTAOSO · A FIELD GUIDE TO WINE GRAPES</view>
+</view>
+
+<!-- 底部固定半透明搜索入口 -->
+<view class="search-bar">
+  <view class="search-box">
+    <text class="search-icon">⌕</text>
+    <input
+      class="search-input"
+      type="text"
+      value="{{query}}"
+      placeholder="搜索品种 · 中文 / 英文 / 别名 / 产地"
+      placeholder-class="search-placeholder"
+      confirm-type="search"
+      bindinput="onSearchInput"
+    />
+    <view wx:if="{{query}}" class="search-clear" bindtap="onClearSearch">✕</view>
+  </view>
 </view>

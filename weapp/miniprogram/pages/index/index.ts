@@ -1,9 +1,8 @@
 import { getAllVarieties, getLiveVarieties, Variety } from '../../utils/data';
-import { formatNumber, tagLabel, typeLabel } from '../../utils/format';
+import { typeLabel } from '../../utils/format';
 
 interface Card {
   slug: string;
-  numberStr: string;
   name_cn: string;
   name_en: string;
   card_tagline: string;
@@ -20,7 +19,7 @@ interface RegionVariety {
   type: string;
   typeText: string;
   live: boolean;
-  tags: string[];
+  tagline: string;
 }
 
 interface RegionInfo {
@@ -35,7 +34,6 @@ interface RegionInfo {
 function toCard(v: Variety): Card {
   return {
     slug: v.slug,
-    numberStr: formatNumber(v.number),
     name_cn: v.name_cn,
     name_en: v.name_en,
     card_tagline: v.card_tagline,
@@ -86,7 +84,7 @@ function buildRegions(): RegionInfo[] {
         type: v.type,
         typeText: typeLabel(v.type),
         live: v.status === 'live',
-        tags: v.flavor_tags.slice(0, 3).map(tagLabel),
+        tagline: v.card_tagline,
       });
     });
   });
@@ -161,6 +159,10 @@ Page({
     this.setData({ selectedRegion: null });
   },
 
+  onNoop() {
+    // 吞掉 tooltip 卡片自身的点击，避免触发地图的关闭逻辑
+  },
+
   onMapError() {
     this.setData({ mapAvailable: false, selectedRegion: null });
   },
@@ -172,10 +174,6 @@ Page({
       return;
     }
     wx.navigateTo({ url: `/pages/detail/detail?slug=${slug}` });
-  },
-
-  onGoCompare() {
-    wx.navigateTo({ url: '/pages/compare/compare' });
   },
 
   onShareAppMessage(): WechatMiniprogram.Page.ICustomShareContent {

@@ -1,5 +1,6 @@
 .page {
-  padding: 24rpx 32rpx 80rpx;
+  /* 底部留出固定搜索栏的高度 */
+  padding: 24rpx 32rpx calc(190rpx + env(safe-area-inset-bottom));
 }
 
 .header {
@@ -18,134 +19,95 @@
   margin-top: 4rpx;
 }
 
+/* 地图贴屏幕左右两侧 */
 .map-wrap {
-  border: 1rpx solid var(--rule);
-  border-radius: 16rpx;
-  overflow: hidden;
+  position: relative;
+  margin: 0 -32rpx;
+  border-top: 1rpx solid var(--rule);
+  border-bottom: 1rpx solid var(--rule);
   background: #fff;
 }
 
 .map {
   width: 100%;
-  height: 400rpx;
+  height: 440rpx;
+  display: block;
 }
 
-.map-hint {
-  font-size: 20rpx;
-  letter-spacing: 2rpx;
-  color: var(--ink-faded);
-  text-align: center;
-  padding: 12rpx 0;
-  border-top: 1rpx solid var(--rule);
-}
-
-.region-panel {
-  margin-top: 20rpx;
+/* === 大头针 tooltip 卡片 === */
+.tooltip {
+  position: absolute;
+  left: 24rpx;
+  right: 24rpx;
+  bottom: 20rpx;
+  background: rgba(255, 255, 255, 0.96);
   border: 1rpx solid var(--wine);
   border-radius: 16rpx;
-  background: #fff;
-  padding: 24rpx 28rpx;
+  padding: 20rpx 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(16, 8, 20, 0.18);
 }
 
-.region-head {
+.tooltip-head {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 12rpx;
+  align-items: center;
+  margin-bottom: 6rpx;
 }
 
-.region-cn {
-  font-size: 32rpx;
-  font-weight: 700;
-}
-
-.region-en {
+.tooltip-region {
   font-size: 22rpx;
   color: var(--ink-faded);
   letter-spacing: 1rpx;
 }
 
-.region-close {
+.tooltip-close {
   color: var(--ink-faded);
-  font-size: 28rpx;
-  padding: 4rpx 12rpx;
+  font-size: 26rpx;
+  padding: 4rpx 8rpx;
 }
 
-.region-variety {
+.tooltip-variety {
+  padding: 12rpx 0;
+}
+
+.tooltip-variety + .tooltip-variety {
   border-top: 1rpx dashed var(--rule);
-  padding: 18rpx 0;
 }
 
-.region-variety-hover {
+.tooltip-variety-hover {
   background: var(--paper-warm);
 }
 
-.region-variety-names {
+.tooltip-names {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 12rpx;
 }
 
-.region-variety-cn {
+.tooltip-cn {
   font-size: 30rpx;
   font-weight: 700;
 }
 
-.region-variety-en {
-  font-size: 24rpx;
+.tooltip-en {
+  font-size: 22rpx;
   color: var(--wine-deep);
 }
 
-.region-variety-tags {
-  display: flex;
-  align-items: center;
-  gap: 10rpx;
-  margin-top: 8rpx;
-}
-
-.region-tag {
-  font-size: 20rpx;
-  color: var(--ink-faded);
-  background: var(--paper-warm);
-  border-radius: 6rpx;
-  padding: 2rpx 10rpx;
-}
-
-.region-variety-go {
+.tooltip-arrow {
   margin-left: auto;
-  font-size: 22rpx;
   color: var(--wine);
-}
-
-.search-wrap {
-  position: relative;
-  margin-top: 24rpx;
-}
-
-.search-input {
-  background: #fff;
-  border: 1rpx solid var(--rule);
-  border-radius: 999rpx;
-  padding: 18rpx 80rpx 18rpx 36rpx;
-  font-size: 28rpx;
-  height: auto;
-}
-
-.search-placeholder {
-  color: var(--ink-faded);
   font-size: 26rpx;
 }
 
-.search-clear {
-  position: absolute;
-  right: 28rpx;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--ink-faded);
-  font-size: 26rpx;
-  padding: 8rpx;
+.tooltip-tagline {
+  font-size: 24rpx;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-top: 4rpx;
 }
 
+/* === 列表 === */
 .toolbar {
   display: flex;
   justify-content: space-between;
@@ -156,16 +118,6 @@
 .result-count {
   font-size: 24rpx;
   color: var(--ink-faded);
-}
-
-.compare-link {
-  font-size: 26rpx;
-  color: var(--wine-deep);
-  font-weight: 700;
-}
-
-.compare-link-hover {
-  opacity: 0.7;
 }
 
 .empty {
@@ -207,4 +159,51 @@
   letter-spacing: 3rpx;
   color: var(--ink-faded);
   margin-top: 56rpx;
+}
+
+/* === 底部固定半透明搜索入口 === */
+.search-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20rpx 32rpx calc(20rpx + env(safe-area-inset-bottom));
+  background: linear-gradient(to top, rgba(251, 247, 255, 0.92), rgba(251, 247, 255, 0));
+  z-index: 10;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(20rpx);
+  border: 1rpx solid var(--rule);
+  border-radius: 999rpx;
+  padding: 16rpx 32rpx;
+  box-shadow: 0 8rpx 32rpx rgba(16, 8, 20, 0.1);
+}
+
+.search-icon {
+  font-size: 34rpx;
+  color: var(--ink-faded);
+  margin-right: 16rpx;
+}
+
+.search-input {
+  flex: 1;
+  font-size: 28rpx;
+  height: auto;
+  background: transparent;
+}
+
+.search-placeholder {
+  color: var(--ink-faded);
+  font-size: 26rpx;
+}
+
+.search-clear {
+  color: var(--ink-faded);
+  font-size: 26rpx;
+  padding: 8rpx;
+  margin-left: 12rpx;
 }

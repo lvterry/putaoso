@@ -63,17 +63,6 @@ async function main() {
   const missingTitle = await (await missing.$('.missing-title')).text();
   console.log(`MISSING ok: ${missingTitle}`);
 
-  // 对比页
-  const compare = await miniProgram.reLaunch('/pages/compare/compare');
-  await compare.waitFor(1200);
-  const chips = await compare.$$('.chip');
-  console.log(`COMPARE ok: chips=${chips.length}`);
-  await chips[0].tap();
-  await chips[1].tap();
-  await compare.waitFor(600);
-  const sel = await compare.data('selected');
-  console.log(`COMPARE selected: ${sel.selected.join(',')}`);
-
   await miniProgram.close();
 
   if (errors.length > 0) {

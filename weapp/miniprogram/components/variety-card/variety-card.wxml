@@ -1,9 +1,8 @@
 <view class="card {{card.live ? '' : 'card-disabled'}}" hover-class="{{card.live ? 'card-hover' : ''}}" bindtap="onTap">
   <view class="card-top">
-    <text class="card-number mono">NO.{{card.numberStr}}</text>
-    <text class="type-badge {{card.type}}">{{card.typeText}}</text>
+    <view class="card-name-cn">{{card.name_cn}}</view>
+    <text class="card-tag {{card.type}}">{{card.typeText}}</text>
   </view>
-  <view class="card-name-cn">{{card.name_cn}}</view>
   <view class="card-name-en">{{card.name_en}}</view>
   <view class="card-tagline">{{card.card_tagline}}</view>
   <view class="card-bottom">
