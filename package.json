@@ -14,7 +14,8 @@
     "ios:generate": "cd ios && xcodegen generate",
     "weapp:data": "node scripts/export-weapp-data.mjs",
     "weapp:assets": "node scripts/export-weapp-assets.mjs",
-    "weapp:resources": "npm run weapp:data && npm run weapp:assets"
+    "weapp:fonts": "node scripts/export-weapp-fonts.mjs",
+    "weapp:resources": "npm run weapp:data && npm run weapp:assets && npm run weapp:fonts"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.18",

@@ -12,7 +12,7 @@ page {
 
   background: var(--paper);
   color: var(--ink);
-  font-family: Georgia, 'Songti SC', 'Noto Serif SC', serif;
+  font-family: 'Noto Serif SC', Georgia, 'Songti SC', serif;
   font-size: 30rpx;
   line-height: 1.7;
 }

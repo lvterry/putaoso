@@ -7,7 +7,13 @@ Component({
       value: null,
     },
   },
+  data: {
+    showIllustration: true,
+  },
   methods: {
+    onIllustrationError() {
+      this.setData({ showIllustration: false });
+    },
     onTap() {
       const card = this.data.card as { slug: string; live: boolean } | null;
       if (!card) return;

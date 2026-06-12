@@ -1,4 +1,13 @@
 <view class="card {{card.live ? '' : 'card-disabled'}}" hover-class="{{card.live ? 'card-hover' : ''}}" bindtap="onTap">
+  <image
+    wx:if="{{showIllustration}}"
+    class="card-illustration"
+    src="/assets/illustrations/{{card.slug}}.jpg"
+    mode="aspectFill"
+    lazy-load="{{true}}"
+    binderror="onIllustrationError"
+  />
+  <view class="card-body">
   <view class="card-top">
     <view class="card-name-cn">{{card.name_cn}}</view>
     <text class="card-tag {{card.type}}">{{card.typeText}}</text>
@@ -8,5 +17,6 @@
   <view class="card-bottom">
     <text class="card-origin mono">{{card.card_origin_short}}</text>
     <text wx:if="{{!card.live}}" class="card-stamp">即将推出</text>
+  </view>
   </view>
 </view>

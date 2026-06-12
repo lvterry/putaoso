@@ -7,9 +7,9 @@ import { spawnSync } from 'node:child_process';
 const root = process.cwd();
 const sourceDir = path.join(root, 'public/illustrations');
 const outputDir = path.join(root, 'weapp/miniprogram/assets/illustrations');
-// 小程序主包有体积上限，渲染尺寸和压缩率都比 iOS 版更保守
-const size = '900';
-const jpegQuality = '70';
+// 小程序主包有体积上限（还要给字体子集留空间），渲染尺寸和压缩率都比 iOS 版更保守
+const size = '800';
+const jpegQuality = '62';
 const outputExtension = 'jpg';
 
 const svgFiles = fs
