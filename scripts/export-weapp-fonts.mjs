@@ -4,9 +4,12 @@ import path from 'node:path';
 import process from 'node:process';
 import { spawnSync } from 'node:child_process';
 
-// 把 Noto Serif SC 子集化成只含小程序实际用到字符的 WOFF2。
+// 把 Noto Serif SC 子集化成只含小程序实际用到字符的 WOFF2，
+// 以 base64 data URL 形式输出成 JS 模块。
 // 全量中文字体约 11MB 无法进包；子集化 + CFF→glyf 转换（WOFF2 对
 // glyf 轮廓有专门的预变换，比 CFF 小约 20%）后约 255KB。
+// 必须走 base64：微信打包代码包按文件类型白名单收文件，
+// woff/woff2/ttf 等字体文件不会被打进包，真机上无法用路径加载。
 // 内容（varieties.json）或界面文案新增生僻字后需要重跑：npm run weapp:fonts
 // 依赖：python3 + fonttools + brotli（python3 -m pip install --user fonttools brotli）
 
@@ -14,7 +17,8 @@ const root = process.cwd();
 const miniprogramDir = path.join(root, 'weapp/miniprogram');
 const dataFile = path.join(miniprogramDir, 'data/varieties.json');
 const outputDir = path.join(miniprogramDir, 'assets/fonts');
-const outputFile = path.join(outputDir, 'noto-serif-sc.woff2');
+const woff2File = path.join(os.tmpdir(), 'putaoso-noto-serif-sc.woff2');
+const moduleFile = path.join(outputDir, 'noto-serif-sc.js');
 
 const cacheDir = path.join(os.homedir(), '.cache/putaoso-fonts');
 const sourceFont = path.join(cacheDir, 'NotoSerifSC-Regular.otf');
@@ -105,7 +109,7 @@ font.flavor = "woff2"
 font.save(output)
 `;
 
-const result = spawnSync('python3', ['-', sourceFont, tmpCharsFile, outputFile], {
+const result = spawnSync('python3', ['-', sourceFont, tmpCharsFile, woff2File], {
   input: pythonScript,
   encoding: 'utf8',
 });
@@ -120,10 +124,18 @@ if (result.status !== 0) {
 
 fs.rmSync(tmpCharsFile, { force: true });
 
-// 旧格式残留清理
-fs.rmSync(path.join(outputDir, 'noto-serif-sc.woff'), { force: true });
+const base64 = fs.readFileSync(woff2File).toString('base64');
+fs.rmSync(woff2File, { force: true });
+fs.writeFileSync(
+  moduleFile,
+  `/* 自动生成：npm run weapp:fonts，不要手动编辑 */\nmodule.exports = 'data:font/woff2;base64,${base64}';\n`
+);
 
-const sizeKb = (fs.statSync(outputFile).size / 1024).toFixed(0);
+// 旧的字体文件残留清理（字体文件本就不会被打进代码包）
+fs.rmSync(path.join(outputDir, 'noto-serif-sc.woff'), { force: true });
+fs.rmSync(path.join(outputDir, 'noto-serif-sc.woff2'), { force: true });
+
+const sizeKb = (fs.statSync(moduleFile).size / 1024).toFixed(0);
 console.log(
-  `Exported ${chars.length}-char Noto Serif SC subset to ${path.relative(root, outputFile)} (${sizeKb} KB)`
+  `Exported ${chars.length}-char Noto Serif SC subset to ${path.relative(root, moduleFile)} (${sizeKb} KB base64 module)`
 );

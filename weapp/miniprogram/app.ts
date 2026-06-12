@@ -1,45 +1,16 @@
+// 微信打包不收字体文件，字体以 base64 data URL 嵌在 JS 模块里
+// （scripts/export-weapp-fonts.mjs 生成）
 const FONT_FAMILY = 'Noto Serif SC';
-const FONT_PKG_PATH = '/assets/fonts/noto-serif-sc.woff2';
-const FONT_USER_PATH = `${wx.env.USER_DATA_PATH}/noto-serif-sc.woff2`;
+const FONT_DATA_URL: string = require('./assets/fonts/noto-serif-sc.js');
 
 App({
   onLaunch() {
-    this.loadFont();
-  },
-
-  loadFont() {
-    // 真机的 loadFontFace 不支持代码包路径，先把字体复制到用户目录，
-    // 用 wxfile:// 路径加载；复制或加载失败时逐级回退，最终静默落回系统衬线字体。
-    const load = (source: string, onFail?: (err: unknown) => void) => {
-      wx.loadFontFace({
-        family: FONT_FAMILY,
-        global: true,
-        source,
-        scopes: ['webview', 'native'],
-        fail: onFail || ((err) => console.warn('loadFontFace failed:', err)),
-      });
-    };
-
-    let userPathReady = false;
-    try {
-      const fsm = wx.getFileSystemManager();
-      try {
-        fsm.accessSync(FONT_USER_PATH);
-      } catch (e) {
-        fsm.copyFileSync(FONT_PKG_PATH, FONT_USER_PATH);
-      }
-      userPathReady = true;
-    } catch (e) {
-      console.warn('font copy to user path failed:', e);
-    }
-
-    const tryPackagePath = () =>
-      load(`url("${FONT_PKG_PATH}")`, () => load(FONT_PKG_PATH));
-
-    if (userPathReady) {
-      load(`url("${FONT_USER_PATH}")`, tryPackagePath);
-    } else {
-      tryPackagePath();
-    }
+    wx.loadFontFace({
+      family: FONT_FAMILY,
+      global: true,
+      source: `url("${FONT_DATA_URL}")`,
+      scopes: ['webview', 'native'],
+      fail: (err) => console.warn('loadFontFace failed:', err),
+    });
   },
 });
