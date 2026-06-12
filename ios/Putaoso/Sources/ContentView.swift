@@ -64,12 +64,11 @@ struct ContentView: View {
 struct HomeRegionMapView: View {
     private let markers: [HomeRegionMarker]
     private let calloutAnimation = Animation.spring(response: 0.36, dampingFraction: 0.78, blendDuration: 0.08)
-    @State private var position: MapCameraPosition = .region(
-        MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: 22, longitude: 20),
-            span: MKCoordinateSpan(latitudeDelta: 138, longitudeDelta: 320)
-        )
+    private static let defaultMapRegion = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 48, longitude: 10),
+        span: MKCoordinateSpan(latitudeDelta: 138 / 6, longitudeDelta: 320 / 6)
     )
+    @State private var position: MapCameraPosition = .region(defaultMapRegion)
     @State private var selectedMarkerID: String?
     @State private var calloutSize: CGSize = .zero
 
