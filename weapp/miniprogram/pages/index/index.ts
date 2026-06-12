@@ -128,8 +128,8 @@ Page({
         latitude: r.latitude,
         longitude: r.longitude,
         iconPath: '/assets/marker.png',
-        width: 20,
-        height: 20,
+        width: 24,
+        height: 24,
         title: r.name_cn,
       })),
     });
