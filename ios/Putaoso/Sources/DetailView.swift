@@ -10,9 +10,6 @@ struct DetailView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 28) {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text(variety.numberText)
-                        .font(.caption.monospaced())
-                        .foregroundStyle(PutaosoTheme.muted)
                     Text(variety.nameEn)
                         .font(.system(size: 44, weight: .semibold, design: .serif))
                         .foregroundStyle(PutaosoTheme.ink)
@@ -155,14 +152,6 @@ struct DetailView: View {
                     .background(.black.opacity(0.36), in: Circle())
                     .padding(10)
                     .accessibilityHidden(true)
-            }
-            .overlay(alignment: .bottomTrailing) {
-                Text(variety.heroSceneCaption)
-                    .font(.caption2)
-                    .padding(8)
-                    .background(.black.opacity(0.42), in: RoundedRectangle(cornerRadius: 4))
-                    .foregroundStyle(.white)
-                    .padding(10)
             }
             .accessibilityLabel("查看\(variety.nameCn)插图大图")
     }
