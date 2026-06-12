@@ -320,6 +320,7 @@
 				DEVELOPMENT_TEAM = RRSXL9JZ27;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "葡萄搜";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "保存葡萄品种插图到系统照片。";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -439,6 +440,7 @@
 				DEVELOPMENT_TEAM = RRSXL9JZ27;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "葡萄搜";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "保存葡萄品种插图到系统照片。";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (

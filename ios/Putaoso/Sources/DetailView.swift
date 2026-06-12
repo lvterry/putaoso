@@ -4,6 +4,8 @@ struct DetailView: View {
     let variety: Variety
     let store: VarietyStore
 
+    @State private var isShowingIllustrationPreview = false
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 28) {
@@ -30,17 +32,22 @@ struct DetailView: View {
                         .padding(.top, 6)
                 }
 
-                IllustrationView(slug: variety.slug)
-                    .frame(height: 210)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                    .overlay(alignment: .bottomTrailing) {
-                        Text(variety.heroSceneCaption)
-                            .font(.caption2)
-                            .padding(8)
-                            .background(.black.opacity(0.42), in: RoundedRectangle(cornerRadius: 4))
-                            .foregroundStyle(.white)
-                            .padding(10)
+                if let previewImage = IllustrationImageCache.shared.image(named: variety.slug) {
+                    Button {
+                        isShowingIllustrationPreview = true
+                    } label: {
+                        detailIllustration
                     }
+                    .buttonStyle(.plain)
+                    .fullScreenCover(isPresented: $isShowingIllustrationPreview) {
+                        IllustrationPreview(
+                            image: previewImage,
+                            title: "\(variety.nameCn) · \(variety.nameEn)"
+                        )
+                    }
+                } else {
+                    detailIllustration
+                }
 
                 SectionBlock("它是谁") {
                     FactRow(label: "类型", value: variety.type.label)
@@ -134,6 +141,30 @@ struct DetailView: View {
         .navigationTitle(variety.nameCn)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.visible, for: .navigationBar)
+    }
+
+    private var detailIllustration: some View {
+        IllustrationView(slug: variety.slug)
+            .frame(height: 210)
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .overlay(alignment: .topTrailing) {
+                Image(systemName: "arrow.up.left.and.arrow.down.right")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.white)
+                    .padding(8)
+                    .background(.black.opacity(0.36), in: Circle())
+                    .padding(10)
+                    .accessibilityHidden(true)
+            }
+            .overlay(alignment: .bottomTrailing) {
+                Text(variety.heroSceneCaption)
+                    .font(.caption2)
+                    .padding(8)
+                    .background(.black.opacity(0.42), in: RoundedRectangle(cornerRadius: 4))
+                    .foregroundStyle(.white)
+                    .padding(10)
+            }
+            .accessibilityLabel("查看\(variety.nameCn)插图大图")
     }
 }
 
