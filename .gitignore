@@ -8,3 +8,8 @@ ios/*.xcworkspace/
 ios/*.xcodeproj/xcuserdata/
 ios/**/*.xcuserdata/
 ios/**/xcuserdata/
+
+# WeChat devtools personal settings
+weapp/project.private.config.json
+weapp/miniprogram/project.config.json
+weapp/miniprogram/project.private.config.json
