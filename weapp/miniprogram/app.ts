@@ -1,6 +1,6 @@
 const FONT_FAMILY = 'Noto Serif SC';
-const FONT_PKG_PATH = '/assets/fonts/noto-serif-sc.woff';
-const FONT_USER_PATH = `${wx.env.USER_DATA_PATH}/noto-serif-sc.woff`;
+const FONT_PKG_PATH = '/assets/fonts/noto-serif-sc.woff2';
+const FONT_USER_PATH = `${wx.env.USER_DATA_PATH}/noto-serif-sc.woff2`;
 
 App({
   onLaunch() {
