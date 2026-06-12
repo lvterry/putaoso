@@ -1,0 +1,12 @@
+<view class="price-block">
+  <view class="price-amount">
+    <text class="currency">¥</text>
+    <text class="amount">{{min}}</text>
+    <text class="dash"> – </text>
+    <text class="amount">{{max}}</text>
+  </view>
+</view>
+<view class="caution" wx:if="{{caveat}}">
+  <text class="caution-label">踩雷提示</text>
+  <md-text text="{{caveat}}" />
+</view>

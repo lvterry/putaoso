@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "葡萄搜",
+  "usingComponents": {
+    "variety-card": "../../components/variety-card/variety-card"
+  }
+}

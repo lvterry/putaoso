@@ -1,0 +1,11 @@
+.section {
+  display: block;
+}
+
+.section-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 72rpx 0 28rpx;
+  line-height: 1.4;
+}

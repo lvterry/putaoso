@@ -1,0 +1,274 @@
+.page {
+  padding: 24rpx 36rpx 80rpx;
+}
+
+/* === 缺失/未上线 === */
+.missing {
+  padding: 200rpx 60rpx;
+  text-align: center;
+}
+
+.missing-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  margin-bottom: 16rpx;
+}
+
+.missing-body {
+  font-size: 26rpx;
+  color: var(--ink-faded);
+  margin-bottom: 56rpx;
+}
+
+.missing-btn {
+  display: inline-block;
+  border: 1rpx solid var(--wine);
+  color: var(--wine-deep);
+  border-radius: 999rpx;
+  padding: 16rpx 48rpx;
+  font-size: 28rpx;
+}
+
+.missing-btn-hover {
+  background: var(--paper-warm);
+}
+
+/* === Hero === */
+.hero {
+  margin: 24rpx 0 32rpx;
+}
+
+.hero-number {
+  font-size: 22rpx;
+  letter-spacing: 3rpx;
+  color: var(--ink-faded);
+  margin-bottom: 16rpx;
+}
+
+.hero-en {
+  font-size: 64rpx;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.hero-cn {
+  font-size: 44rpx;
+  color: var(--wine-deep);
+  margin-top: 8rpx;
+}
+
+.hero-alias {
+  font-size: 24rpx;
+  color: var(--ink-faded);
+  margin-top: 12rpx;
+}
+
+.hero-quote {
+  font-size: 30rpx;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-top: 24rpx;
+  padding-left: 24rpx;
+  border-left: 6rpx solid var(--wine);
+}
+
+/* === 插图 === */
+.scene {
+  border: 1rpx solid var(--rule);
+  border-radius: 16rpx;
+  overflow: hidden;
+  background: #fff;
+}
+
+.scene-img {
+  width: 100%;
+  height: 420rpx;
+  display: block;
+}
+
+.scene-caption {
+  font-size: 20rpx;
+  letter-spacing: 2rpx;
+  color: var(--ink-faded);
+  text-align: center;
+  padding: 12rpx 16rpx;
+  border-top: 1rpx solid var(--rule);
+}
+
+/* === 它是谁 === */
+.facts {
+  background: #fff;
+  border: 1rpx solid var(--rule);
+  border-radius: 16rpx;
+  padding: 12rpx 28rpx;
+}
+
+.fact {
+  display: flex;
+  padding: 18rpx 0;
+}
+
+.fact + .fact {
+  border-top: 1rpx dashed var(--rule);
+}
+
+.fact-label {
+  width: 140rpx;
+  flex-shrink: 0;
+  font-size: 26rpx;
+  color: var(--ink-faded);
+}
+
+.fact-value {
+  font-size: 28rpx;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* === 风味 === */
+.flavor-pro {
+  background: var(--paper-warm);
+  border-radius: 12rpx;
+  padding: 24rpx 28rpx;
+  font-size: 26rpx;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  margin-bottom: 24rpx;
+}
+
+.prose-p {
+  font-size: 30rpx;
+  line-height: 1.9;
+  color: var(--ink);
+  margin-bottom: 24rpx;
+}
+
+.prose-p:last-child {
+  margin-bottom: 0;
+}
+
+/* === 配餐 === */
+.pairing-intro {
+  font-size: 30rpx;
+  line-height: 1.8;
+  margin-bottom: 24rpx;
+}
+
+.pairing-list {
+  background: #fff;
+  border: 1rpx solid var(--rule);
+  border-radius: 16rpx;
+  padding: 8rpx 28rpx;
+  margin-bottom: 24rpx;
+}
+
+.pairing-item {
+  display: flex;
+  align-items: baseline;
+  gap: 20rpx;
+  padding: 18rpx 0;
+}
+
+.pairing-item + .pairing-item {
+  border-top: 1rpx dashed var(--rule);
+}
+
+.pairing-index {
+  font-size: 24rpx;
+  color: var(--wine);
+}
+
+.pairing-text {
+  font-size: 28rpx;
+  line-height: 1.7;
+}
+
+.avoid {
+  font-size: 26rpx;
+  color: var(--ink-faded);
+  line-height: 1.8;
+  padding-left: 20rpx;
+  border-left: 4rpx solid var(--rule);
+}
+
+/* === 产区 === */
+.region-card {
+  background: #fff;
+  border: 1rpx solid var(--rule);
+  border-radius: 16rpx;
+  padding: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.region-badge {
+  font-size: 20rpx;
+  letter-spacing: 2rpx;
+  color: var(--wine-deep);
+  margin-bottom: 10rpx;
+}
+
+.region-name {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.region-name-en {
+  font-size: 22rpx;
+  color: var(--ink-faded);
+  margin-bottom: 12rpx;
+}
+
+.region-body {
+  font-size: 26rpx;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+/* === 酒款 === */
+.bottle-card {
+  background: #fff;
+  border: 1rpx solid var(--rule);
+  border-radius: 16rpx;
+  padding: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.bottle-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12rpx;
+}
+
+.bottle-name {
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.bottle-name-cn {
+  font-size: 24rpx;
+  color: var(--ink-faded);
+}
+
+.bottle-price {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: var(--wine-deep);
+  flex-shrink: 0;
+  margin-left: 20rpx;
+}
+
+.bottle-body {
+  font-size: 26rpx;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+.footer {
+  text-align: center;
+  font-size: 20rpx;
+  letter-spacing: 3rpx;
+  color: var(--ink-faded);
+  margin-top: 72rpx;
+}

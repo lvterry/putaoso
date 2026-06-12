@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "md-text": "../md-text/md-text"
+  }
+}

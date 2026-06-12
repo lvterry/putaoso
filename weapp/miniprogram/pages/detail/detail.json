@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "品种详情",
+  "usingComponents": {
+    "md-text": "../../components/md-text/md-text",
+    "palate-chart": "../../components/palate-chart/palate-chart",
+    "section-block": "../../components/section-block/section-block",
+    "price-block": "../../components/price-block/price-block",
+    "similar-list": "../../components/similar-list/similar-list"
+  }
+}

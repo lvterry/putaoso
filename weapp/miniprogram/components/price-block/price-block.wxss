@@ -1,0 +1,39 @@
+.price-block {
+  text-align: center;
+  padding: 36rpx 0 24rpx;
+}
+
+.currency {
+  font-size: 36rpx;
+  color: var(--ink-faded);
+  margin-right: 6rpx;
+}
+
+.amount {
+  font-size: 72rpx;
+  font-weight: 700;
+  color: var(--wine-deep);
+}
+
+.dash {
+  font-size: 48rpx;
+  color: var(--ink-faded);
+}
+
+.caution {
+  display: block;
+  background: #fff7ed;
+  border: 1rpx solid #f3d9b5;
+  border-radius: 12rpx;
+  padding: 24rpx 28rpx;
+  font-size: 26rpx;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.caution-label {
+  display: inline-block;
+  font-weight: 700;
+  color: #b4690e;
+  margin-right: 12rpx;
+}

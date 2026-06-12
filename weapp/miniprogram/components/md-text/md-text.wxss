@@ -1,0 +1,8 @@
+.md-text {
+  word-break: break-word;
+}
+
+.md-bold {
+  font-weight: 700;
+  color: var(--wine-deep);
+}

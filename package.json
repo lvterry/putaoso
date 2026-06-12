@@ -11,7 +11,10 @@
     "astro": "astro",
     "ios:data": "node scripts/export-ios-data.mjs",
     "ios:resources": "node scripts/export-ios-data.mjs && node scripts/export-ios-illustrations.mjs",
-    "ios:generate": "cd ios && xcodegen generate"
+    "ios:generate": "cd ios && xcodegen generate",
+    "weapp:data": "node scripts/export-weapp-data.mjs",
+    "weapp:assets": "node scripts/export-weapp-assets.mjs",
+    "weapp:resources": "npm run weapp:data && npm run weapp:assets"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.18",
@@ -22,5 +25,10 @@
     "d3-geo": "^3.1.1",
     "topojson-client": "^3.1.0",
     "world-atlas": "^2.0.2"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^5.2.1",
+    "miniprogram-automator": "^0.12.1",
+    "typescript": "^5.9.3"
   }
 }

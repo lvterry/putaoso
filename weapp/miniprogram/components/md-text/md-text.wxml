@@ -1,0 +1,1 @@
+<text class="md-text"><text wx:for="{{segments}}" wx:key="index" class="{{item.bold ? 'md-bold' : ''}}">{{item.text}}</text></text>

@@ -1,0 +1,45 @@
+.similar-item {
+  background: #fff;
+  border: 1rpx solid var(--rule);
+  border-radius: 16rpx;
+  padding: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.similar-hover {
+  background: var(--paper-warm);
+}
+
+.similar-name {
+  display: flex;
+  align-items: baseline;
+  gap: 14rpx;
+  margin-bottom: 10rpx;
+}
+
+.similar-en {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.similar-name.live .similar-en {
+  color: var(--wine-deep);
+}
+
+.similar-cn {
+  font-size: 26rpx;
+  color: var(--ink-faded);
+}
+
+.similar-arrow {
+  margin-left: auto;
+  color: var(--wine);
+  font-size: 28rpx;
+}
+
+.similar-desc {
+  font-size: 26rpx;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}

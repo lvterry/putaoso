@@ -1,0 +1,121 @@
+<view wx:if="{{missing}}" class="missing">
+  <view class="missing-title">这个品种还在酿造中</view>
+  <view class="missing-body">它已经在收录计划里，敬请期待。</view>
+  <view class="missing-btn" hover-class="missing-btn-hover" bindtap="onBackHome">回到图鉴首页</view>
+</view>
+
+<view wx:else class="page">
+  <!-- Hero -->
+  <view class="hero">
+    <view class="hero-number mono">NO.{{numberStr}} · {{typeText}}</view>
+    <view class="hero-en">{{v.name_en}}</view>
+    <view class="hero-cn">{{v.name_cn}}</view>
+    <view wx:if="{{aliasText}}" class="hero-alias">别名 · {{aliasText}}</view>
+    <view class="hero-quote">{{v.hero_quote}}</view>
+  </view>
+
+  <!-- 插图 -->
+  <view class="scene" wx:if="{{showIllustration}}">
+    <image
+      class="scene-img"
+      src="{{illustration}}"
+      mode="aspectFill"
+      binderror="onIllustrationError"
+    />
+    <view class="scene-caption mono">{{v.hero_scene_caption}}</view>
+  </view>
+
+  <!-- 它是谁 -->
+  <section-block title="它是谁">
+    <view class="facts">
+      <view class="fact">
+        <text class="fact-label">类型</text>
+        <text class="fact-value">{{typeText}}</text>
+      </view>
+      <view class="fact">
+        <text class="fact-label">原产地</text>
+        <text class="fact-value">{{v.origin}}</text>
+      </view>
+      <view class="fact" wx:if="{{parentsText || parentsNote}}">
+        <text class="fact-label">亲本</text>
+        <text class="fact-value">{{parentsText}}{{parentsText && parentsNote ? ' · ' : ''}}{{parentsNote}}</text>
+      </view>
+      <view class="fact">
+        <text class="fact-label">葡萄科</text>
+        <text class="fact-value">欧亚种葡萄 Vitis vinifera</text>
+      </view>
+    </view>
+  </section-block>
+
+  <!-- 喝起来什么样 -->
+  <section-block title="喝起来什么样">
+    <view class="flavor-pro">{{v.flavors_professional}}</view>
+    <view class="prose">
+      <view class="prose-p" wx:for="{{v.flavors_casual}}" wx:key="*this">
+        <md-text text="{{item}}" />
+      </view>
+    </view>
+    <palate-chart type="{{v.type}}" palate="{{v.palate}}" />
+  </section-block>
+
+  <!-- 价格 -->
+  <section-block title="多少钱能喝到合格表现">
+    <price-block min="{{v.price.min}}" max="{{v.price.max}}" caveat="{{v.caveat}}" />
+  </section-block>
+
+  <!-- 配餐 -->
+  <section-block title="配什么吃">
+    <view class="pairing-intro">
+      <md-text text="{{v.pairing_intro}}" />
+    </view>
+    <view class="pairing-list">
+      <view class="pairing-item" wx:for="{{v.pairings}}" wx:key="*this">
+        <text class="pairing-index mono">{{index + 1}}</text>
+        <text class="pairing-text">{{item}}</text>
+      </view>
+    </view>
+    <view class="avoid">{{v.avoid}}</view>
+  </section-block>
+
+  <!-- 产区 -->
+  <section-block title="三个代表产区">
+    <view class="region-card" wx:for="{{regions}}" wx:key="name_en">
+      <view class="region-badge mono">{{item.badgeUpper}}{{item.badgeCn ? ' · ' + item.badgeCn : ''}}</view>
+      <view class="region-name">{{item.name_cn}}</view>
+      <view class="region-name-en mono">{{item.name_en}}</view>
+      <view class="region-body">
+        <md-text text="{{item.body}}" />
+      </view>
+    </view>
+  </section-block>
+
+  <!-- 酒款 -->
+  <section-block title="三款值得一试">
+    <view class="bottle-card" wx:for="{{v.bottles}}" wx:key="name_en">
+      <view class="bottle-head">
+        <view>
+          <view class="bottle-name">{{item.name_en}}</view>
+          <view class="bottle-name-cn">{{item.name_cn}}</view>
+        </view>
+        <view class="bottle-price">¥{{item.price}}</view>
+      </view>
+      <view class="bottle-body">{{item.body}}</view>
+    </view>
+  </section-block>
+
+  <!-- 相似品种 -->
+  <section-block title="喜欢{{v.name_cn}}，还可以试试">
+    <similar-list items="{{similar}}" />
+  </section-block>
+
+  <!-- 历史 -->
+  <section-block title="关于这个品种">
+    <view class="prose">
+      <view class="prose-p" wx:for="{{v.history}}" wx:key="*this">
+        <md-text text="{{item}}" />
+      </view>
+    </view>
+  </section-block>
+
+  <view class="footer mono">PUTAOSO · NO.{{numberStr}}</view>
+</view>

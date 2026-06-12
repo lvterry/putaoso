@@ -1,0 +1,18 @@
+<view class="similar">
+  <view
+    wx:for="{{items}}"
+    wx:key="slug"
+    class="similar-item"
+    hover-class="{{item.live ? 'similar-hover' : ''}}"
+    data-slug="{{item.slug}}"
+    data-live="{{item.live}}"
+    bindtap="onTap"
+  >
+    <view class="similar-name {{item.live ? 'live' : ''}}">
+      <text class="similar-en">{{item.name_en}}</text>
+      <text class="similar-cn">{{item.name_cn}}</text>
+      <text wx:if="{{item.live}}" class="similar-arrow">→</text>
+    </view>
+    <view class="similar-desc">{{item.body}}</view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/compare/compare"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fbf7ff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "葡萄搜",
+    "backgroundColor": "#fbf7ff",
+    "backgroundTextStyle": "dark"
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}

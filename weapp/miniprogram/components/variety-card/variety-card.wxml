@@ -1,0 +1,13 @@
+<view class="card {{card.live ? '' : 'card-disabled'}}" hover-class="{{card.live ? 'card-hover' : ''}}" bindtap="onTap">
+  <view class="card-top">
+    <text class="card-number mono">NO.{{card.numberStr}}</text>
+    <text class="type-badge {{card.type}}">{{card.typeText}}</text>
+  </view>
+  <view class="card-name-cn">{{card.name_cn}}</view>
+  <view class="card-name-en">{{card.name_en}}</view>
+  <view class="card-tagline">{{card.card_tagline}}</view>
+  <view class="card-bottom">
+    <text class="card-origin mono">{{card.card_origin_short}}</text>
+    <text wx:if="{{!card.live}}" class="card-stamp">即将推出</text>
+  </view>
+</view>

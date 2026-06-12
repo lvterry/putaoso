@@ -1,0 +1,14 @@
+<view class="palate">
+  <view class="palate-row" wx:for="{{rows}}" wx:key="label">
+    <text class="palate-label">{{item.label}}</text>
+    <view class="palate-dots">
+      <view
+        wx:for="{{item.dots}}"
+        wx:for-item="filled"
+        wx:key="*this"
+        class="palate-dot {{filled ? 'filled' : ''}}"
+      />
+    </view>
+    <text class="palate-value">{{item.valueLabel}}</text>
+  </view>
+</view>

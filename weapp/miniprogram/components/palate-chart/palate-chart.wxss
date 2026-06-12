@@ -1,0 +1,47 @@
+.palate {
+  border: 1rpx solid var(--rule);
+  border-radius: 16rpx;
+  background: #fff;
+  padding: 28rpx 32rpx;
+  margin-top: 28rpx;
+}
+
+.palate-row {
+  display: flex;
+  align-items: center;
+  padding: 14rpx 0;
+}
+
+.palate-row + .palate-row {
+  border-top: 1rpx dashed var(--rule);
+}
+
+.palate-label {
+  width: 140rpx;
+  font-size: 26rpx;
+  color: var(--ink-soft);
+}
+
+.palate-dots {
+  display: flex;
+  gap: 12rpx;
+  flex: 1;
+}
+
+.palate-dot {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  border: 2rpx solid var(--wine);
+  box-sizing: border-box;
+}
+
+.palate-dot.filled {
+  background: var(--wine);
+}
+
+.palate-value {
+  font-size: 24rpx;
+  color: var(--ink-faded);
+  margin-left: 16rpx;
+}
