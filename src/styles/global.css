@@ -89,7 +89,9 @@ body::before {
   top: 12px;
   left: 12px;
   z-index: 100;
-  transform: translateY(-160%);
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  overflow: hidden;
   background: var(--wine-deep);
   color: var(--paper);
   padding: 10px 14px;
@@ -97,11 +99,13 @@ body::before {
   font-family: 'Noto Serif SC', Georgia, serif;
   font-size: 14px;
   text-decoration: none;
-  transition: transform 0.18s ease;
+  transition: none;
 }
 
 .skip-link:focus-visible {
-  transform: translateY(0);
+  clip: auto;
+  clip-path: none;
+  overflow: visible;
 }
 
 :focus-visible {
