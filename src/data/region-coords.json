@@ -326,5 +326,33 @@
   "Alba DOC, Italy": [
     44.7,
     8.03
+  ],
+  "Moscato d'Asti DOCG, Italy": [
+    44.67,
+    8.2
+  ],
+  "Asti DOCG, Italy": [
+    44.9,
+    8.2
+  ],
+  "Muscat de Beaumes-de-Venise, France": [
+    44.12,
+    5.03
+  ],
+  "Sauternes, Bordeaux": [
+    44.53,
+    -0.33
+  ],
+  "Hunter Valley, Australia": [
+    -32.68,
+    151.15
+  ],
+  "Bandol, Provence": [
+    43.14,
+    5.75
+  ],
+  "Jumilla, Spain": [
+    38.48,
+    -1.32
   ]
 }
