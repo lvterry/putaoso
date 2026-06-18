@@ -118,33 +118,21 @@
     <path d="M 8 -100 Q 40 -120 60 -110" stroke-width="2.5"/>
     <path d="M 6 -140 Q 30 -160 50 -150" stroke-width="2"/>
     <path d="M 6 -160 Q 20 -190 40 -180" stroke-width="2"/>
+    <!-- extra bare branches (no grapes) -->
+    <path d="M -70 -170 Q -90 -190 -100 -180" stroke-width="1.5" opacity="0.7"/>
+    <path d="M 50 -150 Q 70 -170 80 -160" stroke-width="1.5" opacity="0.7"/>
+    <path d="M -12 -120 Q -20 -130 -30 -125" stroke-width="1.5" opacity="0.6"/>
     <!-- tiny tendrils -->
     <path d="M -60 -140 Q -80 -130 -90 -145 Q -80 -155 -70 -145" stroke-width="1" opacity="0.7"/>
     <path d="M 60 -110 Q 80 -100 90 -115 Q 80 -125 70 -115" stroke-width="1" opacity="0.7"/>
   </g>
 
-  <!-- grape cluster on the vine -->
-  <g transform="translate(50, -175) scale(0.4)">
-    <g fill="#3a0820">
-      <circle cx="0" cy="-40" r="12"/>
-      <circle cx="-14" cy="-22" r="12"/>
-      <circle cx="14" cy="-22" r="12"/>
-      <circle cx="-28" cy="-4" r="12"/>
-      <circle cx="0" cy="-4" r="12"/>
-      <circle cx="28" cy="-4" r="12"/>
-      <circle cx="-14" cy="14" r="12"/>
-      <circle cx="14" cy="14" r="12"/>
-      <circle cx="0" cy="32" r="12"/>
-    </g>
-    <!-- highlight -->
-    <g fill="#584830" opacity="0.5">
-      <circle cx="-4" cy="-44" r="3"/>
-      <circle cx="-18" cy="-26" r="3"/>
-      <circle cx="10" cy="-26" r="3"/>
-      <circle cx="-32" cy="-8" r="3"/>
-      <circle cx="-4" cy="-8" r="3"/>
-      <circle cx="24" cy="-8" r="3"/>
-    </g>
+  <!-- additional fog bands (atmospheric haze) -->
+  <g fill="#ede0ca" opacity="0.5">
+    <ellipse cx="500" cy="350" rx="200" ry="10"/>
+    <ellipse cx="1200" cy="370" rx="250" ry="8"/>
+    <ellipse cx="200" cy="450" rx="180" ry="6"/>
+    <ellipse cx="1400" cy="490" rx="220" ry="7"/>
   </g>
 
   <!-- etched title text -->

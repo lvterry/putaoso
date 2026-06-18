@@ -35,52 +35,35 @@
     <rect x="780" y="60" width="60" height="60" fill="#fff"/>
   </g>
 
-  <!-- A WINE BOTTLE with BEAUJOLAIS NOUVEAU label -->
-  <g transform="translate(800, 370)">
-    <!-- bottle body -->
-    <path d="M -42 -80 Q -46 -76 -46 80 Q -46 140 -20 160 L 20 160 Q 46 140 46 80 Q 46 -76 42 -80 Z"
-          fill="#284828"/>
-    <!-- bottle neck -->
-    <path d="M -22 -80 Q -22 -160 -18 -180 L 18 -180 Q 22 -160 22 -80 Z"
-          fill="#284828"/>
-    <!-- foil top -->
-    <rect x="-26" y="-185" width="52" height="25" fill="#c89840" rx="3"/>
-    <!-- label -->
-    <rect x="-38" y="-20" width="76" height="100" fill="#f2e4cc" rx="3"/>
-    <rect x="-34" y="-16" width="68" height="92" fill="none" stroke="#b82828" stroke-width="1.5" rx="2"/>
-    <!-- label text -->
-    <text x="0" y="6" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif"
-          font-size="10" font-weight="900" letter-spacing="0.1em" fill="#b82828">BEAUJOLAIS</text>
-    <text x="0" y="20" text-anchor="middle" font-family="Georgia, serif"
-          font-size="14" font-style="italic" font-weight="700" fill="#284828">Nouveau</text>
-    <!-- year on label -->
-    <text x="0" y="42" text-anchor="middle" font-family="Georgia, serif"
-          font-size="20" font-weight="700" fill="#b82828">'25</text>
-    <!-- cru names -->
-    <text x="0" y="62" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif"
-          font-size="6" letter-spacing="0.15em" fill="#284828">MORGON · MOULIN-À-VENT</text>
+  <!-- steaming coffee cup (bistro atmosphere left) -->
+  <g transform="translate(620, 420)">
+    <!-- saucer -->
+    <ellipse cx="0" cy="20" rx="36" ry="6" fill="#d8c8b0" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- cup body -->
+    <path d="M -24 0 L -20 20 Q -20 28 0 28 Q 20 28 20 20 L 24 0 Z" fill="#e8dcc8" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- cup handle -->
+    <path d="M 24 4 Q 38 4 38 14 Q 38 22 22 22" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- coffee surface -->
+    <ellipse cx="0" cy="4" rx="22" ry="5" fill="#4a3828"/>
+    <!-- steam -->
+    <path d="M -8 -4 Q -10 -16 -4 -24 Q 2 -32 -2 -42" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.5"/>
+    <path d="M 4 -4 Q 8 -12 4 -22 Q 0 -30 4 -38" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.4"/>
   </g>
 
-  <!-- a stem of gamay grapes tumbling out left -->
-  <g transform="translate(620, 420)">
-    <path d="M 60 -20 Q 120 -40 140 -10 Q 150 20 130 60"
-          fill="none" stroke="#284828" stroke-width="3" stroke-linecap="round"/>
-    <g fill="#6a2040">
-      <circle cx="130" cy="-18" r="10"/><circle cx="146" cy="-8" r="10"/>
-      <circle cx="136" cy="8" r="10"/><circle cx="148" cy="18" r="10"/>
-      <circle cx="128" cy="30" r="10"/><circle cx="136" cy="48" r="9"/>
-      <circle cx="124" cy="64" r="9"/>
-    </g>
-    <!-- highlights -->
-    <g fill="#8a4868" opacity="0.6">
-      <circle cx="126" cy="-22" r="3"/><circle cx="142" cy="-12" r="3"/>
-      <circle cx="132" cy="4" r="3"/><circle cx="143" cy="14" r="3"/>
-      <circle cx="124" cy="26" r="3"/>
-    </g>
-    <!-- leaf -->
-    <path d="M 100 -32 Q 80 -60 100 -80 Q 120 -60 100 -32 Z"
-          fill="#284828" opacity="0.8"/>
-    <line x1="100" y1="-32" x2="100" y2="-80" stroke="#1a3428" stroke-width="1"/>
+  <!-- croissant (bistro atmosphere right) -->
+  <g transform="translate(1110, 480) rotate(-15)">
+    <path d="M -40 0 Q -50 -20 -30 -30 Q -10 -40 0 -25 Q 10 -40 30 -30 Q 50 -20 40 0 Q 30 10 0 12 Q -30 10 -40 0 Z" fill="#d4a858" stroke="#b88840" stroke-width="1.5"/>
+    <path d="M -30 -20 Q -10 -28 0 -15 Q 10 -28 30 -20" fill="none" stroke="#c89838" stroke-width="1.5" opacity="0.6"/>
+    <path d="M -20 -10 Q 0 -18 20 -10" fill="none" stroke="#c89838" stroke-width="1" opacity="0.5"/>
+  </g>
+
+  <!-- lit candle -->
+  <g transform="translate(1260, 460)">
+    <rect x="-6" y="0" width="12" height="30" fill="#e8dcc8" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+    <path d="M 0 -4 Q -4 -10 0 -18 Q 4 -10 0 -4" fill="#f0e030" stroke="none"/>
+    <path d="M 0 -4 Q -1 -8 0 -14" fill="#f8f0a0" stroke="none" opacity="0.8"/>
+    <!-- wax drip -->
+    <path d="M -6 14 Q -8 18 -6 22" fill="none" stroke="#d8c8b0" stroke-width="1.5"/>
   </g>
 
   <!-- a slice of bread / baguette on right -->

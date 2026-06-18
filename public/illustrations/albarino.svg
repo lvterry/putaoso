@@ -84,38 +84,24 @@
     <circle cx="770" cy="435" r="5"/>
     <circle cx="840" cy="470" r="3"/>
     <circle cx="750" cy="460" r="4"/>
+    <!-- more splashes near shell -->
+    <circle cx="620" cy="400" r="5"/>
+    <circle cx="590" cy="420" r="3"/>
+    <circle cx="650" cy="370" r="4"/>
+    <circle cx="580" cy="380" r="3"/>
+    <circle cx="710" cy="390" r="4"/>
+    <circle cx="550" cy="410" r="3"/>
+    <circle cx="680" cy="360" r="3"/>
+    <circle cx="630" cy="440" r="4"/>
   </g>
 
-  <!-- grape cluster (raised, solid black with white cutout) -->
-  <g transform="translate(980, 360)">
-    <g fill="#1a1612">
-      <circle cx="0" cy="-24" r="14"/>
-      <circle cx="-16" cy="-10" r="14"/>
-      <circle cx="16" cy="-10" r="14"/>
-      <circle cx="-28" cy="6" r="14"/>
-      <circle cx="0" cy="6" r="14"/>
-      <circle cx="28" cy="6" r="14"/>
-      <circle cx="-16" cy="22" r="14"/>
-      <circle cx="16" cy="22" r="14"/>
-      <circle cx="0" cy="38" r="14"/>
-    </g>
-    <!-- white cutout highlights -->
-    <g fill="#f0ead8">
-      <circle cx="-4" cy="-28" r="4"/>
-      <circle cx="-20" cy="-14" r="4"/>
-      <circle cx="12" cy="-14" r="4"/>
-      <circle cx="-32" cy="2" r="4"/>
-      <circle cx="-4" cy="2" r="4"/>
-      <circle cx="24" cy="2" r="4"/>
-      <circle cx="-20" cy="18" r="4"/>
-      <circle cx="12" cy="18" r="4"/>
-      <circle cx="-4" cy="34" r="4"/>
-    </g>
-    <!-- leaf -->
-    <path d="M -8 -40 Q -40 -60 -50 -30 Q -30 -20 -8 -40 Z"
-          fill="#1a1612"/>
-    <path d="M 8 -40 Q 40 -60 50 -30 Q 30 -20 8 -40 Z"
-          fill="#1a1612"/>
+  <!-- fishing boat silhouette (distant) -->
+  <g transform="translate(1020, 310)" fill="none" stroke="#1a1612" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M -30 0 L 30 0 L 20 -16 L -10 -16 Z" fill="#1a1612"/>
+    <path d="M 0 -16 L 0 -36" stroke-width="1.5"/>
+    <!-- sail -->
+    <path d="M 0 -34 L -16 -8 L 0 -8 Z" fill="#f0ead8" stroke-width="1.5"/>
+    <path d="M 0 -34 L 14 -12 L 0 -12 Z" fill="#f0ead8" stroke-width="1.5"/>
   </g>
 
   <!-- TITLE: hand-carved linocut lettering -->

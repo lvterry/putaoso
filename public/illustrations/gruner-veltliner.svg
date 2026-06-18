@@ -24,21 +24,21 @@
   <!-- vertical rule (grid) -->
   <line x1="700" y1="0" x2="700" y2="900" stroke="#2a5818" stroke-width="2" opacity="0.15"/>
 
-  <!-- wine glass (simplified to basic geometric shapes) -->
-  <g transform="translate(440, 340)" stroke="#1a1a1a" stroke-width="2.5" fill="none">
-    <!-- bowl -->
-    <path d="M -70 0 C -70 -30 -40 -80 0 -80 C 40 -80 70 -30 70 0 L 70 60 C 70 100 40 120 0 120 C -40 120 -70 100 -70 60 Z"/>
-    <!-- stem -->
-    <line x1="0" y1="120" x2="0" y2="180"/>
-    <!-- base -->
-    <ellipse cx="0" cy="200" rx="50" ry="8" stroke-width="2"/>
-    <!-- wine fill line -->
-    <path d="M -68 10 C -40 10 40 10 68 10" stroke="#8aaa50" stroke-width="3" fill="none" opacity="0.8"/>
+  <!-- alpine mountain peak (geometric bands, Swiss style) -->
+  <g transform="translate(440, 280)" opacity="0.85">
+    <!-- snow cap -->
+    <polygon points="0,-120 -60,0 60,0" fill="#f5f3e8" stroke="#1a1a1a" stroke-width="2"/>
+    <!-- north face -->
+    <polygon points="-30,-60 -80,40 0,40" fill="#c0d0a0" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- south face -->
+    <polygon points="0,-60 -80,40 60,40" fill="#a0b880" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- east face -->
+    <polygon points="30,-60 0,40 60,40" fill="#8aaa50" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- base band -->
+    <rect x="-100" y="40" width="200" height="20" fill="#4a7828" stroke="#1a1a1a" stroke-width="1.5"/>
+    <!-- snow highlight -->
+    <polygon points="0,-120 -20,-50 20,-50" fill="#fff" stroke="none" opacity="0.5"/>
   </g>
-
-  <!-- WHITE WINE in glass (solid green fill) -->
-  <path d="M 370 350 C 370 340 400 340 440 340 C 480 340 510 340 510 350 L 510 400 C 510 410 480 420 440 420 C 400 420 370 410 370 400 Z"
-        fill="#8aaa50" opacity="0.4"/>
 
   <!-- PEPPERCORNS (scattered, geometric) -->
   <g fill="#1a1a1a">
@@ -50,6 +50,27 @@
     <circle cx="1210" cy="350" r="5"/>
     <circle cx="1240" cy="330" r="4"/>
     <circle cx="1120" cy="300" r="4"/>
+    <!-- more scattered peppercorns -->
+    <circle cx="1080" cy="350" r="4"/>
+    <circle cx="1110" cy="380" r="3"/>
+    <circle cx="1260" cy="370" r="4"/>
+    <circle cx="1280" cy="310" r="3"/>
+    <circle cx="1130" cy="240" r="3"/>
+    <circle cx="1220" cy="230" r="4"/>
+    <circle cx="1170" cy="400" r="3"/>
+    <circle cx="1300" cy="340" r="3"/>
+  </g>
+
+  <!-- mortar & pestle (geometric, Swiss style) -->
+  <g transform="translate(980, 460)" stroke="#1a1a1a">
+    <!-- mortar bowl -->
+    <path d="M -30 0 L -25 40 Q -20 50 0 50 Q 20 50 25 40 L 30 0 Z" fill="#d0d0c0" stroke-width="2"/>
+    <ellipse cx="0" cy="0" rx="30" ry="6" fill="#e0e0d0" stroke-width="2"/>
+    <!-- ground pepper inside -->
+    <ellipse cx="0" cy="2" rx="20" ry="4" fill="#1a1a1a" stroke="none" opacity="0.6"/>
+    <!-- pestle -->
+    <path d="M -12 0 L -20 -50 Q -18 -56 -14 -56 Q -10 -56 -8 -50 L -8 0" fill="#c0c0b0" stroke-width="1.5"/>
+    <ellipse cx="-14" cy="-56" rx="4" ry="2" fill="#d0d0c0" stroke-width="1"/>
   </g>
 
   <!-- green pepper (capsicum) icon -->
@@ -61,19 +82,6 @@
     <path d="M 0 -10 L -20 -20" stroke="#2a5818" stroke-width="1.5" opacity="0.5"/>
     <path d="M -10 20 L 10 20" stroke="#2a5818" stroke-width="2"/>
     <path d="M 0 -10 L 0 60" stroke="#2a5818" stroke-width="1" opacity="0.3"/>
-  </g>
-
-  <!-- grape cluster (minimal) -->
-  <g transform="translate(980, 480)" fill="#6a9840" opacity="0.85">
-    <circle cx="0" cy="-15" r="10"/>
-    <circle cx="-10" cy="-2" r="10"/>
-    <circle cx="10" cy="-2" r="10"/>
-    <circle cx="-18" cy="12" r="10"/>
-    <circle cx="0" cy="12" r="10"/>
-    <circle cx="18" cy="12" r="10"/>
-    <circle cx="-8" cy="26" r="10"/>
-    <circle cx="8" cy="26" r="10"/>
-    <circle cx="0" cy="40" r="10"/>
   </g>
 
   <!-- Helvetica title (Swiss design) -->

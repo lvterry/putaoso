@@ -69,38 +69,52 @@
              fill="#d8c8b8" stroke="#1a1612" stroke-width="1.5"/>
   </g>
 
-  <!-- CUBIST WINE BOTTLE + GLASS (still life) -->
-  <g transform="translate(480, 520)">
-    <!-- bottle -->
-    <polygon points="-20,0 20,0 24,-80 16,-80 16,-140 12,-160 -12,-160 -16,-140 -16,-80 -24,-80"
-             fill="#d0c8b8" stroke="#1a1612" stroke-width="2"/>
-    <!-- bottle shading -->
-    <polygon points="-20,0 0,0 0,-80 -24,-80"
-             fill="#b8a898" stroke="none" opacity="0.5"/>
-    <!-- wine glass (fragmented) -->
-    <polygon points="50,0 80,0 80,-40 70,-60 60,-60 50,-40"
+  <!-- CUBIST SAILBOAT 2 (distant, right) -->
+  <g transform="translate(1080, 360)">
+    <polygon points="-30,0 -20,18 20,18 30,0"
              fill="#d0c8b8" stroke="#1a1612" stroke-width="1.5"/>
-    <polygon points="60,-60 70,-60 70,-100 60,-100"
-             fill="none" stroke="#1a1612" stroke-width="1.5"/>
-    <!-- wine in glass -->
-    <polygon points="52,-20 78,-20 76,-6 54,-6"
-             fill="#e0d8a0" stroke="none" opacity="0.6"/>
+    <line x1="0" y1="0" x2="0" y2="-60" stroke="#1a1612" stroke-width="1.5"/>
+    <polygon points="0,-54 -24,-10 0,-10"
+             fill="#d0c8b8" stroke="#1a1612" stroke-width="1"/>
+    <polygon points="0,-54 8,-20 20,-10 0,-10"
+             fill="#c8b8a8" stroke="#1a1612" stroke-width="1"/>
   </g>
 
-  <!-- CUBIST GRAPE CLUSTER -->
-  <g transform="translate(1080, 520)" fill="none" stroke="#1a1612" stroke-width="1.5">
-    <polygon points="0,-20 10,-10 0,0 -10,-10"
-             fill="#c8b080"/>
-    <polygon points="-12,-8 0,0 -8,12 -16,4"
-             fill="#b8a070"/>
-    <polygon points="8,-8 18,0 10,12 0,4"
-             fill="#c8b080"/>
-    <polygon points="-6,10 6,14 0,24 -10,18"
-             fill="#b8a070"/>
-    <polygon points="6,14 16,18 10,28 0,24"
-             fill="#c8b080"/>
-    <polygon points="-4,22 6,28 0,36 -8,30"
-             fill="#b8a070"/>
+  <!-- seabirds (cubist triangles) -->
+  <g fill="#1a1612" opacity="0.6">
+    <polygon points="200,200 210,185 220,200 210,195"/>
+    <polygon points="230,190 238,178 246,190 238,186"/>
+    <polygon points="180,210 188,198 196,210 188,206"/>
+    <polygon points="320,170 326,160 332,170 326,167"/>
+    <polygon points="340,160 346,150 352,160 346,156"/>
+    <polygon points="1400,240 1406,228 1412,240 1406,236"/>
+    <polygon points="1420,230 1426,218 1432,230 1426,226"/>
+  </g>
+
+  <!-- faceted spray / whitecaps -->
+  <g fill="#e0e8ec" stroke="#1a2a40" stroke-width="0.8" opacity="0.5">
+    <polygon points="500,320 520,310 530,330 510,340"/>
+    <polygon points="900,300 920,290 930,310 910,320"/>
+    <polygon points="1300,290 1320,280 1330,300 1310,310"/>
+  </g>
+
+  <!-- angular rocks (more faceted coastline) -->
+  <g fill="none" stroke="#1a1612" stroke-linejoin="round">
+    <polygon points="0,500 60,460 120,490 140,560 80,590 30,570"
+             fill="#a89880" stroke-width="1.5" opacity="0.6"/>
+    <polygon points="1460,470 1540,440 1600,490 1600,580 1520,560 1480,520"
+             fill="#988878" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- more faceted waves (midground texture) -->
+  <g fill="none" stroke="#1a2a40" stroke-width="1" opacity="0.4">
+    <polygon points="1000,500 1040,490 1060,510 1020,520" fill="#3a6888"/>
+    <polygon points="1060,510 1100,500 1120,520 1080,530" fill="#3a6888"/>
+    <polygon points="1120,520 1160,510 1180,530 1140,540" fill="#3a6888"/>
+    <polygon points="420,530 460,520 480,540 440,550" fill="#3a6888"/>
+    <polygon points="480,540 520,530 540,550 500,560" fill="#3a6888"/>
+    <polygon points="120,550 160,540 180,560 140,570" fill="#3a6888"/>
+    <polygon points="1380,480 1420,470 1440,490 1400,500" fill="#3a6888"/>
   </g>
 
   <!-- angular sun -->
