@@ -1,0 +1,127 @@
+<svg role="img" aria-label="Barbera illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="ba-dots" patternUnits="userSpaceOnUse" width="6" height="6">
+      <circle cx="3" cy="3" r="1.2" fill="#b82828" opacity="0.3"/>
+    </pattern>
+    <pattern id="ba-dots-large" patternUnits="userSpaceOnUse" width="12" height="12">
+      <circle cx="3" cy="3" r="2.5" fill="#b82828" opacity="0.15"/>
+      <circle cx="9" cy="9" r="2.5" fill="#b82828" opacity="0.15"/>
+    </pattern>
+  </defs>
+
+  <!-- bright white background with ben-day dots -->
+  <rect width="1600" height="900" fill="#f5f0e8"/>
+  <rect width="1600" height="900" fill="url(#ba-dots-large)"/>
+
+  <!-- sunburst / comic rays -->
+  <g transform="translate(800, 450)">
+    <g fill="#b82828" opacity="0.12">
+      <polygon points="0,0 -300,-400 -200,-450"/>
+      <polygon points="0,0 -100,-480 0,-500"/>
+      <polygon points="0,0 100,-480 200,-450"/>
+      <polygon points="0,0 300,-400 400,-300"/>
+      <polygon points="0,0 450,-200 480,-100"/>
+      <polygon points="0,0 500,0 480,100"/>
+      <polygon points="0,0 450,200 400,300"/>
+      <polygon points="0,0 300,400 200,450"/>
+      <polygon points="0,0 100,480 0,500"/>
+      <polygon points="0,0 -100,480 -200,450"/>
+      <polygon points="0,0 -300,400 -400,300"/>
+      <polygon points="0,0 -450,200 -480,100"/>
+      <polygon points="0,0 -500,0 -480,-100"/>
+      <polygon points="0,0 -450,-200 -400,-300"/>
+    </g>
+  </g>
+
+  <!-- POP ART CHERRY (mega cherry, Ben-Day shaded) -->
+  <g transform="translate(800, 340)">
+    <!-- cherry body -->
+    <circle cx="0" cy="0" r="120" fill="#c82020"/>
+    <circle cx="0" cy="0" r="120" fill="url(#ba-dots)" opacity="0.5"/>
+    <!-- stem -->
+    <path d="M 0 -120 Q 20 -180 60 -200 Q 80 -210 100 -200"
+          fill="none" stroke="#284828" stroke-width="8" stroke-linecap="round"/>
+    <!-- leaf -->
+    <path d="M 60 -200 Q 40 -230 60 -250 Q 80 -230 60 -200 Z"
+          fill="#284828"/>
+    <!-- highlight -->
+    <ellipse cx="-40" cy="-50" rx="30" ry="20" fill="#f0e0d0" opacity="0.5"
+             transform="rotate(-20 -40 -50)"/>
+    <!-- inner glow -->
+    <circle cx="0" cy="0" r="80" fill="#e84848" opacity="0.5"/>
+  </g>
+
+  <!-- burst text: "POW!" -->
+  <g transform="translate(1110, 240)" fill="#f0e030">
+    <text x="0" y="0" text-anchor="middle" font-family="'Arial Black', 'Helvetica Neue', sans-serif"
+          font-size="52" font-weight="900" transform="rotate(15)">POW!</text>
+  </g>
+
+  <!-- cartoon hills (Piemonte landscape, comic style) -->
+  <g transform="translate(0, 680)">
+    <path d="M 0 0 Q 200 -60 400 -20 T 800 -20 T 1200 0 T 1600 -20 L 1600 220 L 0 220 Z"
+          fill="#68a848"/>
+    <path d="M 0 0 Q 200 -60 400 -20 T 800 -20 T 1200 0 T 1600 -20 L 1600 220 L 0 220 Z"
+          fill="url(#ba-dots)" opacity="0.5"/>
+
+    <path d="M 0 60 Q 300 20 600 60 T 1200 50 T 1600 70 L 1600 220 L 0 220 Z"
+          fill="#4a8838"/>
+    <path d="M 0 60 Q 300 20 600 60 T 1200 50 T 1600 70 L 1600 220 L 0 220 Z"
+          fill="url(#ba-dots)" opacity="0.4"/>
+
+    <!-- vine rows -->
+    <g stroke="#3a6828" stroke-width="3" opacity="0.5">
+      <line x1="100" y1="30" x2="100" y2="100"/>
+      <line x1="200" y1="20" x2="200" y2="100"/>
+      <line x1="300" y1="25" x2="300" y2="100"/>
+      <line x1="500" y1="40" x2="500" y2="100"/>
+      <line x1="600" y1="45" x2="600" y2="100"/>
+      <line x1="700" y1="30" x2="700" y2="100"/>
+      <line x1="900" y1="35" x2="900" y2="100"/>
+      <line x1="1000" y1="40" x2="1000" y2="100"/>
+      <line x1="1100" y1="40" x2="1100" y2="100"/>
+      <line x1="1300" y1="30" x2="1300" y2="100"/>
+      <line x1="1400" y1="25" x2="1400" y2="100"/>
+      <line x1="1500" y1="30" x2="1500" y2="100"/>
+    </g>
+  </g>
+
+  <!-- onomatopoeia: "ZING!" (cherry acidity) -->
+  <text x="200" y="400" font-family="'Arial Black', sans-serif" font-size="28"
+        font-weight="900" fill="#b82828" transform="rotate(-25 200 400)" opacity="0.8">ZING!</text>
+
+  <!-- title -->
+  <text x="100" y="180" font-family="'Helvetica Neue', 'Arial Black', sans-serif"
+        font-size="72" font-weight="900" letter-spacing="-0.03em" fill="#1a1a1a">BARBERA</text>
+  <text x="104" y="228" font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="20" font-weight="700" letter-spacing="0.25em" fill="#b82828">PIEMONTE · EVERYDAY HERO</text>
+
+  <!-- speech bubble bottom left -->
+  <g transform="translate(80, 560)">
+    <path d="M 0 0 L 200 0 Q 220 0 220 20 L 220 80 Q 220 100 200 100 L 40 100 L 20 130 L 30 100 L 0 100 Q -20 100 -20 80 L -20 20 Q -20 0 0 0 Z"
+          fill="#f0e030" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="100" y="45" text-anchor="middle" font-family="'Arial Black', sans-serif"
+          font-size="16" font-weight="900" fill="#1a1a1a">CHERRY BOMB!</text>
+    <text x="100" y="68" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif"
+          font-size="12" font-weight="700" fill="#1a1a1a">hills of Asti</text>
+  </g>
+
+  <!-- red action lines around the cherry -->
+  <g stroke="#1a1a1a" stroke-width="2" fill="none" opacity="0.6">
+    <line x1="680" y1="300" x2="640" y2="280"/>
+    <line x1="940" y1="300" x2="980" y2="280"/>
+    <line x1="680" y1="380" x2="630" y2="400"/>
+    <line x1="940" y1="380" x2="990" y2="400"/>
+    <line x1="800" y1="200" x2="800" y2="170"/>
+  </g>
+
+  <!-- dots in white ("pop art" Ben-Day dot effect on cherry) -->
+  <rect width="1600" height="900" fill="url(#ba-dots)" opacity="0.15"/>
+
+  <!-- bottom banner -->
+  <rect x="0" y="790" width="1600" height="110" fill="#1a1a1a"/>
+  <text x="100" y="838" font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="14" font-weight="700" letter-spacing="0.3em" fill="#f5f0e8">🍒  HIGH ACID  ·  LOW TANNIN  ·  EVERYDAY  🍒</text>
+  <text x="1480" y="838" text-anchor="end" font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="12" letter-spacing="0.2em" fill="#f5f0e8" opacity="0.6">ASTI · ALBA · MMXXVI</text>
+</svg>

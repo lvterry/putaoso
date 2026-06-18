@@ -1,0 +1,143 @@
+<svg role="img" aria-label="Carmenere illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="cr-parchment" patternUnits="userSpaceOnUse" width="60" height="60">
+      <rect width="60" height="60" fill="#f0dcc0"/>
+      <circle cx="15" cy="20" r="0.5" fill="#b8a080" opacity="0.3"/>
+      <circle cx="45" cy="48" r="0.4" fill="#b8a080" opacity="0.3"/>
+      <path d="M 10 30 Q 30 28 50 32" fill="none" stroke="#d8c8a8" stroke-width="0.3" opacity="0.3"/>
+    </pattern>
+    <pattern id="cr-hatch" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(30)">
+      <line x1="0" y1="0" x2="0" y2="5" stroke="#6a4830" stroke-width="0.4" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- aged parchment -->
+  <rect width="1600" height="900" fill="url(#cr-parchment)"/>
+
+  <!-- vignette edges (age darkening) -->
+  <rect width="1600" height="900" fill="none" stroke="#6a4830" stroke-width="30" opacity="0.15"/>
+
+  <!-- MAP FRAME -->
+  <rect x="60" y="60" width="1480" height="780" fill="none" stroke="#6a4830" stroke-width="3"/>
+  <rect x="80" y="80" width="1440" height="740" fill="none" stroke="#6a4830" stroke-width="1"/>
+
+  <!-- COMPASS ROSE top right -->
+  <g transform="translate(1380, 200)">
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#6a4830" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="46" fill="none" stroke="#6a4830" stroke-width="0.5"/>
+    <g fill="#6a4830">
+      <!-- N -->
+      <polygon points="0,-45 6,-18 0,-22 -6,-18"/>
+      <!-- S -->
+      <polygon points="0,45 6,18 0,22 -6,18"/>
+      <!-- E -->
+      <polygon points="45,0 18,6 22,0 18,-6"/>
+      <!-- W -->
+      <polygon points="-45,0 -18,6 -22,0 -18,-6"/>
+    </g>
+    <g fill="#6a4830" font-family="Georgia, serif" font-size="12" font-weight="700" text-anchor="middle">
+      <text x="0" y="-57">N</text>
+      <text x="0" y="66">S</text>
+      <text x="62" y="5">E</text>
+      <text x="-62" y="5">W</text>
+    </g>
+    <!-- decorative inner star -->
+    <g fill="#6a4830" opacity="0.4">
+      <polygon points="0,-30 5,-10 10,-28"/>
+      <polygon points="0,30 -5,10 -10,28"/>
+      <polygon points="30,0 10,-5 28,-10"/>
+      <polygon points="-30,0 -10,5 -28,10"/>
+    </g>
+  </g>
+
+  <!-- MAP OF CHILE (stylized, longitudinal strip) -->
+  <g transform="translate(580, 280)">
+    <!-- Chile silhouette (Andes spine) -->
+    <path d="M 0 0
+             L -20 40 L -30 100 L -25 160 L -40 220 L -35 280
+             L -50 340 L -45 400 L -55 460
+             Q -50 480 -30 480
+             L 0 480
+             Q 10 480 15 460
+             L 10 400 L 25 340 L 20 280
+             L 35 220 L 30 160 L 25 100 L 20 40 Z"
+          fill="none" stroke="#6a4830" stroke-width="2.5"/>
+    <!-- Andes mountain range -->
+    <path d="M -20 40 Q -40 60 -30 100 Q -20 140 -25 160 Q -30 200 -35 220"
+          fill="none" stroke="#6a4830" stroke-width="0.8" opacity="0.5"/>
+    <!-- Santiago dot -->
+    <circle cx="0" cy="200" r="6" fill="#b82828"/>
+    <text x="30" y="205" font-family="Georgia, serif" font-size="11" font-style="italic" fill="#6a4830">Santiago</text>
+    <!-- Valparaiso -->
+    <circle cx="-5" cy="220" r="3" fill="#6a4830"/>
+    <!-- Concepcion -->
+    <circle cx="5" cy="280" r="3" fill="#6a4830"/>
+    <text x="30" y="285" font-family="Georgia, serif" font-size="9" font-style="italic" fill="#6a4830">Concepción</text>
+    <!-- Central Valley label -->
+    <text x="50" y="240" font-family="Georgia, serif" font-size="9" font-style="italic" fill="#6a4830" transform="rotate(15 50 240)">Valle Central</text>
+  </g>
+
+  <!-- LOST GRAPE DISCOVERY ROUTE (dotted sea path from France) -->
+  <g fill="none" stroke="#b82828" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.7">
+    <path d="M 200 260 Q 300 240 400 280 Q 500 320 520 380"/>
+  </g>
+  <!-- Label: "Lost & Found" -->
+  <text x="240" y="250" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#b82828" transform="rotate(-10 240 250)">lost grape · 1994</text>
+
+  <!-- France (outline) top left -->
+  <g transform="translate(140, 180)" fill="none" stroke="#6a4830" stroke-width="1.5">
+    <path d="M 0 0
+             L 30 -10 L 50 -5 L 60 10 L 55 30
+             L 65 50 L 60 70 L 50 80 L 40 75
+             L 30 85 L 20 75 L 10 65 L 5 50
+             L -5 40 L 0 20 Z"/>
+    <!-- Bordeaux label -->
+    <text x="20" y="20" font-family="Georgia, serif" font-size="7" fill="#6a4830" font-style="italic">Bordeaux</text>
+    <!-- tiny grape -->
+    <circle cx="25" cy="15" r="4" fill="#6a4830"/>
+  </g>
+
+  <!-- DIVIDER LINE (Equator-like) -->
+  <line x1="100" y1="540" x2="1500" y2="540" stroke="#6a4830" stroke-width="0.6" opacity="0.5"/>
+  <g fill="#6a4830" opacity="0.4">
+    <line x1="100" y1="544" x2="1500" y2="544" stroke="#6a4830" stroke-width="0.3"/>
+  </g>
+
+  <!-- CARTOUCHE bottom center -->
+  <g transform="translate(800, 720)">
+    <rect x="-200" y="-40" width="400" height="80" rx="8" fill="#f0dcc0" stroke="#6a4830" stroke-width="2"/>
+    <rect x="-192" y="-32" width="384" height="64" rx="4" fill="none" stroke="#6a4830" stroke-width="0.6"/>
+    <text x="0" y="-6" text-anchor="middle" font-family="'Trajan Pro', Georgia, serif"
+          font-size="22" letter-spacing="0.32em" fill="#6a4830">CARMENERE</text>
+    <text x="0" y="18" text-anchor="middle" font-family="Georgia, serif"
+          font-size="12" font-style="italic" letter-spacing="0.18em" fill="#6a4830">Vitis vinifera · Redux</text>
+  </g>
+
+  <!-- grape cluster motif (center, like map decoration) -->
+  <g transform="translate(800, 340)" fill="#3a0820">
+    <circle cx="0" cy="-30" r="8"/><circle cx="-10" cy="-14" r="8"/>
+    <circle cx="10" cy="-14" r="8"/><circle cx="-20" cy="2" r="8"/>
+    <circle cx="0" cy="2" r="8"/><circle cx="20" cy="2" r="8"/>
+    <circle cx="-10" cy="18" r="8"/><circle cx="10" cy="18" r="8"/>
+    <circle cx="0" cy="34" r="8"/>
+    <!-- leaf -->
+    <path d="M -6 -40 Q -20 -60 -30 -38 Q -16 -32 -6 -40 Z" fill="#284828"/>
+    <path d="M 6 -40 Q 20 -60 30 -38 Q 16 -32 6 -40 Z" fill="#284828"/>
+  </g>
+
+  <!-- decorative map flourishes -->
+  <g fill="none" stroke="#6a4830" stroke-width="0.8" opacity="0.4">
+    <!-- top left sea monster? no, a whale tail -->
+    <path d="M 100 120 Q 120 100 140 120 Q 120 140 100 120"/>
+    <path d="M 140 120 Q 160 100 180 120 Q 160 140 140 120"/>
+  </g>
+
+  <!-- parchment fold marks -->
+  <g fill="none" stroke="#6a4830" stroke-width="0.4" opacity="0.2">
+    <line x1="800" y1="60" x2="800" y2="840"/>
+  </g>
+
+  <!-- bottom right annotation -->
+  <text x="1380" y="780" text-anchor="end" font-family="Georgia, serif" font-size="10"
+        font-style="italic" fill="#6a4830" opacity="0.6">Redisc. 1994 · RMO 53 · Apalta</text>
+</svg>

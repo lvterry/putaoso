@@ -1,0 +1,135 @@
+<svg role="img" aria-label="Vermentino illustration" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="vr-facet" patternUnits="userSpaceOnUse" width="20" height="20">
+      <rect width="20" height="20" fill="#e8e0d4"/>
+      <line x1="0" y1="0" x2="20" y2="20" stroke="#c8b8a8" stroke-width="0.3" opacity="0.3"/>
+      <line x1="20" y1="0" x2="0" y2="20" stroke="#c8b8a8" stroke-width="0.3" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- warm stone background -->
+  <rect width="1600" height="900" fill="#e8e0d4"/>
+  <rect width="1600" height="900" fill="url(#vr-facet)"/>
+
+  <!-- CUBIST SEA (faceted angles) -->
+  <g fill="none" stroke="#1a2a40" stroke-linecap="round">
+    <!-- angular waves -->
+    <path d="M 0 280 L 160 260 L 260 300 L 400 270 L 520 310 L 640 280
+             L 760 310 L 880 290 L 1000 320 L 1120 300 L 1240 330
+             L 1360 310 L 1480 340 L 1600 320 L 1600 400 L 0 400 Z"
+          fill="#4a7898" stroke-width="1.5" opacity="0.7"/>
+    <path d="M 0 350 L 180 330 L 300 360 L 440 340 L 560 370 L 700 350
+             L 820 380 L 960 360 L 1080 390 L 1220 370 L 1340 400
+             L 1480 380 L 1600 400 L 1600 480 L 0 480 Z"
+          fill="#2a5878" stroke-width="1.5" opacity="0.85"/>
+    <!-- white cap angles -->
+    <polygon points="260,300 280,290 300,310 280,320" fill="#e0e8ec" stroke="#1a2a40" stroke-width="1"/>
+    <polygon points="760,310 780,300 800,320 780,330" fill="#e0e8ec" stroke="#1a2a40" stroke-width="1"/>
+    <polygon points="1240,330 1260,320 1280,340 1260,350" fill="#e0e8ec" stroke="#1a2a40" stroke-width="1"/>
+  </g>
+
+  <!-- CUBIST ROCKS (Sardinian coastline, faceted) -->
+  <g fill="none" stroke="#1a1612" stroke-linejoin="round">
+    <!-- rock formation 1 (left) -->
+    <polygon points="120,500 200,420 340,450 380,540 280,600 160,580"
+             fill="#a89880" stroke-width="2"/>
+    <polygon points="200,420 260,460 340,450 300,520 200,500"
+             fill="#b8a890" stroke-width="1.5" opacity="0.7"/>
+    <polygon points="160,580 280,600 220,680 120,660"
+             fill="#887860" stroke-width="2"/>
+    <polygon points="280,600 380,540 420,620 340,680 220,680"
+             fill="#988878" stroke-width="2"/>
+
+    <!-- rock formation 2 (right) -->
+    <polygon points="1100,480 1220,440 1360,460 1400,540 1280,580 1140,560"
+             fill="#a89880" stroke-width="2"/>
+    <polygon points="1220,440 1300,480 1360,460 1320,520 1240,500"
+             fill="#b8a890" stroke-width="1.5" opacity="0.7"/>
+    <polygon points="1140,560 1280,580 1220,660 1080,640"
+             fill="#887860" stroke-width="2"/>
+    <polygon points="1280,580 1400,540 1440,620 1320,680 1220,660"
+             fill="#988878" stroke-width="2"/>
+  </g>
+
+  <!-- CUBIST SAILBOAT -->
+  <g transform="translate(800, 380)">
+    <!-- hull (faceted) -->
+    <polygon points="-60,0 -40,30 40,30 60,0"
+             fill="#e0d8c8" stroke="#1a1612" stroke-width="2"/>
+    <polygon points="-40,30 -20,40 20,40 40,30"
+             fill="#c8b8a8" stroke="#1a1612" stroke-width="1.5"/>
+    <!-- mast -->
+    <line x1="0" y1="0" x2="0" y2="-100" stroke="#1a1612" stroke-width="2.5"/>
+    <!-- sail (fragmented triangles) -->
+    <polygon points="0,-90 -40,-20 0,-20"
+             fill="#e0d8c8" stroke="#1a1612" stroke-width="1.5"/>
+    <polygon points="0,-80 -30,-20 0,-20"
+             fill="#f0e8d8" stroke="#1a1612" stroke-width="1"/>
+    <polygon points="0,-90 10,-40 40,-20 0,-20"
+             fill="#d8c8b8" stroke="#1a1612" stroke-width="1.5"/>
+  </g>
+
+  <!-- CUBIST WINE BOTTLE + GLASS (still life) -->
+  <g transform="translate(480, 520)">
+    <!-- bottle -->
+    <polygon points="-20,0 20,0 24,-80 16,-80 16,-140 12,-160 -12,-160 -16,-140 -16,-80 -24,-80"
+             fill="#d0c8b8" stroke="#1a1612" stroke-width="2"/>
+    <!-- bottle shading -->
+    <polygon points="-20,0 0,0 0,-80 -24,-80"
+             fill="#b8a898" stroke="none" opacity="0.5"/>
+    <!-- wine glass (fragmented) -->
+    <polygon points="50,0 80,0 80,-40 70,-60 60,-60 50,-40"
+             fill="#d0c8b8" stroke="#1a1612" stroke-width="1.5"/>
+    <polygon points="60,-60 70,-60 70,-100 60,-100"
+             fill="none" stroke="#1a1612" stroke-width="1.5"/>
+    <!-- wine in glass -->
+    <polygon points="52,-20 78,-20 76,-6 54,-6"
+             fill="#e0d8a0" stroke="none" opacity="0.6"/>
+  </g>
+
+  <!-- CUBIST GRAPE CLUSTER -->
+  <g transform="translate(1080, 520)" fill="none" stroke="#1a1612" stroke-width="1.5">
+    <polygon points="0,-20 10,-10 0,0 -10,-10"
+             fill="#c8b080"/>
+    <polygon points="-12,-8 0,0 -8,12 -16,4"
+             fill="#b8a070"/>
+    <polygon points="8,-8 18,0 10,12 0,4"
+             fill="#c8b080"/>
+    <polygon points="-6,10 6,14 0,24 -10,18"
+             fill="#b8a070"/>
+    <polygon points="6,14 16,18 10,28 0,24"
+             fill="#c8b080"/>
+    <polygon points="-4,22 6,28 0,36 -8,30"
+             fill="#b8a070"/>
+  </g>
+
+  <!-- angular sun -->
+  <g transform="translate(1400, 220)">
+    <polygon points="0,-60 15,-15 60,0 15,15 0,60 -15,15 -60,0 -15,-15"
+             fill="#e0c070" stroke="#1a1612" stroke-width="2"/>
+    <polygon points="0,-30 8,-8 30,0 8,8 0,30 -8,8 -30,0 -8,-8"
+             fill="#d8b860" stroke="none"/>
+  </g>
+
+  <!-- faceted waves foreground -->
+  <g fill="#3a6888" stroke="#1a2a40" stroke-width="1" opacity="0.6">
+    <polygon points="0,680 120,660 200,700 80,720"/>
+    <polygon points="200,700 320,680 400,720 280,740"/>
+    <polygon points="400,720 520,700 600,740 480,760"/>
+    <polygon points="600,740 720,720 800,760 680,780"/>
+    <polygon points="800,760 920,740 1000,780 880,800"/>
+    <polygon points="1000,780 1120,760 1200,800 1080,820"/>
+    <polygon points="1200,800 1320,780 1400,820 1280,840"/>
+    <polygon points="1400,820 1520,800 1600,840 1480,860"/>
+  </g>
+
+  <!-- title (geometric sans, fragmented effect) -->
+  <g font-family="'Futura', 'Century Gothic', sans-serif" fill="#1a1612">
+    <text x="100" y="140" font-size="56" font-weight="700" letter-spacing="-0.02em">VERMENTINO</text>
+    <text x="104" y="180" font-size="16" font-weight="500" letter-spacing="0.35em" opacity="0.7">SARDEGNA · MARE MEDITERRANEO</text>
+  </g>
+
+  <!-- annotation: fragmented text -->
+  <text x="80" y="830" font-family="'Futura', sans-serif" font-size="11" fill="#1a1612" opacity="0.5">BRISA · GRANITO · SALINO</text>
+  <text x="1520" y="830" text-anchor="end" font-family="'Futura', sans-serif" font-size="11" fill="#1a1612" opacity="0.5">CUBO · MMXXVI</text>
+</svg>
