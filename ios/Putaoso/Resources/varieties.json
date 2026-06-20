@@ -2776,5 +2776,1705 @@
     "has_china_planting": true,
     "card_tagline": "耐零下四十度严寒，东北育种人的三十年心血。",
     "card_origin_short": "吉林"
+  },
+  {
+    "slug": "nebbiolo",
+    "number": 21,
+    "status": "live",
+    "publishedAt": "2026-06-18T00:00:00.000Z",
+    "name_en": "Nebbiolo",
+    "name_cn": "内比奥罗",
+    "aliases": [
+      "Spanna（皮埃蒙特北部部分产区的传统叫法）"
+    ],
+    "type": "red",
+    "origin": "意大利皮埃蒙特",
+    "parents": {
+      "note": "名称常被解释为来自 nebbia（雾），也可能与成熟果皮表面的白霜有关"
+    },
+    "hero_quote": "颜色淡得像黑皮诺，单宁硬得像赤霞珠——两种不可能的特质，它占全了。",
+    "hero_scene": "chateau-sundown",
+    "hero_scene_caption": "Hills of Barolo under autumn fog · Piemonte",
+    "flavors_professional": "焦油与玫瑰，这是内比奥罗最经典的标签。酸樱桃、覆盆子、干玫瑰花瓣、焦油、甘草、松露、八角、皮革、烟叶；陈年后出现蜜饯、焦油和森林地表气息。",
+    "flavors_casual": [
+      "倒出来的颜色浅得让人怀疑是不是红葡萄酒——边缘几乎透明，像黑皮诺。闻起来却是另一回事：焦油和玫瑰花瓣，这种组合在葡萄酒世界里几乎独一无二。喝进嘴单宁像砂纸一样抓住你的口腔，酸度锐利，但果味藏在后面——像一朵带刺的玫瑰。",
+      "陈年十年以上之后，内比奥罗会进入另一重境界。单宁磨圆了，酸度融进去了，多出来的是一层层干玫瑰、焦油、松露和烟草的气息。喝到这种状态的内比奥罗，你会理解为什么意大利人愿意为之倾家荡产。"
+    ],
+    "palate": {
+      "acidity": 5,
+      "acidity_label": "极高",
+      "tannin": 5,
+      "tannin_label": "极高",
+      "body": 4,
+      "body_label": "饱满",
+      "beginner_difficulty": 5,
+      "beginner_difficulty_label": "困难"
+    },
+    "price": {
+      "min": 300,
+      "max": 800
+    },
+    "caveat": "年轻的内比奥罗（尤其是巴罗洛）单宁极其强韧，过早开瓶可能像在嚼一块没熟的柿子。入门从 Langhe Nebbiolo 或较早进入适饮期的 Barbaresco 开始会更友好，价格也通常更亲民。",
+    "pairing_intro": "内比奥罗的高酸度和磅礴单宁，需要**油脂丰富、风味浓郁**的料理来呼应。它是松露、慢炖肉类和白松露意面的天选搭档。",
+    "pairings": [
+      "慢炖牛尾、牛膝 —— 油脂化解单宁、肉味呼应复杂度",
+      "松露料理 —— 白松露意面、松露烩饭",
+      "陈年硬质奶酪 —— Parmigiano-Reggiano、Grana Padano、aged Gouda",
+      "烤鸭、烤乳鸽",
+      "意大利炖菜（Brasato al Barolo —— 用巴罗洛酒炖的牛肉）"
+    ],
+    "avoid": "清淡的鱼、生冷海鲜、白灼蔬菜——内比奥罗会被这些菜衬托得又涩又酸，两边都不讨好。辣菜也不是它的领域。",
+    "regions": [
+      {
+        "name_en": "Barolo DOCG",
+        "name_cn": "意大利 · 巴罗洛",
+        "badge": "The King",
+        "body": "意大利最受尊敬的红葡萄酒产区，被称为\"葡萄酒之王\"。内比奥罗在这里达到最高表达。严格法规要求至少 38 个月陈年（Riserva 62 个月），单宁在漫长陈年中磨出极致复杂。价格不菲，但每一口都配得上它的名号。",
+        "coordinate": {
+          "latitude": 44.62,
+          "longitude": 7.94
+        }
+      },
+      {
+        "name_en": "Barbaresco DOCG",
+        "name_cn": "意大利 · 巴巴莱斯科",
+        "badge": "The Queen",
+        "body": "巴罗洛的\"皇后\"，同是内比奥罗但性格迥异。地势更低、气候稍暖，让巴巴莱斯科比巴罗洛更早可饮、更优雅柔顺。如果你被巴罗洛的单宁吓到过，巴巴莱斯科是一个温柔的重新认识。",
+        "coordinate": {
+          "latitude": 44.72,
+          "longitude": 8.08
+        }
+      },
+      {
+        "name_en": "Langhe Nebbiolo DOC",
+        "name_cn": "意大利 · 朗格",
+        "badge": "The Accessible",
+        "body": "巴罗洛和巴巴莱斯科的\"弟弟\"产区，法规宽松、陈年要求低，酒年轻新鲜、价格亲民。是日常理解 \"内比奥罗味道\" 的最佳入口，也是性价比最高的选择。",
+        "coordinate": {
+          "latitude": 44.65,
+          "longitude": 7.98
+        }
+      }
+    ],
+    "bottles": [
+      {
+        "name_en": "Bruno Giacosa Langhe Nebbiolo",
+        "name_cn": "嘉科萨 · 朗格内比奥罗 · 皮埃蒙特",
+        "price": 250,
+        "body": "顶级名庄的入门款。巴罗洛的功力浓缩在一支朗格里，可以清晰感受什么是\"优雅的内比奥罗\"，价格却不到巴罗洛的五分之一。"
+      },
+      {
+        "name_en": "Produttori del Barbaresco",
+        "name_cn": "巴巴莱斯科合作社 · 经典款",
+        "price": 350,
+        "body": "了解巴巴莱斯科性价比最高的途径。合作社出品，但品质极其稳定。果香和单宁的平衡做得好，比 Langhe 款多一层复杂度。"
+      },
+      {
+        "name_en": "Vietti Perbacco Langhe Nebbiolo",
+        "name_cn": "维埃蒂 · 佩巴科 · 朗格内比奥罗",
+        "price": 250,
+        "body": "来自巴罗洛与巴巴莱斯科周边葡萄园的朗格内比奥罗，保留玫瑰、红樱桃和紧致单宁，同时比多数巴罗洛更早进入适饮期。"
+      }
+    ],
+    "similar": [
+      {
+        "slug": "barbera",
+        "name_en": "Barbera",
+        "name_cn": "巴贝拉",
+        "body": "皮埃蒙特另一位主角。内比奥罗是\"高冷王者\"，巴贝拉是\"日常暖男\"——酸度同样高，但单宁轻得多，价格也友好得多。"
+      },
+      {
+        "slug": "sangiovese",
+        "name_en": "Sangiovese",
+        "name_cn": "桑娇维塞",
+        "body": "意大利另一位高酸高单宁选手。风格上，桑娇维塞更偏酸樱桃和干草味，内比奥罗是玫瑰和焦油——放在一起对比超级有趣。"
+      },
+      {
+        "slug": "pinot-noir",
+        "name_en": "Pinot Noir",
+        "name_cn": "黑皮诺",
+        "body": "颜色上都一样\"淡\"，但性格天差地别。黑皮诺轻柔优雅，内比奥罗是结构坚硬的建筑。如果你觉得黑皮诺太温柔，内比奥罗是下一站。"
+      }
+    ],
+    "history": [
+      "内比奥罗名称常被联系到意大利语 nebbia（雾），因为晚熟采收期常遇到秋雾；另一种解释则指成熟果皮表面的白霜。它萌芽早、成熟晚，需要漫长生长季和良好坡向，因此很难在皮埃蒙特以外稳定复制经典表现。",
+      "巴罗洛在 19 世纪曾是甜酒（因为发酵未完成就停止），后来在 Camillo Benso di Cavour 等人的推动下才转变成今天的干型风格。在 20 世纪中期，巴罗洛经历了\"古典派\"与\"现代派\"的大论战，核心问题是：要不要用小型法国橡木桶替代传统大橡木桶？这场争论把整个产区分裂了近二十年，最终各路都找到了自己的忠实追随者。",
+      "中国有极少量尝试种植内比奥罗（云南、宁夏），但受气候限制，至今没有出现让人信服的国产作品。这个品种恐怕注定是意大利的专属。"
+    ],
+    "flavor_tags": [
+      "rose",
+      "tar",
+      "cherry",
+      "high-tannin",
+      "aged"
+    ],
+    "occasion_tags": [
+      "fine-dining",
+      "red-meat",
+      "truffle",
+      "wine-enthusiast"
+    ],
+    "beginner_friendly": false,
+    "has_china_planting": true,
+    "card_tagline": "焦油与玫瑰。意大利最骄傲的红葡萄。",
+    "card_origin_short": "皮埃蒙特"
+  },
+  {
+    "slug": "gamay",
+    "number": 22,
+    "status": "live",
+    "publishedAt": "2026-06-18T00:00:00.000Z",
+    "name_en": "Gamay",
+    "name_cn": "佳美",
+    "aliases": [
+      "Gamay Noir（全称）"
+    ],
+    "type": "red",
+    "origin": "法国博若莱",
+    "parents": {
+      "p1": "黑皮诺",
+      "p2": "白高维斯",
+      "note": "黑皮诺和白高维斯的另一对子女（与霞多丽同父母）"
+    },
+    "hero_quote": "最被低估的日常红。年轻、欢快，喝它不需要理由。",
+    "hero_scene": "vineyard-dawn",
+    "hero_scene_caption": "Rolling vineyards of Beaujolais at dawn",
+    "flavors_professional": "新鲜红樱桃、草莓、覆盆子、香蕉（碳酸浸渍法的标志性气息）、紫罗兰、碎石；陈年后出现森林地表和蘑菇。",
+    "flavors_casual": [
+      "像一杯冰镇过的鲜榨浆果汁——红樱桃、草莓、覆盆子，每一口都是明亮的酸甜。单宁通常不重，酸度轻快，喝完一口自然会想喝第二口。部分采用碳酸或半碳酸浸渍的版本会带香蕉、泡泡糖般的发酵香气，在博若莱新酒中尤其明显。",
+      "佳美和霞多丽是同一个爸妈生的（黑皮诺 × 白高维斯），但性格差得像两兄弟——霞多丽擅长随风土和酿造变化，佳美则更直接地表达新鲜红果。它不需要你懂酒，开瓶就是一场派对。"
+    ],
+    "palate": {
+      "acidity": 3,
+      "acidity_label": "中",
+      "tannin": 1,
+      "tannin_label": "极低",
+      "body": 2,
+      "body_label": "轻盈",
+      "beginner_difficulty": 1,
+      "beginner_difficulty_label": "极易"
+    },
+    "price": {
+      "min": 80,
+      "max": 150
+    },
+    "caveat": "博若莱新酒（Beaujolais Nouveau）不等于佳美。每年 11 月第三个星期四发布的 Nouveau 是快速酿造的狂欢酒，不代表这个品种的上限。博若莱的村庄级和 Cru 级别（如 Morgon、Fleurie）才真正展现佳美的潜力。",
+    "pairing_intro": "佳美单宁极低、酸度适中、酒体轻盈，是**冷食、野餐、午餐酒**的完美选择。轻微冰镇后的佳美会有一种惊人的清新感。",
+    "pairings": [
+      "冷切肉、火腿拼盘、肉冻",
+      "烤鸡、白切鸡、盐焗鸡",
+      "三文鱼、金枪鱼沙拉",
+      "番茄意面、蘑菇烩饭、奶酪焗菜",
+      "法式洋葱汤、乡村肉酱（Rillettes）"
+    ],
+    "avoid": "浓酱牛排、红烧类重油料理——佳美的轻盈会被彻底淹没。更不要配巧克力，会完全消失。",
+    "regions": [
+      {
+        "name_en": "Beaujolais, France",
+        "name_cn": "法国 · 博若莱",
+        "badge": "The Home",
+        "body": "佳美的唯一真正故乡。博若莱位于勃艮第南端，土壤以花岗岩为主，和勃艮第的石灰岩截然不同——这正是为什么同一个爸妈的品种（佳美和黑皮诺）能长出两种性格。博若莱内部等级分明：大区级、村庄级，以及 10 个 Cru（特级村），品质依次攀升。",
+        "coordinate": {
+          "latitude": 46.15,
+          "longitude": 4.62
+        }
+      },
+      {
+        "name_en": "Beaujolais Crus",
+        "name_cn": "法国 · 博若莱特级村",
+        "badge": "The Serious Side",
+        "body": "博若莱有十个特级村（如 Morgon、Fleurie、Moulin-à-Vent），出产的佳美不再是那个轻松简单的少年——它们有结构、有深度、可以陈年。Morgon 的陈年潜力可达十年以上，被称作\"博若莱的巴罗洛\"。这些酒才是佳美应该被认真对待的证据。",
+        "coordinate": {
+          "latitude": 46.18,
+          "longitude": 4.65
+        }
+      },
+      {
+        "name_en": "Loire Valley",
+        "name_cn": "法国 · 卢瓦尔河谷",
+        "badge": "The French Cousin",
+        "body": "卢瓦尔河谷也种佳美，虽然面积远小于博若莱。卢瓦尔的佳美更清爽、更有矿物感，常带一丝青草和燧石味。如果博若莱的佳美太奔放，试试卢瓦尔版的会更收敛。",
+        "coordinate": {
+          "latitude": 47.21,
+          "longitude": -0.59
+        }
+      }
+    ],
+    "bottles": [
+      {
+        "name_en": "Georges Duboeuf Beaujolais-Villages",
+        "name_cn": "杜宝夫 · 博若莱村庄级 · 法国",
+        "price": 100,
+        "body": "国内最容易买到的佳美，超市和葡萄酒电商都有。果香鲜明、单宁几乎无感，适合夏日冰镇后大口喝，是建立\"佳美基本味\"的零门槛选择。"
+      },
+      {
+        "name_en": "Domaine Jean Foillard Morgon",
+        "name_cn": "富雅庄园 · 莫尔贡 · 法国",
+        "price": 250,
+        "body": "自然派酿酒师的经典作品，也是打破\"佳美就是瞎喝\"偏见的一瓶。Morgon 特级村的佳美在这里展示出惊人的深度和结构，甚至值得陈年五到八年。"
+      },
+      {
+        "name_en": "Domaine Thivin Côte de Brouilly",
+        "name_cn": "蒂凡庄园 · 布鲁伊丘 · 法国",
+        "price": 200,
+        "body": "博若莱十 Cru 之一的经典代表。Côte de Brouilly 位于死火山坡上，矿物质感赋予佳美出乎意料的骨架和余味。"
+      }
+    ],
+    "similar": [
+      {
+        "slug": "pinot-noir",
+        "name_en": "Pinot Noir",
+        "name_cn": "黑皮诺",
+        "body": "黑皮诺是佳美的亲本之一。两者都能酿出浅色、轻盈的红酒，但黑皮诺通常更细腻复杂，佳美更强调鲜活果味，是很好的对照组合。"
+      },
+      {
+        "slug": "syrah",
+        "name_en": "Syrah / Shiraz",
+        "name_cn": "西拉",
+        "body": "同样是博若莱之外的另一个\"法式红\"。西拉饱满香料，佳美轻盈果味，是两个极端方向。"
+      },
+      {
+        "slug": "grenache",
+        "name_en": "Grenache",
+        "name_cn": "歌海娜",
+        "body": "同样果味甜润、单宁轻、价格亲民，但歌海娜酒精度高、酒体饱满，与佳美的轻盈形成对比。"
+      }
+    ],
+    "history": [
+      "1395 年，勃艮第公爵 Philippe le Hardi 下令在勃艮第公国核心葡萄园中清除佳美，转而推广黑皮诺。佳美随后在更南面的博若莱扎根，并在当地花岗岩土壤上找到了最适合自己的舞台。",
+      "今天佳美是博若莱的绝对主角，约占当地葡萄园的绝大多数。勃艮第大区仍有少量佳美，并可用于 Bourgogne Passe-Tout-Grains 等法定混酿，但不用于勃艮第特级园或一级园红酒。"
+    ],
+    "flavor_tags": [
+      "red-berry",
+      "cherry",
+      "light-body",
+      "easy-drinking"
+    ],
+    "occasion_tags": [
+      "picnic",
+      "summer",
+      "lunch",
+      "party"
+    ],
+    "beginner_friendly": true,
+    "has_china_planting": false,
+    "card_tagline": "被勃艮第嫌弃，在博若莱称王。",
+    "card_origin_short": "博若莱"
+  },
+  {
+    "slug": "carmenere",
+    "number": 23,
+    "status": "live",
+    "publishedAt": "2026-06-18T00:00:00.000Z",
+    "name_en": "Carménère",
+    "name_cn": "佳美娜",
+    "type": "red",
+    "origin": "法国波尔多（在智利重获新生）",
+    "parents": {
+      "p1": "品丽珠",
+      "p2": "大卡本内",
+      "note": "波尔多六大红葡萄之一，与赤霞珠、梅洛同系"
+    },
+    "hero_quote": "被当作梅洛种了一百年，直到 DNA 揭晓才知道自己是谁。",
+    "hero_scene": "vineyard-dawn",
+    "hero_scene_caption": "Chilean vineyards under the Andes · Maipo Valley",
+    "flavors_professional": "黑樱桃、黑李子、青椒、红甜椒、番茄叶、巧克力、咖啡、黑胡椒、烟叶，以及佳美娜标志性的青草与辛香料气息。",
+    "flavors_casual": [
+      "像一杯加了黑胡椒碎的黑樱桃汁。果味饱满甜润，但鼻子里总有一缕青椒和番茄叶的清香——这不是缺陷，是佳美娜的身份标签。比梅洛多一点\"野\"劲，比赤霞珠少一点涩。酒体中等偏饱满，入口顺滑，后味带着淡淡的可可粉和烟叶味。",
+      "如果佳美娜突然\"尝起来像菜椒\"——那是葡萄没完全成熟。真正成熟的佳美娜，青椒味只是背景板，前面是黑樱桃、巧克力和一丝异国香料的气息。找一瓶智利中央山谷的，比法国的好找十倍、便宜十倍。"
+    ],
+    "palate": {
+      "acidity": 3,
+      "acidity_label": "中",
+      "tannin": 3,
+      "tannin_label": "中",
+      "body": 4,
+      "body_label": "中至饱满",
+      "beginner_difficulty": 2,
+      "beginner_difficulty_label": "容易"
+    },
+    "price": {
+      "min": 80,
+      "max": 200
+    },
+    "caveat": "颜色比梅洛深、果味也足够饱满，但\"青椒味\"是佳美娜的双刃剑——成熟度不够时会显得生青，好酒庄能把这个味道控制在\"香料感\"而非\"菜椒感\"。买智利知名产区（Maipo、Rapel、Colchagua）的更放心。",
+    "pairing_intro": "佳美娜的果味甜润加上那抹青椒/香料气息，让它和中餐**酱香菜、熏腊菜、烤肉类**配合出色，尤其是带点甜味的酱汁。",
+    "pairings": [
+      "蜜汁叉烧、烧鹅、烤乳猪 —— 甜酱和佳美娜的果感互相呼应",
+      "烟熏香肠、腊肉 —— 烟熏味和青椒气息一拍即合",
+      "红烧排骨、照烧鸡",
+      "黑胡椒牛柳、铁板牛肉",
+      "墨西哥菜 —— 辣肉酱、牛肉塔可"
+    ],
+    "avoid": "白灼海鲜、清淡沙拉、生鱼片——佳美娜的饱满感会压倒这些菜，果味无处安放。",
+    "regions": [
+      {
+        "name_en": "Maipo Valley, Chile",
+        "name_cn": "智利 · 迈坡谷",
+        "badge": "The Heartland",
+        "body": "迈坡谷是智利佳美娜的重要产区之一。冲积土壤、充足日照和明显昼夜温差有助于葡萄成熟，常呈现浓郁黑果、柔顺单宁和适度草本辛香。",
+        "coordinate": {
+          "latitude": -33.65,
+          "longitude": -70.65
+        }
+      },
+      {
+        "name_en": "Colchagua Valley, Chile",
+        "name_cn": "智利 · 空加瓜谷",
+        "badge": "The Premium",
+        "body": "更暖和、更干燥，出产的佳美娜更饱满、更浓郁、少一些青椒味。空加瓜也是智利顶级酒庄的聚集地，如果你想要\"挑战对佳美娜的刻板印象\"，从这里入手。",
+        "coordinate": {
+          "latitude": -34.61,
+          "longitude": -71.09
+        }
+      },
+      {
+        "name_en": "Bordeaux, France",
+        "name_cn": "法国 · 波尔多",
+        "badge": "The Lost Origin",
+        "body": "佳美娜的故乡，如今种植极少。它成熟晚、坐果不稳定，在根瘤蚜灾后重建葡萄园时没有像梅洛和赤霞珠那样被广泛补种，因此逐渐退出波尔多主流混酿。",
+        "coordinate": {
+          "latitude": 44.84,
+          "longitude": -0.58
+        }
+      }
+    ],
+    "bottles": [
+      {
+        "name_en": "Concha y Toro Marqués de Casa Concha Carménère",
+        "name_cn": "侯爵 · 佳美娜 · 智利迈坡",
+        "price": 150,
+        "body": "智利头部酒庄的稳定出品，是认识\"佳美娜的标准味道\"的教科书选择。黑樱桃、巧克力，青椒仅做香料点缀，完成度高。"
+      },
+      {
+        "name_en": "Santa Rita Floresta Carménère",
+        "name_cn": "桑塔丽塔 · 佳美娜 · 智利",
+        "price": 120,
+        "body": "高性价比的日常款。果味浓郁、单宁柔顺、价格亲民。如果预算在 100 元上下想买一瓶不会出错的智利红酒，这是佳选。"
+      },
+      {
+        "name_en": "Lapostolle Cuvée Alexandre Carménère",
+        "name_cn": "拉博丝特 · 亚历山大 · 空加瓜谷",
+        "price": 300,
+        "body": "法国名门（Marnier Lapostolle 家族，Grand Marnier 的创立者）在智利打造的精品酒庄。这款佳美娜展示了这个品种可以达到的精细度和陈年潜力——它不只是\"便宜的梅洛替代品\"。"
+      }
+    ],
+    "similar": [
+      {
+        "slug": "merlot",
+        "name_en": "Merlot",
+        "name_cn": "梅洛",
+        "body": "曾与佳美娜混淆百年的品种。梅洛更圆润、少一份青椒香料感，如果盲品两者放在一起，可以清晰感受到\"兄弟但不是双胞胎\"的关系。"
+      },
+      {
+        "slug": "cabernet-sauvignon",
+        "name_en": "Cabernet Sauvignon",
+        "name_cn": "赤霞珠",
+        "body": "如果有青椒味的赤霞珠让你不适，佳美娜也许更对你的胃口——同样的草本气息，但多了一份南美的甜润果子味来平衡。"
+      },
+      {
+        "slug": "malbec",
+        "name_en": "Malbec",
+        "name_cn": "马尔贝克",
+        "body": "同为新世界明星——马尔贝克来自阿根廷，佳美娜来自智利。都是出口中国的热门品种，都在南美找到第二故乡。"
+      }
+    ],
+    "history": [
+      "佳美娜是波尔多传统红葡萄之一。根瘤蚜灾后，因成熟晚、坐果不稳定等栽培难题，它在法国没有被大规模重新种植，随后几乎从波尔多消失。",
+      "1994 年，法国葡萄品种学家 Jean-Michel Boursiquot 在智利确认，许多长期被当作梅洛种植的葡萄藤其实是佳美娜。19 世纪从波尔多引入的混杂植株，就这样在智利保存并发展成了标志性品种。"
+    ],
+    "flavor_tags": [
+      "black-fruit",
+      "bell-pepper",
+      "chocolate",
+      "smooth"
+    ],
+    "occasion_tags": [
+      "red-meat",
+      "chinese-cuisine",
+      "everyday",
+      "barbecue"
+    ],
+    "beginner_friendly": true,
+    "has_china_planting": false,
+    "card_tagline": "智利的国民红葡萄，被误认了一百年的法国移民。",
+    "card_origin_short": "智利"
+  },
+  {
+    "slug": "chenin-blanc",
+    "number": 24,
+    "status": "live",
+    "publishedAt": "2026-06-18T00:00:00.000Z",
+    "name_en": "Chenin Blanc",
+    "name_cn": "白诗南",
+    "aliases": [
+      "Pineau de la Loire（法国卢瓦尔本地称呼，现已少用）"
+    ],
+    "type": "white",
+    "origin": "法国卢瓦尔河谷",
+    "parents": {
+      "p1": "萨瓦涅",
+      "p2": "未知品种",
+      "note": "DNA 研究显示它是萨瓦涅的后代；至少从中世纪起就在卢瓦尔河谷种植"
+    },
+    "hero_quote": "卢瓦尔河谷的灵魂。能起泡、能干、能甜，每一种都好喝。",
+    "hero_scene": "slate-slope",
+    "hero_scene_caption": "Limestone slopes of Vouvray · Loire Valley",
+    "flavors_professional": "青苹果、柠檬、梨、白桃、蜂蜜、洋甘菊、金银花、蜂蜡、湿石头、白垩、甜瓜、无花果（晚收/贵腐款）；陈年后有蜂蜡、坚果和藏红花气息。",
+    "flavors_casual": [
+      "干型的白诗南像一杯浸着蜜糖的青苹果水——酸度锋利但不扎嘴，果味干净、带着淡淡的洋甘菊和金银花的香气。和霞多丽的最大区别是：白诗南即使过桶也依然保持一种\"石头和花香\"的底色，不像霞多丽那样可以被橡木桶完全重塑。",
+      "甜型的白诗南是另一个层次的美物。卢瓦尔的 Coteaux du Layon 出产的贵腐白诗南有浓郁的蜂蜜、杏干和无花果味，酸度像一把隐藏的刀在背后托住甜味——不会腻，只会一口接一口。它是世界上性价比最高的贵腐酒之一。"
+    ],
+    "palate": {
+      "acidity": 5,
+      "acidity_label": "极高",
+      "sweetness": 3,
+      "sweetness_label": "干至甜均有",
+      "body": 3,
+      "body_label": "中等",
+      "beginner_difficulty": 3,
+      "beginner_difficulty_label": "中等"
+    },
+    "price": {
+      "min": 100,
+      "max": 250
+    },
+    "caveat": "白诗南的酸度极为突出，有些人第一次喝会以为酒坏了（\"这酒怎么这么酸？\"）。但这是它的特征，不是缺陷——白诗南的高酸让它拥有惊人的陈年潜力，好的白诗南可以陈放 20 年以上。如果不想被酸到皱眉，从半干款（Demi-Sec）入手会更友好。",
+    "pairing_intro": "白诗南的高酸和洋甘菊般的花香让它成为**亚洲菜和广式蒸鲜**的出色搭档。干型配海鲜，甜型配辣菜和甜点，各司其职。",
+    "pairings": [
+      "清蒸鲈鱼、清蒸螃蟹 —— 干型白诗南，酸度切油脂、花香衬鲜味",
+      "白灼虾、白切鸡 —— 同样配干型",
+      "泰式青木瓜沙拉、越南春卷 —— 半干款的白诗南配酸辣绝妙",
+      "广式点心 —— 虾饺、烧卖、肠粉",
+      "苹果派、杏仁蛋糕 —— 配甜型白诗南或 Coteaux du Layon"
+    ],
+    "avoid": "重口红烧、红肉料理、巧克力——白诗南的高酸度和细腻花香会被浓酱淹没无论干甜。",
+    "regions": [
+      {
+        "name_en": "Vouvray, Loire Valley",
+        "name_cn": "法国 · 卢瓦尔 · 武弗雷",
+        "badge": "The Classic",
+        "body": "武弗雷是白诗南最著名的产区。这里的石灰岩土壤（tuffeau）赋予白诗南精致的矿物骨架和极高的酸度。武弗雷可以做成起泡、干型、半干、甜型各种风格，每一家酒庄都有自己的理念。",
+        "coordinate": {
+          "latitude": 47.41,
+          "longitude": 0.8
+        }
+      },
+      {
+        "name_en": "Savennières, Loire Valley",
+        "name_cn": "法国 · 卢瓦尔 · 萨韦涅尔",
+        "badge": "The Serious",
+        "body": "卢瓦尔最\"严肃\"的白诗南产区。几乎只做干型，风格极其紧凑、矿物感强、酸度凛冽，年轻时甚至有点抗拒人的距离感——但陈年五到十年后绽放出惊人的层次。它是白诗南的\"勃艮第特级园\"，喝懂它需要一点耐心。",
+        "coordinate": {
+          "latitude": 47.38,
+          "longitude": -0.66
+        }
+      },
+      {
+        "name_en": "Coteaux du Layon, Loire Valley",
+        "name_cn": "法国 · 卢瓦尔 · 莱昂丘",
+        "badge": "The Sweet Master",
+        "body": "卢瓦尔最著名的甜白产区。因莱昂河带来的晨雾让贵腐菌在葡萄上生长，果实浓缩成蜜糖般的甜度。白诗南的高酸在这里成了黄金品质，把甜味托举得轻盈灵动。价格只有苏玳的三分之一，品质不遑多让。",
+        "coordinate": {
+          "latitude": 47.27,
+          "longitude": -0.68
+        }
+      }
+    ],
+    "bottles": [
+      {
+        "name_en": "Domaine Huet Vouvray Demi-Sec \"Le Haut-Lieu\"",
+        "name_cn": "于特庄园 · 武弗雷半干 · 法国",
+        "price": 300,
+        "body": "白诗南最著名的酒庄，没有之一。Huet 的白诗南被全世界葡萄酒爱好者视为教科书。这款半干款是了解\"白诗南的灵魂\"的最佳入口——酸与甜的完美平衡。"
+      },
+      {
+        "name_en": "François Pinon Vouvray Sec",
+        "name_cn": "比诺庄园 · 武弗雷干型 · 法国",
+        "price": 180,
+        "body": "干型白诗南的友好入门款。青苹果、洋甘菊、燧石感清晰，酸度新鲜但不尖锐。日常配海鲜的性价比好选择。"
+      },
+      {
+        "name_en": "Château de la Roulerie Coteaux du Layon",
+        "name_cn": "鲁勒里庄园 · 莱昂丘甜白 · 法国",
+        "price": 200,
+        "body": "甜型白诗南的性价比王者。蜂蜜、杏干和果脯风味，酸度贯穿始终。配蓝纹奶酪或直接当甜品酒，200 元买到这样的复杂度，很难找到更划算的。"
+      }
+    ],
+    "similar": [
+      {
+        "slug": "riesling",
+        "name_en": "Riesling",
+        "name_cn": "雷司令",
+        "body": "白诗南最亲的\"同行\"——同样能干能甜、酸度极高、矿物感出色。区别是白诗南偏洋甘菊和蜂蜜，雷司令偏青柠和汽油。"
+      },
+      {
+        "slug": "chardonnay",
+        "name_en": "Chardonnay",
+        "name_cn": "霞多丽",
+        "body": "白诗南常被比作\"卢瓦尔的霞多丽\"，但实际差异很大——白诗南酸度更高、花香更重、矿物感更突出，是霞多丽之外的另一种白葡萄表达。"
+      },
+      {
+        "slug": "sauvignon-blanc",
+        "name_en": "Sauvignon Blanc",
+        "name_cn": "长相思",
+        "body": "同为卢瓦尔河谷的招牌白葡萄。长相思草本感和柑橘感更张扬，白诗南更圆融、有厚度。两个放在一起对比喝，是理解\"同一产区、不同品种\"的绝佳练习。"
+      }
+    ],
+    "history": [
+      "白诗南在卢瓦尔河谷形成了从干型、起泡到贵腐甜酒的完整风格谱系；南非则拥有全球规模最大的白诗南种植，并把它称作 Steen。过去南非确有大量高产基础酒，但如今老藤干白和精品单一园已经成为重要风格。",
+      "白诗南拥有白葡萄中最高水平的天然酸度之一。这个特点让它成为世界上最百变的白葡萄之一：从干型静止酒到甜型贵腐酒到起泡酒，白诗南都能胜任。在武弗雷，同一块田里的白诗南，同一个年份，可以做出极干的 Sec 和极甜的 Moelleux，区别只在于采摘时间和酿造方式。"
+    ],
+    "flavor_tags": [
+      "apple",
+      "honey",
+      "floral",
+      "mineral",
+      "high-acid"
+    ],
+    "occasion_tags": [
+      "seafood",
+      "asian-cuisine",
+      "brunch",
+      "dessert"
+    ],
+    "beginner_friendly": false,
+    "has_china_planting": false,
+    "card_tagline": "卢瓦尔河谷的灵魂。酸度极高，能干能甜，被严重低估。",
+    "card_origin_short": "卢瓦尔河谷"
+  },
+  {
+    "slug": "albarino",
+    "number": 25,
+    "status": "live",
+    "publishedAt": "2026-06-18T00:00:00.000Z",
+    "name_en": "Albariño",
+    "name_cn": "阿尔巴利诺",
+    "aliases": [
+      "Alvarinho（葡萄牙）"
+    ],
+    "type": "white",
+    "origin": "西班牙加利西亚（Rías Baixas）",
+    "parents": {
+      "note": "伊比利亚西北部的古老品种，长期种植于加利西亚和葡萄牙北部"
+    },
+    "hero_quote": "西班牙海岸的白葡萄名片——尝一口就知道为什么它离不开大西洋。",
+    "hero_scene": "slate-slope",
+    "hero_scene_caption": "Estuary vineyards of Rías Baixas · Galicia, Spain",
+    "flavors_professional": "柠檬、葡萄柚、青柠、蜜瓜、白桃、杏、蜂蜡、海盐、湿花岗岩、橙花、薄荷、白胡椒。",
+    "flavors_casual": [
+      "像一杯加了青柠汁和一点海盐的白桃气泡水。酸度活泼、口感轻盈，鼻子里有一股说不清道不明的\"海水味\"——不是腥，而是一股凉爽的、带矿物感的咸鲜气息，像站在西班牙大西洋海岸的岩石上吹海风。余味干净利落，喝完就想再倒一杯。",
+      "阿尔巴利诺是最佳\"海鲜伴侣\"之一。它的矿物质咸感和清爽酸度专门为蚌类、鱼生、虾蟹设计。如果哪家餐厅的杯卖酒单里有阿尔巴利诺，那大概率是配海鲜设计的。"
+    ],
+    "palate": {
+      "acidity": 4,
+      "acidity_label": "高",
+      "sweetness": 1,
+      "sweetness_label": "干",
+      "body": 2,
+      "body_label": "轻盈",
+      "beginner_difficulty": 1,
+      "beginner_difficulty_label": "极易"
+    },
+    "price": {
+      "min": 120,
+      "max": 250
+    },
+    "caveat": "市面上的阿尔巴利诺大多是干型，但成熟果香和酒泥陈年带来的圆润感有时会让人产生微甜错觉。选购时优先看 Rías Baixas DO 或葡萄牙 Monção e Melgaço；入门款应有清晰酸度和柑橘、核果香，而不只是寡淡果味。",
+    "pairing_intro": "阿尔巴利诺的高酸度和标志性的\"海盐矿物感\"让它成为**世界级的海鲜搭档**。清蒸、白灼、刺身、生蚝——没有它应付不了的海鲜。",
+    "pairings": [
+      "生蚝、蛤蜊、扇贝 —— 绝配，酸度像柠檬汁一样提鲜，矿物质咸鲜感与海味相互映衬",
+      "清蒸鱼、白灼虾、蒸螃蟹",
+      "生鱼片、寿司 —— 尤其是白身鱼",
+      "海鲜冷盘、虾仁沙拉、酸橘汁腌鱼（Ceviche）",
+      "加利西亚本土菜 —— Pulpo a la Gallega（加利西亚章鱼）"
+    ],
+    "avoid": "红肉、奶油重酱、巧克力这类厚重的风味会直接压垮阿尔巴利诺轻盈的骨架。",
+    "regions": [
+      {
+        "name_en": "Rías Baixas, Spain",
+        "name_cn": "西班牙 · 下海湾",
+        "badge": "The Home",
+        "body": "阿尔巴利诺最核心的产区，没有之一。位于西班牙西北角的加利西亚，大西洋潮湿气候让葡萄保持高酸度、低酒精度。花岗岩土壤和海风共同带来了那种\"喝一口像站在海边\"的矿物质咸鲜感。下海湾内部还有五个子产区，Val do Salnés 是最靠近海洋、最经典的区域。",
+        "coordinate": {
+          "latitude": 42.42,
+          "longitude": -8.76
+        }
+      },
+      {
+        "name_en": "Vinho Verde, Portugal",
+        "name_cn": "葡萄牙 · 绿酒产区",
+        "badge": "The Portuguese Side",
+        "body": "葡萄牙版的阿尔巴利诺（当地叫 Alvarinho）种植在蒙桑（Monção）子产区，风格比西班牙更饱满、酒精度略高，但依然保持高酸清爽的特质。绿酒产区的性价比很高。",
+        "coordinate": {
+          "latitude": 41.72,
+          "longitude": -8.55
+        }
+      },
+      {
+        "name_en": "California, USA",
+        "name_cn": "美国 · 加州",
+        "badge": "The New World",
+        "body": "加州也有少量阿尔巴利诺，主要分布在凉爽沿海产区。风格会随产地和采收成熟度变化，通常果味更成熟、酒体稍饱满，但仍以清爽酸度为核心。",
+        "coordinate": {
+          "latitude": 37.3,
+          "longitude": -120
+        }
+      }
+    ],
+    "bottles": [
+      {
+        "name_en": "Martín Códax Albariño",
+        "name_cn": "马丁科达斯 · 阿尔巴利诺 · 西班牙",
+        "price": 150,
+        "body": "国际市场上较常见的阿尔巴利诺品牌之一。柠檬、白桃和清爽酸度清晰，是建立\"阿尔巴利诺应该是什么味道\"的友好选择。"
+      },
+      {
+        "name_en": "Pazo de Señorans Albariño",
+        "name_cn": "塞诺兰庄园 · 阿尔巴利诺 · 西班牙",
+        "price": 220,
+        "body": "下海湾的标杆酒庄之一。比 Martín Códax 更集中、更有层次，花香和矿物感的平衡做到极致。如果你觉得阿尔巴利诺就是\"简单的海鲜酒\"，这瓶可以改变看法。"
+      },
+      {
+        "name_en": "Do Ferreiro Cepas Vellas Albariño",
+        "name_cn": "费雷罗庄园 · 老藤阿尔巴利诺 · 西班牙",
+        "price": 350,
+        "body": "老藤阿尔巴利诺的代表——60-100 年藤龄的葡萄产量极低，但风味浓郁度和结构感远超普通款。多了一份杏和蜜瓜的深度，余味惊人地长。"
+      }
+    ],
+    "similar": [
+      {
+        "slug": "sauvignon-blanc",
+        "name_en": "Sauvignon Blanc",
+        "name_cn": "长相思",
+        "body": "同样高酸、清爽、配海鲜出色。区别是长相思的草本感和柑橘味更张扬，阿尔巴利诺多了一分海水矿物感和花香，更\"咸鲜\"。"
+      },
+      {
+        "slug": "vermentino",
+        "name_en": "Vermentino",
+        "name_cn": "维蒙蒂诺",
+        "body": "地中海的另一款海风白葡萄。同样高酸、轻盈、带咸鲜感。阿尔巴利诺的酸更像柠檬，维蒙蒂诺偏柚子皮。"
+      },
+      {
+        "slug": "gruner-veltliner",
+        "name_en": "Grüner Veltliner",
+        "name_cn": "绿维特利纳",
+        "body": "如果你喜欢阿尔巴利诺那种\"清爽不腻\"的感觉但想换个口味，奥地利的绿维特利纳提供了白胡椒和扁豆的另一种清新。"
+      }
+    ],
+    "history": [
+      "阿尔巴利诺是西班牙最\"亲海\"的葡萄品种。下海湾（Rías Baixas）的葡萄园离大西洋海岸不到几公里，葡萄藤搭在花岗岩石柱和高架棚架上（Parral 种植法），让果实远离湿润地面、通风防霉。这种独特的种植系统也是下海湾的景观标志。",
+      "Rías Baixas 在 1988 年取得 DO 地位后迅速建立国际知名度，阿尔巴利诺也成为西班牙最具辨识度的白葡萄之一。",
+      "阿尔巴利诺并非只能生长在海边或花岗岩上，但凉爽、湿润环境中的棚架栽培和良好通风，确实塑造了 Rías Baixas 最经典的风格。"
+    ],
+    "flavor_tags": [
+      "citrus",
+      "stone-fruit",
+      "saline",
+      "mineral",
+      "high-acid"
+    ],
+    "occasion_tags": [
+      "seafood",
+      "summer",
+      "aperitif",
+      "brunch"
+    ],
+    "beginner_friendly": true,
+    "has_china_planting": false,
+    "card_tagline": "西班牙海岸的白葡萄名片。海鲜的终极伴侣。",
+    "card_origin_short": "下海湾, 西班牙"
+  },
+  {
+    "slug": "gruner-veltliner",
+    "number": 26,
+    "status": "live",
+    "publishedAt": "2026-06-18T00:00:00.000Z",
+    "name_en": "Grüner Veltliner",
+    "name_cn": "绿维特利纳",
+    "aliases": [
+      "GruVe（简称）",
+      "Grüner（日常简称）"
+    ],
+    "type": "white",
+    "origin": "奥地利",
+    "parents": {
+      "p1": "萨瓦涅（Traminer）",
+      "p2": "圣格奥尔根（St. Georgen）",
+      "note": "奥地利本土品种，由萨瓦涅与圣格奥尔根自然杂交而来"
+    },
+    "hero_quote": "奥地利的中坚力量。带着白胡椒味的干白，配谁都不怯场。",
+    "hero_scene": "vineyard-dawn",
+    "hero_scene_caption": "Terraced vineyards along the Danube · Wachau, Austria",
+    "flavors_professional": "青苹果、柠檬、柚子、白桃、白胡椒、扁豆、芹菜根、草木樨、生姜、矿物感、燧石；顶级款陈年后有蜂蜜、烤面包和松露气息。",
+    "flavors_casual": [
+      "最明显的特征是那股若有若无的**白胡椒**味道——在青苹果和柠檬的底色上撒了一点白胡椒和扁豆的辛香，这在白葡萄里极其罕见。口感清瘦、酸度爽快，余味干净利落，喉咙里留下一丝微妙的香料感。",
+      "顶级的 Grüner（来自奥地利瓦豪、克雷姆斯等著名产区）会有一种\"高密度的清爽\"——酸度和矿物感被高度压缩，像一条拉扯得很紧的琴弦，余味可以持续几十秒。它能陈年，十年以上的顶级 Grüner 会发展出惊人的复杂度。"
+    ],
+    "palate": {
+      "acidity": 4,
+      "acidity_label": "高",
+      "sweetness": 1,
+      "sweetness_label": "干",
+      "body": 3,
+      "body_label": "中",
+      "beginner_difficulty": 3,
+      "beginner_difficulty_label": "中等"
+    },
+    "price": {
+      "min": 100,
+      "max": 250
+    },
+    "caveat": "便宜的绿维特利纳（80 元以下）往往偏水、缺乏标志性的白胡椒和矿物感，喝起来像普通的酸白葡萄酒——这个品种\"下限不低，但上限极高\"，建议从 120 元以上的开始尝试。另外市场上一些标着\"奥地利干白\"的低价酒可能混了其他品种，认准酒标上的\"Grüner Veltliner\"字样。",
+    "pairing_intro": "Grüner 的高酸度和独特的白胡椒辛香让它成为**蔬菜料理、亚洲菜、特别是素食餐饮**的明星搭档。它比霞多丽更轻灵，比长相思更多一丝暖意。",
+    "pairings": [
+      "泰国菜 —— 冬阴功、青咖喱、泰式炒河粉（辣度和酒体完美匹配）",
+      "越南生春卷、越南粉",
+      "蔬菜沙拉、芦笋、青豆、白芦笋 —— 配白胡椒感的 Grüner 锦上添花",
+      "清蒸鱼、水煮鱼（不辣的版本）、蒸鸡",
+      "奥地利名菜 —— 维也纳炸牛排（Wiener Schnitzel）的产区标配"
+    ],
+    "avoid": "浓赤酱的红肉料理和巧克力甜品——它的清爽会被完全埋没。",
+    "regions": [
+      {
+        "name_en": "Wachau, Austria",
+        "name_cn": "奥地利 · 瓦豪河谷",
+        "badge": "The Holy Land",
+        "body": "Grüner Veltliner 最顶级的表现地。多瑙河畔的陡峭梯田、贫瘠的片麻岩和风化花岗岩土壤，产出酒体紧致、矿物感极强、陈年潜力巨大的 Grüner。瓦豪有自己的分级（Steinfeder → Federspiel → Smaragd），用酒精度标记而不是葡萄成熟度。",
+        "coordinate": {
+          "latitude": 48.35,
+          "longitude": 15.45
+        }
+      },
+      {
+        "name_en": "Kamptal, Austria",
+        "name_cn": "奥地利 · 卡姆普河谷",
+        "badge": "The Noble Neighbor",
+        "body": "紧邻瓦豪，同样以 Grüner 闻名。卡姆普的气候略暖，葡萄成熟度略高，风格比瓦豪更饱满一些。这里的顶级酒庄如 Weingut Hirsch 和 Weingut Bründlmayer 是寻找 Grüner 的最佳选择。",
+        "coordinate": {
+          "latitude": 48.45,
+          "longitude": 15.7
+        }
+      },
+      {
+        "name_en": "Weinviertel, Austria",
+        "name_cn": "奥地利 · 葡萄酒区",
+        "badge": "The Everyday",
+        "body": "奥地利最大的葡萄酒产区，也是 Grüner 种植面积最大的地方。这里主要产出友好易饮的日常 Grüner，没有瓦豪的\"神圣感\"，但有极高的性价比和稳定的质量。如果想日常喝，这里是最好的来源。",
+        "coordinate": {
+          "latitude": 48.54,
+          "longitude": 16.34
+        }
+      }
+    ],
+    "bottles": [
+      {
+        "name_en": "Domäne Wachau Terrassen Federspiel Grüner Veltliner",
+        "name_cn": "瓦豪酒庄 · 梯田系列 · 奥地利",
+        "price": 150,
+        "body": "瓦豪产区合作社出品，国内容易买到。Federspiel 级别（中等酒精度），果味矿物平衡，白胡椒感清晰，是 Grüner 的入门标准答案。"
+      },
+      {
+        "name_en": "F.X. Pichler Loibner Grüner Veltliner Federspiel",
+        "name_cn": "皮希勒 · 绿维特利纳 · 瓦豪",
+        "price": 350,
+        "body": "瓦豪的传奇名家。这家 Grüner Veltliner 被誉为全球最好的之一，白胡椒和矿物质的浓度令人印象深刻。一瓶能让你彻底理解\"为什么 Grüner 不是普通的白葡萄酒\"。"
+      },
+      {
+        "name_en": "Wieninger Grüner Veltliner",
+        "name_cn": "维宁格 · 绿维特利纳 · 奥地利",
+        "price": 180,
+        "body": "维也纳市区至今保留着活跃葡萄园。维宁格的绿维特利纳以清爽柑橘、白胡椒和良好酸度为主，是瓦豪之外理解奥地利日常风格的合适切入点。"
+      }
+    ],
+    "similar": [
+      {
+        "slug": "riesling",
+        "name_en": "Riesling",
+        "name_cn": "雷司令",
+        "body": "奥地利同时产出世界级的雷司令和 Grüner。雷司令偏青柠和矿物，Grüner 偏白胡椒和扁豆。两者放在一起 A/B，是认识\"同一产区两种白葡萄\"的经典练习。"
+      },
+      {
+        "slug": "sauvignon-blanc",
+        "name_en": "Sauvignon Blanc",
+        "name_cn": "长相思",
+        "body": "同样高酸、清爽、有特有的香气特征（长相思的猫尿味 vs Grüner 的白胡椒味）。如果你喜欢长相思的\"尖锐感\"但想换一种复杂度，Grüner 是自然的下一步。"
+      },
+      {
+        "slug": "albarino",
+        "name_en": "Albariño",
+        "name_cn": "阿尔巴利诺",
+        "body": "同样干性高酸、轻盈矿物，一个海风咸鲜（阿尔巴利诺），一个白胡椒辛香（绿维特利纳），是两种不同方向的清爽。"
+      }
+    ],
+    "history": [
+      "Grüner Veltliner 是奥地利种植最广的葡萄品种，约占全国葡萄园近三分之一。1985 年掺假丑闻后，奥地利重建了严格的葡萄酒法规和质量体系，Grüner 也逐步成为最重要的国际名片。",
+      "2002 年，在一次著名的盲品会上，一支顶级瓦豪 Grüner Veltliner 击败了多支勃艮第蒙哈榭特级园霞多丽，震惊了葡萄酒界。这次盲品被视为 Grüner 的\"成人礼\"——从此之后它不再只是\"奥地利佐餐酒\"，而是跻身世界顶级白葡萄行列。",
+      "中国没有规模化种植 Grüner Veltliner 的记录。这个品种的产地高度集中在奥地利和邻近的捷克（当地称为 Veltlínské zelené），离开中欧几乎找不到第二个家。"
+    ],
+    "flavor_tags": [
+      "citrus",
+      "white-pepper",
+      "mineral",
+      "herbal",
+      "high-acid"
+    ],
+    "occasion_tags": [
+      "asian-cuisine",
+      "vegetables",
+      "dinner-party",
+      "brunch"
+    ],
+    "beginner_friendly": false,
+    "has_china_planting": false,
+    "card_tagline": "奥地利的中坚力量。白胡椒味的干白，配菜万能。",
+    "card_origin_short": "瓦豪河谷"
+  },
+  {
+    "slug": "barbera",
+    "number": 27,
+    "status": "live",
+    "publishedAt": "2026-06-18T00:00:00.000Z",
+    "name_en": "Barbera",
+    "name_cn": "巴贝拉",
+    "type": "red",
+    "origin": "意大利皮埃蒙特",
+    "parents": {
+      "note": "皮埃蒙特历史悠久的本地品种，可靠文字记录至少可追溯到 16 世纪"
+    },
+    "hero_quote": "内比奥罗的日常暖男。高酸、低单宁，意大利人家里喝的那种。",
+    "hero_scene": "chateau-sundown",
+    "hero_scene_caption": "Rolling hills of Monferrato · Piemonte, Italy",
+    "flavors_professional": "酸樱桃、草莓、红李、覆盆子、紫罗兰、黑胡椒、甘草、香草（过桶后）；陈年后出现烟草、无花果和皮革气息。",
+    "flavors_casual": [
+      "像一个熟透的红色浆果拼盘——酸樱桃、草莓、覆盆子，酸度活泼明亮，但单宁几乎不硌嘴，喝起来毫无压力。比梅洛多一点\"精神气\"（因为酸度高），比内比奥罗少一副\"我很难懂\"的面孔。",
+      "过橡木桶的 Barbera 会有更多香草和巧克力的气息，甚至带点烟熏感。未过桶的就是纯粹的果味和酸度。不管哪种，它都是皮埃蒙特人餐桌上最常见的日常红酒，也是意大利最好的\"披萨和意面酒\"之一。"
+    ],
+    "palate": {
+      "acidity": 4,
+      "acidity_label": "高",
+      "tannin": 2,
+      "tannin_label": "低",
+      "body": 3,
+      "body_label": "中",
+      "beginner_difficulty": 1,
+      "beginner_difficulty_label": "极易"
+    },
+    "price": {
+      "min": 80,
+      "max": 180
+    },
+    "caveat": "便宜的 Barbera 往往酸度突兀、果味单一。入门可从 Barbera d'Asti DOCG 或 Barbera d'Alba DOC 开始：前者通常更强调鲜活果味，后者常有更扎实的结构或桶陈风格。",
+    "pairing_intro": "Barbera 的高酸度和低单宁让它成了**番茄料理和意大利面**的天然搭档。酸度和番茄的酸相互融合，不会像高单宁酒那样产生金属味。",
+    "pairings": [
+      "番茄肉酱意面 —— Barbera 的酸度和番茄做朋友，不是对手",
+      "玛格丽特披萨、意大利辣肠披萨",
+      "烤千层面、肉酱千层",
+      "火腿拼盘、意式冷切肉（Prosciutto、Salami）",
+      "蘑菇烩饭、香草烤鸡"
+    ],
+    "avoid": "重油赤酱的料理（红烧肉、牛排）和生鱼/冷食——巴贝拉偏高的酸度与清淡的鱼生不太协调。",
+    "regions": [
+      {
+        "name_en": "Barbera d'Asti DOCG",
+        "name_cn": "意大利 · 阿斯蒂巴贝拉",
+        "badge": "The Fruity One",
+        "body": "阿斯蒂的 Barbera 以果味新鲜、酸度活泼、风格直爽著称。法规允许高达 15% 的其他品种混酿以增加复杂度，但大多是纯 Barbera。比 d'Alba 更轻盈、更易饮，是入门 Barbera 的首选产区。",
+        "coordinate": {
+          "latitude": 44.91,
+          "longitude": 8.2
+        }
+      },
+      {
+        "name_en": "Barbera d'Alba DOC",
+        "name_cn": "意大利 · 阿尔巴巴贝拉",
+        "badge": "The Structured One",
+        "body": "在巴罗洛的阴影区种植的 Barbera。这里的土壤（含石灰岩和沙土）让 Barbera 有了出乎意料的结构感。不少酒庄会做桶陈版本，风格比 d'Asti 更严肃、更有陈年潜力。",
+        "coordinate": {
+          "latitude": 44.67,
+          "longitude": 7.98
+        }
+      },
+      {
+        "name_en": "Super-Piedmont (Barbera in Langhe)",
+        "name_cn": "意大利 · 朗格产区",
+        "badge": "The Premium",
+        "body": "朗格地区的部分酒庄把 Barbera 当作\"精品酒\"来酿——使用小法桶、老藤选择、低产控制。这些酒的质量足以挑战很多\"更高贵\"的品种，价格却依然亲民。如果你想找一款能陈年五年的 Barbera，朗格是你的产区。",
+        "coordinate": {
+          "latitude": 44.67,
+          "longitude": 7.98
+        }
+      }
+    ],
+    "bottles": [
+      {
+        "name_en": "Michele Chiarlo Le Orme Barbera d'Asti",
+        "name_cn": "凯乐洛 · 足迹 · 阿斯蒂巴贝拉",
+        "price": 120,
+        "body": "阿斯蒂巴贝拉的入门标杆。酸樱桃果香、柔顺单宁、价格友好，是建立\"Barbera 标准味道\"的安全选择。"
+      },
+      {
+        "name_en": "Giacomo Conterno Barbera d'Alba",
+        "name_cn": "孔特尔诺 · 阿尔巴巴贝拉 · 意大利",
+        "price": 250,
+        "body": "康特尔诺是巴罗洛的传奇级酒庄，他家的 Barbera 被公认为全世界最顶级的 Barbera 之一。过桶款带着惊人的深度和矿物复杂度，可以陈年十年以上。"
+      },
+      {
+        "name_en": "Pio Cesare Barbera d'Alba",
+        "name_cn": "皮欧 · 阿尔巴巴贝拉 · 意大利",
+        "price": 200,
+        "body": "另一个皮埃蒙特名门。风格介于阿斯蒂的轻盈和孔特尔诺的厚重之间——是了解\"日常款\"和\"精品款\"之间的中间地带的好选择。"
+      }
+    ],
+    "similar": [
+      {
+        "slug": "nebbiolo",
+        "name_en": "Nebbiolo",
+        "name_cn": "内比奥罗",
+        "body": "皮埃蒙特另一个红葡萄王者，和巴贝拉形成鲜明对比——内比奥罗单宁极高、结构宏大；巴贝拉单宁低、果味直接。喝懂巴贝拉是理解内比奥罗的第一步。"
+      },
+      {
+        "slug": "merlot",
+        "name_en": "Merlot",
+        "name_cn": "梅洛",
+        "body": "同样单宁柔和、容易入口、配餐百搭。区别是巴贝拉酸度更高（更像意大利品种），梅洛更圆润丝滑。"
+      },
+      {
+        "slug": "dolcetto",
+        "name_en": "Dolcetto",
+        "name_cn": "多姿桃",
+        "body": "皮埃蒙特的\"老三样\"之一——内比奥罗、巴贝拉、多姿桃。多姿桃单宁更轻、果味更偏向深色浆果，是三个人当中最随和的那一个。"
+      }
+    ],
+    "history": [
+      "巴贝拉是皮埃蒙特种植最广的重要红葡萄之一。它适应性强、产量稳定，长期承担当地日常餐酒的角色；通过低产控制和橡木桶陈年，也能酿成结构扎实、具陈年能力的精品酒。",
+      "巴贝拉通常颜色较深、天然酸度高而单宁偏低。这个少见的组合既让它容易入口，也使它能很好地搭配以番茄为主的意大利料理。",
+      "加州有少量巴贝拉种植，风格比意大利更饱满、更熟，但失去了那种标志性的\"活泼酸度\"。澳大利亚（特别是阿德莱德山）也有些品种。"
+    ],
+    "flavor_tags": [
+      "cherry",
+      "red-fruit",
+      "high-acid",
+      "easy-drinking"
+    ],
+    "occasion_tags": [
+      "pasta",
+      "pizza",
+      "everyday",
+      "lunch"
+    ],
+    "beginner_friendly": true,
+    "has_china_planting": false,
+    "card_tagline": "内比奥罗的日常暖男。高酸低单宁，意面的天作之合。",
+    "card_origin_short": "皮埃蒙特"
+  },
+  {
+    "slug": "vermentino",
+    "number": 28,
+    "status": "live",
+    "publishedAt": "2026-06-18T00:00:00.000Z",
+    "name_en": "Vermentino",
+    "name_cn": "维蒙蒂诺",
+    "aliases": [
+      "Rolle（法国普罗旺斯的叫法）",
+      "Pigato（意大利利古里亚）"
+    ],
+    "type": "white",
+    "origin": "意大利撒丁岛 / 法国科西嘉",
+    "parents": {
+      "note": "起源于地中海西部，与马尔瓦西亚（Malvasia）有亲缘关系"
+    },
+    "hero_quote": "地中海的白葡萄典型代表——海风、阳光、和一座岩石海岸。",
+    "hero_scene": "slate-slope",
+    "hero_scene_caption": "Coastal vineyards of Sardinia · Mediterranean Sea",
+    "flavors_professional": "柠檬、葡萄柚、青柠、青苹果、白桃、草药（牛至、百里香）、海盐、杏仁、燧石矿物感、松脂、茴香。",
+    "flavors_casual": [
+      "像一杯加了海盐和百里香的柠檬水。酸度清爽但不尖锐，口感带着一种独特的油润感（不像 Riesling 那么清瘦），鼻子里飘着地中海草药和杏仁的复杂香气。余味中有一丝矿物咸鲜——那是地中海的印记。它比 Sauvignon Blanc 柔和，比 Albariño 饱满，是那种\"什么菜都能配\"的安心选择。",
+      "如果靠近柠檬海盐味的是撒丁岛的维蒙蒂诺（风格更直接），靠近杏仁草药味的是托斯卡纳海岸的（更饱满），再往北到利古里亚它就叫 Pigato，风格更浓缩。同一个品种，三种不同面孔。"
+    ],
+    "palate": {
+      "acidity": 3,
+      "acidity_label": "中",
+      "sweetness": 1,
+      "sweetness_label": "干",
+      "body": 3,
+      "body_label": "中",
+      "beginner_difficulty": 1,
+      "beginner_difficulty_label": "极易"
+    },
+    "price": {
+      "min": 100,
+      "max": 200
+    },
+    "caveat": "维蒙蒂诺最怕买到风味寡淡的高产款。优先寻找 Vermentino di Sardegna DOC、Vermentino di Gallura DOCG、利古里亚或托斯卡纳海岸出品；新鲜酸度、柑橘、草药和微苦杏仁收尾比单纯浓郁更重要。",
+    "pairing_intro": "维蒙蒂诺清爽的酸度、矿物咸鲜感和轻微的草药气息，让它成为**地中海料理和海鲜烧烤**的天然搭档。",
+    "pairings": [
+      "海鲜烧烤 —— 烤鱿鱼、烤虾、烤鱼（它的淡淡烟熏感能呼应烤味）",
+      "生蚝、青口、蛤蜊",
+      "普罗旺斯蔬菜炖菜（Ratatouille）",
+      "希腊沙拉、地中海冷盘、橄榄、风干火腿",
+      "炸海鲜（Calamari fritti）"
+    ],
+    "avoid": "重口红肉、牛排、红烧菜、巧克力甜点——维蒙蒂诺的轻快骨架完全撑不住。",
+    "regions": [
+      {
+        "name_en": "Sardinia, Italy",
+        "name_cn": "意大利 · 撒丁岛",
+        "badge": "The Classic",
+        "body": "维蒙蒂诺在撒丁岛找到了最适合自己的家。岛上海风强、土壤贫瘠、日照充足，产出风格清爽、盐矿物感突出的维蒙蒂诺。Vermentino di Sardegna DOC 是最常见的产区标签。",
+        "coordinate": {
+          "latitude": 40.12,
+          "longitude": 9.01
+        }
+      },
+      {
+        "name_en": "Tuscany, Italy",
+        "name_cn": "意大利 · 托斯卡纳海岸",
+        "badge": "The Richer Side",
+        "body": "托斯卡纳沿海的 Maremma、Bolgheri 等产区出产的维蒙蒂诺比撒丁岛更饱满，常有淡淡的香草和杏仁膏气息（部分过桶），风格更接近法国南部。是维蒙蒂诺\"升级版\"的方向。",
+        "coordinate": {
+          "latitude": 43.77,
+          "longitude": 11.25
+        }
+      },
+      {
+        "name_en": "Provence / Languedoc, France",
+        "name_cn": "法国 · 普罗旺斯 / 朗格多克",
+        "badge": "The French Accent",
+        "body": "在法国它叫 Rolle，常用于混酿（特别是在桃红葡萄酒中增加香气的层次）。纯种 Rolle 在普罗旺斯并不多见，但 Languedoc 有一些独立装瓶。风格比意大利版更柔和，草药味更明显。",
+        "coordinate": {
+          "latitude": 43.61,
+          "longitude": 3.88
+        }
+      }
+    ],
+    "bottles": [
+      {
+        "name_en": "Argiolas Costamolino Vermentino",
+        "name_cn": "阿吉拉斯 · 科斯塔莫利诺 · 撒丁岛",
+        "price": 120,
+        "body": "撒丁岛代表性酒庄的招牌白。柠檬、海盐、地中海草药的标志性风格完整呈现，轻松易饮。是认识\"Vermentino 标准味道\"的首选。"
+      },
+      {
+        "name_en": "Poggio al Tesoro Solosole Vermentino",
+        "name_cn": "波焦宝藏 · Solosole · 托斯卡纳",
+        "price": 200,
+        "body": "托斯卡纳海岸的精品维蒙蒂诺。比撒丁岛版更饱满、更香醇，带有一点桶香和杏仁的层次感，展示了这个品种\"认真起来\"的一面。"
+      },
+      {
+        "name_en": "Domaine Ott Clos Mireille Blanc de Blancs",
+        "name_cn": "奥特庄园 · 米海耶白葡萄酒 · 普罗旺斯",
+        "price": 350,
+        "body": "以 Rolle 为主、搭配 Sémillon 的普罗旺斯海岸白葡萄酒。柑橘、草药和咸鲜感较为收敛，适合用来理解维蒙蒂诺在法国混酿中的角色。"
+      }
+    ],
+    "similar": [
+      {
+        "slug": "albarino",
+        "name_en": "Albariño",
+        "name_cn": "阿尔巴利诺",
+        "body": "维蒙蒂诺在海边的\"同行\"——都是喜欢海风的白葡萄，都有矿物咸鲜感。阿尔巴利诺更\"柠檬海盐\"，维蒙蒂诺多一丝地中海草药和杏仁的温暖。"
+      },
+      {
+        "slug": "sauvignon-blanc",
+        "name_en": "Sauvignon Blanc",
+        "name_cn": "长相思",
+        "body": "同样清爽、高酸，配海鲜出色。长相思的草本味更\"尖锐\"（猫尿/青草），维蒙蒂诺的草药感更\"圆融\"（牛至/百里香）。"
+      },
+      {
+        "slug": "gruner-veltliner",
+        "name_en": "Grüner Veltliner",
+        "name_cn": "绿维特利纳",
+        "body": "如果你喜欢维蒙蒂诺的清爽干白风格但想找内陆产地的替代，Grüner 提供了白胡椒和扁豆的另一种清新感——海风的对面是阿尔卑斯山的风。"
+      }
+    ],
+    "history": [
+      "维蒙蒂诺的起源地至今没有定论——撒丁岛、科西嘉、利古里亚都声称自己是故乡。基因研究指向它起源于地中海西部地区，随海上贸易传播到各岛。今天它在意大利、法国南部、科西嘉广泛种植，是美国加州和澳大利亚正在崛起的新兴白葡萄品种。",
+      "维蒙蒂诺和桃红葡萄酒有特别的缘分。在普罗旺斯，它作为混酿品种（名为 Rolle）为桃红葡萄酒提供香气和酸度的骨架。在托斯卡纳海岸，它常与安索尼卡（Ansonica）等其他地中海白葡萄混酿。虽然纯种维蒙蒂诺越来越受追捧，但它作为\"混酿高手\"的角色永远不会被淘汰。",
+      "维蒙蒂诺最经典的风格来自地中海沿岸，但并非只能在海洋性气候中生长；加州、澳大利亚等温暖产区也有逐渐增加的种植。"
+    ],
+    "flavor_tags": [
+      "citrus",
+      "herbal",
+      "saline",
+      "mineral",
+      "medium-acid"
+    ],
+    "occasion_tags": [
+      "seafood",
+      "summer",
+      "italian-food",
+      "aperitif"
+    ],
+    "beginner_friendly": true,
+    "has_china_planting": false,
+    "card_tagline": "地中海白葡萄的典型——海风、阳光和岩石海岸的味道。",
+    "card_origin_short": "撒丁岛"
+  },
+  {
+    "slug": "dolcetto",
+    "number": 29,
+    "status": "live",
+    "publishedAt": "2026-06-18T00:00:00.000Z",
+    "name_en": "Dolcetto",
+    "name_cn": "多姿桃",
+    "type": "red",
+    "origin": "意大利皮埃蒙特",
+    "parents": {
+      "note": "皮埃蒙特最古老的特色品种之一，和巴贝拉、内比奥罗并称当地三宝"
+    },
+    "hero_quote": "皮埃蒙特三人组里最直接的那个。深色果香、酸度不高，收尾带一点杏仁苦味。",
+    "hero_scene": "chateau-sundown",
+    "hero_scene_caption": "Hills of Dogliani at sunset · Piemonte",
+    "flavors_professional": "黑樱桃、李子、黑莓、紫罗兰、甘草、苦杏仁，典型的\"苦甜交织\"余味使其在皮埃蒙特餐桌上不可或缺；年轻饮用的风格为主。",
+    "flavors_casual": [
+      "像一把深色浆果，收尾带一丝干净的苦味（像杏仁或黑巧克力）。Dolcetto 通常酸度不高，但单宁并不一定轻，有些多利亚尼版本会相当结实；它的名字也不代表葡萄酒是甜型。",
+      "它和内比奥罗出同一片山坡，但性格完全不同。内比奥罗是那个需要你认真对待的严肃王者，Dolcetto 是同一片土壤上的周末朋友——浅龄时最好喝，不适合陈年，开瓶就是大口喝。"
+    ],
+    "palate": {
+      "acidity": 2,
+      "acidity_label": "中低",
+      "tannin": 3,
+      "tannin_label": "中",
+      "body": 3,
+      "body_label": "中",
+      "beginner_difficulty": 1,
+      "beginner_difficulty_label": "极易"
+    },
+    "price": {
+      "min": 80,
+      "max": 150
+    },
+    "caveat": "多姿桃通常是干型，名字中的 dolce 不能直接理解为酒有甜味。多数酒适合年轻饮用，但 Dogliani DOCG 等结构更好的版本可以陈放数年；选购时不要把它误当成低单宁版的梅洛。",
+    "pairing_intro": "多姿桃的柔顺单宁和明快果味让它成为**意式餐前酒和日常配菜**的万能选择，尤其适合搭配有嚼劲的肉类和硬质奶酪。",
+    "pairings": [
+      "意式冷切肉拼盘 —— Salami、Prosciutto、Mortadella",
+      "烤猪排、烤香肠、肉丸",
+      "硬质奶酪 —— Parmigiano、Pecorino、Gouda",
+      "薄底披萨、意大利辣肉酱面",
+      "炖豆子、扁豆汤等乡村料理"
+    ],
+    "avoid": "清淡海鲜、白灼蔬菜——多姿桃的果味较重，会盖过清淡食物的味道。",
+    "regions": [
+      {
+        "name_en": "Dogliani DOCG, Italy",
+        "name_cn": "意大利 · 多利亚尼",
+        "badge": "The Heartland",
+        "body": "多姿桃在皮埃蒙特最出色的产区。多利亚尼的石灰岩-黏土土壤让多姿桃的果味尤其集中，单宁质感更好。这里的 Dolcetto di Dogliani 是多姿桃品质的上限代表。",
+        "coordinate": {
+          "latitude": 44.55,
+          "longitude": 7.94
+        }
+      },
+      {
+        "name_en": "Diano d'Alba DOCG, Italy",
+        "name_cn": "意大利 · 迪亚诺阿尔巴",
+        "badge": "The Premium",
+        "body": "阿尔巴附近的精品产区，以出产结构更好、陈年潜力更强的多姿桃而闻名。如果你对多姿桃的刻板印象是\"即饮型\"，这里可以打破这种看法。",
+        "coordinate": {
+          "latitude": 44.66,
+          "longitude": 7.97
+        }
+      },
+      {
+        "name_en": "Dolcetto d'Alba DOC, Italy",
+        "name_cn": "意大利 · 阿尔巴多姿桃",
+        "badge": "The Everyday",
+        "body": "最广泛的多姿桃产区，也是日常最容易买到的。酒体偏轻盈、果味新鲜，价格极其亲民，是皮埃蒙特人日常午餐的标配红酒。",
+        "coordinate": {
+          "latitude": 44.7,
+          "longitude": 8.03
+        }
+      }
+    ],
+    "bottles": [
+      {
+        "name_en": "Luigi Einaudi Dolcetto di Dogliani",
+        "name_cn": "路易吉·埃诺迪 · 多利亚尼多姿桃",
+        "price": 120,
+        "body": "意大利总统的酒庄（Einaudi 曾任意大利总统）。这款 Dolcetto 是入门标杆——黑樱桃果味、甘草和一丝杏仁苦味，结构端正、价格亲民。"
+      },
+      {
+        "name_en": "Giacomo Borgogno Dolcetto d'Alba",
+        "name_cn": "伯噶诺 · 阿尔巴多姿桃",
+        "price": 130,
+        "body": "皮埃蒙特历史酒庄的代表。风格直率、果味充沛，带着多汁的黑樱桃和紫罗兰香气，是日常饮用最放心的选择之一。"
+      },
+      {
+        "name_en": "Renato Ratti Dolcetto d'Alba",
+        "name_cn": "拉蒂 · 阿尔巴多姿桃",
+        "price": 140,
+        "body": "拉蒂的巴罗洛很出名，但他家的多姿桃同样优秀。风格比前两者稍更厚实、略带矿物感，展示了多姿桃可以多\"有趣\"。"
+      }
+    ],
+    "similar": [
+      {
+        "slug": "barbera",
+        "name_en": "Barbera",
+        "name_cn": "巴贝拉",
+        "body": "皮埃蒙特三人组的另一位——巴贝拉酸度更高、单宁更低，感觉更\"活泼\"；多姿桃酸度较低，深色果味和杏仁苦味更明显。"
+      },
+      {
+        "slug": "merlot",
+        "name_en": "Merlot",
+        "name_cn": "梅洛",
+        "body": "口感上最接近多姿桃的非意大利品种，同样单宁柔顺、黑果味为主，但梅洛多了香草/橡木桶基底，多姿桃更偏向纯粹的果味。"
+      },
+      {
+        "slug": "nebbiolo",
+        "name_en": "Nebbiolo",
+        "name_cn": "内比奥罗",
+        "body": "皮埃蒙特三人组的老大。如果你想从多姿桃的\"轻松友好\"出发，理解为什么同一片山坡上能长出这么不同的品种，内比奥罗是下一步。"
+      }
+    ],
+    "history": [
+      "Dolcetto 的词源有不同解释，常见说法与意大利语 dolce（甜）或皮埃蒙特方言中的小山丘有关；无论哪种，成酒通常都是干型。当地人多把它作为年轻饮用的午餐酒。",
+      "多姿桃果皮颜色深，能酿出深紫红色、带明显单宁和微苦收尾的红酒。它通常以单一品种装瓶，并非主要用来给内比奥罗混酿调色。"
+    ],
+    "flavor_tags": [
+      "black-fruit",
+      "slightly-bitter",
+      "medium-tannin",
+      "everyday"
+    ],
+    "occasion_tags": [
+      "lunch",
+      "pizza",
+      "cured-meats",
+      "everyday"
+    ],
+    "beginner_friendly": true,
+    "has_china_planting": false,
+    "card_tagline": "皮埃蒙特三人组里最直接的那个——深色果香，收尾微苦。",
+    "card_origin_short": "皮埃蒙特"
+  },
+  {
+    "slug": "moscato",
+    "number": 30,
+    "status": "live",
+    "publishedAt": "2026-06-18T00:00:00.000Z",
+    "name_en": "Moscato",
+    "name_cn": "莫斯卡托",
+    "aliases": [
+      "麝香（家族统称）",
+      "Muscat（国际叫法）",
+      "Moscato Bianco（意大利最常见的变种）"
+    ],
+    "type": "white",
+    "origin": "地中海地区（意大利皮埃蒙特形成 Moscato d'Asti 经典风格）",
+    "parents": {
+      "note": "世界上最古老的酿酒葡萄家族之一，拥有超过 200 个变种"
+    },
+    "hero_quote": "芳香像刚摘下的鲜葡萄；在阿斯蒂，它被酿成微甜、低酒精、带细腻气泡的经典风格。",
+    "hero_scene": "vineyard-dawn",
+    "hero_scene_caption": "Hills of Moscato d'Asti · Piemonte, Italy",
+    "flavors_professional": "白桃、橙花、玫瑰花瓣、荔枝、蜜瓜、柠檬皮、蜂蜜、鼠尾草、葡萄皮本身的清甜。标志性的\"麝香\"气息是 Muscat 家族的身份证，无论是干型还是甜型都能立刻辨认。",
+    "flavors_casual": [
+      "像咬开一颗刚摘下来的芳香葡萄——鲜甜果肉之外还有橙花、白桃和鼠尾草。Moscato d'Asti 通常只有约 5% 酒精度，保留自然甜味和细腻微气泡。",
+      "Muscat 是一个庞大的芳香葡萄家族，并不都甜、也不都起泡；这里重点介绍最常见的意大利 Moscato Bianco，以及它在 Moscato d'Asti 和 Asti DOCG 中的表现。"
+    ],
+    "palate": {
+      "acidity": 3,
+      "acidity_label": "中",
+      "sweetness": 4,
+      "sweetness_label": "甜",
+      "body": 1,
+      "body_label": "轻盈",
+      "beginner_difficulty": 1,
+      "beginner_difficulty_label": "极简单"
+    },
+    "price": {
+      "min": 60,
+      "max": 120
+    },
+    "caveat": "“Moscato”既可能指葡萄家族，也可能只是商品风格名。想喝经典阿斯蒂风格，应认准 Moscato d'Asti DOCG（微起泡、酒精度低）或 Asti DOCG（全起泡）；两者都以 Moscato Bianco 为核心，但气泡强度和酒精度不同。",
+    "pairing_intro": "莫斯卡托的甜度、低酒精度和清爽气泡让它成为**甜点、水果和东南亚辣菜**的万能搭档。也是新手聚会中唯一一瓶绝对不会被剩下的小甜水。",
+    "pairings": [
+      "甜品 —— 提拉米苏、奶油蛋糕、水果塔、冰淇淋",
+      "新鲜水果 —— 草莓、荔枝、蜜瓜、白桃",
+      "泰式/越南菜 —— 青木瓜沙拉、芒果糯米饭、冬阴功",
+      "辣菜 —— 川菜、湘菜（甜度能中和辣味）",
+      "软质奶酪 —— 布利、山羊奶酪"
+    ],
+    "avoid": "红烧肉、牛排、浓酱——莫斯卡托的酒体在这些菜面前等于不存在。",
+    "regions": [
+      {
+        "name_en": "Moscato d'Asti DOCG, Italy",
+        "name_cn": "意大利 · 莫斯卡托阿斯蒂",
+        "badge": "The Holy Land",
+        "body": "莫斯卡托在全世界最著名的产区。阿斯蒂地区的 Moscato Bianco 葡萄在凉爽山丘上缓慢成熟，保留高酸度和芳香。微气泡（frizzante）风格、酒精度仅 5-6%，是全世界最受欢迎的甜型葡萄酒之一。",
+        "coordinate": {
+          "latitude": 44.67,
+          "longitude": 8.2
+        }
+      },
+      {
+        "name_en": "Asti DOCG, Italy",
+        "name_cn": "意大利 · 阿斯蒂起泡",
+        "badge": "The Sparkling",
+        "body": "与 Moscato d'Asti 来自同一法定产区，但做成全起泡（spumante）风格。气泡更丰富，酒精度通常高于 Moscato d'Asti；它不是香槟的复制品，而是以鲜葡萄和花香为核心的甜型起泡酒。",
+        "coordinate": {
+          "latitude": 44.9,
+          "longitude": 8.2
+        }
+      },
+      {
+        "name_en": "Muscat de Beaumes-de-Venise, France",
+        "name_cn": "法国 · 博姆-德沃尼斯",
+        "badge": "The French Sweet",
+        "body": "法国南罗纳河谷的甜型 Muscat 产区。Muscat Blanc à Petits Grains 在这里被酿成天然甜酒（VDN），风格更浓郁、更蜂蜜感，酒精度约 15%，是莫斯卡托的\"成年版\"。",
+        "coordinate": {
+          "latitude": 44.12,
+          "longitude": 5.03
+        }
+      }
+    ],
+    "bottles": [
+      {
+        "name_en": "La Spinetta Moscato d'Asti \"Bricco Quaglia\"",
+        "name_cn": "犀牛庄 · 鹌鹑山 · 莫斯卡托阿斯蒂",
+        "price": 120,
+        "body": "皮埃蒙特名庄的莫斯卡托标杆。橙花、白桃、荔枝的香气集中度远超同类，气泡细腻得像丝绸。如果你只喝一瓶莫斯卡托，选它。"
+      },
+      {
+        "name_en": "Ceretto Moscato d'Asti",
+        "name_cn": "赛乐托 · 莫斯卡托阿斯蒂 · 意大利",
+        "price": 100,
+        "body": "在国内最容易买到的精品 Moscato d'Asti。果味新鲜，微甜清爽。开瓶放冰箱，第二天喝依然好喝。"
+      },
+      {
+        "name_en": "Martini & Rossi Asti",
+        "name_cn": "马天尼 · 阿斯蒂起泡 · 意大利",
+        "price": 80,
+        "body": "超市和便利店随处可见。全起泡风格，气泡丰富、口味偏甜。作为派对酒或者调酒基底非常合适——它不会让人惊艳，但也不会让人失望。"
+      }
+    ],
+    "similar": [
+      {
+        "slug": "riesling",
+        "name_en": "Riesling",
+        "name_cn": "雷司令",
+        "body": "莫斯卡托和甜型雷司令（Auslese/BA/TBA）都带甜味和花果香，但雷司令有明亮的酸度撑腰，风格更\"立体\"；莫斯卡托更温顺直接。"
+      },
+      {
+        "slug": "gewurztraminer",
+        "name_en": "Gewürztraminer",
+        "name_cn": "琼瑶浆",
+        "body": "同样以芳香著称。琼瑶浆的荔枝和玫瑰味更浓烈、更\"喷香\"，莫斯卡托的气质更轻盈清透，像一个散发花香的小气泡。"
+      },
+      {
+        "slug": "chenin-blanc",
+        "name_en": "Chenin Blanc",
+        "name_cn": "白诗南",
+        "body": "白诗南的甜型版本（Coteaux du Layon）也有类似的花蜜和果香，但酸度更高、结构更强。莫斯卡托是\"直接甜\"，甜白诗南是\"有骨架的甜\"。"
+      }
+    ],
+    "history": [
+      "Muscat 是历史悠久、成员众多的芳香葡萄家族，不同成员之间未必都有直接亲缘关系。Moscato d'Asti 使用的是 Moscato Bianco，也就是 Muscat Blanc à Petits Grains。",
+      "低酒精、甜味和明显花果香让 Moscato d'Asti 成为很友好的入门酒，但它仍应保有足够酸度；只有甜、没有清新感的版本容易显得黏腻。"
+    ],
+    "flavor_tags": [
+      "peach",
+      "floral",
+      "sweet",
+      "low-alcohol",
+      "sparkling"
+    ],
+    "occasion_tags": [
+      "dessert",
+      "party",
+      "beginner",
+      "summer",
+      "afternoon-tea"
+    ],
+    "beginner_friendly": true,
+    "has_china_planting": false,
+    "card_tagline": "阿斯蒂的芳香名片——微甜、细泡、低酒精，像鲜葡萄与橙花。",
+    "card_origin_short": "阿斯蒂, 意大利"
+  },
+  {
+    "slug": "semillon",
+    "number": 31,
+    "status": "live",
+    "publishedAt": "2026-06-18T00:00:00.000Z",
+    "name_en": "Sémillon",
+    "name_cn": "赛美蓉",
+    "type": "white",
+    "origin": "法国波尔多",
+    "parents": {
+      "p1": "白高维斯",
+      "p2": "未知品种（与长相思有亲缘关系）",
+      "note": "波尔多最古老的白葡萄之一"
+    },
+    "hero_quote": "长相思的经典搭档。干型时低调圆润，遇上贵腐菌后成为苏玳甜白的核心。",
+    "hero_scene": "vineyard-dawn",
+    "hero_scene_caption": "Misty mornings by the Garonne · Sauternes, Bordeaux",
+    "flavors_professional": "柠檬、青苹果、梨、白桃（干型）；蜂蜜、杏干、橙皮、无花果、藏红花、姜饼、焦糖布丁（贵腐甜型）；陈年后出现蜂蜡、坚果和烤面包气息。",
+    "flavors_casual": [
+      "干型赛美蓉像一杯安静的柠檬水——有酸度但不突出，有果香但不张扬。它很少作主角，在波尔多干白里通常是长相思的\"伴侣\"角色（赛美蓉提供酒体和圆润度，长相思提供香气和酸度）。单独喝可能觉得\"还行，但没什么特别\"——这正是它的性格。",
+      "赛美蓉真正发光的时候是感染了贵腐菌（Botrytis cinerea）之后。在苏玳，秋天的晨雾让葡萄感染贵腐菌，菌丝在果皮上刺出微孔让水分蒸发、糖分和风味浓缩。酿出来的酒是金色的——蜂蜜、杏干、橙皮的浓郁香气，酸度像一把藏在下面的刀，让甜味永远不腻。这是全世界最伟大的甜酒之一，也是赛美蓉存在的终极理由。"
+    ],
+    "palate": {
+      "acidity": 3,
+      "acidity_label": "中",
+      "sweetness": 2,
+      "sweetness_label": "干至极甜均有",
+      "body": 3,
+      "body_label": "中至饱满",
+      "beginner_difficulty": 2,
+      "beginner_difficulty_label": "容易"
+    },
+    "price": {
+      "min": 100,
+      "max": 200
+    },
+    "caveat": "许多入门级波尔多干白以长相思为主，赛美蓉比例不高，未必能充分体现品种特点。认识它可以从猎人谷单一品种干白、赛美蓉占比较高的波尔多干白，或正规苏玳/巴萨克甜白入手；贵腐酒成本高，但半瓶装常能降低尝试门槛。",
+    "pairing_intro": "干型赛美蓉是中规中矩的海鲜搭档，但它真正的舞台是**贵腐甜型配蓝纹奶酪、鹅肝或中式甜羹**——甜与咸/鲜的碰撞会产生惊人的效果。",
+    "pairings": [
+      "鹅肝 —— 苏玳的经典搭档，甜酒配肥肝是法国餐的哲学",
+      "蓝纹奶酪（Roquefort、Gorgonzola）—— 盐和甜的对撞",
+      "椰子鸡、椰汁炖品 —— 甜型配椰香料理",
+      "菠萝咕咾肉 —— 甜酸口的菜和甜型赛美蓉呼应",
+      "杏仁豆腐、焦糖布丁、拿破仑蛋糕"
+    ],
+    "avoid": "辣菜（干型会被辣味盖过）、酱油红肉、牛排（无论干甜都不太搭）。",
+    "regions": [
+      {
+        "name_en": "Sauternes, Bordeaux",
+        "name_cn": "法国 · 苏玳",
+        "badge": "The Holy Land",
+        "body": "世界最著名的贵腐甜酒产区。加龙河与锡龙河交汇的晨雾为贵腐菌创造了完美的生长条件。苏玳的赛美蓉可以陈年几十年，金黄色液体中蜂蜜、杏干和藏红花的层次随时间愈发深邃。滴金（Château d'Yquem）是这里的金字塔尖。",
+        "coordinate": {
+          "latitude": 44.53,
+          "longitude": -0.33
+        }
+      },
+      {
+        "name_en": "Pessac-Léognan, Bordeaux",
+        "name_cn": "法国 · 佩萨克-雷奥良",
+        "badge": "The Dry Side",
+        "body": "波尔多干型白葡萄酒的顶级产区。这里的赛美蓉通常与长相思混酿（赛美蓉占 20-50%），经过橡木桶陈年，出品风格饱满、坚果味突出、有矿物骨架。是最能表现\"干型赛美蓉能做什么\"的地方。",
+        "coordinate": {
+          "latitude": 44.77,
+          "longitude": -0.64
+        }
+      },
+      {
+        "name_en": "Hunter Valley, Australia",
+        "name_cn": "澳洲 · 猎人谷",
+        "badge": "The New World",
+        "body": "澳洲赛美蓉的代表产区——但风格极度独特。猎人谷的干型赛美蓉在年轻时极其清瘦（青柠、青苹果），但装瓶陈年十年后会绽放出惊人的烤面包、蜂蜜和柑橘酱的气息，像一瓶自己会变身的酒。被爱好者称为\"瓶中陈年\"的教科书。",
+        "coordinate": {
+          "latitude": -32.68,
+          "longitude": 151.15
+        }
+      }
+    ],
+    "bottles": [
+      {
+        "name_en": "Château Suduiraut Sauternes",
+        "name_cn": "绪帝罗庄园 · 苏玳一级庄 · 法国",
+        "price": 400,
+        "body": "苏玳一级名庄，仅次于滴金的级别。蜂蜜、杏脯、洋槐花的香气华丽集中，酸度漂亮地把甜味托起来。喝一杯可以配一整块蓝纹奶酪。"
+      },
+      {
+        "name_en": "Château Carbonnieux Blanc, Pessac-Léognan",
+        "name_cn": "卡尔邦女庄园 · 佩萨克干白 · 法国",
+        "price": 350,
+        "body": "被低估的波尔多顶级干白——赛美蓉和长相思的经典混酿，桶陈后展现出柠檬凝乳、烤面包和微妙矿物感。认识\"严肃的赛美蓉\"好选择。"
+      },
+      {
+        "name_en": "Tyrrell's Vat 1 Semillon",
+        "name_cn": "天瑞 · Vat 1 · 猎人谷 · 澳洲",
+        "price": 300,
+        "body": "澳洲猎人谷的传奇赛美蓉。年轻时清淡、不起眼，但陈年 10 年后变成焦糖、蜂蜜、烤面包的复杂杰作——一瓶能让所有人重新认识这个品种的酒。"
+      }
+    ],
+    "similar": [
+      {
+        "slug": "sauvignon-blanc",
+        "name_en": "Sauvignon Blanc",
+        "name_cn": "长相思",
+        "body": "赛美蓉在波尔多的固定搭档。长相思提供香气和酸度，赛美蓉提供酒体和圆润度——两者互补，是混酿的经典范例。"
+      },
+      {
+        "slug": "chenin-blanc",
+        "name_en": "Chenin Blanc",
+        "name_cn": "白诗南",
+        "body": "白诗南和赛美蓉一样\"能干能甜\"。两者的甜型版本有相似的金色蜂蜜感，但白诗南的酸度始终更高、矿物感更强。"
+      },
+      {
+        "slug": "riesling",
+        "name_en": "Riesling",
+        "name_cn": "雷司令",
+        "body": "雷司令的甜型版本（尤其是 BA 和 TBA 贵腐）与苏玳常有相似的口感重量和蜂蜜杏干风味，但雷司令的酸度更锐利。"
+      }
+    ],
+    "history": [
+      "赛美蓉是波尔多最重要的传统白葡萄之一，在苏玳和巴萨克通常占混酿主体，在干白中则常与长相思搭配。它在市场上的知名度较低，很大程度上因为酒标更常突出产区而非品种。",
+      "苏玳的贵腐酒酿造是全世界最\"依赖天气\"的葡萄酒生产工艺之一。贵腐菌需要清晨浓雾、午后晴朗的完美交替。如果不下雾，葡萄不会感染；如果不够晴晒，葡萄会腐烂而不是浓缩。每颗葡萄被人工逐粒采摘，一个采收季通常要分批经过 4-6 次摘采，持续两个月。这就是为什么一瓶好苏玳永远不便宜。",
+      "1980 年代之前，澳洲猎人谷的赛美蓉被当作日常廉价白葡萄酒出售，直到有酒庄发现它装瓶 10 年后的惊人变化。今天猎人谷赛美蓉的\"瓶中陈年\"风格是全球独一无二的。"
+    ],
+    "flavor_tags": [
+      "citrus",
+      "honey",
+      "apricot",
+      "botrytis",
+      "blend-friendly"
+    ],
+    "occasion_tags": [
+      "dessert",
+      "cheese",
+      "fine-dining",
+      "aging"
+    ],
+    "beginner_friendly": false,
+    "has_china_planting": false,
+    "card_tagline": "长相思的经典搭档。干型低调圆润，贵腐后成为苏玳的核心。",
+    "card_origin_short": "波尔多"
+  },
+  {
+    "slug": "mourvedre",
+    "number": 32,
+    "status": "live",
+    "publishedAt": "2026-06-18T00:00:00.000Z",
+    "name_en": "Mourvèdre",
+    "name_cn": "慕合怀特",
+    "aliases": [
+      "Monastrell（西班牙）",
+      "Mataró（美国/澳洲）"
+    ],
+    "type": "red",
+    "origin": "西班牙（后在南法成名）",
+    "parents": {
+      "note": "起源于西班牙东部，Monastrell 是当地最常用的名称；后来传播到法国南部"
+    },
+    "hero_quote": "GSM 混酿里的\"肌肉担当\"——深色、野性、单宁结实，也是被最多人低估的配角。",
+    "hero_scene": "chateau-sundown",
+    "hero_scene_caption": "Mistral winds over Bandol · Provence, France",
+    "flavors_professional": "黑莓、黑樱桃、蓝莓、紫罗兰、烟熏肉、黑胡椒、焦土、碎石、皮革、普罗旺斯干草、鼠尾草、迷迭香；陈年后出现野味、松露和森林地表气息。",
+    "flavors_casual": [
+      "像一杯深紫色的浆果与一把花园干草一起扔进篝火里的味道。黑莓和黑樱桃的果香浓郁深沉，但鼻子里总是飘着一缕烟熏、皮革和地中海干燥草药的气息——那是慕合怀特的签名。单宁结实有力，像一块磨刀石，不硌嘴但有存在感。",
+      "慕合怀特很少单独装瓶——因为单宁太强、需要太多阳光才能成熟。它的真正舞台在混酿中：和歌海娜（提供果味甜润）、西拉（提供香料感）组成经典的\"GSM\"组合，在教皇新堡和南罗纳撑起一片天。喝到一瓶结构紧密、烟熏肉香的南罗纳混酿，后面那颗默默撑起骨架的葡萄就是慕合怀特。"
+    ],
+    "palate": {
+      "acidity": 3,
+      "acidity_label": "中",
+      "tannin": 4,
+      "tannin_label": "高",
+      "body": 5,
+      "body_label": "饱满",
+      "beginner_difficulty": 4,
+      "beginner_difficulty_label": "较难"
+    },
+    "price": {
+      "min": 150,
+      "max": 350
+    },
+    "caveat": "结构强的邦多尔慕合怀特常需要数年瓶陈才能舒展，但西班牙 Monastrell 和部分新世界 Mataro 可以在年轻时就展现成熟果味。入门可从 GSM 混酿或果味较开放的西班牙版本开始，再尝试需要耐心的邦多尔。",
+    "pairing_intro": "慕合怀特粗犷的单宁、烟熏肉感和地中海草药气息，最适合**烧烤肉类、野味和普罗旺斯炖菜**——那些需要一杯\"有肌肉\"的酒来匹配的菜。",
+    "pairings": [
+      "烤羊排、迷迭香烤羊肉 —— 烟熏肉味和羊肉的野味互相映衬",
+      "慢炖牛尾、红酒烩牛肉",
+      "普罗旺斯炖菜（Ratatouille）—— 香草配香草",
+      "烟熏香肠、西班牙辣肠、风干牛肉",
+      "野味 —— 鹿肉、兔肉、鸽子"
+    ],
+    "avoid": "清淡鱼生、白灼海鲜、沙拉——慕合怀特的浓郁会在这些菜面前像一个闯进花园的大汉。",
+    "regions": [
+      {
+        "name_en": "Bandol, Provence",
+        "name_cn": "法国 · 邦多尔",
+        "badge": "The Holy Land",
+        "body": "慕合怀特在法国最光辉的舞台。普罗旺斯海岸的石灰岩土壤和地中海海风，让慕合怀特达到完美成熟度——单宁虽强但细腻，果味浓郁但优雅。邦多尔法定要求红葡萄酒至少含 50% 慕合怀特，是世界范围内慕合怀特的品质天花板。",
+        "coordinate": {
+          "latitude": 43.14,
+          "longitude": 5.75
+        }
+      },
+      {
+        "name_en": "Jumilla, Spain",
+        "name_cn": "西班牙 · 胡米利亚",
+        "badge": "The Old Home",
+        "body": "在西班牙它叫 Monastrell，是这里的传统品种。胡米利亚炎热干燥的气候让 Monastrell 果味浓缩、酒精度偏高。风格比邦多尔更奔放粗犷，但价格只有法国的三分之一，是了解这个品种性价比最高的方式。",
+        "coordinate": {
+          "latitude": 38.48,
+          "longitude": -1.32
+        }
+      },
+      {
+        "name_en": "Châteauneuf-du-Pape, Rhône",
+        "name_cn": "法国 · 教皇新堡",
+        "badge": "The Blender",
+        "body": "在南罗纳，慕合怀特是 GSM（歌海娜-西拉-慕合怀特）混酿中的常客，负责提供颜色、单宁和结构。教皇新堡传统上常说“13 个品种”，按现行规则把颜色变种分别计算则共有 18 个允许品种。",
+        "coordinate": {
+          "latitude": 44.06,
+          "longitude": 4.83
+        }
+      }
+    ],
+    "bottles": [
+      {
+        "name_en": "Château de Pibarnon Bandol",
+        "name_cn": "皮巴尔农庄园 · 邦多尔 · 法国",
+        "price": 400,
+        "body": "邦多尔最优雅的酒庄之一。慕合怀特比例高达 90%，陈年后展现出黑莓、松露和地中海草药的极致融合——是\"认真对待慕合怀特\"的教科书级选择。"
+      },
+      {
+        "name_en": "Domaine Tempier Bandol \"La Migoua\"",
+        "name_cn": "天佩尔庄园 · 拉米瓜 · 邦多尔",
+        "price": 600,
+        "body": "邦多尔的传奇酒庄，被尊为全球慕合怀特葡萄酒的标杆。酒体宏大、结构坚实，但经过陈年后有一种难以形容的高贵粗犷感——粗犷和优雅在此共存。"
+      },
+      {
+        "name_en": "Casa de la Ermita Monastrell, Jumilla",
+        "name_cn": "隐士庄园 · 莫纳斯特雷尔 · 西班牙",
+        "price": 120,
+        "body": "认识西班牙 Monastrell 的最佳入口。果味奔放、单宁比法国款更柔顺、价格亲民，喝了就知道为什么这个品种在西班牙是\"日常强者\"。"
+      }
+    ],
+    "similar": [
+      {
+        "slug": "syrah",
+        "name_en": "Syrah / Shiraz",
+        "name_cn": "西拉",
+        "body": "慕合怀特在混酿中最常见的搭档之一。西拉提供香料感和更圆润的口感，慕合怀特提供颜色和单宁骨架。西拉是\"肌肉\"，慕合怀特是\"骨骼\"。"
+      },
+      {
+        "slug": "grenache",
+        "name_en": "Grenache",
+        "name_cn": "歌海娜",
+        "body": "GSM 的第三位成员。歌海娜提供甜润果味和酒精度，慕合怀特提供结构和深度。和歌海娜相比，慕合怀特是更\"严肃\"的那个。"
+      },
+      {
+        "slug": "malbec",
+        "name_en": "Malbec",
+        "name_cn": "马尔贝克",
+        "body": "同样深色、单宁饱满，但马尔贝克多一份\"南美的圆润甜美感\"，慕合怀特多一份\"法国的烟熏草本感\"。"
+      }
+    ],
+    "history": [
+      "慕合怀特起源于西班牙东部，在当地称作 Monastrell，至今仍广泛种植于 Jumilla、Yecla、Alicante 等炎热干燥产区。法国邦多尔则用高比例慕合怀特建立了最具陈年声誉的经典风格。",
+      "慕合怀特萌芽和成熟都偏晚，需要漫长、温暖的生长季，也容易受风和水分压力影响。除邦多尔与南罗纳外，朗格多克、鲁西永、加州和澳大利亚也有成功种植。",
+      "中国目前少见以慕合怀特为主角的单一品种酒，市场上更常见的是西班牙 Monastrell、法国南部混酿和澳大利亚 Mataro。"
+    ],
+    "flavor_tags": [
+      "dark-fruit",
+      "smoky",
+      "gamey",
+      "high-tannin",
+      "herbal"
+    ],
+    "occasion_tags": [
+      "bbq",
+      "red-meat",
+      "game",
+      "wine-enthusiast",
+      "cold-weather"
+    ],
+    "beginner_friendly": false,
+    "has_china_planting": false,
+    "card_tagline": "GSM 混酿里的肌肉担当——深色、野性、单宁结实。",
+    "card_origin_short": "邦多尔"
   }
 ]

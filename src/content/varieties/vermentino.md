@@ -22,7 +22,7 @@ hero_scene_caption: Coastal vineyards of Sardinia · Mediterranean Sea
 flavors_professional: 柠檬、葡萄柚、青柠、青苹果、白桃、草药（牛至、百里香）、海盐、杏仁、燧石矿物感、松脂、茴香。
 
 flavors_casual:
-  - 像一杯加了海盐和百里香的柠檬水。酸度清爽但不尖锐，口感带着一种独特的油润感（不像 Riesling 那么清瘦），鼻子里飘着地中海草药和杏仁的复杂香气。余味中有一丝矿物咸鲜——那是地中海的印记。它比 Sauvignon Blanc 柔和，比 Albariño 饱满，是那种\"什么菜都能配\"的安心选择。
+  - 像一杯加了海盐和百里香的柠檬水。酸度清爽但不尖锐，口感带着一种独特的油润感（不像 Riesling 那么清瘦），鼻子里飘着地中海草药和杏仁的复杂香气。余味中有一丝矿物咸鲜——那是地中海的印记。它比 Sauvignon Blanc 柔和，比 Albariño 饱满，是那种"什么菜都能配"的安心选择。
   - 如果靠近柠檬海盐味的是撒丁岛的维蒙蒂诺（风格更直接），靠近杏仁草药味的是托斯卡纳海岸的（更饱满），再往北到利古里亚它就叫 Pigato，风格更浓缩。同一个品种，三种不同面孔。
 
 palate:
@@ -39,7 +39,7 @@ price:
   min: 100
   max: 200
 
-caveat: 维蒙蒂诺最怕买到\"风味寡淡\"的便宜款——很多大规模生产的维蒙蒂诺为了产量牺牲了品种典型的草药和矿物感。认准撒丁岛（Vermentino di Sardegna DOC）或托斯卡纳海岸（Maremma/Morellino di Scansano 产区）的出品，避开的卢瓦尔那种大路货。
+caveat: 维蒙蒂诺最怕买到风味寡淡的高产款。优先寻找 Vermentino di Sardegna DOC、Vermentino di Gallura DOCG、利古里亚或托斯卡纳海岸出品；新鲜酸度、柑橘、草药和微苦杏仁收尾比单纯浓郁更重要。
 
 pairing_intro: 维蒙蒂诺清爽的酸度、矿物咸鲜感和轻微的草药气息，让它成为**地中海料理和海鲜烧烤**的天然搭档。
 pairings:
@@ -58,7 +58,7 @@ regions:
   - name_en: Tuscany, Italy
     name_cn: 意大利 · 托斯卡纳海岸
     badge: The Richer Side
-    body: 托斯卡纳沿海的 Maremma、Bolgheri 等产区出产的维蒙蒂诺比撒丁岛更饱满，常有淡淡的香草和杏仁膏气息（部分过桶），风格更接近法国南部。是维蒙蒂诺\"升级版\"的方向。
+    body: 托斯卡纳沿海的 Maremma、Bolgheri 等产区出产的维蒙蒂诺比撒丁岛更饱满，常有淡淡的香草和杏仁膏气息（部分过桶），风格更接近法国南部。是维蒙蒂诺"升级版"的方向。
   - name_en: Provence / Languedoc, France
     name_cn: 法国 · 普罗旺斯 / 朗格多克
     badge: The French Accent
@@ -68,25 +68,25 @@ bottles:
   - name_en: Argiolas Costamolino Vermentino
     name_cn: 阿吉拉斯 · 科斯塔莫利诺 · 撒丁岛
     price: 120
-    body: 撒丁岛代表性酒庄的招牌白。柠檬、海盐、地中海草药的标志性风格完整呈现，轻松易饮。是认识\"Vermentino 标准味道\"的首选。
-  - name_en: Poggio al Tesoro \"Dedicato a Walter\" Vermentino
-    name_cn: 波焦 · 献给 Walter · 托斯卡纳
+    body: 撒丁岛代表性酒庄的招牌白。柠檬、海盐、地中海草药的标志性风格完整呈现，轻松易饮。是认识"Vermentino 标准味道"的首选。
+  - name_en: Poggio al Tesoro Solosole Vermentino
+    name_cn: 波焦宝藏 · Solosole · 托斯卡纳
     price: 200
-    body: 托斯卡纳海岸的精品维蒙蒂诺。比撒丁岛版更饱满、更香醇，带有一点桶香和杏仁的层次感，展示了这个品种\"认真起来\"的一面。
-  - name_en: Domaine de la Colombe Vignes de Lune Rolle
-    name_cn: 鸽之庄园 · 月光藤 · 普罗旺斯
-    price: 150
-    body: 法国 Rolle 的稳定出品。草药香和矿物感突出，风格比意大利版更收敛、更\"法式\"。如果喝意大利版已经喝腻了，这瓶可以给你一个新的视角。
+    body: 托斯卡纳海岸的精品维蒙蒂诺。比撒丁岛版更饱满、更香醇，带有一点桶香和杏仁的层次感，展示了这个品种"认真起来"的一面。
+  - name_en: Domaine Ott Clos Mireille Blanc de Blancs
+    name_cn: 奥特庄园 · 米海耶白葡萄酒 · 普罗旺斯
+    price: 350
+    body: 以 Rolle 为主、搭配 Sémillon 的普罗旺斯海岸白葡萄酒。柑橘、草药和咸鲜感较为收敛，适合用来理解维蒙蒂诺在法国混酿中的角色。
 
 similar:
   - slug: albarino
     name_en: Albariño
     name_cn: 阿尔巴利诺
-    body: 维蒙蒂诺在海边的\"同行\"——都是喜欢海风的白葡萄，都有矿物咸鲜感。阿尔巴利诺更\"柠檬海盐\"，维蒙蒂诺多一丝地中海草药和杏仁的温暖。
+    body: 维蒙蒂诺在海边的"同行"——都是喜欢海风的白葡萄，都有矿物咸鲜感。阿尔巴利诺更"柠檬海盐"，维蒙蒂诺多一丝地中海草药和杏仁的温暖。
   - slug: sauvignon-blanc
     name_en: Sauvignon Blanc
     name_cn: 长相思
-    body: 同样清爽、高酸，配海鲜出色。长相思的草本味更\"尖锐\"（猫尿/青草），维蒙蒂诺的草药感更\"圆融\"（牛至/百里香）。
+    body: 同样清爽、高酸，配海鲜出色。长相思的草本味更"尖锐"（猫尿/青草），维蒙蒂诺的草药感更"圆融"（牛至/百里香）。
   - slug: gruner-veltliner
     name_en: Grüner Veltliner
     name_cn: 绿维特利纳
@@ -94,8 +94,8 @@ similar:
 
 history:
   - 维蒙蒂诺的起源地至今没有定论——撒丁岛、科西嘉、利古里亚都声称自己是故乡。基因研究指向它起源于地中海西部地区，随海上贸易传播到各岛。今天它在意大利、法国南部、科西嘉广泛种植，是美国加州和澳大利亚正在崛起的新兴白葡萄品种。
-  - 维蒙蒂诺和桃红葡萄酒有特别的缘分。在普罗旺斯，它作为混酿品种（名为 Rolle）为桃红葡萄酒提供香气和酸度的骨架。在托斯卡纳海岸，它常与安索尼卡（Ansonica）等其他地中海白葡萄混酿。虽然纯种维蒙蒂诺越来越受追捧，但它作为\"混酿高手\"的角色永远不会被淘汰。
-  - 维蒙蒂诺在中国几乎没有种植。作为地中海的\"本地品种\"，它对海洋性气候的依赖比大多数白葡萄都强。
+  - 维蒙蒂诺和桃红葡萄酒有特别的缘分。在普罗旺斯，它作为混酿品种（名为 Rolle）为桃红葡萄酒提供香气和酸度的骨架。在托斯卡纳海岸，它常与安索尼卡（Ansonica）等其他地中海白葡萄混酿。虽然纯种维蒙蒂诺越来越受追捧，但它作为"混酿高手"的角色永远不会被淘汰。
+  - 维蒙蒂诺最经典的风格来自地中海沿岸，但并非只能在海洋性气候中生长；加州、澳大利亚等温暖产区也有逐渐增加的种植。
 
 flavor_tags:
   - citrus
