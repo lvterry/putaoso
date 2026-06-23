@@ -141,7 +141,6 @@ const markers = markerBase.map((marker) => {
 
   <div class="hero-map-popup" hidden>
     <button class="hero-map-popup-close" type="button" aria-label="关闭">×</button>
-    <div class="hero-map-region-badge"></div>
     <div class="hero-map-region-en" lang="en"></div>
     <div class="hero-map-region-cn"></div>
     <div class="hero-map-divider"></div>
@@ -149,10 +148,6 @@ const markers = markerBase.map((marker) => {
     <div class="hero-map-variety-en" lang="en"></div>
     <div class="hero-map-variety-cn"></div>
     <p class="hero-map-tagline"></p>
-    <div class="hero-map-meta">
-      <span class="hero-map-origin"></span>
-      <span class="hero-map-price"></span>
-    </div>
     <a class="hero-map-link" href="/">查看详情 →</a>
   </div>
 </div>
@@ -197,15 +192,12 @@ const markers = markerBase.map((marker) => {
     const showPopup = (marker) => {
       const data = marker.dataset;
       markers.forEach((item) => item.classList.toggle('is-active', item === marker));
-      setText('.hero-map-region-badge', data.regionBadge);
       setText('.hero-map-region-en', data.regionEn);
       setText('.hero-map-region-cn', data.regionCn);
       setText('.hero-map-type b', data.typeLabel);
       setText('.hero-map-variety-en', data.varietyEn);
       setText('.hero-map-variety-cn', data.varietyCn);
       setText('.hero-map-tagline', data.tagline);
-      setText('.hero-map-origin', `原产 ${data.origin}`);
-      setText('.hero-map-price', `¥${data.priceMin} – ${data.priceMax}`);
       popup.querySelector('.hero-map-type span').className = `hm-dot hm-dot-${data.type}`;
       popup.querySelector('.hero-map-link').href = `/${data.slug}`;
       popup.hidden = false;
