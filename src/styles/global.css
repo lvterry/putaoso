@@ -1494,9 +1494,17 @@ section.varieties {
     min-height: calc(100svh - 160px);
   }
   .hero-map,
-  .hero-map svg {
+  .hero-map > svg {
     min-height: 100vh;
     min-height: 100svh;
+  }
+  /* Portrait/narrow: cover the height (like wide screens) instead of
+     letterboxing, so the landmass reaches the top edge with no gap. */
+  .hero-map > svg {
+    width: auto;
+    min-width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -1532,7 +1540,7 @@ section.varieties {
     min-height: calc(100svh - 128px);
   }
   .hero-map,
-  .hero-map svg {
+  .hero-map > svg {
     min-height: 100vh;
     min-height: 100svh;
   }

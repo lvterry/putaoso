@@ -11,6 +11,13 @@ const SCALE = 1.7;
 const INITIAL_TX = -150;
 const INITIAL_TY = -62;
 
+// Narrow/portrait screens cover the height instead of letterboxing (see
+// global.css), which crops the map horizontally. Re-frame onto the dense
+// European cluster and zoom out a touch so markers aren't oversized.
+const NARROW_SCALE = 1.2;
+const NARROW_TX = -116;
+const NARROW_TY = -38;
+
 const world = countries as any;
 const countryCollection = feature(world, world.objects.countries) as any;
 const projection = geoNaturalEarth1().fitSize([VB_W, VB_H], countryCollection);
@@ -104,6 +111,9 @@ const markers = markerBase.map((marker) => {
   data-scale={SCALE}
   data-initial-tx={INITIAL_TX}
   data-initial-ty={INITIAL_TY}
+  data-narrow-scale={NARROW_SCALE}
+  data-narrow-tx={NARROW_TX}
+  data-narrow-ty={NARROW_TY}
 >
   <svg viewBox={`0 0 ${VB_W} ${VB_H}`} preserveAspectRatio="xMidYMid meet" aria-label="Global wine region map">
     <g class="hm-viewport" transform={`translate(${INITIAL_TX}, ${INITIAL_TY}) scale(${SCALE})`}>
@@ -164,9 +174,11 @@ const markers = markerBase.map((marker) => {
     const markers = Array.from(wrapper.querySelectorAll('.hm-marker'));
     const VB_W = Number(wrapper.dataset.vbW);
     const VB_H = Number(wrapper.dataset.vbH);
-    const scale = Number(wrapper.dataset.scale);
-    let tx = Number(wrapper.dataset.initialTx);
-    let ty = Number(wrapper.dataset.initialTy);
+    const narrow = window.matchMedia('(max-width: 1024px)').matches;
+    const scale = narrow ? Number(wrapper.dataset.narrowScale) : Number(wrapper.dataset.scale);
+    let tx = narrow ? Number(wrapper.dataset.narrowTx) : Number(wrapper.dataset.initialTx);
+    let ty = narrow ? Number(wrapper.dataset.narrowTy) : Number(wrapper.dataset.initialTy);
+    viewport.setAttribute('transform', `translate(${tx}, ${ty}) scale(${scale})`);
     let dragging = false;
     let moved = false;
     let startX = 0;
