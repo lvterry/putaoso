@@ -20,9 +20,9 @@ const countryPaths = countryCollection.features
   .filter(Boolean);
 
 const typeLabels = {
-  red: '红葡萄 · Red',
-  white: '白葡萄 · White',
-  rose: '桃红葡萄 · Rosé',
+  red: '红葡萄',
+  white: '白葡萄',
+  rose: '桃红葡萄',
 };
 
 const all = await getCollection('varieties');
@@ -141,12 +141,12 @@ const markers = markerBase.map((marker) => {
 
   <div class="hero-map-popup" hidden>
     <button class="hero-map-popup-close" type="button" aria-label="关闭">×</button>
-    <div class="hero-map-region-en" lang="en"></div>
     <div class="hero-map-region-cn"></div>
+    <div class="hero-map-region-en" lang="en"></div>
     <div class="hero-map-divider"></div>
-    <div class="hero-map-type"><span></span><b></b></div>
-    <div class="hero-map-variety-en" lang="en"></div>
+    <div class="hero-map-type"><svg class="hero-map-drop" viewBox="0 0 12 18" aria-hidden="true"><path d="M6 1 C3 5 0 8.5 0 12 C0 15.3 2.7 18 6 18 C9.3 18 12 15.3 12 12 C12 8.5 9 5 6 1Z" /></svg><b></b></div>
     <div class="hero-map-variety-cn"></div>
+    <div class="hero-map-variety-en" lang="en"></div>
     <p class="hero-map-tagline"></p>
     <a class="hero-map-link" href="/">查看详情 →</a>
   </div>
@@ -198,7 +198,7 @@ const markers = markerBase.map((marker) => {
       setText('.hero-map-variety-en', data.varietyEn);
       setText('.hero-map-variety-cn', data.varietyCn);
       setText('.hero-map-tagline', data.tagline);
-      popup.querySelector('.hero-map-type span').className = `hm-dot hm-dot-${data.type}`;
+      popup.querySelector('.hero-map-drop path').setAttribute('fill', data.type === 'red' ? 'var(--wine)' : data.type === 'white' ? '#d4b85a' : '#d4807a');
       popup.querySelector('.hero-map-link').href = `/${data.slug}`;
       popup.hidden = false;
 
