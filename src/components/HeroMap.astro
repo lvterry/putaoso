@@ -175,10 +175,12 @@ const markers = markerBase.map((marker) => {
     const VB_W = Number(wrapper.dataset.vbW);
     const VB_H = Number(wrapper.dataset.vbH);
     const narrow = window.matchMedia('(max-width: 1024px)').matches;
-    const scale = narrow ? Number(wrapper.dataset.narrowScale) : Number(wrapper.dataset.scale);
+    let scale = narrow ? Number(wrapper.dataset.narrowScale) : Number(wrapper.dataset.scale);
     let tx = narrow ? Number(wrapper.dataset.narrowTx) : Number(wrapper.dataset.initialTx);
     let ty = narrow ? Number(wrapper.dataset.narrowTy) : Number(wrapper.dataset.initialTy);
     viewport.setAttribute('transform', `translate(${tx}, ${ty}) scale(${scale})`);
+    const MIN_SCALE = scale;
+    const MAX_SCALE = scale * 3.2;
     let dragging = false;
     let moved = false;
     let startX = 0;
@@ -187,9 +189,78 @@ const markers = markerBase.map((marker) => {
     let startTy = ty;
     let downMarker = null;
 
+    // Active touch/pointer points, keyed by pointerId, for pinch tracking.
+    const pointers = new Map();
+    let pinchStartDist = 0;
+    let pinchStartScale = scale;
+    let pinchAnchor = null;
+
     const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
     const applyTransform = () => {
       viewport.setAttribute('transform', `translate(${tx}, ${ty}) scale(${scale})`);
+    };
+
+    // Which slice of the viewBox is actually on screen. On wide screens the
+    // SVG fills the container so this is ~the full viewBox; on narrow/portrait
+    // the CSS blows the SVG up to cover the height, so only a center strip is
+    // visible. getScreenCTM reflects whichever layout is live, so the pan
+    // bounds below adapt automatically without hard-coded assumptions.
+    const visibleViewBox = () => {
+      const ctm = svg.getScreenCTM();
+      if (!ctm) return { l: 0, t: 0, r: VB_W, b: VB_H };
+      const inv = ctm.inverse();
+      const rect = wrapper.getBoundingClientRect();
+      const p = svg.createSVGPoint();
+      p.x = rect.left; p.y = rect.top;
+      const a = p.matrixTransform(inv);
+      p.x = rect.right; p.y = rect.bottom;
+      const b = p.matrixTransform(inv);
+      return {
+        l: Math.min(a.x, b.x),
+        t: Math.min(a.y, b.y),
+        r: Math.max(a.x, b.x),
+        b: Math.max(a.y, b.y),
+      };
+    };
+
+    // Keep the scaled map covering the visible window (no empty gaps). If the
+    // map is narrower/shorter than the window on an axis, center it there.
+    const clampTranslate = () => {
+      const vis = visibleViewBox();
+      const minTx = vis.r - VB_W * scale;
+      const maxTx = vis.l;
+      const minTy = vis.b - VB_H * scale;
+      const maxTy = vis.t;
+      tx = minTx <= maxTx ? clamp(tx, minTx, maxTx) : (minTx + maxTx) / 2;
+      ty = minTy <= maxTy ? clamp(ty, minTy, maxTy) : (minTy + maxTy) / 2;
+    };
+
+    // Screen px → group-local (content) coordinates under the current transform.
+    const screenToContent = (clientX, clientY) => {
+      const ctm = svg.getScreenCTM();
+      const p = svg.createSVGPoint();
+      p.x = clientX; p.y = clientY;
+      const v = ctm ? p.matrixTransform(ctm.inverse()) : { x: clientX, y: clientY };
+      return { vx: v.x, vy: v.y, gx: (v.x - tx) / scale, gy: (v.y - ty) / scale };
+    };
+
+    const pinchMid = () => {
+      const pts = [...pointers.values()];
+      return { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 };
+    };
+    const pinchDist = () => {
+      const pts = [...pointers.values()];
+      return Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y);
+    };
+    const startPinch = () => {
+      dragging = false;
+      moved = true;
+      downMarker = null;
+      pinchStartDist = pinchDist() || 1;
+      pinchStartScale = scale;
+      const mid = pinchMid();
+      const c = screenToContent(mid.x, mid.y);
+      pinchAnchor = { gx: c.gx, gy: c.gy };
     };
 
     const hidePopup = () => {
@@ -230,6 +301,15 @@ const markers = markerBase.map((marker) => {
 
     svg.addEventListener('pointerdown', (event) => {
       if (event.button !== undefined && event.button !== 0) return;
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      svg.setPointerCapture(event.pointerId);
+
+      if (pointers.size >= 2) {
+        startPinch();
+        svg.style.cursor = 'grabbing';
+        return;
+      }
+
       downMarker = event.target.closest('.hm-marker');
 
       if (!downMarker && !popup.contains(event.target)) {
@@ -242,11 +322,28 @@ const markers = markerBase.map((marker) => {
       startY = event.clientY;
       startTx = tx;
       startTy = ty;
-      svg.setPointerCapture(event.pointerId);
       svg.style.cursor = 'grabbing';
     });
 
     svg.addEventListener('pointermove', (event) => {
+      if (!pointers.has(event.pointerId)) return;
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+
+      if (pointers.size >= 2 && pinchAnchor) {
+        event.preventDefault();
+        scale = clamp(pinchStartScale * (pinchDist() / pinchStartDist), MIN_SCALE, MAX_SCALE);
+        const mid = pinchMid();
+        const ctm = svg.getScreenCTM();
+        const p = svg.createSVGPoint();
+        p.x = mid.x; p.y = mid.y;
+        const v = ctm ? p.matrixTransform(ctm.inverse()) : { x: mid.x, y: mid.y };
+        tx = v.x - pinchAnchor.gx * scale;
+        ty = v.y - pinchAnchor.gy * scale;
+        clampTranslate();
+        applyTransform();
+        return;
+      }
+
       if (!dragging) return;
 
       const rect = svg.getBoundingClientRect();
@@ -257,17 +354,39 @@ const markers = markerBase.map((marker) => {
         moved = true;
       }
 
-      tx = clamp(startTx + dx, -VB_W * (scale - 1), 0);
-      ty = clamp(startTy + dy, -VB_H * (scale - 1), 0);
+      tx = startTx + dx;
+      ty = startTy + dy;
+      clampTranslate();
       applyTransform();
     });
 
     const endDrag = (event) => {
-      if (!dragging) return;
-      dragging = false;
+      const wasPinching = pointers.size >= 2;
+      pointers.delete(event.pointerId);
       if (svg.hasPointerCapture(event.pointerId)) {
         svg.releasePointerCapture(event.pointerId);
       }
+
+      if (pointers.size >= 2) return; // still pinching with remaining fingers
+
+      if (wasPinching) {
+        // Dropped from a pinch to a single finger: resume panning smoothly
+        // from wherever that finger now is.
+        pinchAnchor = null;
+        const remaining = [...pointers.values()][0];
+        if (remaining) {
+          dragging = true;
+          moved = true;
+          startX = remaining.x;
+          startY = remaining.y;
+          startTx = tx;
+          startTy = ty;
+        }
+        return;
+      }
+
+      if (!dragging) return;
+      dragging = false;
       svg.style.cursor = 'grab';
 
       if (downMarker && !moved) {
