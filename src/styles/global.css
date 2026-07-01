@@ -1094,14 +1094,31 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
   opacity: 0.68;
 }
 
+/* Per-type marker palette — mirrors the card drops (.card-drop.*):
+   red = wine purple, white = gold, rose = dusty rose. */
 .hm-marker {
-  fill: var(--wine);
+  --m-fill: var(--wine);
+  --m-fill-active: var(--wine-deep);
+  --m-glow: 159, 66, 244;
+  fill: var(--m-fill);
   stroke: rgba(var(--paper-rgb), 0.86);
   stroke-width: 1.35;
   vector-effect: non-scaling-stroke;
   cursor: pointer;
-  filter: drop-shadow(0 0 0 rgba(159, 66, 244, 0));
+  filter: drop-shadow(0 0 0 rgba(var(--m-glow), 0));
   transition: r 0.18s ease, opacity 0.18s ease, fill 0.18s ease, stroke 0.18s ease, filter 0.18s ease;
+}
+
+.hm-marker-white {
+  --m-fill: #d4b85a;
+  --m-fill-active: #b8952f;
+  --m-glow: 212, 184, 90;
+}
+
+.hm-marker-rose {
+  --m-fill: #d4807a;
+  --m-fill-active: #c05f58;
+  --m-glow: 212, 128, 122;
 }
 
 .hm-markers:hover .hm-marker:not(:hover) {
@@ -1114,9 +1131,9 @@ section:nth-of-type(8) { animation-delay: 0.45s; }
   r: 6;
   opacity: 1;
   outline: none;
-  fill: var(--wine-deep);
+  fill: var(--m-fill-active);
   stroke: rgba(var(--paper-rgb), 0.98);
-  filter: drop-shadow(0 0 8px rgba(159, 66, 244, 0.42));
+  filter: drop-shadow(0 0 8px rgba(var(--m-glow), 0.42));
 }
 
 .hero-map-popup {
