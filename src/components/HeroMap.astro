@@ -405,10 +405,6 @@ const markers = markerBase.map((marker) => {
         nextMarker.focus();
       };
 
-      marker.addEventListener('pointerup', (event) => {
-        event.stopPropagation();
-      });
-
       marker.addEventListener('click', (event) => {
         event.stopPropagation();
         if (!moved) showPopup(marker);
