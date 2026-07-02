@@ -116,9 +116,9 @@ const structuredData = [
         );
 
         return isLive ? (
-          <a class="card live" href={`/${v.slug}`}>{inner}</a>
+          <a class="card live" data-type={d.type} href={`/${v.slug}`}>{inner}</a>
         ) : (
-          <div class="card upcoming">{inner}</div>
+          <div class="card upcoming" data-type={d.type}>{inner}</div>
         );
       })}
     </div>

@@ -16,6 +16,9 @@
   --map-border-rgb: 16, 8, 20;
   --wine: #9f42f4;
   --wine-deep: #6415b8;
+  --white-wine: #d4b85a;
+  --white-wine-deep: #b8952f;
+  --paper-warm-gold: #faf5e2;
   --rule: #d9c6ef;
   --highlight: #18a84f;
 }
@@ -32,6 +35,9 @@
     --map-border-rgb: 251, 247, 255;
     --wine: #b968ff;
     --wine-deep: #d9b0ff;
+    --white-wine: #e0c76e;
+    --white-wine-deep: #d4b85a;
+    --paper-warm-gold: #1e1a10;
     --rule: #332040;
     --highlight: #19ae55;
   }
@@ -1357,8 +1363,13 @@ section.varieties {
 }
 
 .card-drop.red { fill: var(--wine); }
-.card-drop.white { fill: #d4b85a; }
+.card-drop.white { fill: var(--white-wine); }
 .card-drop.rose { fill: #d4807a; }
+
+/* 首页卡片 — 白葡萄用金色 */
+.card[data-type="white"] .card-name-en { color: var(--white-wine-deep); }
+.card[data-type="white"] .card-foot-value { color: var(--white-wine); }
+.card[data-type="white"].live::after { color: var(--white-wine); }
 
 .card-type-label {
   font-family: 'JetBrains Mono', monospace;
@@ -1482,6 +1493,28 @@ section.varieties {
   transform: translateX(-8px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+/* ============================================================
+   品种详情页 — 白葡萄用金色
+============================================================ */
+[data-grape-type="white"] .hero h1 { color: var(--white-wine-deep); }
+[data-grape-type="white"] .hero-quote::before { color: var(--white-wine); }
+[data-grape-type="white"] .section-label { color: var(--white-wine-deep); }
+[data-grape-type="white"] .section-label::before { color: var(--white-wine); }
+[data-grape-type="white"] .flavor-pro { color: var(--white-wine-deep); }
+[data-grape-type="white"] .prose strong,
+[data-grape-type="white"] .pairing-intro strong { color: var(--white-wine-deep); }
+[data-grape-type="white"] .palate-value { color: var(--white-wine-deep); }
+[data-grape-type="white"] .palate-bar .dot.fill { background: var(--white-wine); }
+[data-grape-type="white"] .price-amount { color: var(--white-wine-deep); }
+[data-grape-type="white"] .price-amount .currency { color: var(--white-wine); }
+[data-grape-type="white"] .caution { border-left-color: var(--white-wine); background: var(--paper-warm-gold); }
+[data-grape-type="white"] .pairing-list li::before { color: var(--white-wine); }
+[data-grape-type="white"] .cards .card-title { color: var(--white-wine-deep); }
+[data-grape-type="white"] .region-card .card-title .en { color: var(--white-wine-deep); }
+[data-grape-type="white"] .card-meta .price { color: var(--white-wine); }
+[data-grape-type="white"] .similar-name { color: var(--white-wine-deep); }
+[data-grape-type="white"] .similar-name:hover { color: var(--white-wine); }
 
 .grid .card.live:hover::after {
   opacity: 1;
