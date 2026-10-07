@@ -6,4 +6,4 @@ Role: Static wine grape variety field guide
 Language: Chinese (zh-CN)
 Framework: Astro
 Host: Cloudflare Pages
-Standards: HTML, CSS, RSS, XML Sitemap, JSON-LD, Linkset
+Standards: HTML, CSS, XML Sitemap, JSON-LD, Linkset

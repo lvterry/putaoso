@@ -8,7 +8,6 @@ The site helps readers compare grape varieties, understand flavor profiles, lear
 
 - [Homepage](https://putaoso.com/): Editorial cover, interactive region map, variety picker, and full variety index.
 - [Variety comparison](https://putaoso.com/compare): Client-side comparison table for selected live grape varieties.
-- [RSS feed](https://putaoso.com/rss.xml): Feed of published variety guide entries.
 - [Variety API](https://putaoso.com/api/varieties.json): Machine-readable JSON for live variety data.
 
 ## Representative Variety Guides
